@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lịch Thi Kiểm Tra - THPT Lương Thế Vinh</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="Css/Chung.css" />
+    <link rel="stylesheet" href="Css/lichthikiemtra.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="header__gradient">
+          <div class="header__top">
+            <div class="container">
+              <div class="brand">
+                <img
+                  src="Images/LogoTruong.jpg"
+                  alt="logo"
+                  class="brand__logo"
+                />
+                <div class="brand__info">
+                  <h1 class="brand__name">Trường THPT Lương Thế Vinh</h1>
+                  <p class="brand__tagline">
+                    Nơi ươm mầm tương lai - Khơi nguồn tri thức
+                  </p>
+                </div>
+              </div>
+
+              <div class="header__stats">
+                <div class="stat-item">
+                  <div class="stat-number">27</div>
+                  <div class="stat-label">Năm thành lập</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">1500+</div>
+                  <div class="stat-label">Học sinh</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">98%</div>
+                  <div class="stat-label">Tỷ lệ đỗ ĐH</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <nav class="nav">
+            <div class="container">
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <a href="Index.html" class="nav__link">🏠 Trang Chủ</a>
+                </li>
+                <li class="nav__item has-submenu">
+                  <a href="Gioithieu.html" class="nav__link">ℹ️ Giới thiệu</a>
+                  <ul class="submenu">
+                    <li class="submenu__item">
+                      <a href="Lichsunhatruong.html" class="submenu__link"
+                        >📚 Lịch sử nhà trường</a
+                      >
+                    </li>
+                    <li class="submenu__item">
+                      <a href="TieusuLTV.html" class="submenu__link"
+                        >👨‍🎓 Tiểu sử Lương Thế Vinh</a
+                      >
+                    </li>
+                    <li class="submenu__item">
+                      <a href="Tamnhinsumenh.html" class="submenu__link"
+                        >🎯 Tầm nhìn sứ mệnh</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav__item has-submenu">
+                  <a href="Tochuc.html" class="nav__link">🏢 Tổ chức</a>
+                  <ul class="submenu">
+                    <li class="submenu__item">
+                      <a href="Bangiamhieu.html" class="submenu__link"
+                        >👥 Ban giám hiệu</a
+                      >
+                    </li>
+                    <li class="submenu__item">
+                      <a href="Chibodang.html" class="submenu__link"
+                        >🏛️ Chi bộ Đảng</a
+                      >
+                    </li>
+                    <li class="submenu__item">
+                      <a href="Tochuyenmon.html" class="submenu__link"
+                        >📖 Tổ chuyên môn</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav__item has-submenu">
+                  <a href="Tintuc.html" class="nav__link">📰 Tin tức</a>
+                  <ul class="submenu">
+                    <li class="submenu__item">
+                      <a href="Hoatdongtruong.html" class="submenu__link"
+                        >🎉 Hoạt động trường</a
+                      >
+                    </li>
+                    <li class="submenu__item">
+                      <a href="Hoatdonggiaoduc.html" class="submenu__link"
+                        >🎓 Hoạt động giáo dục</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav__item has-submenu active">
+                  <a href="Dieuhanh.html" class="nav__link">⚙️ Điều hành</a>
+                  <ul class="submenu">
+                    <li class="submenu__item">
+                      <a href="ThoiKhoaBieu.html" class="submenu__link"
+                        >📅 Thời khóa biểu</a
+                      >
+                    </li>
+                    <li class="submenu__item">
+                      <a href="Lichthikiemtra.html" class="submenu__link"
+                        >📝 Lịch thi kiểm tra</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav__item">
+                  <a href="Lienhe.html" class="nav__link">📞 Liên hệ</a>
+                </li>
+                <li class="nav__item">
+                  <a href="Gopy.html" class="nav__link">💬 Góp ý</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <div class="page-banner">
+        <div class="page-banner__overlay">
+          <div class="container">
+            <h1 class="page-banner__title">Lịch Thi Kiểm Tra</h1>
+            <div class="breadcrumb">
+              <a href="Index.html" class="breadcrumb__item">Trang chủ</a>
+              <span class="breadcrumb__separator">/</span>
+              <a href="Dieuhanh.html" class="breadcrumb__item">Điều hành</a>
+              <span class="breadcrumb__separator">/</span>
+              <span class="breadcrumb__item breadcrumb__item--active"
+                >Lịch thi kiểm tra</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main class="main">
+        <div class="container">
+          <!-- Info Section -->
+          <section class="info-section">
+            <div class="info-box">
+              <div class="info-icon">📝</div>
+              <h2 class="info-title">Lịch Thi Kiểm Tra Năm Học 2025-2026</h2>
+              <p class="info-text">
+                Lịch thi kiểm tra được thông báo trước ít nhất 1 tuần. Học sinh
+                cần chuẩn bị tốt kiến thức và có mặt đúng giờ. Mọi thắc mắc xin
+                liên hệ giáo viên bộ môn hoặc GVCN.
+              </p>
+            </div>
+          </section>
+
+          <!-- Filter Section -->
+          <section class="filter-section">
+            <div class="filter-box">
+              <h3 class="filter-title">🔍 Lọc Lịch Thi</h3>
+              <div class="filter-controls">
+                <div class="filter-group">
+                  <label class="filter-label">Loại thi:</label>
+                  <select class="filter-select" id="examTypeFilter">
+                    <option value="all">Tất cả</option>
+                    <option value="midterm">Giữa kỳ</option>
+                    <option value="final">Cuối kỳ</option>
+                    <option value="monthly">Kiểm tra định kỳ</option>
+                  </select>
+                </div>
+                <div class="filter-group">
+                  <label class="filter-label">Khối:</label>
+                  <select class="filter-select" id="gradeFilter">
+                    <option value="all">Tất cả</option>
+                    <option value="10">Khối 10</option>
+                    <option value="11">Khối 11</option>
+                    <option value="12">Khối 12</option>
+                  </select>
+                </div>
+                <div class="filter-group">
+                  <label class="filter-label">Học kỳ:</label>
+                  <select class="filter-select" id="semesterFilter">
+                    <option value="1">Học kỳ I</option>
+                    <option value="2">Học kỳ II</option>
+                  </select>
+                </div>
+                <button class="btn-filter">🔎 Lọc</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Upcoming Exams -->
+          <section class="upcoming-section">
+            <h2 class="section-title">⏰ Kỳ Thi Sắp Tới</h2>
+            <div class="upcoming-grid">
+              <div class="upcoming-card upcoming-card--urgent">
+                <div class="upcoming-badge">Sắp diễn ra</div>
+                <div class="upcoming-date">
+                  <div class="date-day">28</div>
+                  <div class="date-month">Tháng 10</div>
+                  <div class="date-year">2025</div>
+                </div>
+                <div class="upcoming-content">
+                  <h3 class="upcoming-title">Thi giữa kỳ I - Toán</h3>
+                  <div class="upcoming-info">
+                    <div class="info-item">
+                      <span class="info-icon">📚</span>
+                      <span>Khối 10, 11, 12</span>
+                    </div>
+                    <div class="info-item">
+                      <span class="info-icon">🕐</span>
+                      <span>7:30 - 9:00</span>
+                    </div>
+                    <div class="info-item">
+                      <span class="info-icon">📍</span>
+                      <span>Các phòng thi</span>
+                    </div>
+                  </div>
+                  <div class="countdown">
+                    <span class="countdown-label">Còn:</span>
+                    <span class="countdown-time">19 ngày</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="upcoming-card">
+                <div class="upcoming-badge">Sắp diễn ra</div>
+                <div class="upcoming-date">
+                  <div class="date-day">29</div>
+                  <div class="date-month">Tháng 10</div>
+                  <div class="date-year">2025</div>
+                </div>
+                <div class="upcoming-content">
+                  <h3 class="upcoming-title">Thi giữa kỳ I - Vật Lý</h3>
+                  <div class="upcoming-info">
+                    <div class="info-item">
+                      <span class="info-icon">📚</span>
+                      <span>Khối 10, 11, 12</span>
+                    </div>
+                    <div class="info-item">
+                      <span class="info-icon">🕐</span>
+                      <span>7:30 - 8:45</span>
+                    </div>
+                    <div class="info-item">
+                      <span class="info-icon">📍</span>
+                      <span>Các phòng thi</span>
+                    </div>
+                  </div>
+                  <div class="countdown">
+                    <span class="countdown-label">Còn:</span>
+                    <span class="countdown-time">20 ngày</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="upcoming-card">
+                <div class="upcoming-badge">Sắp diễn ra</div>
+                <div class="upcoming-date">
+                  <div class="date-day">30</div>
+                  <div class="date-month">Tháng 10</div>
+                  <div class="date-year">2025</div>
+                </div>
+                <div class="upcoming-content">
+                  <h3 class="upcoming-title">Thi giữa kỳ I - Hóa Học</h3>
+                  <div class="upcoming-info">
+                    <div class="info-item">
+                      <span class="info-icon">📚</span>
+                      <span>Khối 10, 11, 12</span>
+                    </div>
+                    <div class="info-item">
+                      <span class="info-icon">🕐</span>
+                      <span>7:30 - 8:45</span>
+                    </div>
+                    <div class="info-item">
+                      <span class="info-icon">📍</span>
+                      <span>Các phòng thi</span>
+                    </div>
+                  </div>
+                  <div class="countdown">
+                    <span class="countdown-label">Còn:</span>
+                    <span class="countdown-time">21 ngày</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Midterm Schedule -->
+          <section class="schedule-section">
+            <h2 class="section-title">
+              📋 Lịch Thi Giữa Kỳ I (28/10 - 02/11/2025)
+            </h2>
+            <div class="schedule-table-wrapper">
+              <table class="exam-table">
+                <thead>
+                  <tr>
+                    <th>Ngày thi</th>
+                    <th>Môn thi</th>
+                    <th>Khối</th>
+                    <th>Thời gian</th>
+                    <th>Hình thức</th>
+                    <th>Phòng thi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="td-date">
+                      <div class="date-cell">
+                        <div class="date-num">28/10</div>
+                        <div class="date-day">Thứ Hai</div>
+                      </div>
+                    </td>
+                    <td class="td-subject">
+                      <div class="subject-cell subject-math">
+                        <span class="subject-icon">🔢</span>
+                        <span class="subject-name">Toán</span>
+                      </div>
+                    </td>
+                    <td class="td-grade">Khối 10, 11, 12</td>
+                    <td class="td-time">7:30 - 9:00 (90 phút)</td>
+                    <td class="td-format">
+                      <span class="format-badge">Tự luận</span>
+                    </td>
+                    <td class="td-room">P.201-220</td>
+                  </tr>
+
+                  <tr>
+                    <td class="td-date">
+                      <div class="date-cell">
+                        <div class="date-num">29/10</div>
+                        <div class="date-day">Thứ Ba</div>
+                      </div>
+                    </td>
+                    <td class="td-subject">
+                      <div class="subject-cell subject-physics">
+                        <span class="subject-icon">⚛️</span>
+                        <span class="subject-name">Vật Lý</span>
+                      </div>
+                    </td>
+                    <td class="td-grade">Khối 10, 11, 12</td>
+                    <td class="td-time">7:30 - 8:45 (75 phút)</td>
+                    <td class="td-format">
+                      <span class="format-badge">Tự luận</span>
+                    </td>
+                    <td class="td-room">P.201-220</td>
+                  </tr>
+
+                  <tr>
+                    <td class="td-date">
+                      <div class="date-cell">
+                        <div class="date-num">30/10</div>
+                        <div class="date-day">Thứ Tư</div>
+                      </div>
+                    </td>
+                    <td class="td-subject">
+                      <div class="subject-cell subject-chemistry">
+                        <span class="subject-icon">⚗️</span>
+                        <span class="subject-name">Hóa Học</span>
+                      </div>
+                    </td>
+                    <td class="td-grade">Khối 10, 11, 12</td>
+                    <td class="td-time">7:30 - 8:45 (75 phút)</td>
+                    <td class="td-format">
+                      <span class="format-badge">Tự luận</span>
+                    </td>
+                    <td class="td-room">P.201-220</td>
+                  </tr>
+
+                  <tr>
+                    <td class="td-date">
+                      <div class="date-cell">
+                        <div class="date-num">31/10</div>
+                        <div class="date-day">Thứ Năm</div>
+                      </div>
+                    </td>
+                    <td class="td-subject">
+                      <div class="subject-cell subject-literature">
+                        <span class="subject-icon">📝</span>
+                        <span class="subject-name">Ngữ Văn</span>
+                      </div>
+                    </td>
+                    <td class="td-grade">Khối 10, 11, 12</td>
+                    <td class="td-time">7:30 - 9:30 (120 phút)</td>
+                    <td class="td-format">
+                      <span class="format-badge">Tự luận</span>
+                    </td>
+                    <td class="td-room">P.201-220</td>
+                  </tr>
+
+                  <tr>
+                    <td class="td-date">
+                      <div class="date-cell">
+                        <div class="date-num">01/11</div>
+                        <div class="date-day">Thứ Sáu</div>
+                      </div>
+                    </td>
+                    <td class="td-subject">
+                      <div class="subject-cell subject-english">
+                        <span class="subject-icon">🗣️</span>
+                        <span class="subject-name">Tiếng Anh</span>
+                      </div>
+                    </td>
+                    <td class="td-grade">Khối 10, 11, 12</td>
+                    <td class="td-time">7:30 - 9:00 (90 phút)</td>
+                    <td class="td-format">
+                      <span class="format-badge format-badge--test"
+                        >Trắc nghiệm</span
+                      >
+                    </td>
+                    <td class="td-room">P.201-220</td>
+                  </tr>
+
+                  <tr>
+                    <td class="td-date">
+                      <div class="date-cell">
+                        <div class="date-num">02/11</div>
+                        <div class="date-day">Thứ Bảy</div>
+                      </div>
+                    </td>
+                    <td class="td-subject">
+                      <div class="subject-cell subject-biology">
+                        <span class="subject-icon">🧬</span>
+                        <span class="subject-name">Sinh Học</span>
+                      </div>
+                    </td>
+                    <td class="td-grade">Khối 10, 11, 12</td>
+                    <td class="td-time">7:30 - 8:45 (75 phút)</td>
+                    <td class="td-format">
+                      <span class="format-badge">Tự luận</span>
+                    </td>
+                    <td class="td-room">P.201-220</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- Exam Rules -->
+          <section class="rules-section">
+            <h2 class="section-title">📜 Quy Định Thi Cử</h2>
+            <div class="rules-grid">
+              <div class="rule-card">
+                <div class="rule-number">01</div>
+                <div class="rule-icon">🕐</div>
+                <h3 class="rule-title">Thời gian</h3>
+                <p class="rule-desc">
+                  Học sinh phải có mặt trước 15 phút. Không được vào phòng thi
+                  sau 30 phút kể từ khi bắt đầu làm bài.
+                </p>
+              </div>
+
+              <div class="rule-card">
+                <div class="rule-number">02</div>
+                <div class="rule-icon">🎫</div>
+                <h3 class="rule-title">Giấy tờ</h3>
+                <p class="rule-desc">
+                  Mang theo thẻ học sinh hoặc giấy tờ tùy thân có ảnh. Xuất
+                  trình khi được yêu cầu.
+                </p>
+              </div>
+
+              <div class="rule-card">
+                <div class="rule-number">03</div>
+                <div class="rule-icon">✏️</div>
+                <h3 class="rule-title">Dụng cụ</h3>
+                <p class="rule-desc">
+                  Chỉ mang dụng cụ học tập cần thiết. Không được mang tài liệu,
+                  điện thoại vào phòng thi.
+                </p>
+              </div>
+
+              <div class="rule-card">
+                <div class="rule-number">04</div>
+                <div class="rule-icon">🤫</div>
+                <h3 class="rule-title">Kỷ luật</h3>
+                <p class="rule-desc">
+                  Giữ trật tự, không nói chuyện, không quay cóp. Vi phạm sẽ bị
+                  đình chỉ thi.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Tips -->
+          <section class="tips-section">
+            <div class="tips-box">
+              <h2 class="tips-title">💡 Lời Khuyên Hữu Ích</h2>
+              <div class="tips-grid">
+                <div class="tip-item">
+                  <div class="tip-icon">📚</div>
+                  <h4 class="tip-heading">Chuẩn bị kỹ lưỡng</h4>
+                  <p class="tip-text">
+                    Ôn tập toàn diện kiến thức, làm đề cũ, tìm hiểu cấu trúc đề
+                    thi.
+                  </p>
+                </div>
+
+                <div class="tip-item">
+                  <div class="tip-icon">😴</div>
+                  <h4 class="tip-heading">Ngủ đủ giấc</h4>
+                  <p class="tip-text">
+                    Đảm bảo ngủ ít nhất 7-8 tiếng trước ngày thi để tỉnh táo.
+                  </p>
+                </div>
+
+                <div class="tip-item">
+                  <div class="tip-icon">🍎</div>
+                  <h4 class="tip-heading">Ăn uống hợp lý</h4>
+                  <p class="tip-text">
+                    Ăn sáng đầy đủ, uống đủ nước, tránh đồ ăn nặng gây buồn ngủ.
+                  </p>
+                </div>
+
+                <div class="tip-item">
+                  <div class="tip-icon">😌</div>
+                  <h4 class="tip-heading">Giữ bình tĩnh</h4>
+                  <p class="tip-text">
+                    Đọc kỹ đề, phân bổ thời gian hợp lý, làm bài cẩn thận.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__gradient">
+          <div class="container">
+            <div class="footer__content">
+              <div class="footer__info">
+                <h3 class="footer__title">THPT Lương Thế Vinh</h3>
+                <p class="footer__desc">
+                  Ngôi trường của tri thức và tương lai
+                </p>
+                <div class="footer__address">
+                  📍 Phường Điện Nam Trung, Thị xã Điện Bàn, Tỉnh Quảng Nam
+                </div>
+                <div class="footer__social">
+                  <a
+                    href="https://www.facebook.com/groups/ltvpro"
+                    target="_blank"
+                    class="social-link"
+                    >📘 Facebook</a
+                  >
+                </div>
+              </div>
+              <div class="footer__links">
+                <div class="footer__column">
+                  <h4>Liên kết nhanh</h4>
+                  <ul>
+                    <li><a href="Gioithieu.html">Giới thiệu</a></li>
+                    <li><a href="Tuyensinh.html">Tuyển sinh</a></li>
+                    <li><a href="Tintuc.html">Tin tức</a></li>
+                    <li><a href="Lienhe.html">Liên hệ</a></li>
+                  </ul>
+                </div>
+                <div class="footer__column">
+                  <h4>Hỗ trợ</h4>
+                  <ul>
+                    <li><a href="#">Câu hỏi thường gặp</a></li>
+                    <li><a href="#">Hướng dẫn</a></li>
+                    <li><a href="Gopy.html">Góp ý</a></li>
+                    <li><a href="#">Báo lỗi</a></li>
+                  </ul>
+                </div>
+                <div class="footer__column">
+                  <h4>Liên hệ</h4>
+                  <ul>
+                    <li><a href="tel:0935308369">📞 0935.308.369</a></li>
+                    <li>
+                      <a href="mailto:levanngat@gmail.com"
+                        >📧 levanngat@gmail.com</a
+                      >
+                    </li>
+                    <li>🕒 7:00 - 17:00</li>
+                    <li>📅 Thứ 2 - Thứ 7</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer__bottom">
+              <p>
+                &copy; 2025 Trường THPT Lương Thế Vinh. Tất cả quyền được bảo
+                lưu.
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <div class="fab-container">
+        <div class="fab fab--main">💬</div>
+        <div class="fab-menu">
+          <a href="tel:0935308369" class="fab fab--phone">📞</a>
+          <a href="#" class="fab fab--facebook">📘</a>
+          <a href="mailto:levanngat@gmail.com" class="fab fab--email">✉️</a>
+          <a href="#top" class="fab fab--top">⬆️</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

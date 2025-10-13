@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tổ Chuyên Môn - THPT Lương Thế Vinh</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="Css/Chung.css" />
+    <link rel="stylesheet" href="Css/tochuyenmon.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="header__gradient">
+          <div class="header__top">
+            <div class="container">
+              <div class="brand">
+                <img
+                  src="Images/LogoTruong.jpg"
+                  alt="logo"
+                  class="brand__logo"
+                />
+                <div class="brand__info">
+                  <h1 class="brand__name">Trường THPT Lương Thế Vinh</h1>
+                  <p class="brand__tagline">
+                    Nơi ươm mầm tương lai - Khơi nguồn tri thức
+                  </p>
+                </div>
+              </div>
+
+              <div class="header__stats">
+                <div class="stat-item">
+                  <div class="stat-number">27</div>
+                  <div class="stat-label">Năm thành lập</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">1500+</div>
+                  <div class="stat-label">Học sinh</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-number">98%</div>
+                  <div class="stat-label">Tỷ lệ đỗ ĐH</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <nav class="nav">
+            <div class="container">
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <a href="Index.html" class="nav__link">🏠 Trang Chủ</a>
+                </li>
+                <li class="nav__item has-submenu">
+                  <a href="Gioithieu.html" class="nav__link">ℹ️ Giới thiệu</a>
+                  <ul class="submenu">
+                    <li class="submenu__item">
+                      <a href="Lichsunhatruong.html" class="submenu__link"
+                        >📚 Lịch sử nhà trường</a
+                      >
+                    </li>
+                    <li class="submenu__item">
+                      <a href="TieusuLTV.html" class="submenu__link"
+                        >👨‍🎓 Tiểu sử Lương Thế Vinh</a
+                      >
+                    </li>
+                    <li class="submenu__item">
+                      <a href="Tamnhinsumenh.html" class="submenu__link"
+                        >🎯 Tầm nhìn sứ mệnh</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav__item has-submenu active">
+                  <a href="Tochuc.html" class="nav__link">🏢 Tổ chức</a>
+                  <ul class="submenu">
+                    <li class="submenu__item">
+                      <a href="Bangiamhieu.html" class="submenu__link"
+                        >👥 Ban giám hiệu</a
+                      >
+                    </li>
+                    <li class="submenu__item">
+                      <a href="Chibodang.html" class="submenu__link"
+                        >🏛️ Chi bộ Đảng</a
+                      >
+                    </li>
+                    <li class="submenu__item">
+                      <a href="Tochuyenmon.html" class="submenu__link"
+                        >📖 Tổ chuyên môn</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav__item has-submenu">
+                  <a href="Tintuc.html" class="nav__link">📰 Tin tức</a>
+                  <ul class="submenu">
+                    <li class="submenu__item">
+                      <a href="Hoatdongtruong.html" class="submenu__link"
+                        >🎉 Hoạt động trường</a
+                      >
+                    </li>
+                    <li class="submenu__item">
+                      <a href="Hoatdonggiaoduc.html" class="submenu__link"
+                        >🎓 Hoạt động giáo dục</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav__item has-submenu">
+                  <a href="Dieuhanh.html" class="nav__link">⚙️ Điều hành</a>
+                  <ul class="submenu">
+                    <li class="submenu__item">
+                      <a href="ThoiKhoaBieu.html" class="submenu__link"
+                        >📅 Thời khóa biểu</a
+                      >
+                    </li>
+                    <li class="submenu__item">
+                      <a href="Lichthikiemtra.html" class="submenu__link"
+                        >📝 Lịch thi kiểm tra</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav__item">
+                  <a href="Lienhe.html" class="nav__link">📞 Liên hệ</a>
+                </li>
+                <li class="nav__item">
+                  <a href="Gopy.html" class="nav__link">💬 Góp ý</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <div class="page-banner">
+        <div class="page-banner__overlay">
+          <div class="container">
+            <h1 class="page-banner__title">Tổ Chuyên Môn</h1>
+            <div class="breadcrumb">
+              <a href="Index.html" class="breadcrumb__item">Trang chủ</a>
+              <span class="breadcrumb__separator">/</span>
+              <a href="Tochuc.html" class="breadcrumb__item">Tổ chức</a>
+              <span class="breadcrumb__separator">/</span>
+              <span class="breadcrumb__item breadcrumb__item--active"
+                >Tổ chuyên môn</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main class="main">
+        <div class="container">
+          <!-- Introduction -->
+          <section class="intro-section">
+            <div class="intro-box">
+              <div class="intro-icon">📚</div>
+              <h2 class="intro-title">Tổ Chuyên Môn Nhà Trường</h2>
+              <p class="intro-text">
+                Trường THPT Lương Thế Vinh có 12 tổ chuyên môn với đội ngũ 78
+                giáo viên tâm huyết, nhiệt huyết và chuyên nghiệp. Mỗi tổ chuyên
+                môn là một tập thể đoàn kết, không ngừng học hỏi, đổi mới phương
+                pháp giảng dạy nhằm nâng cao chất lượng giáo dục, đáp ứng yêu
+                cầu đổi mới giáo dục trong giai đoạn hiện nay.
+              </p>
+            </div>
+          </section>
+
+          <!-- Overall Statistics -->
+          <section class="overall-stats">
+            <h2 class="section-title">📊 Tổng Quan</h2>
+            <div class="stats-grid">
+              <div class="stat-card stat-card--blue">
+                <div class="stat-card__icon">👨‍🏫</div>
+                <div class="stat-card__number">78</div>
+                <div class="stat-card__label">Giáo viên</div>
+                <div class="stat-card__detail">100% đạt chuẩn</div>
+              </div>
+              <div class="stat-card stat-card--green">
+                <div class="stat-card__icon">📖</div>
+                <div class="stat-card__number">12</div>
+                <div class="stat-card__label">Tổ chuyên môn</div>
+                <div class="stat-card__detail">Đa dạng môn học</div>
+              </div>
+              <div class="stat-card stat-card--orange">
+                <div class="stat-card__icon">🎓</div>
+                <div class="stat-card__number">48</div>
+                <div class="stat-card__label">Thạc sĩ</div>
+                <div class="stat-card__detail">61.5% đội ngũ</div>
+              </div>
+              <div class="stat-card stat-card--purple">
+                <div class="stat-card__icon">🏆</div>
+                <div class="stat-card__number">25</div>
+                <div class="stat-card__label">GV dạy giỏi</div>
+                <div class="stat-card__detail">Cấp tỉnh trở lên</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Subject Groups -->
+          <section class="subject-groups">
+            <h2 class="section-title">📚 Các Tổ Chuyên Môn</h2>
+
+            <!-- Natural Sciences -->
+            <div class="group-section">
+              <h3 class="group-title">🔬 Khối Khoa Học Tự Nhiên</h3>
+              <div class="subjects-grid">
+                <!-- Math -->
+                <div class="subject-card">
+                  <div class="subject-header">
+                    <div class="subject-icon">🔢</div>
+                    <h4 class="subject-name">Toán</h4>
+                  </div>
+                  <div class="subject-image">
+                    <div class="image-placeholder">
+                      <span class="placeholder-icon">🧮</span>
+                      <span class="placeholder-text">Tổ Toán</span>
+                    </div>
+                  </div>
+                  <div class="subject-info">
+                    <div class="info-row">
+                      <span class="info-label">👥 Tổ trưởng:</span>
+                      <span class="info-value">Thầy Nguyễn Văn A</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">👨‍🏫 Giáo viên:</span>
+                      <span class="info-value">8 thầy cô</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">🎓 Trình độ:</span>
+                      <span class="info-value">5 Thạc sĩ</span>
+                    </div>
+                  </div>
+                  <div class="subject-achievements">
+                    <div class="achievement-tag">🥇 3 GV dạy giỏi cấp tỉnh</div>
+                    <div class="achievement-tag">🏆 5 giải HSG Quốc gia</div>
+                  </div>
+                  <div class="subject-description">
+                    Tổ Toán có đội ngũ giáo viên giàu kinh nghiệm, nhiệt huyết.
+                    Học sinh đạt nhiều thành tích xuất sắc trong các kỳ thi HSG
+                    cấp tỉnh và quốc gia.
+                  </div>
+                </div>
+
+                <!-- Physics -->
+                <div class="subject-card">
+                  <div class="subject-header">
+                    <div class="subject-icon">⚛️</div>
+                    <h4 class="subject-name">Vật Lý</h4>
+                  </div>
+                  <div class="subject-image">
+                    <div class="image-placeholder">
+                      <span class="placeholder-icon">🔬</span>
+                      <span class="placeholder-text">Tổ Vật Lý</span>
+                    </div>
+                  </div>
+                  <div class="subject-info">
+                    <div class="info-row">
+                      <span class="info-label">👥 Tổ trưởng:</span>
+                      <span class="info-value">Thầy Trần Văn B</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">👨‍🏫 Giáo viên:</span>
+                      <span class="info-value">6 thầy cô</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">🎓 Trình độ:</span>
+                      <span class="info-value">4 Thạc sĩ</span>
+                    </div>
+                  </div>
+                  <div class="subject-achievements">
+                    <div class="achievement-tag">🥇 2 GV dạy giỏi cấp tỉnh</div>
+                    <div class="achievement-tag">🏆 3 giải HSG Quốc gia</div>
+                  </div>
+                  <div class="subject-description">
+                    Phòng thí nghiệm Vật Lý được trang bị hiện đại, phục vụ tốt
+                    cho việc giảng dạy và học tập.
+                  </div>
+                </div>
+
+                <!-- Chemistry -->
+                <div class="subject-card">
+                  <div class="subject-header">
+                    <div class="subject-icon">⚗️</div>
+                    <h4 class="subject-name">Hóa Học</h4>
+                  </div>
+                  <div class="subject-image">
+                    <div class="image-placeholder">
+                      <span class="placeholder-icon">🧪</span>
+                      <span class="placeholder-text">Tổ Hóa Học</span>
+                    </div>
+                  </div>
+                  <div class="subject-info">
+                    <div class="info-row">
+                      <span class="info-label">👥 Tổ trưởng:</span>
+                      <span class="info-value">Cô Phạm Thị C</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">👨‍🏫 Giáo viên:</span>
+                      <span class="info-value">5 thầy cô</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">🎓 Trình độ:</span>
+                      <span class="info-value">3 Thạc sĩ</span>
+                    </div>
+                  </div>
+                  <div class="subject-achievements">
+                    <div class="achievement-tag">🥇 2 GV dạy giỏi cấp tỉnh</div>
+                    <div class="achievement-tag">🏆 4 giải HSG cấp tỉnh</div>
+                  </div>
+                  <div class="subject-description">
+                    Tổ Hóa học chú trọng thực hành thí nghiệm, giúp học sinh nắm
+                    vững kiến thức và kỹ năng thực tế.
+                  </div>
+                </div>
+
+                <!-- Biology -->
+                <div class="subject-card">
+                  <div class="subject-header">
+                    <div class="subject-icon">🧬</div>
+                    <h4 class="subject-name">Sinh Học</h4>
+                  </div>
+                  <div class="subject-image">
+                    <div class="image-placeholder">
+                      <span class="placeholder-icon">🔬</span>
+                      <span class="placeholder-text">Tổ Sinh Học</span>
+                    </div>
+                  </div>
+                  <div class="subject-info">
+                    <div class="info-row">
+                      <span class="info-label">👥 Tổ trưởng:</span>
+                      <span class="info-value">Cô Lê Thị D</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">👨‍🏫 Giáo viên:</span>
+                      <span class="info-value">5 thầy cô</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">🎓 Trình độ:</span>
+                      <span class="info-value">3 Thạc sĩ</span>
+                    </div>
+                  </div>
+                  <div class="subject-achievements">
+                    <div class="achievement-tag">🥇 1 GV dạy giỏi cấp tỉnh</div>
+                    <div class="achievement-tag">🏆 3 giải HSG cấp tỉnh</div>
+                  </div>
+                  <div class="subject-description">
+                    Tổ Sinh học có vườn thực vật phong phú, hỗ trợ tốt cho việc
+                    nghiên cứu và thực hành.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Sciences -->
+            <div class="group-section">
+              <h3 class="group-title">📖 Khối Khoa Học Xã Hội</h3>
+              <div class="subjects-grid">
+                <!-- Literature -->
+                <div class="subject-card">
+                  <div class="subject-header">
+                    <div class="subject-icon">📝</div>
+                    <h4 class="subject-name">Ngữ Văn</h4>
+                  </div>
+                  <div class="subject-image">
+                    <div class="image-placeholder">
+                      <span class="placeholder-icon">📚</span>
+                      <span class="placeholder-text">Tổ Ngữ Văn</span>
+                    </div>
+                  </div>
+                  <div class="subject-info">
+                    <div class="info-row">
+                      <span class="info-label">👥 Tổ trưởng:</span>
+                      <span class="info-value">Cô Hoàng Thị E</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">👨‍🏫 Giáo viên:</span>
+                      <span class="info-value">10 thầy cô</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">🎓 Trình độ:</span>
+                      <span class="info-value">7 Thạc sĩ</span>
+                    </div>
+                  </div>
+                  <div class="subject-achievements">
+                    <div class="achievement-tag">🥇 4 GV dạy giỏi cấp tỉnh</div>
+                    <div class="achievement-tag">🏆 2 giải HSG Quốc gia</div>
+                  </div>
+                  <div class="subject-description">
+                    Tổ Văn là tổ lớn nhất với đội ngũ giàu kinh nghiệm, tổ chức
+                    nhiều hoạt động ngoại khóa sôi nổi.
+                  </div>
+                </div>
+
+                <!-- History -->
+                <div class="subject-card">
+                  <div class="subject-header">
+                    <div class="subject-icon">🏛️</div>
+                    <h4 class="subject-name">Lịch Sử</h4>
+                  </div>
+                  <div class="subject-image">
+                    <div class="image-placeholder">
+                      <span class="placeholder-icon">📜</span>
+                      <span class="placeholder-text">Tổ Lịch Sử</span>
+                    </div>
+                  </div>
+                  <div class="subject-info">
+                    <div class="info-row">
+                      <span class="info-label">👥 Tổ trưởng:</span>
+                      <span class="info-value">Thầy Võ Văn F</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">👨‍🏫 Giáo viên:</span>
+                      <span class="info-value">6 thầy cô</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">🎓 Trình độ:</span>
+                      <span class="info-value">4 Thạc sĩ</span>
+                    </div>
+                  </div>
+                  <div class="subject-achievements">
+                    <div class="achievement-tag">🥇 2 GV dạy giỏi cấp tỉnh</div>
+                    <div class="achievement-tag">🏆 5 giải HSG cấp tỉnh</div>
+                  </div>
+                  <div class="subject-description">
+                    Tổ Sử tích cực tổ chức các chuyến tham quan di tích lịch sử,
+                    giúp học sinh học tập thực tế.
+                  </div>
+                </div>
+
+                <!-- Geography -->
+                <div class="subject-card">
+                  <div class="subject-header">
+                    <div class="subject-icon">🌍</div>
+                    <h4 class="subject-name">Địa Lý</h4>
+                  </div>
+                  <div class="subject-image">
+                    <div class="image-placeholder">
+                      <span class="placeholder-icon">🗺️</span>
+                      <span class="placeholder-text">Tổ Địa Lý</span>
+                    </div>
+                  </div>
+                  <div class="subject-info">
+                    <div class="info-row">
+                      <span class="info-label">👥 Tổ trưởng:</span>
+                      <span class="info-value">Cô Đặng Thị G</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">👨‍🏫 Giáo viên:</span>
+                      <span class="info-value">5 thầy cô</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">🎓 Trình độ:</span>
+                      <span class="info-value">3 Thạc sĩ</span>
+                    </div>
+                  </div>
+                  <div class="subject-achievements">
+                    <div class="achievement-tag">🥇 1 GV dạy giỏi cấp tỉnh</div>
+                    <div class="achievement-tag">🏆 4 giải HSG cấp tỉnh</div>
+                  </div>
+                  <div class="subject-description">
+                    Phòng học Địa lý với bản đồ, mô hình địa hình hiện đại hỗ
+                    trợ giảng dạy hiệu quả.
+                  </div>
+                </div>
+
+                <!-- Civic Education -->
+                <div class="subject-card">
+                  <div class="subject-header">
+                    <div class="subject-icon">⚖️</div>
+                    <h4 class="subject-name">GDCD</h4>
+                  </div>
+                  <div class="subject-image">
+                    <div class="image-placeholder">
+                      <span class="placeholder-icon">📋</span>
+                      <span class="placeholder-text">Tổ GDCD</span>
+                    </div>
+                  </div>
+                  <div class="subject-info">
+                    <div class="info-row">
+                      <span class="info-label">👥 Tổ trưởng:</span>
+                      <span class="info-value">Thầy Bùi Văn H</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">👨‍🏫 Giáo viên:</span>
+                      <span class="info-value">4 thầy cô</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">🎓 Trình độ:</span>
+                      <span class="info-value">2 Thạc sĩ</span>
+                    </div>
+                  </div>
+                  <div class="subject-achievements">
+                    <div class="achievement-tag">🥇 1 GV dạy giỏi cấp tỉnh</div>
+                    <div class="achievement-tag">
+                      🏆 Giáo dục đạo đức xuất sắc
+                    </div>
+                  </div>
+                  <div class="subject-description">
+                    Tổ GDCD đóng vai trò quan trọng trong giáo dục đạo đức, lối
+                    sống cho học sinh.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Languages & Skills -->
+            <div class="group-section">
+              <h3 class="group-title">🌐 Khối Ngoại Ngữ & Kỹ Năng</h3>
+              <div class="subjects-grid">
+                <!-- English -->
+                <div class="subject-card">
+                  <div class="subject-header">
+                    <div class="subject-icon">🗣️</div>
+                    <h4 class="subject-name">Tiếng Anh</h4>
+                  </div>
+                  <div class="subject-image">
+                    <div class="image-placeholder">
+                      <span class="placeholder-icon">🇬🇧</span>
+                      <span class="placeholder-text">Tổ Tiếng Anh</span>
+                    </div>
+                  </div>
+                  <div class="subject-info">
+                    <div class="info-row">
+                      <span class="info-label">👥 Tổ trưởng:</span>
+                      <span class="info-value">Cô Nguyễn Thị I</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">👨‍🏫 Giáo viên:</span>
+                      <span class="info-value">9 thầy cô</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">🎓 Trình độ:</span>
+                      <span class="info-value">6 Thạc sĩ</span>
+                    </div>
+                  </div>
+                  <div class="subject-achievements">
+                    <div class="achievement-tag">🥇 3 GV dạy giỏi cấp tỉnh</div>
+                    <div class="achievement-tag">🏆 CLB Tiếng Anh sôi nổi</div>
+                  </div>
+                  <div class="subject-description">
+                    Tổ Tiếng Anh áp dụng nhiều phương pháp giảng dạy hiện đại,
+                    tăng cường kỹ năng giao tiếp.
+                  </div>
+                </div>
+
+                <!-- IT -->
+                <div class="subject-card">
+                  <div class="subject-header">
+                    <div class="subject-icon">💻</div>
+                    <h4 class="subject-name">Tin Học</h4>
+                  </div>
+                  <div class="subject-image">
+                    <div class="image-placeholder">
+                      <span class="placeholder-icon">🖥️</span>
+                      <span class="placeholder-text">Tổ Tin Học</span>
+                    </div>
+                  </div>
+                  <div class="subject-info">
+                    <div class="info-row">
+                      <span class="info-label">👥 Tổ trưởng:</span>
+                      <span class="info-value">Thầy Phan Văn K</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">👨‍🏫 Giáo viên:</span>
+                      <span class="info-value">5 thầy cô</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">🎓 Trình độ:</span>
+                      <span class="info-value">3 Thạc sĩ</span>
+                    </div>
+                  </div>
+                  <div class="subject-achievements">
+                    <div class="achievement-tag">🥇 2 GV dạy giỏi cấp tỉnh</div>
+                    <div class="achievement-tag">🏆 CLB Lập trình</div>
+                  </div>
+                  <div class="subject-description">
+                    2 phòng máy hiện đại với 80 máy tính, phục vụ tốt cho học
+                    tập và nghiên cứu.
+                  </div>
+                </div>
+
+                <!-- PE -->
+                <div class="subject-card">
+                  <div class="subject-header">
+                    <div class="subject-icon">⚽</div>
+                    <h4 class="subject-name">Thể Dục</h4>
+                  </div>
+                  <div class="subject-image">
+                    <div class="image-placeholder">
+                      <span class="placeholder-icon">🏃</span>
+                      <span class="placeholder-text">Tổ Thể Dục</span>
+                    </div>
+                  </div>
+                  <div class="subject-info">
+                    <div class="info-row">
+                      <span class="info-label">👥 Tổ trưởng:</span>
+                      <span class="info-value">Thầy Trương Văn L</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">👨‍🏫 Giáo viên:</span>
+                      <span class="info-value">6 thầy cô</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">🎓 Trình độ:</span>
+                      <span class="info-value">2 Thạc sĩ</span>
+                    </div>
+                  </div>
+                  <div class="subject-achievements">
+                    <div class="achievement-tag">🥇 Nhiều HCV thể thao</div>
+                    <div class="achievement-tag">🏆 Đội tuyển xuất sắc</div>
+                  </div>
+                  <div class="subject-description">
+                    Sân thể thao đạt chuẩn với đầy đủ trang thiết bị, tổ chức
+                    hội thao hàng năm sôi nổi.
+                  </div>
+                </div>
+
+                <!-- Defense Education -->
+                <div class="subject-card">
+                  <div class="subject-header">
+                    <div class="subject-icon">🎖️</div>
+                    <h4 class="subject-name">GDQP-AN</h4>
+                  </div>
+                  <div class="subject-image">
+                    <div class="image-placeholder">
+                      <span class="placeholder-icon">🪖</span>
+                      <span class="placeholder-text">Tổ GDQP-AN</span>
+                    </div>
+                  </div>
+                  <div class="subject-info">
+                    <div class="info-row">
+                      <span class="info-label">👥 Tổ trưởng:</span>
+                      <span class="info-value">Thầy Lý Văn M</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">👨‍🏫 Giáo viên:</span>
+                      <span class="info-value">4 thầy cô</span>
+                    </div>
+                    <div class="info-row">
+                      <span class="info-label">🎓 Trình độ:</span>
+                      <span class="info-value">Đại học chuyên ngành</span>
+                    </div>
+                  </div>
+                  <div class="subject-achievements">
+                    <div class="achievement-tag">🥇 Huấn luyện xuất sắc</div>
+                    <div class="achievement-tag">🏆 An toàn giao thông</div>
+                  </div>
+                  <div class="subject-description">
+                    Giáo dục quốc phòng - An ninh, kỹ năng sống và an toàn giao
+                    thông cho học sinh.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Activities -->
+          <section class="activities-section">
+            <h2 class="section-title">🎯 Hoạt Động Chung</h2>
+            <div class="activities-grid">
+              <div class="activity-box">
+                <div class="activity-icon">📖</div>
+                <h3 class="activity-title">Sinh hoạt chuyên môn</h3>
+                <p class="activity-desc">
+                  Tổ chức sinh hoạt chuyên môn 2 tuần/lần. Trao đổi kinh nghiệm,
+                  nghiên cứu giáo án, phương pháp dạy học mới.
+                </p>
+              </div>
+
+              <div class="activity-box">
+                <div class="activity-icon">🎓</div>
+                <h3 class="activity-title">Bồi dưỡng chuyên môn</h3>
+                <p class="activity-desc">
+                  Tham gia các lớp bồi dưỡng, tập huấn nâng cao nghiệp vụ sư
+                  phạm và chuyên môn.
+                </p>
+              </div>
+
+              <div class="activity-box">
+                <div class="activity-icon">🏆</div>
+                <h3 class="activity-title">Dạy học sinh giỏi</h3>
+                <p class="activity-desc">
+                  Tổ chức dạy thêm, bồi dưỡng học sinh giỏi, chuẩn bị cho các kỳ
+                  thi HSG cấp tỉnh, quốc gia.
+                </p>
+              </div>
+
+              <div class="activity-box">
+                <div class="activity-icon">🔬</div>
+                <h3 class="activity-title">Nghiên cứu khoa học</h3>
+                <p class="activity-desc">
+                  Thực hiện các đề tài sáng kiến kinh nghiệm, đổi mới phương
+                  pháp giảng dạy.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Contact CTA -->
+          <section class="contact-cta">
+            <div class="cta-box">
+              <div class="cta-icon">📞</div>
+              <h2 class="cta-title">Liên Hệ Tổ Chuyên Môn</h2>
+              <p class="cta-text">
+                Để biết thêm thông tin chi tiết về các tổ chuyên môn, phụ huynh
+                và học sinh có thể liên hệ trực tiếp với Phòng Đào Tạo hoặc Tổ
+                trưởng các tổ chuyên môn.
+              </p>
+              <div class="cta-buttons">
+                <a href="Lienhe.html" class="btn btn--primary"
+                  >📧 Liên hệ ngay</a
+                >
+                <a href="Tochuc.html" class="btn btn--outline">🏢 Về tổ chức</a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer__gradient">
+          <div class="container">
+            <div class="footer__content">
+              <div class="footer__info">
+                <h3 class="footer__title">THPT Lương Thế Vinh</h3>
+                <p class="footer__desc">
+                  Ngôi trường của tri thức và tương lai
+                </p>
+                <div class="footer__address">
+                  📍 Phường Điện Nam Trung, Thị xã Điện Bàn, Tỉnh Quảng Nam
+                </div>
+                <div class="footer__social">
+                  <a
+                    href="https://www.facebook.com/groups/ltvpro"
+                    target="_blank"
+                    class="social-link"
+                    >📘 Facebook</a
+                  >
+                </div>
+              </div>
+              <div class="footer__links">
+                <div class="footer__column">
+                  <h4>Liên kết nhanh</h4>
+                  <ul>
+                    <li><a href="Gioithieu.html">Giới thiệu</a></li>
+                    <li><a href="Tuyensinh.html">Tuyển sinh</a></li>
+                    <li><a href="Tintuc.html">Tin tức</a></li>
+                    <li><a href="Lienhe.html">Liên hệ</a></li>
+                  </ul>
+                </div>
+                <div class="footer__column">
+                  <h4>Hỗ trợ</h4>
+                  <ul>
+                    <li><a href="#">Câu hỏi thường gặp</a></li>
+                    <li><a href="#">Hướng dẫn</a></li>
+                    <li><a href="Gopy.html">Góp ý</a></li>
+                    <li><a href="#">Báo lỗi</a></li>
+                  </ul>
+                </div>
+                <div class="footer__column">
+                  <h4>Liên hệ</h4>
+                  <ul>
+                    <li><a href="tel:0935308369">📞 0935.308.369</a></li>
+                    <li>
+                      <a href="mailto:levanngat@gmail.com"
+                        >📧 levanngat@gmail.com</a
+                      >
+                    </li>
+                    <li>🕒 7:00 - 17:00</li>
+                    <li>📅 Thứ 2 - Thứ 7</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer__bottom">
+              <p>
+                &copy; 2025 Trường THPT Lương Thế Vinh. Tất cả quyền được bảo
+                lưu.
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <div class="fab-container">
+        <div class="fab fab--main">💬</div>
+        <div class="fab-menu">
+          <a href="tel:0935308369" class="fab fab--phone">📞</a>
+          <a href="#" class="fab fab--facebook">📘</a>
+          <a href="mailto:levanngat@gmail.com" class="fab fab--email">✉️</a>
+          <a href="#top" class="fab fab--top">⬆️</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
