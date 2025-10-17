@@ -541,8 +541,8 @@ ul {
 /* ========== FAB (Floating Action Button) ========== */
 .fab-container {
   position: fixed;
-  bottom: var(--spacing-xl);
-  right: var(--spacing-xl);
+  bottom: 100px !important; /* Thêm !important để ép nó phải được áp dụng */
+  right: 25px !important;
   z-index: 1000;
 }
 
