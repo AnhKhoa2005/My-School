@@ -318,7 +318,7 @@
 
 /* Đường nối ngang cho nhiều nhánh */
 .org-connector--multi {
-  height: 40px; /* Chiều cao */
+  height: 40px; /* Chiều cao - khoảng cách*/
   width: 80%; /* Chiều rộng */
   margin: 0 auto var(--spacing-xl); /* Căn giữa và lề dưới */
   background: transparent; /* Nền trong suốt */

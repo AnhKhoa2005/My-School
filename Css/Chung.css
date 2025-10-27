@@ -247,9 +247,13 @@ ul {
   background: none; /* Tắt gradient cũ */
   -webkit-text-fill-color: white; /* Đảm bảo màu chữ là trắng trên Webkit */
 
-  /* Hiệu ứng chữ phát sáng (neon) */
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff,
-    0 0 40px #a855f7, /* Màu tím neon */ 0 0 60px #a855f7;
+  /* Hiệu ứng chữ phát sáng (neon) - text-shadow: x y blur color */
+  text-shadow:
+   0 0 5px #fff, 
+   0 0 10px #fff, 
+   0 0 20px #fff,
+   0 0 40px #a855f7, /* Màu tím neon */ 
+   0 0 60px #a855f7;
 }
 
 /* Hiệu ứng khi di chuột vào khối brand, áp dụng cho tagline */

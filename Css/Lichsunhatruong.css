@@ -349,7 +349,7 @@
   left: 0;
   top: 0;
   bottom: 0;
-  width: 0;
+  width: 0; /*chiều rộng khi chưa rê vào sẽ = 0*/
   background: var(--gradient-primary);
   transition: var(--transition);
   opacity: 0.1;
@@ -363,6 +363,7 @@
   box-shadow: var(--shadow-md);
 }
 
+/*Khi rê chuột vào sẽ tăng full 100%*/
 .detail-list li:hover::before {
   width: 100%;
 }
@@ -571,10 +572,10 @@
 .legacy-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 6px;
+  top: 0; /*bám ở trên*/
+  left: 0;  /*Bát đầu từ bên trái*/
+  right: 0; /*Sang phải*/
+  height: 6px; /*Độ cao trên top*/
   background: var(--gradient-primary);
   transform: scaleX(0);
   transform-origin: left;
@@ -589,6 +590,7 @@
   transform: translateY(-10px);
 }
 
+/*Transition cái border xanh đậm ở trên khi rê chuột*/
 .legacy-card:hover::before {
   transform: scaleX(1);
 }

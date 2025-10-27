@@ -573,7 +573,7 @@
 }
 
 /* Hiệu ứng khi chọn hoặc di chuột vào sao */
-.rating-group input[type="radio"]:checked ~ .star,
+.rating-group input[type="radio"]:checked ~ .star, /* Làm sáng sao hiện tại và các sao trước đó cùng cấp cha .rating-group */
 .rating-group .star:hover,
 .rating-group .star:hover ~ .star {
   opacity: 1; /* Làm sao sáng lên */

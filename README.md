@@ -490,3 +490,356 @@ Chúng ta sẽ không phân tích mọi phần tử trên mọi trang, mà sẽ 
 ---
 
 Tài liệu phân tích đến đây là hoàn tất. Hy vọng qua 3 phần này, bạn đã có một cái nhìn chi tiết và hệ thống về cách trang web được xây dựng. Từ nền tảng này, bạn có thể dễ dàng hơn trong việc học hỏi, chỉnh sửa, bảo trì và phát triển dự án trong tương lai.
+
+# Các định dạng css trong trang có thể hỏi
+
+## Logo trường
+
+- Dùng transform để phóng to và xoay logo khi hover
+- Dùng text-shadow để chữ phát sáng khi hover
+
+```css
+.brand:hover .brand__logo {
+  transform: scale(1.15) rotate(-5deg); /* Phóng to và xoay nhẹ */
+  box-shadow: 0 12px 30px rgba(27, 39, 79, 0.3); /* Tăng đổ bóng */
+
+  .brand:hover .brand__name {
+    color: #fff; /* Đổi màu chữ thành trắng sáng */
+    background: none; /* Tắt gradient cũ */
+    -webkit-text-fill-color: white; /* Đảm bảo màu chữ là trắng trên Webkit */
+
+    /* Hiệu ứng chữ phát sáng (neon) */
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #a855f7,
+      /* Màu tím neon */ 0 0 60px #a855f7;
+  }
+
+  /* Hiệu ứng khi di chuột vào khối brand, áp dụng cho tagline */
+  .brand:hover .brand__tagline {
+    color: #fff; /* Chuyển màu tagline thành trắng */
+    opacity: 1; /* Hiện rõ 100% */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8); /* Thêm lớp sáng nhẹ */
+  }
+}
+```
+
+## Hiện menu 2 cấp
+
+- Khi hover thì ta chỉnh opacity lên 1 để hiển thị
+
+```css
+.submenu {
+  position: absolute; /* Vị trí tuyệt đối */
+  top: 100%; /* Nằm ngay dưới mục cha */
+  left: 0; /* Căn trái với mục cha */
+  min-width: 250px; /* Chiều rộng tối thiểu */
+  background: white; /* Nền trắng */
+  border-radius: var(--radius-lg); /* Bo góc */
+  box-shadow: var(--shadow-xl); /* Đổ bóng rất lớn */
+  opacity: 0; /* Ẩn ban đầu */
+  visibility: hidden; /* Ẩn hoàn toàn */
+  transform: translateY(-10px); /* Dịch chuyển lên trên */
+  transition: var(--transition); /* Hiệu ứng chuyển động */
+  z-index: 10000; /* Lớp rất cao để không bị che */
+  padding: var(--spacing-sm); /* Lề trong */
+  margin-top: var(--spacing-xs); /* Lề trên */
+}
+
+/* Hiển thị menu con khi di chuột vào trên desktop */
+@media (min-width: 1025px) {
+  .has-submenu:hover .submenu {
+    opacity: 1; /* Hiện ra */
+    visibility: visible; /* Hiện hoàn toàn */
+    transform: translateY(0); /* Về vị trí ban đầu */
+  }
+}
+```
+
+## Chuyển đổi 4 ảnh slideshow
+
+- Mỗi tấm ảnh ta sẽ dùng thuộc tính animation chuyển đổi dần theo thứ tự, animation dùng keyframe slideshow
+
+```css
+@keyframes slideshow {
+  0%,
+  25% {
+    opacity: 1; /* Hiện ảnh */
+  }
+  30%,
+  95% {
+    opacity: 0; /* Ẩn ảnh */
+  }
+  100% {
+    opacity: 1; /* Quay lại trạng thái ban đầu cho vòng lặp tiếp theo */
+  }
+}
+
+/* Áp dụng animation cho từng ảnh với độ trễ khác nhau để tạo hiệu ứng chuyển đổi */
+.slideshow__image:nth-child(1) {
+  animation: slideshow 16s infinite;
+} /* Ảnh 1: hiển thị từ 0s đến 4s */
+.slideshow__image:nth-child(2) {
+  animation: slideshow 16s infinite 4s;
+} /* Ảnh 2: hiển thị từ 4s đến 8s */
+.slideshow__image:nth-child(3) {
+  animation: slideshow 16s infinite 8s;
+} /* Ảnh 3: hiển thị từ 8s đến 12s */
+.slideshow__image:nth-child(4) {
+  animation: slideshow 16s infinite 12s;
+} /* Ảnh 4: hiển thị từ 12s đến 16s */
+```
+
+## Fab menu - liên hệ nhanh
+
+- Khi chưa rê chuột vào, display sẽ là none để ẩn, còn khi hover: display sẽ là flex để nó dàn đều ra
+
+```css
+.fab-menu {
+  display: none; /* Ẩn ban đầu */
+  flex-direction: column; /* Xếp theo chiều dọc */
+  gap: var(--spacing-sm); /* Khoảng cách */
+}
+
+/* Hiển thị menu FAB con khi di chuột vào container */
+.fab-container:hover .fab-menu {
+  display: flex; /* Hiện ra */
+  animation: fadeInUp 0.3s ease-out; /* Animation hiện ra */
+}
+```
+
+## Phần trượt border-top xanh đậm dần sang phải của phần di sản bên lịch sử trường
+
+- Ban đầu before scaleX sẽ là không, là chưa thấy border, sau khi hover đặt scaleX bằng 1, transition để hiện dần
+
+```css
+.legacy-card::before {
+  content: "";
+  position: absolute;
+  top: 0; /*bám ở trên*/
+  left: 0; /*Bát đầu từ bên trái*/
+  right: 0; /*Sang phải*/
+  height: 6px; /*Độ cao trên top*/
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: var(--transition);
+}
+
+/* Hiệu ứng khi di chuột vào thẻ di sản */
+.legacy-card:hover {
+  background: white;
+  border-color: var(--primary);
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-10px);
+}
+
+/*Transition cái border xanh đậm ở trên khi rê chuột*/
+.legacy-card:hover::before {
+  transform: scaleX(1);
+}
+```
+
+## Phần Background xoay trong tiểu sử
+
+- Dùng thuộc tính animation để rotate background radial-gradient từ 0 đến 360 độ liên tục
+
+```css
+/* Lớp giả ::before cho hộp trích dẫn để tạo hiệu ứng nền */
+.quote-box::before {
+  content: ""; /* Bắt buộc */
+  position: absolute; /* Vị trí tuyệt đối */
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  animation: rotate 20s linear infinite; /* Animation xoay */
+}
+
+/* Animation xoay */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+```
+
+## Hiệu ứng lấp lánh của placeholder môn trong phần các tổ chuyên môn trang tổ chuyên môn
+
+- dùng animation là di chuyển transform
+
+```css
+.image-placeholder::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 70%
+  );
+  animation: shimmer 3s infinite;
+}
+
+/* Animation lấp lánh */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(180deg);
+  }
+}
+```
+
+## Phần nội quy ẩn hiện bằng cách selector checked để check xem có được chọn không
+
+- Dùng input để check xem radio nào đang được chọn
+- Label for=... liên kết cùng tên với id của thẻ Input, để khi nhấp vào label(Ô chọn nội quy), nó sẽ liên kết đến input là checked
+- Dùng selector checked để check id đó input có được chọn không để có thể hiện thị nội dung
+
+```html
+<div class="rules-container">
+  <!-- Input radio cho tab CSS thuần -->
+  <input
+    type="radio"
+    name="rule-tab"
+    id="tab-general"
+    class="rule-tab-input"
+    checked
+  />
+  <input type="radio" name="rule-tab" id="tab-study" class="rule-tab-input" />
+  <input
+    type="radio"
+    name="rule-tab"
+    id="tab-behavior"
+    class="rule-tab-input"
+  />
+  <input type="radio" name="rule-tab" id="tab-uniform" class="rule-tab-input" />
+
+  <!-- Sidebar nội quy -->
+  <div class="rules-sidebar">
+    <!-- Điều hướng nội quy -->
+    <div class="rules-nav">
+      <label for="tab-general" class="rule-nav-btn"> Nội quy chung </label>
+      <label for="tab-study" class="rule-nav-btn">Học tập</label>
+      <label for="tab-behavior" class="rule-nav-btn"> Hành vi </label>
+      <label for="tab-uniform" class="rule-nav-btn"> Đồng phục </label>
+    </div>
+  </div>
+
+  <!-- Nội dung nội quy -->
+  <div class="rules-content">
+    <!-- Tab nội quy -->
+    <div class="rule-tab" id="general">
+      <h3 class="rule-title">Nội Quy Chung</h3>
+      <ul class="rule-list">
+        <li>
+          <span class="rule-number">1.</span>
+          <span class="rule-text"
+            >Học sinh phải có mặt tại trường trước 7:00 sáng</span
+          >
+        </li>
+        <li>
+          <span class="rule-number">2.</span>
+          <span class="rule-text"
+            >Nghiêm túc thực hiện nội quy, quy định của nhà trường</span
+          >
+        </li>
+        <li>
+          <span class="rule-number">3.</span>
+          <span class="rule-text"
+            >Không được sử dụng điện thoại trong giờ học</span
+          >
+        </li>
+        <li>
+          <span class="rule-number">4.</span>
+          <span class="rule-text"
+            >Giữ gìn vệ sinh chung, không vứt rác bừa bãi</span
+          >
+        </li>
+        <li>
+          <span class="rule-number">5.</span>
+          <span class="rule-text"
+            >Bảo quản tài sản của trường, không làm hư hỏng cơ sở vật chất</span
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="rule-tab" id="study">
+      <h3 class="rule-title">Nội Quy Học Tập</h3>
+      <ul class="rule-list">
+        <li>
+          <span class="rule-number">1.</span>
+          <span class="rule-text"
+            >Đi học đầy đủ, đúng giờ. Nghỉ học phải có phép</span
+          >
+        </li>
+        <li>
+          <span class="rule-number">2.</span>
+          <span class="rule-text">Chuẩn bị bài đầy đủ trước khi đến lớp</span>
+        </li>
+        <li>
+          <span class="rule-number">3.</span>
+          <span class="rule-text"
+            >Tập trung lắng nghe, tích cực tham gia bài học</span
+          >
+        </li>
+        <li>
+          <span class="rule-number">4.</span>
+          <span class="rule-text">Hoàn thành bài tập đầy đủ, đúng hạn</span>
+        </li>
+        <li>
+          <span class="rule-number">5.</span>
+          <span class="rule-text"
+            >Không làm bài tập hộ, không gian lận trong thi cử</span
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+```
+
+```css
+#tab-general:checked ~ .rules-sidebar label[for="tab-general"],
+#tab-study:checked ~ .rules-sidebar label[for="tab-study"],
+#tab-behavior:checked ~ .rules-sidebar label[for="tab-behavior"],
+#tab-uniform:checked ~ .rules-sidebar label[for="tab-uniform"] {
+  background: var(--gradient-primary);
+  color: white;
+  border-color: transparent;
+  box-shadow: var(--shadow-md);
+}
+
+/* Khung chứa nội dung của các tab */
+.rules-content {
+  padding: var(--spacing-2xl);
+}
+
+/* Mỗi tab nội dung (mặc định ẩn) */
+.rule-tab {
+  display: none;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Hiển thị tab khi radio tương ứng được chọn */
+/* Nếu label có for = ... được chọn(selector: checked) thì phần tử .rules-content cùng cấp cha với id #... là rules-container thì hiển thị nội dung */
+#tab-general:checked ~ .rules-content #general,
+#tab-study:checked ~ .rules-content #study,
+#tab-behavior:checked ~ .rules-content #behavior,
+#tab-uniform:checked ~ .rules-content #uniform {
+  display: block;
+}
+```

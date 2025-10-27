@@ -652,6 +652,7 @@
 }
 
 /* Trạng thái active cho tab khi radio tương ứng được chọn */
+/* Nếu label có for = ... được chọn(selector: checked) thì phần tử .rules-sidebar cùng cấp cha với id #... là rules-container thì tô chọn ô nội quy tương ứng */
 #tab-general:checked ~ .rules-sidebar label[for="tab-general"],
 #tab-study:checked ~ .rules-sidebar label[for="tab-study"],
 #tab-behavior:checked ~ .rules-sidebar label[for="tab-behavior"],
@@ -674,6 +675,7 @@
 }
 
 /* Hiển thị tab khi radio tương ứng được chọn */
+/* Nếu label có for = ... được chọn(selector: checked) thì phần tử .rules-content cùng cấp cha với id #... là rules-container thì hiển thị nội dung */
 #tab-general:checked ~ .rules-content #general,
 #tab-study:checked ~ .rules-content #study,
 #tab-behavior:checked ~ .rules-content #behavior,
