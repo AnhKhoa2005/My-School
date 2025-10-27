@@ -1,4 +1,9 @@
-/* ========== Page Banner ========== */
+﻿/* ============================================================
+   LICHSUNHATRUONG.CSS - CSS cho trang Lịch sử nhà trường
+   ============================================================ */
+
+/* ========== Banner trang ========== */
+/* Banner chính ở đầu trang */
 .page-banner {
   position: relative;
   height: 300px;
@@ -9,6 +14,7 @@
   overflow: hidden;
 }
 
+/* Lớp giả để tạo hiệu ứng nền */
 .page-banner::before {
   content: '';
   position: absolute;
@@ -20,11 +26,13 @@
   animation: float 20s infinite linear;
 }
 
+/* Keyframe cho animation 'float' */
 @keyframes float {
   from { transform: translateY(0); }
   to { transform: translateY(-100px); }
 }
 
+/* Lớp phủ chứa nội dung text trên banner */
 .page-banner__overlay {
   position: relative;
   z-index: 2;
@@ -32,6 +40,7 @@
   color: white;
 }
 
+/* Tiêu đề của banner */
 .page-banner__title {
   font-size: 3rem;
   font-weight: 800;
@@ -40,6 +49,7 @@
   animation: slideInDown 0.6s ease-out;
 }
 
+/* Keyframe cho animation 'slideInDown' */
 @keyframes slideInDown {
   from {
     opacity: 0;
@@ -51,6 +61,7 @@
   }
 }
 
+/* Thanh điều hướng breadcrumb */
 .breadcrumb {
   display: flex;
   align-items: center;
@@ -60,11 +71,13 @@
   animation: fadeIn 0.8s ease-out;
 }
 
+/* Keyframe cho animation 'fadeIn' */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
+/* Mỗi mục trong breadcrumb */
 .breadcrumb__item {
   color: rgba(255,255,255,0.9);
   transition: var(--transition);
@@ -74,21 +87,25 @@
   color: white;
 }
 
+/* Mục đang hoạt động (trang hiện tại) */
 .breadcrumb__item--active {
   color: white;
   font-weight: 600;
 }
 
+/* Dấu phân cách trong breadcrumb */
 .breadcrumb__separator {
   color: rgba(255,255,255,0.6);
 }
 
-/* ========== Main ========== */
+/* ========== Nội dung chính ========== */
+/* Phần nội dung chính của trang */
 .main {
   padding: var(--spacing-2xl) 0;
 }
 
-/* ========== History Hero ========== */
+/* ========== Phần Giới thiệu Lịch sử ========== */
+/* Hộp giới thiệu đầu trang */
 .history-hero {
   padding: var(--spacing-2xl);
   background: white;
@@ -99,6 +116,7 @@
   animation: fadeInUp 0.8s ease-out;
 }
 
+/* Keyframe cho animation 'fadeInUp' */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -110,6 +128,7 @@
   }
 }
 
+/* Tiêu đề phần giới thiệu */
 .history-hero__title {
   font-size: 2.5rem;
   font-weight: 800;
@@ -120,6 +139,7 @@
   margin-bottom: var(--spacing-lg);
 }
 
+/* Văn bản giới thiệu */
 .history-hero__text {
   font-size: 1.2rem;
   line-height: 1.9;
@@ -128,19 +148,22 @@
   margin: 0 auto;
 }
 
-/* ========== Timeline Detail ========== */
+/* ========== Dòng thời gian chi tiết ========== */
+/* Phần chứa dòng thời gian */
 .timeline-detail {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Mỗi mục trên dòng thời gian */
 .timeline-detail__item {
   display: grid;
-  grid-template-columns: 150px 1fr;
+  grid-template-columns: 150px 1fr; /* Cột năm và cột nội dung */
   gap: var(--spacing-2xl);
   margin-bottom: var(--spacing-2xl);
-  animation: slideInRight 0.8s ease-out backwards;
+  animation: slideInRight 0.8s ease-out backwards; /* Animation trượt vào */
 }
 
+/* Thêm độ trễ cho animation của từng mục */
 .timeline-detail__item:nth-child(1) { animation-delay: 0.1s; }
 .timeline-detail__item:nth-child(2) { animation-delay: 0.2s; }
 .timeline-detail__item:nth-child(3) { animation-delay: 0.3s; }
@@ -148,6 +171,7 @@
 .timeline-detail__item:nth-child(5) { animation-delay: 0.5s; }
 .timeline-detail__item:nth-child(6) { animation-delay: 0.6s; }
 
+/* Keyframe cho animation 'slideInRight' */
 @keyframes slideInRight {
   from {
     opacity: 0;
@@ -159,6 +183,7 @@
   }
 }
 
+/* Hộp hiển thị năm */
 .timeline-detail__year {
   font-size: 1.5rem;
   font-weight: 800;
@@ -168,30 +193,33 @@
   border-radius: var(--radius-xl);
   text-align: center;
   box-shadow: var(--shadow-lg);
-  height: fit-content;
-  position: sticky;
-  top: 100px;
+  height: fit-content; /* Chiều cao vừa với nội dung */
+  position: sticky; /* Dính lại khi cuộn */
+  top: 100px; /* Cách đỉnh 100px */
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 120px;
+  min-height: 120px; /* Chiều cao tối thiểu */
 }
 
+/* Hộp chứa nội dung của mốc thời gian */
 .timeline-detail__content {
   background: white;
   padding: var(--spacing-2xl);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-md);
   transition: var(--transition);
-  border-left: 5px solid var(--primary);
+  border-left: 5px solid var(--primary); /* Viền trái trang trí */
 }
 
+/* Hiệu ứng khi di chuột vào nội dung */
 .timeline-detail__content:hover {
   box-shadow: var(--shadow-xl);
-  transform: translateX(10px);
-  border-left-color: var(--secondary);
+  transform: translateX(10px); /* Di chuyển sang phải */
+  border-left-color: var(--secondary); /* Đổi màu viền */
 }
 
+/* Tiêu đề của mốc thời gian */
 .timeline-detail__title {
   font-size: 1.8rem;
   font-weight: 700;
@@ -199,6 +227,7 @@
   margin-bottom: var(--spacing-lg);
 }
 
+/* Khung chứa ảnh */
 .timeline-detail__image {
   margin-bottom: var(--spacing-xl);
   border-radius: var(--radius-lg);
@@ -207,17 +236,15 @@
   box-shadow: var(--shadow-md);
 }
 
-/* ========== SỬA LỖI ẢNH TIMELINE TRÀN KHUNG ========== */
+/* Ảnh trong mốc thời gian */
 .timeline-detail__image img {
   width: 100%;
-  height: 100%; /* Tự động co giãn theo chiều cao 300px của thẻ cha */
-  object-fit: cover; /* Lấp đầy khung, tự cắt phần thừa */
-  border-radius: var(
-    --radius-lg
-  ); /* Bo góc ảnh giống như khung placeholder cũ */
+  height: 100%;
+  object-fit: cover; /* Lấp đầy khung, cắt phần thừa */
+  border-radius: var(--radius-lg);
 }
 
-/* Image Placeholder */
+/* Ảnh giữ chỗ (Placeholder) */
 .image-placeholder {
   width: 100%;
   height: 100%;
@@ -233,6 +260,7 @@
   overflow: hidden;
 }
 
+/* Hiệu ứng ánh sáng lướt qua */
 .image-placeholder::before {
   content: '';
   position: absolute;
@@ -249,16 +277,19 @@
   animation: shimmer 3s infinite;
 }
 
+/* Keyframe cho animation 'shimmer' */
 @keyframes shimmer {
   0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
   100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
 }
 
+/* Hiệu ứng khi di chuột vào placeholder */
 .image-placeholder:hover {
   background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
   transform: scale(1.02);
 }
 
+/* Icon trong placeholder */
 .placeholder-icon {
   font-size: 4rem;
   opacity: 0.4;
@@ -266,6 +297,7 @@
   z-index: 2;
 }
 
+/* Chữ trong placeholder */
 .placeholder-text {
   font-size: 1.1rem;
   font-weight: 600;
@@ -274,6 +306,7 @@
   z-index: 2;
 }
 
+/* Mô tả chi tiết của mốc thời gian */
 .timeline-detail__desc {
   color: var(--text-secondary);
   line-height: 1.8;
@@ -289,6 +322,7 @@
   font-weight: 700;
 }
 
+/* Danh sách các chi tiết */
 .detail-list {
   list-style: none;
   padding: 0;
@@ -296,6 +330,7 @@
   gap: var(--spacing-sm);
 }
 
+/* Mỗi mục trong danh sách chi tiết */
 .detail-list li {
   padding: var(--spacing-md) var(--spacing-lg);
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
@@ -307,6 +342,7 @@
   overflow: hidden;
 }
 
+/* Lớp giả cho hiệu ứng nền khi di chuột */
 .detail-list li::before {
   content: '';
   position: absolute;
@@ -319,6 +355,7 @@
   opacity: 0.1;
 }
 
+/* Hiệu ứng khi di chuột vào mục */
 .detail-list li:hover {
   background: white;
   border-left-color: var(--secondary);
@@ -330,7 +367,7 @@
   width: 100%;
 }
 
-/* ========== Section Title ========== */
+/* ========== Tiêu đề chung của các phần ========== */
 .section-title {
   font-size: 2.5rem;
   font-weight: 800;
@@ -344,6 +381,7 @@
   padding-bottom: var(--spacing-lg);
 }
 
+/* Gạch chân trang trí cho tiêu đề */
 .section-title::after {
   content: '';
   position: absolute;
@@ -357,12 +395,14 @@
   animation: expandWidth 1s ease-out;
 }
 
+/* Keyframe cho animation 'expandWidth' */
 @keyframes expandWidth {
   from { width: 0; }
   to { width: 120px; }
 }
 
-/* ========== Achievements Stats ========== */
+/* ========== Thống kê thành tựu ========== */
+/* Phần thống kê */
 .achievements-stats {
   padding: var(--spacing-2xl);
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -374,6 +414,7 @@
   overflow: hidden;
 }
 
+/* Hiệu ứng nền xoay */
 .achievements-stats::before {
   content: '';
   position: absolute;
@@ -385,16 +426,19 @@
   animation: rotate 20s linear infinite;
 }
 
+/* Keyframe cho animation 'rotate' */
 @keyframes rotate {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
+/* Nội dung thống kê */
 .achievements-stats__content {
   position: relative;
   z-index: 2;
 }
 
+/* Tiêu đề thống kê */
 .achievements-stats__title {
   font-size: 2.5rem;
   font-weight: 800;
@@ -403,28 +447,32 @@
   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
+/* Lưới chứa các mục thống kê */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: var(--spacing-xl);
 }
 
+/* Mỗi mục thống kê lớn */
 .stat-item-large {
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.15); /* Nền mờ */
+  backdrop-filter: blur(10px); /* Hiệu ứng kính mờ */
   padding: var(--spacing-2xl);
   border-radius: var(--radius-xl);
   text-align: center;
-  border: 2px solid rgba(255,255,255,0.2);
+  border: 2px solid rgba(255,255,255,0.2); /* Viền mờ */
   transition: var(--transition);
   animation: fadeInScale 0.6s ease-out backwards;
 }
 
+/* Thêm độ trễ cho animation */
 .stat-item-large:nth-child(1) { animation-delay: 0.1s; }
 .stat-item-large:nth-child(2) { animation-delay: 0.2s; }
 .stat-item-large:nth-child(3) { animation-delay: 0.3s; }
 .stat-item-large:nth-child(4) { animation-delay: 0.4s; }
 
+/* Keyframe cho animation 'fadeInScale' */
 @keyframes fadeInScale {
   from {
     opacity: 0;
@@ -436,12 +484,14 @@
   }
 }
 
+/* Hiệu ứng khi di chuột vào mục thống kê */
 .stat-item-large:hover {
   background: rgba(255,255,255,0.25);
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
+/* Icon của mục thống kê */
 .stat-item-large__icon {
   font-size: 4rem;
   margin-bottom: var(--spacing-lg);
@@ -449,11 +499,13 @@
   animation: bounce 2s infinite;
 }
 
+/* Keyframe cho animation 'bounce' */
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-15px); }
 }
 
+/* Con số thống kê */
 .stat-item-large__number {
   font-size: 3.5rem;
   font-weight: 800;
@@ -461,13 +513,15 @@
   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
 
+/* Nhãn của thống kê */
 .stat-item-large__label {
   font-size: 1.2rem;
   opacity: 0.95;
   font-weight: 600;
 }
 
-/* ========== Legacy Section ========== */
+/* ========== Phần Di sản ========== */
+/* Phần chứa các di sản */
 .legacy-section {
   padding: var(--spacing-2xl);
   background: white;
@@ -476,12 +530,14 @@
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Lưới chứa các thẻ di sản */
 .legacy-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-2xl);
 }
 
+/* Mỗi thẻ di sản */
 .legacy-card {
   padding: var(--spacing-2xl);
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
@@ -493,11 +549,13 @@
   animation: slideInUp 0.6s ease-out backwards;
 }
 
+/* Thêm độ trễ cho animation */
 .legacy-card:nth-child(1) { animation-delay: 0.1s; }
 .legacy-card:nth-child(2) { animation-delay: 0.2s; }
 .legacy-card:nth-child(3) { animation-delay: 0.3s; }
 .legacy-card:nth-child(4) { animation-delay: 0.4s; }
 
+/* Keyframe cho animation 'slideInUp' */
 @keyframes slideInUp {
   from {
     opacity: 0;
@@ -509,6 +567,7 @@
   }
 }
 
+/* Hiệu ứng viền trên khi di chuột */
 .legacy-card::before {
   content: '';
   position: absolute;
@@ -522,6 +581,7 @@
   transition: var(--transition);
 }
 
+/* Hiệu ứng khi di chuột vào thẻ di sản */
 .legacy-card:hover {
   background: white;
   border-color: var(--primary);
@@ -533,6 +593,7 @@
   transform: scaleX(1);
 }
 
+/* Icon của thẻ di sản */
 .legacy-card__icon {
   font-size: 3.5rem;
   margin-bottom: var(--spacing-lg);
@@ -544,6 +605,7 @@
   transform: scale(1.2) rotate(10deg);
 }
 
+/* Tiêu đề của thẻ di sản */
 .legacy-card__title {
   font-size: 1.5rem;
   font-weight: 700;
@@ -551,12 +613,14 @@
   margin-bottom: var(--spacing-md);
 }
 
+/* Mô tả của thẻ di sản */
 .legacy-card__desc {
   color: var(--text-secondary);
   line-height: 1.8;
   font-size: 1.05rem;
 }
 
+/* Danh sách trong thẻ di sản */
 .legacy-card__list {
   list-style: none;
   padding: 0;
@@ -570,6 +634,7 @@
   padding-left: var(--spacing-lg);
 }
 
+/* Dấu tick đầu dòng */
 .legacy-card__list li::before {
   content: '✓';
   position: absolute;
@@ -579,7 +644,8 @@
   font-size: 1.2rem;
 }
 
-/* ========== Notable Moment ========== */
+/* ========== Khoảnh khắc đáng nhớ ========== */
+/* Phần khoảnh khắc đáng nhớ */
 .notable-moment {
   padding: var(--spacing-2xl);
   background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
@@ -590,6 +656,7 @@
   overflow: hidden;
 }
 
+/* Hiệu ứng nền xoay */
 .notable-moment::before {
   content: '';
   position: absolute;
@@ -601,18 +668,21 @@
   animation: rotate 30s linear infinite;
 }
 
+/* Nội dung khoảnh khắc */
 .notable-moment__content {
   position: relative;
   z-index: 2;
   text-align: center;
 }
 
+/* Icon khoảnh khắc */
 .notable-moment__icon {
   font-size: 5rem;
   margin-bottom: var(--spacing-lg);
   animation: pulse 2s infinite;
 }
 
+/* Tiêu đề khoảnh khắc */
 .notable-moment__title {
   font-size: 2rem;
   font-weight: 800;
@@ -620,6 +690,7 @@
   margin-bottom: var(--spacing-md);
 }
 
+/* Văn bản khoảnh khắc */
 .notable-moment__text {
   font-size: 1.3rem;
   color: var(--text-primary);
@@ -629,6 +700,7 @@
 }
 
 /* ========== Responsive ========== */
+/* Cho màn hình nhỏ hơn 1024px */
 @media (max-width: 1024px) {
   .timeline-detail__item {
     grid-template-columns: 120px 1fr;
@@ -641,10 +713,11 @@
   }
   
   .legacy-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Chuyển lưới di sản thành 1 cột */
   }
 }
 
+/* Cho màn hình nhỏ hơn 768px (máy tính bảng) */
 @media (max-width: 768px) {
   .page-banner {
     height: 200px;
@@ -655,21 +728,21 @@
   }
   
   .timeline-detail__item {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Chuyển dòng thời gian thành 1 cột */
     gap: var(--spacing-md);
   }
   
   .timeline-detail__year {
-    position: static;
+    position: static; /* Bỏ thuộc tính sticky cho năm */
     min-height: auto;
   }
   
   .timeline-detail__image {
-    height: 200px;
+    height: 200px; /* Giảm chiều cao ảnh */
   }
   
   .stats-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Chuyển lưới thống kê thành 1 cột */
   }
   
   .section-title {

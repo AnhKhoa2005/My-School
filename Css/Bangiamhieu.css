@@ -1,267 +1,321 @@
-/* ========== Page Banner ========== */
+﻿/* ============================================================
+   BANGIAMHIEU.CSS - CSS cho trang Ban Giám hiệu
+   ============================================================ */
+
+/* ========== Banner trang ========== */
+/* Banner chính ở đầu trang */
 .page-banner {
-  position: relative;
-  height: 300px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  position: relative; /* Vị trí tương đối để chứa các phần tử con tuyệt đối */
+  height: 300px; /* Chiều cao của banner */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Nền chuyển sắc xanh-tím */
+  display: flex; /* Sử dụng flexbox để căn giữa nội dung */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  overflow: hidden; /* Ẩn các phần tử tràn ra ngoài */
 }
 
+/* Lớp giả để tạo hiệu ứng hạt nổi */
 .page-banner::before {
-  content: '';
-  position: absolute;
+  content: ""; /* Bắt buộc cho pseudo-element */
+  position: absolute; /* Vị trí tuyệt đối so với banner */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="90" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.15)"/></svg>');
-  animation: float 20s infinite linear;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="90" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.15)"/></svg>'); /* Hình nền hạt SVG */
+  animation: float 20s infinite linear; /* Animation di chuyển hạt */
 }
 
+/* Keyframe cho animation 'float' */
 @keyframes float {
-  from { transform: translateY(0); }
-  to { transform: translateY(-100px); }
+  from {
+    transform: translateY(0); /* Bắt đầu từ vị trí ban đầu */
+  }
+  to {
+    transform: translateY(-100px); /* Di chuyển lên trên 100px */
+  }
 }
 
+/* Lớp phủ chứa nội dung text trên banner */
 .page-banner__overlay {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: white;
+  position: relative; /* Vị trí tương đối */
+  z-index: 2; /* Nằm trên lớp giả ::before */
+  text-align: center; /* Căn giữa chữ */
+  color: white; /* Màu chữ trắng */
 }
 
+/* Tiêu đề của banner */
 .page-banner__title {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: var(--spacing-md);
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-  animation: slideInDown 0.6s ease-out;
+  font-size: 3rem; /* Cỡ chữ lớn */
+  font-weight: 800; /* Độ đậm chữ */
+  margin-bottom: var(--spacing-md); /* Lề dưới */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Đổ bóng cho chữ */
+  animation: slideInDown 0.6s ease-out; /* Animation trượt xuống */
 }
 
+/* Keyframe cho animation 'slideInDown' */
 @keyframes slideInDown {
   from {
-    opacity: 0;
-    transform: translateY(-30px);
+    opacity: 0; /* Bắt đầu với độ mờ 0 */
+    transform: translateY(-30px); /* Bắt đầu từ vị trí cao hơn */
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1; /* Kết thúc với độ mờ 1 */
+    transform: translateY(0); /* Kết thúc ở vị trí ban đầu */
   }
 }
 
+/* Thanh điều hướng breadcrumb */
 .breadcrumb {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-sm);
-  font-size: 1rem;
-  animation: fadeIn 0.8s ease-out;
+  display: flex; /* Sử dụng flexbox */
+  align-items: center; /* Căn giữa dọc */
+  justify-content: center; /* Căn giữa ngang */
+  gap: var(--spacing-sm); /* Khoảng cách giữa các mục */
+  font-size: 1rem; /* Cỡ chữ */
+  animation: fadeIn 0.8s ease-out; /* Animation hiện ra */
 }
 
+/* Keyframe cho animation 'fadeIn' */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0; /* Bắt đầu mờ */
+  }
+  to {
+    opacity: 1; /* Kết thúc rõ */
+  }
 }
 
+/* Mỗi mục trong breadcrumb */
 .breadcrumb__item {
-  color: rgba(255,255,255,0.9);
-  transition: var(--transition);
+  color: rgba(255, 255, 255, 0.9); /* Màu chữ trắng mờ */
+  transition: var(--transition); /* Hiệu ứng chuyển động */
 }
 
+/* Hiệu ứng khi di chuột vào mục breadcrumb */
 .breadcrumb__item:hover {
-  color: white;
+  color: white; /* Chuyển màu thành trắng */
 }
 
+/* Mục đang hoạt động (trang hiện tại) */
 .breadcrumb__item--active {
-  color: white;
-  font-weight: 600;
+  color: white; /* Màu trắng */
+  font-weight: 600; /* Chữ đậm */
 }
 
+/* Dấu phân cách trong breadcrumb */
 .breadcrumb__separator {
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6); /* Màu trắng mờ hơn */
 }
 
-/* ========== Main ========== */
+/* ========== Nội dung chính ========== */
+/* Phần nội dung chính của trang */
 .main {
-  padding: var(--spacing-2xl) 0;
+  padding: var(--spacing-2xl) 0; /* Lề trong trên dưới */
 }
 
-/* ========== Intro Section ========== */
+/* ========== Phần giới thiệu ========== */
+/* Section giới thiệu chung */
 .intro-section {
-  margin-bottom: var(--spacing-2xl);
-  animation: fadeInUp 0.8s ease-out;
+  margin-bottom: var(--spacing-2xl); /* Lề dưới */
+  animation: fadeInUp 0.8s ease-out; /* Animation hiện ra từ dưới */
 }
 
+/* Keyframe cho animation 'fadeInUp' */
 @keyframes fadeInUp {
   from {
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 0; /* Bắt đầu mờ */
+    transform: translateY(30px); /* Bắt đầu từ vị trí thấp hơn */
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1; /* Kết thúc rõ */
+    transform: translateY(0); /* Kết thúc ở vị trí ban đầu */
   }
 }
 
+/* Hộp chứa nội dung giới thiệu */
 .intro-box {
-  background: white;
-  padding: var(--spacing-2xl);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
-  text-align: center;
+  background: white; /* Nền trắng */
+  padding: var(--spacing-2xl); /* Lề trong lớn */
+  border-radius: var(--radius-xl); /* Bo góc lớn */
+  box-shadow: var(--shadow-lg); /* Đổ bóng lớn */
+  text-align: center; /* Căn giữa chữ */
 }
 
+/* Icon trong hộp giới thiệu */
 .intro-box__icon {
-  font-size: 5rem;
-  margin-bottom: var(--spacing-lg);
+  font-size: 5rem; /* Cỡ icon */
+  margin-bottom: var(--spacing-lg); /* Lề dưới */
 }
 
+/* Tiêu đề trong hộp giới thiệu */
 .intro-box__title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 2.5rem; /* Cỡ chữ */
+  font-weight: 800; /* Độ đậm */
+  background: var(--gradient-primary); /* Nền chuyển sắc */
+  -webkit-background-clip: text; /* Cắt nền theo chữ */
+  -webkit-text-fill-color: transparent; /* Chữ trong suốt */
   background-clip: text;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg); /* Lề dưới */
 }
 
+/* Đoạn văn bản trong hộp giới thiệu */
 .intro-box__text {
-  font-size: 1.2rem;
-  line-height: 1.9;
-  color: var(--text-secondary);
-  max-width: 900px;
-  margin: 0 auto;
+  font-size: 1.2rem; /* Cỡ chữ */
+  line-height: 1.9; /* Chiều cao dòng */
+  color: var(--text-secondary); /* Màu chữ phụ */
+  max-width: 900px; /* Chiều rộng tối đa */
+  margin: 0 auto; /* Căn giữa */
 }
 
-/* ========== Section Title ========== */
+/* ========== Tiêu đề chung của các phần ========== */
+/* Tiêu đề của một phần (section) */
 .section-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  text-align: center;
-  background: var(--gradient-primary);
+  font-size: 2.5rem; /* Cỡ chữ */
+  font-weight: 800; /* Độ đậm */
+  text-align: center; /* Căn giữa */
+  background: var(--gradient-primary); /* Nền chuyển sắc */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: var(--spacing-2xl);
-  position: relative;
-  padding-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl); /* Lề dưới */
+  position: relative; /* Vị trí tương đối */
+  padding-bottom: var(--spacing-lg); /* Lề trong dưới để tạo khoảng cách cho gạch chân */
 }
 
+/* Gạch chân trang trí cho tiêu đề */
 .section-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 4px;
-  background: var(--gradient-secondary);
-  border-radius: 2px;
+  content: "";
+  position: absolute; /* Vị trí tuyệt đối */
+  bottom: 0; /* Nằm ở đáy */
+  left: 50%; /* Căn giữa ngang */
+  transform: translateX(-50%); /* Tinh chỉnh căn giữa */
+  width: 120px; /* Chiều rộng */
+  height: 4px; /* Độ dày */
+  background: var(--gradient-secondary); /* Nền chuyển sắc */
+  border-radius: 2px; /* Bo góc */
 }
 
-/* ========== Principal Section ========== */
+/* ========== Phần Hiệu trưởng ========== */
+/* Section chứa thông tin hiệu trưởng */
 .principal-section {
-  margin-bottom: var(--spacing-2xl);
+  margin-bottom: var(--spacing-2xl); /* Lề dưới */
 }
 
+/* Thẻ thông tin chính của hiệu trưởng */
 .principal-card {
-  background: white;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-xl);
-  overflow: hidden;
-  animation: scaleIn 0.8s ease-out;
+  background: white; /* Nền trắng */
+  border-radius: var(--radius-xl); /* Bo góc */
+  box-shadow: var(--shadow-xl); /* Đổ bóng rất lớn */
+  overflow: hidden; /* Ẩn nội dung tràn */
+  animation: scaleIn 0.8s ease-out; /* Animation phóng to */
 }
 
+/* Keyframe cho animation 'scaleIn' */
 @keyframes scaleIn {
   from {
-    opacity: 0;
-    transform: scale(0.95);
+    opacity: 0; /* Bắt đầu mờ */
+    transform: scale(0.95); /* Bắt đầu nhỏ hơn */
   }
   to {
-    opacity: 1;
-    transform: scale(1);
+    opacity: 1; /* Kết thúc rõ */
+    transform: scale(1); /* Kết thúc ở kích thước thật */
   }
 }
 
+/* Phần đầu của thẻ hiệu trưởng */
 .principal-header {
-  background: var(--gradient-primary);
-  padding: var(--spacing-xl);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+  background: var(--gradient-primary); /* Nền chuyển sắc */
+  padding: var(--spacing-xl); /* Lề trong */
+  text-align: center; /* Căn giữa */
+  position: relative; /* Vị trí tương đối */
+  overflow: hidden; /* Ẩn nội dung tràn */
 }
 
+/* Hiệu ứng nền xoay */
 .principal-header::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-  animation: rotate 20s linear infinite;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
+  animation: rotate 20s linear infinite; /* Animation xoay */
 }
 
+/* Keyframe cho animation 'rotate' */
 @keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
+/* Huy hiệu "Hiệu trưởng" */
 .principal-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--spacing-md);
-  padding: var(--spacing-lg) var(--spacing-2xl);
-  background: rgba(255,255,255,0.2);
-  backdrop-filter: blur(10px);
-  border-radius: var(--radius-xl);
-  border: 3px solid rgba(255,255,255,0.3);
+  display: inline-flex; /* Hiển thị dạng flex nội tuyến */
+  align-items: center; /* Căn giữa dọc */
+  gap: var(--spacing-md); /* Khoảng cách */
+  padding: var(--spacing-lg) var(--spacing-2xl); /* Lề trong */
+  background: rgba(255, 255, 255, 0.2); /* Nền trắng mờ */
+  backdrop-filter: blur(10px); /* Hiệu ứng kính mờ */
+  border-radius: var(--radius-xl); /* Bo góc */
+  border: 3px solid rgba(255, 255, 255, 0.3); /* Viền trắng mờ */
   position: relative;
-  z-index: 2;
+  z-index: 2; /* Nằm trên hiệu ứng nền */
 }
 
+/* Icon trên huy hiệu */
 .principal-badge__icon {
-  font-size: 2.5rem;
+  font-size: 2.5rem; /* Cỡ icon */
 }
 
+/* Chữ trên huy hiệu */
 .principal-badge__text {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-  letter-spacing: 2px;
+  font-size: 1.8rem; /* Cỡ chữ */
+  font-weight: 800; /* Độ đậm */
+  color: white; /* Chữ trắng */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Đổ bóng chữ */
+  letter-spacing: 2px; /* Khoảng cách ký tự */
 }
 
+/* Nội dung chính của thẻ hiệu trưởng */
 .principal-content {
-  display: grid;
-  grid-template-columns: 350px 1fr;
-  gap: var(--spacing-2xl);
-  padding: var(--spacing-2xl);
+  display: grid; /* Sử dụng grid */
+  grid-template-columns: 350px 1fr; /* 2 cột: ảnh và thông tin */
+  gap: var(--spacing-2xl); /* Khoảng cách */
+  padding: var(--spacing-2xl); /* Lề trong */
 }
 
+/* Khối chứa ảnh đại diện */
 .principal-avatar {
-  text-align: center;
+  text-align: center; /* Căn giữa */
 }
 
+/* Khung ảnh đại diện */
 .avatar-frame {
-  width: 300px;
-  height: 350px;
-  margin: 0 auto var(--spacing-lg);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  border: 8px solid transparent;
+  width: 300px; /* Chiều rộng */
+  height: 350px; /* Chiều cao */
+  margin: 0 auto var(--spacing-lg); /* Căn giữa và lề dưới */
+  border-radius: var(--radius-xl); /* Bo góc */
+  overflow: hidden; /* Ẩn phần ảnh thừa */
+  border: 8px solid transparent; /* Viền trong suốt */
   background: linear-gradient(white, white) padding-box,
-              var(--gradient-primary) border-box;
-  box-shadow: var(--shadow-xl);
+    var(--gradient-primary) border-box; /* Tạo viền gradient */
+  box-shadow: var(--shadow-xl); /* Đổ bóng */
 }
 
+/* Khung giữ chỗ cho ảnh (khi chưa có ảnh) */
 .image-placeholder {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%); /* Nền xám chuyển sắc */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -271,8 +325,9 @@
   overflow: hidden;
 }
 
+/* Hiệu ứng ánh sáng lướt qua */
 .image-placeholder::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
@@ -284,21 +339,28 @@
     rgba(255, 255, 255, 0.3) 50%,
     transparent 70%
   );
-  animation: shimmer 3s infinite;
+  animation: shimmer 3s infinite; /* Animation lấp lánh */
 }
 
+/* Keyframe cho animation 'shimmer' */
 @keyframes shimmer {
-  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
 }
 
+/* Icon người dùng trong khung giữ chỗ */
 .placeholder-icon {
-  font-size: 5rem;
-  opacity: 0.4;
+  font-size: 5rem; /* Cỡ icon */
+  opacity: 0.4; /* Độ mờ */
   position: relative;
-  z-index: 2;
+  z-index: 2; /* Nằm trên hiệu ứng shimmer */
 }
 
+/* Chữ trong khung giữ chỗ */
 .placeholder-text {
   font-size: 1rem;
   font-weight: 600;
@@ -307,19 +369,22 @@
   z-index: 2;
 }
 
+/* Kiểu riêng cho khung giữ chỗ lớn */
 .image-placeholder--large {
   height: 100%;
 }
 
+/* Khối chứa các huy hiệu dưới ảnh */
 .avatar-badges {
   display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
+  flex-direction: column; /* Xếp dọc */
+  gap: var(--spacing-sm); /* Khoảng cách */
 }
 
+/* Mỗi huy hiệu */
 .badge-item {
   padding: var(--spacing-sm) var(--spacing-md);
-  background: var(--gradient-blue);
+  background: var(--gradient-blue); /* Nền chuyển sắc */
   color: white;
   border-radius: var(--radius-lg);
   font-weight: 600;
@@ -327,12 +392,14 @@
   box-shadow: var(--shadow-sm);
 }
 
+/* Khối thông tin chi tiết của hiệu trưởng */
 .principal-info {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xl);
 }
 
+/* Tên hiệu trưởng */
 .principal-name {
   font-size: 3rem;
   font-weight: 800;
@@ -343,21 +410,24 @@
   line-height: 1.2;
 }
 
+/* Chức danh */
 .principal-title {
   font-size: 1.5rem;
   color: var(--text-secondary);
   font-weight: 600;
 }
 
+/* Hộp thông tin liên hệ */
 .contact-info-box {
   padding: var(--spacing-xl);
-  background: var(--bg-secondary);
+  background: var(--bg-secondary); /* Nền phụ */
   border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
 }
 
+/* Mỗi dòng liên hệ */
 .contact-row {
   display: flex;
   align-items: center;
@@ -365,25 +435,29 @@
   font-size: 1.1rem;
 }
 
+/* Icon liên hệ */
 .contact-icon {
   font-size: 1.5rem;
-  flex-shrink: 0;
+  flex-shrink: 0; /* Không co lại */
 }
 
+/* Chữ liên hệ */
 .contact-text {
   color: var(--text-secondary);
   font-weight: 500;
 }
 
+/* Các phần tiểu sử, nhiệm vụ, thành tích */
 .bio-section,
 .responsibilities-section,
 .achievements-section {
   padding: var(--spacing-xl);
   background: var(--bg-secondary);
   border-radius: var(--radius-xl);
-  border-left: 5px solid var(--primary);
+  border-left: 5px solid var(--primary); /* Viền trái màu xanh */
 }
 
+/* Tiêu đề của các phần */
 .bio-title,
 .responsibilities-title,
 .achievements-title {
@@ -393,14 +467,15 @@
   margin-bottom: var(--spacing-lg);
 }
 
-/* Timeline */
+/* Dòng thời gian (timeline) cho tiểu sử */
 .timeline {
   position: relative;
-  padding-left: 40px;
+  padding-left: 40px; /* Chừa chỗ cho đường kẻ và chấm tròn */
 }
 
+/* Đường kẻ dọc của timeline */
 .timeline::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 10px;
   top: 0;
@@ -409,24 +484,27 @@
   background: var(--gradient-primary);
 }
 
+/* Mỗi mốc thời gian */
 .timeline-item {
   position: relative;
   margin-bottom: var(--spacing-lg);
   padding-bottom: var(--spacing-lg);
 }
 
+/* Chấm tròn trên timeline */
 .timeline-dot {
   position: absolute;
-  left: -36px;
+  left: -36px; /* Dịch sang trái để nằm trên đường kẻ */
   top: 5px;
   width: 16px;
   height: 16px;
   background: white;
   border: 4px solid var(--primary);
   border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1); /* Vòng sáng mờ */
 }
 
+/* Năm trên timeline */
 .timeline-year {
   font-weight: 700;
   color: var(--primary);
@@ -434,13 +512,14 @@
   margin-bottom: var(--spacing-xs);
 }
 
+/* Nội dung của mốc thời gian */
 .timeline-text {
   color: var(--text-secondary);
   font-size: 1.05rem;
   line-height: 1.6;
 }
 
-/* Responsibilities List */
+/* Danh sách nhiệm vụ */
 .responsibilities-list {
   list-style: none;
   padding: 0;
@@ -449,8 +528,10 @@
   gap: var(--spacing-md);
 }
 
+/* Mỗi mục nhiệm vụ */
 .responsibilities-list li {
-  padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) var(--spacing-xl);
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-md)
+    var(--spacing-xl);
   background: white;
   border-radius: var(--radius-md);
   color: var(--text-secondary);
@@ -460,8 +541,9 @@
   transition: var(--transition);
 }
 
+/* Dấu tick đầu dòng */
 .responsibilities-list li::before {
-  content: '✓';
+  content: "✓";
   position: absolute;
   left: var(--spacing-md);
   color: var(--success);
@@ -469,18 +551,20 @@
   font-size: 1.2rem;
 }
 
+/* Hiệu ứng khi di chuột vào mục nhiệm vụ */
 .responsibilities-list li:hover {
   background: var(--bg-tertiary);
-  transform: translateX(10px);
+  transform: translateX(10px); /* Dịch sang phải */
 }
 
-/* Achievements Grid */
+/* Lưới thành tích */
 .achievements-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* 2 cột */
   gap: var(--spacing-lg);
 }
 
+/* Mỗi huy hiệu thành tích */
 .achievement-badge {
   padding: var(--spacing-lg);
   background: white;
@@ -491,34 +575,40 @@
   border: 2px solid transparent;
 }
 
+/* Hiệu ứng khi di chuột vào huy hiệu thành tích */
 .achievement-badge:hover {
-  border-color: var(--secondary);
-  transform: scale(1.05);
+  border-color: var(--secondary); /* Đổi màu viền */
+  transform: scale(1.05); /* Phóng to */
   box-shadow: var(--shadow-md);
 }
 
+/* Icon thành tích */
 .achievement-icon {
   font-size: 3rem;
   margin-bottom: var(--spacing-sm);
 }
 
+/* Chữ thành tích */
 .achievement-text {
   font-weight: 600;
   color: var(--text-primary);
   font-size: 0.95rem;
 }
 
-/* ========== Vice Principals Section ========== */
+/* ========== Phần Phó Hiệu trưởng ========== */
+/* Section chứa thông tin các phó hiệu trưởng */
 .vice-principals-section {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Lưới chứa các thẻ phó hiệu trưởng */
 .vice-principals-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* 2 cột */
   gap: var(--spacing-2xl);
 }
 
+/* Mỗi thẻ thông tin của một phó hiệu trưởng */
 .vice-card {
   background: white;
   border-radius: var(--radius-xl);
@@ -527,27 +617,35 @@
   position: relative;
   overflow: hidden;
   transition: var(--transition);
-  animation: fadeInUp 0.6s ease-out backwards;
+  animation: fadeInUp 0.6s ease-out backwards; /* Animation hiện ra */
 }
 
-.vice-card:nth-child(1) { animation-delay: 0.1s; }
-.vice-card:nth-child(2) { animation-delay: 0.2s; }
+/* Thêm độ trễ cho animation */
+.vice-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.vice-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
 
+/* Đường kẻ màu ở trên cùng của thẻ */
 .vice-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 6px;
-  background: var(--gradient-secondary);
+  background: var(--gradient-secondary); /* Nền chuyển sắc vàng */
 }
 
+/* Hiệu ứng khi di chuột vào thẻ */
 .vice-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px); /* Nhấc lên */
   box-shadow: var(--shadow-xl);
 }
 
+/* Ruy băng chức danh */
 .vice-card__ribbon {
   display: inline-block;
   padding: var(--spacing-sm) var(--spacing-lg);
@@ -559,16 +657,18 @@
   margin-bottom: var(--spacing-lg);
 }
 
+/* Ảnh đại diện */
 .vice-card__avatar {
   width: 180px;
   height: 180px;
   margin: 0 auto var(--spacing-lg);
-  border-radius: 50%;
+  border-radius: 50%; /* Hình tròn */
   overflow: hidden;
   border: 6px solid var(--bg-secondary);
   box-shadow: var(--shadow-md);
 }
 
+/* Tên phó hiệu trưởng */
 .vice-card__name {
   font-size: 1.8rem;
   font-weight: 700;
@@ -577,6 +677,7 @@
   text-align: center;
 }
 
+/* Học vị */
 .vice-card__degree {
   text-align: center;
   color: var(--text-secondary);
@@ -585,6 +686,7 @@
   font-size: 1.05rem;
 }
 
+/* Hộp thông tin liên hệ */
 .vice-card__contact {
   padding: var(--spacing-lg);
   background: var(--bg-secondary);
@@ -595,6 +697,7 @@
   gap: var(--spacing-sm);
 }
 
+/* Mỗi dòng liên hệ nhỏ */
 .contact-item-small {
   display: flex;
   align-items: center;
@@ -603,20 +706,24 @@
   color: var(--text-secondary);
 }
 
+/* Icon liên hệ nhỏ */
 .contact-item-small .icon {
   font-size: 1.2rem;
 }
 
+/* Mỗi phần trong thẻ (nhiệm vụ, kinh nghiệm,...) */
 .vice-card__section {
   margin-bottom: var(--spacing-lg);
   padding-bottom: var(--spacing-lg);
-  border-bottom: 2px solid var(--bg-secondary);
+  border-bottom: 2px solid var(--bg-secondary); /* Đường kẻ phân cách */
 }
 
+/* Bỏ đường kẻ cho phần cuối cùng */
 .vice-card__section:last-of-type {
   border-bottom: none;
 }
 
+/* Tiêu đề của phần trong thẻ */
 .vice-section-title {
   font-size: 1.2rem;
   font-weight: 700;
@@ -624,6 +731,7 @@
   margin-bottom: var(--spacing-md);
 }
 
+/* Danh sách trong thẻ */
 .vice-list {
   list-style: none;
   padding: 0;
@@ -632,8 +740,10 @@
   gap: var(--spacing-sm);
 }
 
+/* Mỗi mục trong danh sách */
 .vice-list li {
-  padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-sm) var(--spacing-lg);
+  padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-sm)
+    var(--spacing-lg);
   background: var(--bg-secondary);
   border-radius: var(--radius-md);
   color: var(--text-secondary);
@@ -642,27 +752,31 @@
   transition: var(--transition);
 }
 
+/* Dấu mũi tên đầu dòng */
 .vice-list li::before {
-  content: '▸';
+  content: "▸";
   position: absolute;
   left: var(--spacing-sm);
   color: var(--primary);
   font-weight: 700;
 }
 
+/* Hiệu ứng khi di chuột vào mục danh sách */
 .vice-list li:hover {
   background: var(--bg-tertiary);
   transform: translateX(5px);
 }
 
+/* Mục kinh nghiệm */
 .experience-item {
   padding: var(--spacing-lg);
-  background: var(--gradient-success);
+  background: var(--gradient-success); /* Nền chuyển sắc xanh lá */
   color: white;
   border-radius: var(--radius-lg);
   text-align: center;
 }
 
+/* Số năm kinh nghiệm */
 .exp-year {
   font-size: 2rem;
   font-weight: 800;
@@ -670,17 +784,20 @@
   margin-bottom: var(--spacing-xs);
 }
 
+/* Chữ "năm kinh nghiệm" */
 .exp-text {
   font-size: 1rem;
   opacity: 0.9;
 }
 
+/* Khối thành tích trong thẻ phó hiệu trưởng */
 .vice-card__achievements {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
 }
 
+/* Huy hiệu thành tích nhỏ */
 .mini-badge {
   padding: var(--spacing-sm) var(--spacing-md);
   background: var(--bg-secondary);
@@ -689,16 +806,18 @@
   font-weight: 600;
   color: var(--text-primary);
   text-align: center;
-  border-left: 4px solid var(--warning);
+  border-left: 4px solid var(--warning); /* Viền trái màu vàng */
 }
 
-/* ========== Team Spirit Section ========== */
+/* ========== Phần Tinh thần đồng đội ========== */
+/* Section tinh thần đồng đội */
 .team-spirit-section {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Hộp chứa nội dung */
 .spirit-box {
-  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); /* Nền chuyển sắc cam nhạt */
   padding: var(--spacing-2xl);
   border-radius: var(--radius-xl);
   text-align: center;
@@ -707,17 +826,23 @@
   overflow: hidden;
 }
 
+/* Hiệu ứng nền xoay */
 .spirit-box::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 70%
+  );
   animation: rotate 30s linear infinite;
 }
 
+/* Icon của phần */
 .spirit-icon {
   font-size: 5rem;
   margin-bottom: var(--spacing-lg);
@@ -725,6 +850,7 @@
   z-index: 2;
 }
 
+/* Tiêu đề của phần */
 .spirit-title {
   font-size: 2.5rem;
   font-weight: 800;
@@ -734,6 +860,7 @@
   z-index: 2;
 }
 
+/* Đoạn văn bản của phần */
 .spirit-text {
   font-size: 1.2rem;
   line-height: 1.9;
@@ -744,90 +871,114 @@
   z-index: 2;
 }
 
+/* Lưới các giá trị cốt lõi */
 .spirit-values {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* 4 cột */
   gap: var(--spacing-xl);
   position: relative;
   z-index: 2;
 }
 
+/* Mỗi mục giá trị */
 .value-item {
   padding: var(--spacing-xl);
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.8); /* Nền trắng mờ */
+  backdrop-filter: blur(10px); /* Hiệu ứng kính mờ */
   border-radius: var(--radius-lg);
   transition: var(--transition);
 }
 
+/* Hiệu ứng khi di chuột vào mục giá trị */
 .value-item:hover {
   background: white;
   transform: translateY(-5px);
   box-shadow: var(--shadow-md);
 }
 
+/* Icon của giá trị */
 .value-icon {
   font-size: 3rem;
   margin-bottom: var(--spacing-md);
 }
 
+/* Chữ của giá trị */
 .value-text {
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--primary-dark);
 }
 
-/* ========== Schedule Section ========== */
+/* ========== Phần Lịch làm việc ========== */
+/* Section lịch làm việc */
 .schedule-section {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Lưới chứa các thẻ lịch làm việc */
 .schedule-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* 3 cột */
   gap: var(--spacing-xl);
 }
 
+/* Mỗi thẻ lịch làm việc */
 .schedule-card {
   background: white;
   border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow-md);
   transition: var(--transition);
-  border-top: 5px solid var(--primary);
+  border-top: 5px solid var(--primary); /* Viền trên màu xanh */
   animation: fadeInUp 0.6s ease-out backwards;
 }
 
-.schedule-card:nth-child(1) { animation-delay: 0.1s; border-top-color: #667eea; }
-.schedule-card:nth-child(2) { animation-delay: 0.2s; border-top-color: #f093fb; }
-.schedule-card:nth-child(3) { animation-delay: 0.3s; border-top-color: #4facfe; }
+/* Thêm độ trễ và màu sắc khác nhau cho mỗi thẻ */
+.schedule-card:nth-child(1) {
+  animation-delay: 0.1s;
+  border-top-color: #667eea;
+}
+.schedule-card:nth-child(2) {
+  animation-delay: 0.2s;
+  border-top-color: #f093fb;
+}
+.schedule-card:nth-child(3) {
+  animation-delay: 0.3s;
+  border-top-color: #4facfe;
+}
 
+/* Hiệu ứng khi di chuột vào thẻ lịch */
 .schedule-card:hover {
   transform: translateY(-10px);
   box-shadow: var(--shadow-xl);
 }
 
+/* Phần đầu của thẻ lịch */
 .schedule-card__header {
   padding: var(--spacing-xl);
   background: var(--bg-secondary);
   text-align: center;
 }
 
+/* Icon trên thẻ lịch */
 .schedule-icon {
   font-size: 3rem;
   margin-bottom: var(--spacing-md);
 }
 
+/* Tên người trên thẻ lịch */
 .schedule-name {
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--primary-dark);
 }
 
+/* Nội dung của thẻ lịch */
 .schedule-card__content {
   padding: var(--spacing-xl);
 }
 
+/* Thời gian và địa điểm */
 .schedule-time,
 .schedule-location {
   display: flex;
@@ -839,12 +990,14 @@
   border-radius: var(--radius-md);
 }
 
+/* Icon thời gian và địa điểm */
 .time-icon,
 .location-icon {
   font-size: 1.5rem;
   flex-shrink: 0;
 }
 
+/* Chữ thời gian và địa điểm */
 .time-text,
 .location-text {
   font-size: 1rem;
@@ -852,9 +1005,10 @@
   color: var(--text-primary);
 }
 
+/* Ghi chú trên thẻ lịch */
 .schedule-note {
   padding: var(--spacing-md);
-  background: var(--gradient-warning);
+  background: var(--gradient-warning); /* Nền chuyển sắc vàng */
   color: white;
   border-radius: var(--radius-md);
   font-size: 0.9rem;
@@ -862,50 +1016,64 @@
   text-align: center;
 }
 
+
 /* ========== Responsive ========== */
+/* Cho màn hình nhỏ hơn 1200px */
 @media (max-width: 1200px) {
+  /* Chuyển layout thẻ hiệu trưởng thành 1 cột */
   .principal-content {
     grid-template-columns: 1fr;
   }
   
+  /* Căn giữa khung ảnh */
   .avatar-frame {
     margin: 0 auto var(--spacing-xl);
   }
   
+  /* Chuyển lưới phó hiệu trưởng thành 1 cột */
   .vice-principals-grid {
     grid-template-columns: 1fr;
   }
   
+  /* Chuyển lưới giá trị cốt lõi thành 2 cột */
   .spirit-values {
     grid-template-columns: repeat(2, 1fr);
   }
   
+  /* Chuyển lưới lịch làm việc thành 1 cột */
   .schedule-grid {
     grid-template-columns: 1fr;
   }
 }
 
+/* Cho màn hình nhỏ hơn 768px (tablet) */
 @media (max-width: 768px) {
+  /* Giảm chiều cao banner */
   .page-banner {
     height: 200px;
   }
   
+  /* Giảm cỡ chữ tiêu đề banner */
   .page-banner__title {
     font-size: 2rem;
   }
   
+  /* Giảm cỡ chữ tên hiệu trưởng */
   .principal-name {
     font-size: 2rem;
   }
   
+  /* Chuyển lưới thành tích thành 1 cột */
   .achievements-grid {
     grid-template-columns: 1fr;
   }
   
+  /* Chuyển lưới giá trị cốt lõi thành 1 cột */
   .spirit-values {
     grid-template-columns: 1fr;
   }
   
+  /* Giảm cỡ chữ tiêu đề phần */
   .section-title {
     font-size: 2rem;
   }

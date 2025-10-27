@@ -1,180 +1,230 @@
-/* ========== Page Banner ========== */
+﻿/* ============================================================
+   CHIBODANG.CSS - CSS cho trang Chi bộ Đảng
+   ============================================================ */
+
+/* ========== Banner trang ========== */
+/* Banner chính ở đầu trang */
 .page-banner {
-  position: relative;
-  height: 300px;
-  background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  position: relative; /* Vị trí tương đối để chứa các phần tử con tuyệt đối */
+  height: 300px; /* Chiều cao của banner */
+  background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%); /* Nền chuyển sắc đỏ */
+  display: flex; /* Sử dụng flexbox để căn giữa nội dung */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  overflow: hidden; /* Ẩn các phần tử tràn ra ngoài */
 }
 
+/* Lớp giả để tạo hiệu ứng nền */
 .page-banner::before {
-  content: '';
-  position: absolute;
+  content: ""; /* Bắt buộc cho pseudo-element */
+  position: absolute; /* Vị trí tuyệt đối so với banner */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="90" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.15)"/><path d="M30,50 L40,45 L40,55 Z" fill="rgba(255,215,0,0.3)"/><path d="M70,50 L60,45 L60,55 Z" fill="rgba(255,215,0,0.3)"/></svg>');
-  animation: float 20s infinite linear;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="90" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.15)"/><path d="M30,50 L40,45 L40,55 Z" fill="rgba(255,215,0,0.3)"/><path d="M70,50 L60,45 L60,55 Z" fill="rgba(255,215,0,0.3)"/></svg>'); /* Hình nền SVG với các biểu tượng nhỏ */
+  animation: float 20s infinite linear; /* Animation di chuyển nền */
 }
 
+/* Keyframe cho animation 'float' */
 @keyframes float {
-  from { transform: translateY(0); }
-  to { transform: translateY(-100px); }
+  from {
+    transform: translateY(0); /* Bắt đầu từ vị trí ban đầu */
+  }
+  to {
+    transform: translateY(-100px); /* Di chuyển lên trên 100px */
+  }
 }
 
+/* Lớp phủ chứa nội dung text trên banner */
 .page-banner__overlay {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: white;
+  position: relative; /* Vị trí tương đối */
+  z-index: 2; /* Nằm trên lớp giả ::before */
+  text-align: center; /* Căn giữa chữ */
+  color: white; /* Màu chữ trắng */
 }
 
+/* Tiêu đề của banner */
 .page-banner__title {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: var(--spacing-md);
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-  animation: slideInDown 0.6s ease-out;
+  font-size: 3rem; /* Cỡ chữ lớn */
+  font-weight: 800; /* Độ đậm chữ */
+  margin-bottom: var(--spacing-md); /* Lề dưới */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Đổ bóng cho chữ */
+  animation: slideInDown 0.6s ease-out; /* Animation trượt xuống */
 }
 
+/* Keyframe cho animation 'slideInDown' */
 @keyframes slideInDown {
   from {
-    opacity: 0;
-    transform: translateY(-30px);
+    opacity: 0; /* Bắt đầu với độ mờ 0 */
+    transform: translateY(-30px); /* Bắt đầu từ vị trí cao hơn */
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1; /* Kết thúc với độ mờ 1 */
+    transform: translateY(0); /* Kết thúc ở vị trí ban đầu */
   }
 }
 
+/* Thanh điều hướng breadcrumb */
 .breadcrumb {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-sm);
-  font-size: 1rem;
-  animation: fadeIn 0.8s ease-out;
+  display: flex; /* Sử dụng flexbox */
+  align-items: center; /* Căn giữa dọc */
+  justify-content: center; /* Căn giữa ngang */
+  gap: var(--spacing-sm); /* Khoảng cách giữa các mục */
+  font-size: 1rem; /* Cỡ chữ */
+  animation: fadeIn 0.8s ease-out; /* Animation hiện ra */
 }
 
+/* Keyframe cho animation 'fadeIn' */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0; /* Bắt đầu mờ */
+  }
+  to {
+    opacity: 1; /* Kết thúc rõ */
+  }
 }
 
+/* Mỗi mục trong breadcrumb */
 .breadcrumb__item {
-  color: rgba(255,255,255,0.9);
-  transition: var(--transition);
+  color: rgba(255, 255, 255, 0.9); /* Màu chữ trắng mờ */
+  transition: var(--transition); /* Hiệu ứng chuyển động */
 }
 
+/* Hiệu ứng khi di chuột vào mục breadcrumb */
 .breadcrumb__item:hover {
-  color: white;
+  color: white; /* Chuyển màu thành trắng */
 }
 
+/* Mục đang hoạt động (trang hiện tại) */
 .breadcrumb__item--active {
-  color: white;
-  font-weight: 600;
+  color: white; /* Màu trắng */
+  font-weight: 600; /* Chữ đậm */
 }
 
+/* Dấu phân cách trong breadcrumb */
 .breadcrumb__separator {
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6); /* Màu trắng mờ hơn */
 }
 
-/* ========== Main ========== */
+/* ========== Nội dung chính ========== */
+/* Phần nội dung chính của trang */
 .main {
-  padding: var(--spacing-2xl) 0;
+  padding: var(--spacing-2xl) 0; /* Lề trong trên dưới */
 }
 
-/* ========== Party Intro ========== */
+/* ========== Giới thiệu Chi bộ ========== */
+/* Phần giới thiệu */
 .party-intro {
-  margin-bottom: var(--spacing-2xl);
-  animation: fadeInUp 0.8s ease-out;
+  margin-bottom: var(--spacing-2xl); /* Lề dưới */
+  animation: fadeInUp 0.8s ease-out; /* Animation hiện ra từ dưới */
 }
 
+/* Keyframe cho animation 'fadeInUp' */
 @keyframes fadeInUp {
   from {
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 0; /* Bắt đầu mờ */
+    transform: translateY(30px); /* Bắt đầu từ vị trí thấp hơn */
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1; /* Kết thúc rõ */
+    transform: translateY(0); /* Kết thúc ở vị trí ban đầu */
   }
 }
 
+/* Khối chứa biểu tượng và giới thiệu */
 .party-emblem {
-  background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%);
-  padding: var(--spacing-2xl);
-  border-radius: var(--radius-xl);
-  text-align: center;
-  color: white;
-  box-shadow: var(--shadow-xl);
-  position: relative;
-  overflow: hidden;
+  background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%); /* Nền đỏ */
+  padding: var(--spacing-2xl); /* Lề trong */
+  border-radius: var(--radius-xl); /* Bo góc */
+  text-align: center; /* Căn giữa chữ */
+  color: white; /* Chữ trắng */
+  box-shadow: var(--shadow-xl); /* Đổ bóng */
+  position: relative; /* Vị trí tương đối */
+  overflow: hidden; /* Ẩn nội dung tràn */
 }
 
+/* Hiệu ứng nền xoay */
 .party-emblem::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   right: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255,215,0,0.2) 0%, transparent 70%);
-  animation: rotate 20s linear infinite;
+  background: radial-gradient(
+    circle,
+    rgba(255, 215, 0, 0.2) 0%,
+    transparent 70%
+  ); /* Vòng tròn ánh sáng vàng */
+  animation: rotate 20s linear infinite; /* Animation xoay */
 }
 
+/* Keyframe cho animation 'rotate' */
 @keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
+/* Biểu tượng búa liềm */
 .emblem-icon {
-  font-size: 6rem;
-  margin-bottom: var(--spacing-lg);
+  font-size: 6rem; /* Cỡ icon */
+  margin-bottom: var(--spacing-lg); /* Lề dưới */
   position: relative;
-  z-index: 2;
-  animation: pulse 2s infinite;
+  z-index: 2; /* Nằm trên hiệu ứng nền */
+  animation: pulse 2s infinite; /* Animation nhấp nháy */
 }
 
+/* Keyframe cho animation 'pulse' */
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* Phóng to nhẹ */
+  }
 }
 
+/* Tiêu đề giới thiệu */
 .party-intro__title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: var(--spacing-lg);
+  font-size: 2.5rem; /* Cỡ chữ */
+  font-weight: 800; /* Độ đậm */
+  margin-bottom: var(--spacing-lg); /* Lề dưới */
   position: relative;
   z-index: 2;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Đổ bóng chữ */
 }
 
+/* Đoạn văn bản giới thiệu */
 .party-intro__text {
-  font-size: 1.2rem;
-  line-height: 1.9;
-  max-width: 900px;
-  margin: 0 auto;
+  font-size: 1.2rem; /* Cỡ chữ */
+  line-height: 1.9; /* Chiều cao dòng */
+  max-width: 900px; /* Chiều rộng tối đa */
+  margin: 0 auto; /* Căn giữa */
   position: relative;
   z-index: 2;
-  opacity: 0.95;
+  opacity: 0.95; /* Độ mờ nhẹ */
 }
 
-/* ========== Party Stats ========== */
+/* ========== Thống kê Chi bộ ========== */
+/* Phần thống kê */
 .party-stats {
-  margin-bottom: var(--spacing-2xl);
+  margin-bottom: var(--spacing-2xl); /* Lề dưới */
 }
 
+/* Lưới chứa các thẻ thống kê */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--spacing-xl);
+  grid-template-columns: repeat(4, 1fr); /* 4 cột */
+  gap: var(--spacing-xl); /* Khoảng cách */
 }
 
+/* Mỗi thẻ thống kê */
 .stat-box {
   padding: var(--spacing-2xl);
   border-radius: var(--radius-xl);
@@ -184,14 +234,24 @@
   transition: var(--transition);
   position: relative;
   overflow: hidden;
-  animation: scaleIn 0.6s ease-out backwards;
+  animation: scaleIn 0.6s ease-out backwards; /* Animation phóng to */
 }
 
-.stat-box:nth-child(1) { animation-delay: 0.1s; }
-.stat-box:nth-child(2) { animation-delay: 0.2s; }
-.stat-box:nth-child(3) { animation-delay: 0.3s; }
-.stat-box:nth-child(4) { animation-delay: 0.4s; }
+/* Thêm độ trễ cho animation */
+.stat-box:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.stat-box:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stat-box:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.stat-box:nth-child(4) {
+  animation-delay: 0.4s;
+}
 
+/* Keyframe cho animation 'scaleIn' */
 @keyframes scaleIn {
   from {
     opacity: 0;
@@ -203,38 +263,43 @@
   }
 }
 
+/* Hiệu ứng nền xoay cho thẻ thống kê */
 .stat-box::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
   animation: rotate 15s linear infinite;
 }
 
+/* Hiệu ứng khi di chuột vào thẻ thống kê */
 .stat-box:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  transform: translateY(-10px) scale(1.05); /* Nhấc lên và phóng to */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
+/* Các biến thể màu cho thẻ thống kê */
 .stat-box--red {
   background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%);
 }
-
 .stat-box--gold {
   background: linear-gradient(135deg, #ffd700 0%, #ff8c00 100%);
 }
-
 .stat-box--blue {
   background: linear-gradient(135deg, #0047ab 0%, #002366 100%);
 }
-
 .stat-box--green {
   background: linear-gradient(135deg, #228b22 0%, #006400 100%);
 }
 
+/* Icon trong thẻ thống kê */
 .stat-box__icon {
   font-size: 4rem;
   margin-bottom: var(--spacing-md);
@@ -242,15 +307,17 @@
   z-index: 2;
 }
 
+/* Con số thống kê */
 .stat-box__number {
   font-size: 4rem;
   font-weight: 800;
   margin-bottom: var(--spacing-sm);
   position: relative;
   z-index: 2;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Nhãn của con số thống kê */
 .stat-box__label {
   font-size: 1.2rem;
   font-weight: 600;
@@ -259,12 +326,13 @@
   opacity: 0.95;
 }
 
-/* ========== Section Title ========== */
+/* ========== Tiêu đề chung của các phần ========== */
+/* Tiêu đề của một phần (section) */
 .section-title {
   font-size: 2.5rem;
   font-weight: 800;
   text-align: center;
-  background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%);
+  background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%); /* Nền đỏ */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -273,29 +341,33 @@
   padding-bottom: var(--spacing-lg);
 }
 
+/* Gạch chân trang trí cho tiêu đề */
 .section-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 120px;
   height: 4px;
-  background: linear-gradient(90deg, #dc143c 0%, #ffd700 50%, #dc143c 100%);
+  background: linear-gradient(90deg, #dc143c 0%, #ffd700 50%, #dc143c 100%); /* Nền chuyển sắc đỏ-vàng-đỏ */
   border-radius: 2px;
 }
 
-/* ========== Party Leadership ========== */
+/* ========== Ban Chi ủy ========== */
+/* Phần ban chi ủy */
 .party-leadership {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Lưới chứa các thẻ thông tin lãnh đạo */
 .leadership-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* 3 cột */
   gap: var(--spacing-2xl);
 }
 
+/* Mỗi thẻ thông tin của một lãnh đạo */
 .leader-profile {
   background: white;
   border-radius: var(--radius-xl);
@@ -307,12 +379,20 @@
   animation: fadeInUp 0.6s ease-out backwards;
 }
 
-.leader-profile:nth-child(1) { animation-delay: 0.1s; }
-.leader-profile:nth-child(2) { animation-delay: 0.2s; }
-.leader-profile:nth-child(3) { animation-delay: 0.3s; }
+/* Thêm độ trễ cho animation */
+.leader-profile:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.leader-profile:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.leader-profile:nth-child(3) {
+  animation-delay: 0.3s;
+}
 
+/* Đường kẻ màu ở trên cùng của thẻ */
 .leader-profile::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -321,16 +401,19 @@
   background: linear-gradient(90deg, #dc143c 0%, #ffd700 100%);
 }
 
+/* Kiểu riêng cho thẻ Bí thư */
 .leader-profile--secretary::before {
   height: 8px;
   background: linear-gradient(90deg, #dc143c 0%, #ffd700 50%, #dc143c 100%);
 }
 
+/* Hiệu ứng khi di chuột vào thẻ */
 .leader-profile:hover {
   transform: translateY(-10px);
   box-shadow: var(--shadow-xl);
 }
 
+/* Huy hiệu chức vụ */
 .leader-badge {
   display: inline-flex;
   align-items: center;
@@ -345,20 +428,23 @@
   box-shadow: var(--shadow-md);
 }
 
+/* Ngôi sao trên huy hiệu */
 .badge-star {
   font-size: 1.2rem;
 }
 
+/* Ảnh đại diện */
 .leader-avatar {
   width: 150px;
   height: 150px;
   margin: 0 auto var(--spacing-lg);
   border-radius: 50%;
   overflow: hidden;
-  border: 5px solid #dc143c;
+  border: 5px solid #dc143c; /* Viền đỏ */
   box-shadow: var(--shadow-md);
 }
 
+/* Khung giữ chỗ cho ảnh (khi chưa có ảnh) */
 .image-placeholder {
   width: 100%;
   height: 100%;
@@ -372,8 +458,9 @@
   overflow: hidden;
 }
 
+/* Hiệu ứng ánh sáng lướt qua */
 .image-placeholder::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
@@ -388,11 +475,17 @@
   animation: shimmer 3s infinite;
 }
 
+/* Keyframe cho animation 'shimmer' */
 @keyframes shimmer {
-  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
 }
 
+/* Icon người dùng trong khung giữ chỗ */
 .placeholder-icon {
   font-size: 4rem;
   opacity: 0.4;
@@ -400,14 +493,16 @@
   z-index: 2;
 }
 
+/* Tên lãnh đạo */
 .leader-name {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #8b0000;
+  color: #8b0000; /* Màu đỏ sẫm */
   margin-bottom: var(--spacing-sm);
   text-align: center;
 }
 
+/* Chức vụ */
 .leader-position {
   text-align: center;
   color: var(--text-secondary);
@@ -416,6 +511,7 @@
   font-size: 1rem;
 }
 
+/* Hộp thông tin liên hệ */
 .leader-info {
   padding: var(--spacing-lg);
   background: var(--bg-secondary);
@@ -423,6 +519,7 @@
   margin-bottom: var(--spacing-lg);
 }
 
+/* Mỗi dòng thông tin */
 .info-row {
   display: flex;
   align-items: center;
@@ -435,21 +532,25 @@
   margin-bottom: 0;
 }
 
+/* Icon thông tin */
 .info-icon {
   font-size: 1.2rem;
   flex-shrink: 0;
 }
 
+/* Chữ thông tin */
 .info-text {
   color: var(--text-secondary);
   font-weight: 500;
 }
 
+/* Khối nhiệm vụ */
 .leader-responsibilities {
   padding-top: var(--spacing-lg);
   border-top: 2px solid var(--bg-secondary);
 }
 
+/* Tiêu đề khối nhiệm vụ */
 .leader-responsibilities h4 {
   font-size: 1.1rem;
   font-weight: 700;
@@ -457,11 +558,13 @@
   margin-bottom: var(--spacing-md);
 }
 
+/* Danh sách nhiệm vụ */
 .leader-responsibilities ul {
   list-style: none;
   padding: 0;
 }
 
+/* Mỗi mục nhiệm vụ */
 .leader-responsibilities li {
   padding: var(--spacing-sm) 0 var(--spacing-sm) var(--spacing-lg);
   color: var(--text-secondary);
@@ -470,24 +573,28 @@
   font-size: 0.95rem;
 }
 
+/* Dấu sao đầu dòng */
 .leader-responsibilities li::before {
-  content: '⭐';
+  content: "⭐";
   position: absolute;
   left: 0;
   font-size: 1rem;
 }
 
-/* ========== Functions Section ========== */
+/* ========== Nhiệm vụ Chi bộ ========== */
+/* Phần nhiệm vụ */
 .functions-section {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Lưới chứa các thẻ nhiệm vụ */
 .functions-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* 3 cột */
   gap: var(--spacing-xl);
 }
 
+/* Mỗi thẻ nhiệm vụ */
 .function-card {
   background: white;
   padding: var(--spacing-2xl);
@@ -499,15 +606,29 @@
   animation: fadeInUp 0.6s ease-out backwards;
 }
 
-.function-card:nth-child(1) { animation-delay: 0.1s; }
-.function-card:nth-child(2) { animation-delay: 0.2s; }
-.function-card:nth-child(3) { animation-delay: 0.3s; }
-.function-card:nth-child(4) { animation-delay: 0.4s; }
-.function-card:nth-child(5) { animation-delay: 0.5s; }
-.function-card:nth-child(6) { animation-delay: 0.6s; }
+/* Thêm độ trễ cho animation */
+.function-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.function-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.function-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.function-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.function-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.function-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
 
+/* Đường kẻ màu bên trái thẻ */
 .function-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -516,11 +637,13 @@
   background: linear-gradient(180deg, #dc143c 0%, #ffd700 100%);
 }
 
+/* Hiệu ứng khi di chuột vào thẻ nhiệm vụ */
 .function-card:hover {
   transform: translateY(-10px);
   box-shadow: var(--shadow-xl);
 }
 
+/* Số thứ tự mờ ở góc thẻ */
 .function-number {
   position: absolute;
   top: var(--spacing-lg);
@@ -531,11 +654,13 @@
   opacity: 0.1;
 }
 
+/* Icon nhiệm vụ */
 .function-icon {
   font-size: 3.5rem;
   margin-bottom: var(--spacing-lg);
 }
 
+/* Tiêu đề nhiệm vụ */
 .function-title {
   font-size: 1.3rem;
   font-weight: 700;
@@ -543,23 +668,27 @@
   margin-bottom: var(--spacing-md);
 }
 
+/* Mô tả nhiệm vụ */
 .function-desc {
   font-size: 1.05rem;
   line-height: 1.7;
   color: var(--text-secondary);
 }
 
-/* ========== Activities Section ========== */
+/* ========== Hoạt động Chi bộ ========== */
+/* Phần hoạt động */
 .activities-section {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Dòng thời gian các hoạt động */
 .activities-timeline {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xl);
 }
 
+/* Mỗi mục hoạt động */
 .activity-item {
   display: flex;
   gap: var(--spacing-xl);
@@ -568,14 +697,24 @@
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-md);
   transition: var(--transition);
-  animation: slideInRight 0.6s ease-out backwards;
+  animation: slideInRight 0.6s ease-out backwards; /* Animation trượt vào từ phải */
 }
 
-.activity-item:nth-child(1) { animation-delay: 0.1s; }
-.activity-item:nth-child(2) { animation-delay: 0.2s; }
-.activity-item:nth-child(3) { animation-delay: 0.3s; }
-.activity-item:nth-child(4) { animation-delay: 0.4s; }
+/* Thêm độ trễ cho animation */
+.activity-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.activity-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.activity-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.activity-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
 
+/* Keyframe cho animation 'slideInRight' */
 @keyframes slideInRight {
   from {
     opacity: 0;
@@ -587,11 +726,13 @@
   }
 }
 
+/* Hiệu ứng khi di chuột vào mục hoạt động */
 .activity-item:hover {
   transform: translateX(10px);
   box-shadow: var(--shadow-xl);
 }
 
+/* Icon hoạt động */
 .activity-icon {
   font-size: 4rem;
   flex-shrink: 0;
@@ -606,10 +747,12 @@
   box-shadow: var(--shadow-md);
 }
 
+/* Nội dung hoạt động */
 .activity-content {
   flex: 1;
 }
 
+/* Tiêu đề hoạt động */
 .activity-title {
   font-size: 1.5rem;
   font-weight: 700;
@@ -617,6 +760,7 @@
   margin-bottom: var(--spacing-md);
 }
 
+/* Mô tả hoạt động */
 .activity-desc {
   font-size: 1.05rem;
   line-height: 1.7;
@@ -624,6 +768,7 @@
   margin-bottom: var(--spacing-md);
 }
 
+/* Thời gian hoạt động */
 .activity-time {
   display: inline-block;
   padding: var(--spacing-sm) var(--spacing-lg);
@@ -634,36 +779,48 @@
   font-size: 0.9rem;
 }
 
-/* ========== Party Cells Section ========== */
+/* ========== Các Tổ Đảng ========== */
+/* Phần các tổ đảng */
 .party-cells-section {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Lưới chứa các thẻ tổ đảng */
 .cells-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* 3 cột */
   gap: var(--spacing-xl);
 }
 
+/* Mỗi thẻ của một tổ đảng */
 .cell-card {
   background: white;
   border-radius: var(--radius-xl);
   padding: var(--spacing-2xl);
   box-shadow: var(--shadow-lg);
   transition: var(--transition);
-  border-top: 5px solid #dc143c;
+  border-top: 5px solid #dc143c; /* Viền trên màu đỏ */
   animation: fadeInUp 0.6s ease-out backwards;
 }
 
-.cell-card:nth-child(1) { animation-delay: 0.1s; }
-.cell-card:nth-child(2) { animation-delay: 0.2s; }
-.cell-card:nth-child(3) { animation-delay: 0.3s; }
+/* Thêm độ trễ cho animation */
+.cell-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.cell-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.cell-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
 
+/* Hiệu ứng khi di chuột vào thẻ tổ đảng */
 .cell-card:hover {
   transform: translateY(-10px);
   box-shadow: var(--shadow-xl);
 }
 
+/* Phần đầu của thẻ */
 .cell-header {
   display: flex;
   justify-content: space-between;
@@ -671,6 +828,7 @@
   margin-bottom: var(--spacing-lg);
 }
 
+/* Số thứ tự của tổ */
 .cell-number {
   padding: var(--spacing-sm) var(--spacing-lg);
   background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%);
@@ -680,10 +838,12 @@
   font-size: 1.1rem;
 }
 
+/* Icon của tổ */
 .cell-icon {
   font-size: 3rem;
 }
 
+/* Tên tổ */
 .cell-name {
   font-size: 1.3rem;
   font-weight: 700;
@@ -691,6 +851,7 @@
   margin-bottom: var(--spacing-lg);
 }
 
+/* Hộp thông tin tổ trưởng, số lượng đảng viên */
 .cell-info {
   padding: var(--spacing-lg);
   background: var(--bg-secondary);
@@ -698,6 +859,7 @@
   margin-bottom: var(--spacing-lg);
 }
 
+/* Thông tin tổ trưởng và số lượng đảng viên */
 .cell-leader,
 .cell-members {
   display: flex;
@@ -711,54 +873,71 @@
   margin-bottom: 0;
 }
 
+/* Nhãn (Tổ trưởng, Số lượng) */
 .cell-info .label {
   font-weight: 600;
   color: var(--text-primary);
 }
 
+/* Giá trị (tên, số lượng) */
 .cell-info .value {
   color: #8b0000;
   font-weight: 700;
 }
 
+/* Mô tả của tổ */
 .cell-desc {
   font-size: 1rem;
   line-height: 1.7;
   color: var(--text-secondary);
 }
 
-/* ========== Achievements Showcase ========== */
+/* ========== Khen thưởng & Thành tích ========== */
+/* Phần khen thưởng */
 .achievements-showcase {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Lưới chứa các mục khen thưởng */
 .showcase-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr); /* 2 cột */
   gap: var(--spacing-xl);
 }
 
+/* Mỗi mục khen thưởng */
 .showcase-item {
   padding: var(--spacing-2xl);
-  background: linear-gradient(135deg, #fff5e6 0%, #ffe4b3 100%);
+  background: linear-gradient(135deg, #fff5e6 0%, #ffe4b3 100%); /* Nền vàng nhạt */
   border-radius: var(--radius-xl);
-  border-left: 6px solid #ffd700;
+  border-left: 6px solid #ffd700; /* Viền trái màu vàng */
   box-shadow: var(--shadow-md);
   transition: var(--transition);
   animation: fadeInUp 0.6s ease-out backwards;
 }
 
-.showcase-item:nth-child(1) { animation-delay: 0.1s; }
-.showcase-item:nth-child(2) { animation-delay: 0.2s; }
-.showcase-item:nth-child(3) { animation-delay: 0.3s; }
-.showcase-item:nth-child(4) { animation-delay: 0.4s; }
+/* Thêm độ trễ cho animation */
+.showcase-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.showcase-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.showcase-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.showcase-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
 
+/* Hiệu ứng khi di chuột vào mục khen thưởng */
 .showcase-item:hover {
   transform: translateX(10px);
   box-shadow: var(--shadow-xl);
-  border-left-color: #dc143c;
+  border-left-color: #dc143c; /* Đổi màu viền sang đỏ */
 }
 
+/* Năm khen thưởng */
 .showcase-year {
   font-size: 2rem;
   font-weight: 800;
@@ -766,6 +945,7 @@
   margin-bottom: var(--spacing-md);
 }
 
+/* Tên giải thưởng */
 .showcase-award {
   font-size: 1.3rem;
   font-weight: 700;
@@ -773,17 +953,20 @@
   margin-bottom: var(--spacing-md);
 }
 
+/* Mô tả giải thưởng */
 .showcase-desc {
   font-size: 1.05rem;
   line-height: 1.7;
   color: var(--text-secondary);
 }
 
-/* ========== Party Contact ========== */
+/* ========== Liên hệ Chi bộ ========== */
+/* Phần liên hệ */
 .party-contact {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Hộp chứa thông tin liên hệ */
 .contact-box {
   background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%);
   padding: var(--spacing-2xl);
@@ -794,17 +977,23 @@
   overflow: hidden;
 }
 
+/* Hiệu ứng nền xoay */
 .contact-box::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255,215,0,0.2) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 215, 0, 0.2) 0%,
+    transparent 70%
+  );
   animation: rotate 30s linear infinite;
 }
 
+/* Phần đầu của hộp liên hệ */
 .contact-box__header {
   display: flex;
   align-items: center;
@@ -815,16 +1004,19 @@
   z-index: 2;
 }
 
+/* Icon liên hệ */
 .contact-icon {
   font-size: 4rem;
 }
 
+/* Tiêu đề liên hệ */
 .contact-title {
   font-size: 2.5rem;
   font-weight: 800;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* Nội dung liên hệ */
 .contact-content {
   display: flex;
   flex-direction: column;
@@ -833,35 +1025,41 @@
   z-index: 2;
 }
 
+/* Mỗi chi tiết liên hệ */
 .contact-detail {
   display: flex;
   gap: var(--spacing-md);
   padding: var(--spacing-lg);
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.15); /* Nền trắng mờ */
+  backdrop-filter: blur(10px); /* Hiệu ứng kính mờ */
   border-radius: var(--radius-lg);
-  border: 2px solid rgba(255,255,255,0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   transition: var(--transition);
 }
 
+/* Hiệu ứng khi di chuột vào chi tiết liên hệ */
 .contact-detail:hover {
-  background: rgba(255,255,255,0.25);
+  background: rgba(255, 255, 255, 0.25);
   transform: translateX(10px);
 }
 
+/* Nhãn (Văn phòng, Email,...) */
 .detail-label {
   font-weight: 700;
   min-width: 150px;
   font-size: 1.1rem;
 }
 
+/* Giá trị của chi tiết liên hệ */
 .detail-value {
   font-size: 1.1rem;
   opacity: 0.95;
 }
 
 /* ========== Responsive ========== */
+/* Cho màn hình nhỏ hơn 1200px */
 @media (max-width: 1200px) {
+  /* Chuyển lưới thống kê thành 2 cột */
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }

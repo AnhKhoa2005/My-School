@@ -1,142 +1,174 @@
-/* ========== Page Banner ========== */
+﻿/* ============================================================
+   DIEUHANH.CSS - CSS cho trang Điều hành - Nội quy
+   ============================================================ */
+
+/* ========== Banner trang ========== */
+/* Banner chính ở đầu trang */
 .page-banner {
-  position: relative;
-  height: 300px;
-  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  position: relative; /* Vị trí tương đối để chứa các phần tử con tuyệt đối */
+  height: 300px; /* Chiều cao của banner */
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); /* Nền chuyển sắc hồng-vàng */
+  display: flex; /* Sử dụng flexbox để căn giữa nội dung */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  overflow: hidden; /* Ẩn các phần tử tràn ra ngoài */
 }
 
+/* Lớp giả để tạo hiệu ứng nền */
 .page-banner::before {
-  content: '';
-  position: absolute;
+  content: ""; /* Bắt buộc cho pseudo-element */
+  position: absolute; /* Vị trí tuyệt đối so với banner */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="90" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.15)"/></svg>');
-  animation: float 20s infinite linear;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="90" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.15)"/></svg>'); /* Hình nền SVG với các biểu tượng nhỏ */
+  animation: float 20s infinite linear; /* Animation di chuyển nền */
 }
 
+/* Keyframe cho animation 'float' */
 @keyframes float {
-  from { transform: translateY(0); }
-  to { transform: translateY(-100px); }
+  from {
+    transform: translateY(0); /* Bắt đầu từ vị trí ban đầu */
+  }
+  to {
+    transform: translateY(-100px); /* Di chuyển lên trên 100px */
+  }
 }
 
+/* Lớp phủ chứa nội dung text trên banner */
 .page-banner__overlay {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: white;
+  position: relative; /* Vị trí tương đối */
+  z-index: 2; /* Nằm trên lớp giả ::before */
+  text-align: center; /* Căn giữa chữ */
+  color: white; /* Màu chữ trắng */
 }
 
+/* Tiêu đề của banner */
 .page-banner__title {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: var(--spacing-md);
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-  animation: slideInDown 0.6s ease-out;
+  font-size: 3rem; /* Cỡ chữ lớn */
+  font-weight: 800; /* Độ đậm chữ */
+  margin-bottom: var(--spacing-md); /* Lề dưới */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Đổ bóng cho chữ */
+  animation: slideInDown 0.6s ease-out; /* Animation trượt xuống */
 }
 
+/* Keyframe cho animation 'slideInDown' */
 @keyframes slideInDown {
   from {
-    opacity: 0;
-    transform: translateY(-30px);
+    opacity: 0; /* Bắt đầu với độ mờ 0 */
+    transform: translateY(-30px); /* Bắt đầu từ vị trí cao hơn */
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1; /* Kết thúc với độ mờ 1 */
+    transform: translateY(0); /* Kết thúc ở vị trí ban đầu */
   }
 }
 
+/* Thanh điều hướng breadcrumb */
 .breadcrumb {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-sm);
-  font-size: 1rem;
-  animation: fadeIn 0.8s ease-out;
+  display: flex; /* Sử dụng flexbox */
+  align-items: center; /* Căn giữa dọc */
+  justify-content: center; /* Căn giữa ngang */
+  gap: var(--spacing-sm); /* Khoảng cách giữa các mục */
+  font-size: 1rem; /* Cỡ chữ */
+  animation: fadeIn 0.8s ease-out; /* Animation hiện ra */
 }
 
+/* Keyframe cho animation 'fadeIn' */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0; /* Bắt đầu mờ */
+  }
+  to {
+    opacity: 1; /* Kết thúc rõ */
+  }
 }
 
+/* Mỗi mục trong breadcrumb */
 .breadcrumb__item {
-  color: rgba(255,255,255,0.9);
-  transition: var(--transition);
+  color: rgba(255, 255, 255, 0.9); /* Màu chữ trắng mờ */
+  transition: var(--transition); /* Hiệu ứng chuyển động */
 }
 
+/* Hiệu ứng khi di chuột vào mục breadcrumb */
 .breadcrumb__item:hover {
-  color: white;
+  color: white; /* Chuyển màu thành trắng */
 }
 
+/* Mục đang hoạt động (trang hiện tại) */
 .breadcrumb__item--active {
-  color: white;
-  font-weight: 600;
+  color: white; /* Màu trắng */
+  font-weight: 600; /* Chữ đậm */
 }
 
+/* Dấu phân cách trong breadcrumb */
 .breadcrumb__separator {
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6); /* Màu trắng mờ hơn */
 }
 
-/* ========== Main ========== */
+/* ========== Nội dung chính ========== */
+/* Phần nội dung chính của trang */
 .main {
-  padding: var(--spacing-2xl) 0;
+  padding: var(--spacing-2xl) 0; /* Lề trong trên dưới */
 }
 
-/* ========== Intro Section ========== */
+/* ========== Phần Giới thiệu ========== */
+/* Phần giới thiệu chung */
 .intro-section {
-  margin-bottom: var(--spacing-2xl);
-  animation: fadeInUp 0.8s ease-out;
+  margin-bottom: var(--spacing-2xl); /* Lề dưới */
+  animation: fadeInUp 0.8s ease-out; /* Animation hiện ra từ dưới */
 }
 
+/* Keyframe cho animation 'fadeInUp' */
 @keyframes fadeInUp {
   from {
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 0; /* Bắt đầu mờ */
+    transform: translateY(30px); /* Bắt đầu từ vị trí thấp hơn */
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1; /* Kết thúc rõ */
+    transform: translateY(0); /* Kết thúc ở vị trí ban đầu */
   }
 }
 
+/* Hộp chứa nội dung giới thiệu */
 .intro-box {
-  background: white;
-  padding: var(--spacing-2xl);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
-  text-align: center;
+  background: white; /* Nền trắng */
+  padding: var(--spacing-2xl); /* Lề trong */
+  border-radius: var(--radius-xl); /* Bo góc */
+  box-shadow: var(--shadow-lg); /* Đổ bóng */
+  text-align: center; /* Căn giữa chữ */
 }
 
+/* Icon giới thiệu */
 .intro-icon {
-  font-size: 5rem;
-  margin-bottom: var(--spacing-lg);
+  font-size: 5rem; /* Cỡ icon */
+  margin-bottom: var(--spacing-lg); /* Lề dưới */
 }
 
+/* Tiêu đề giới thiệu */
 .intro-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: var(--spacing-lg);
+  font-size: 2.5rem; /* Cỡ chữ */
+  font-weight: 800; /* Độ đậm */
+  background: var(--gradient-primary); /* Nền chuyển sắc (định nghĩa ở file chung) */
+  -webkit-background-clip: text; /* Cắt nền theo chữ (cho trình duyệt Webkit) */
+  -webkit-text-fill-color: transparent; /* Làm chữ trong suốt để thấy nền */
+  background-clip: text; /* Cắt nền theo chữ */
+  margin-bottom: var(--spacing-lg); /* Lề dưới */
 }
 
+/* Đoạn văn bản giới thiệu */
 .intro-text {
-  font-size: 1.2rem;
-  line-height: 1.9;
-  color: var(--text-secondary);
-  max-width: 900px;
-  margin: 0 auto;
+  font-size: 1.2rem; /* Cỡ chữ */
+  line-height: 1.9; /* Chiều cao dòng */
+  color: var(--text-secondary); /* Màu chữ phụ */
+  max-width: 900px; /* Chiều rộng tối đa */
+  margin: 0 auto; /* Căn giữa */
 }
 
-/* ========== Section Title ========== */
+/* ========== Tiêu đề chung của các phần ========== */
+/* Tiêu đề của một phần (section) */
 .section-title {
   font-size: 2.5rem;
   font-weight: 800;
@@ -150,29 +182,33 @@
   padding-bottom: var(--spacing-lg);
 }
 
+/* Gạch chân trang trí cho tiêu đề */
 .section-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 120px;
   height: 4px;
-  background: var(--gradient-secondary);
+  background: var(--gradient-secondary); /* Nền chuyển sắc phụ */
   border-radius: 2px;
 }
 
-/* ========== Quick Access ========== */
+/* ========== Truy cập nhanh ========== */
+/* Phần truy cập nhanh */
 .quick-access {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Lưới chứa các thẻ truy cập nhanh */
 .access-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Lưới tự động điều chỉnh số cột */
   gap: var(--spacing-xl);
 }
 
+/* Mỗi thẻ truy cập nhanh */
 .access-card {
   position: relative;
   padding: var(--spacing-2xl);
@@ -180,16 +216,26 @@
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
   transition: var(--transition);
-  text-decoration: none;
+  text-decoration: none; /* Bỏ gạch chân của thẻ a */
   overflow: hidden;
-  animation: scaleIn 0.6s ease-out backwards;
+  animation: scaleIn 0.6s ease-out backwards; /* Animation phóng to */
 }
 
-.access-card:nth-child(1) { animation-delay: 0.1s; }
-.access-card:nth-child(2) { animation-delay: 0.2s; }
-.access-card:nth-child(3) { animation-delay: 0.3s; }
-.access-card:nth-child(4) { animation-delay: 0.4s; }
+/* Thêm độ trễ cho animation */
+.access-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.access-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.access-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.access-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
 
+/* Keyframe cho animation 'scaleIn' */
 @keyframes scaleIn {
   from {
     opacity: 0;
@@ -201,8 +247,9 @@
   }
 }
 
+/* Đường kẻ màu ở trên cùng của thẻ */
 .access-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -211,25 +258,29 @@
   background: var(--gradient-primary);
 }
 
+/* Hiệu ứng khi di chuột vào thẻ */
 .access-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px); /* Nhấc thẻ lên */
   box-shadow: var(--shadow-xl);
 }
 
+/* Icon truy cập nhanh */
 .access-icon {
   font-size: 4rem;
   margin-bottom: var(--spacing-lg);
   text-align: center;
 }
 
+/* Tiêu đề truy cập nhanh */
 .access-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary-dark);
+  color: var(--primary-dark); /* Màu chính đậm */
   margin-bottom: var(--spacing-md);
   text-align: center;
 }
 
+/* Mô tả truy cập nhanh */
 .access-desc {
   font-size: 1.05rem;
   line-height: 1.7;
@@ -238,23 +289,27 @@
   margin-bottom: var(--spacing-lg);
 }
 
+/* Mũi tên chỉ dẫn */
 .access-arrow {
   font-size: 2rem;
-  color: var(--primary);
+  color: var(--primary); /* Màu chính */
   text-align: center;
   font-weight: 700;
   transition: var(--transition);
 }
 
+/* Hiệu ứng di chuột vào mũi tên */
 .access-card:hover .access-arrow {
-  transform: translateX(10px);
+  transform: translateX(10px); /* Di chuyển mũi tên sang phải */
 }
 
-/* ========== Weekly Schedule ========== */
+/* ========== Lịch công tác tuần ========== */
+/* Phần lịch công tác */
 .weekly-schedule {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Phần đầu của lịch (chứa thông tin tuần) */
 .schedule-header {
   padding: var(--spacing-2xl);
   background: white;
@@ -263,13 +318,15 @@
   margin-bottom: var(--spacing-xl);
 }
 
+/* Thông tin tuần */
 .schedule-info {
   display: flex;
   gap: var(--spacing-xl);
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Cho phép xuống dòng nếu không đủ chỗ */
 }
 
+/* Huy hiệu thông tin (ví dụ: Tuần 35) */
 .info-badge {
   padding: var(--spacing-lg) var(--spacing-2xl);
   background: var(--gradient-primary);
@@ -280,36 +337,54 @@
   box-shadow: var(--shadow-md);
 }
 
+/* Nhãn của huy hiệu (ví dụ: Tuần) */
 .badge-label {
   font-weight: 700;
   margin-right: var(--spacing-sm);
 }
 
+/* Giá trị của huy hiệu (ví dụ: 35) */
 .badge-value {
   opacity: 0.95;
 }
 
+/* Dòng thời gian của lịch */
 .schedule-timeline {
   display: grid;
   gap: var(--spacing-lg);
 }
 
+/* Lịch của một ngày */
 .day-schedule {
   background: white;
   border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: var(--shadow-md);
   transition: var(--transition);
-  animation: slideInLeft 0.6s ease-out backwards;
+  animation: slideInLeft 0.6s ease-out backwards; /* Animation trượt vào từ trái */
 }
 
-.day-schedule:nth-child(1) { animation-delay: 0.1s; }
-.day-schedule:nth-child(2) { animation-delay: 0.2s; }
-.day-schedule:nth-child(3) { animation-delay: 0.3s; }
-.day-schedule:nth-child(4) { animation-delay: 0.4s; }
-.day-schedule:nth-child(5) { animation-delay: 0.5s; }
-.day-schedule:nth-child(6) { animation-delay: 0.6s; }
+/* Thêm độ trễ cho animation */
+.day-schedule:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.day-schedule:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.day-schedule:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.day-schedule:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.day-schedule:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.day-schedule:nth-child(6) {
+  animation-delay: 0.6s;
+}
 
+/* Keyframe cho animation 'slideInLeft' */
 @keyframes slideInLeft {
   from {
     opacity: 0;
@@ -321,11 +396,13 @@
   }
 }
 
+/* Hiệu ứng khi di chuột vào lịch của một ngày */
 .day-schedule:hover {
   transform: translateX(10px);
   box-shadow: var(--shadow-lg);
 }
 
+/* Phần đầu của một ngày (chứa tên ngày và ngày tháng) */
 .day-header {
   padding: var(--spacing-lg) var(--spacing-xl);
   background: var(--gradient-secondary);
@@ -335,17 +412,20 @@
   align-items: center;
 }
 
+/* Tên ngày (Thứ Hai, Thứ Ba,...) */
 .day-name {
   font-size: 1.3rem;
   font-weight: 700;
 }
 
+/* Ngày tháng */
 .day-date {
   font-size: 1rem;
   opacity: 0.9;
   font-weight: 600;
 }
 
+/* Danh sách các sự kiện trong ngày */
 .day-events {
   padding: var(--spacing-xl);
   display: flex;
@@ -353,20 +433,23 @@
   gap: var(--spacing-md);
 }
 
+/* Mỗi mục sự kiện */
 .event-item {
   display: flex;
   gap: var(--spacing-lg);
   padding: var(--spacing-lg);
-  background: var(--bg-secondary);
+  background: var(--bg-secondary); /* Nền phụ */
   border-radius: var(--radius-lg);
   transition: var(--transition);
 }
 
+/* Hiệu ứng khi di chuột vào sự kiện */
 .event-item:hover {
-  background: var(--bg-tertiary);
+  background: var(--bg-tertiary); /* Nền cấp ba */
   transform: translateX(10px);
 }
 
+/* Thời gian diễn ra sự kiện */
 .event-time {
   width: 60px;
   padding: var(--spacing-sm) var(--spacing-md);
@@ -376,17 +459,19 @@
   font-weight: 700;
   font-size: 1.1rem;
   text-align: center;
-  flex-shrink: 0;
+  flex-shrink: 0; /* Không co lại */
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: var(--shadow-sm);
 }
 
+/* Nội dung sự kiện */
 .event-content {
-  flex: 1;
+  flex: 1; /* Chiếm hết không gian còn lại */
 }
 
+/* Tiêu đề sự kiện */
 .event-title {
   font-size: 1.1rem;
   font-weight: 600;
@@ -394,54 +479,69 @@
   margin-bottom: var(--spacing-xs);
 }
 
+/* Địa điểm sự kiện */
 .event-location {
   font-size: 0.95rem;
-  color: var(--text-muted);
+  color: var(--text-muted); /* Màu chữ mờ */
   font-weight: 600;
 }
 
-/* ========== Notices Section ========== */
+/* ========== Phần Thông báo ========== */
+/* Phần thông báo */
 .notices-section {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Lưới chứa các thẻ thông báo */
 .notices-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: var(--spacing-2xl);
 }
 
+/* Mỗi thẻ thông báo */
 .notice-card {
   padding: var(--spacing-2xl);
   background: white;
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
-  border-left: 6px solid var(--primary);
+  border-left: 6px solid var(--primary); /* Viền trái màu chính */
   transition: var(--transition);
   animation: fadeInUp 0.6s ease-out backwards;
 }
 
-.notice-card:nth-child(1) { animation-delay: 0.1s; }
-.notice-card:nth-child(2) { animation-delay: 0.2s; }
-.notice-card:nth-child(3) { animation-delay: 0.3s; }
+/* Thêm độ trễ cho animation */
+.notice-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.notice-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.notice-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
 
+/* Hiệu ứng khi di chuột vào thẻ thông báo */
 .notice-card:hover {
   transform: translateY(-10px);
   box-shadow: var(--shadow-xl);
 }
 
+/* Kiểu riêng cho thông báo khẩn */
 .notice-card--urgent {
-  border-left-color: #e74c3c;
+  border-left-color: #e74c3c; /* Màu đỏ */
 }
 
+/* Kiểu riêng cho thông báo quan trọng */
 .notice-card--important {
-  border-left-color: #f39c12;
+  border-left-color: #f39c12; /* Màu cam */
 }
 
+/* Nhãn của thông báo (Khẩn, Quan trọng) */
 .notice-label {
   display: inline-block;
   padding: var(--spacing-xs) var(--spacing-md);
-  background: var(--gradient-warning);
+  background: var(--gradient-warning); /* Nền cảnh báo */
   color: white;
   border-radius: var(--radius-lg);
   font-size: 0.85rem;
@@ -450,10 +550,12 @@
   box-shadow: var(--shadow-sm);
 }
 
+/* Nền riêng cho nhãn khẩn */
 .notice-card--urgent .notice-label {
   background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
 }
 
+/* Tiêu đề thông báo */
 .notice-title {
   font-size: 1.3rem;
   font-weight: 700;
@@ -462,6 +564,7 @@
   line-height: 1.4;
 }
 
+/* Thông tin meta (ngày đăng, người đăng) */
 .notice-meta {
   display: flex;
   gap: var(--spacing-lg);
@@ -471,6 +574,7 @@
   font-weight: 600;
 }
 
+/* Đoạn trích của thông báo */
 .notice-excerpt {
   font-size: 1.05rem;
   line-height: 1.7;
@@ -478,6 +582,7 @@
   margin-bottom: var(--spacing-lg);
 }
 
+/* Liên kết xem thêm */
 .notice-link {
   color: var(--primary);
   font-weight: 600;
@@ -490,14 +595,16 @@
   transform: translateX(5px);
 }
 
-/* ========== Rules Section ========== */
+/* ========== Phần Nội quy ========== */
+/* Phần nội quy */
 .rules-section {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Khung chứa các tab nội quy */
 .rules-container {
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 250px 1fr; /* 2 cột: sidebar và nội dung */
   gap: var(--spacing-2xl);
   background: white;
   border-radius: var(--radius-xl);
@@ -505,17 +612,25 @@
   overflow: hidden;
 }
 
+/* Sidebar chứa các nút chuyển tab */
 .rules-sidebar {
   background: var(--bg-secondary);
   padding: var(--spacing-xl);
 }
 
+/* Thanh điều hướng các tab */
 .rules-nav {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-sm);
 }
 
+/* Ẩn các input radio (dùng để điều khiển tab) */
+.rule-tab-input {
+  display: none;
+}
+
+/* Nút điều hướng (thực chất là label cho radio) */
 .rule-nav-btn {
   padding: var(--spacing-md) var(--spacing-lg);
   background: white;
@@ -527,33 +642,46 @@
   cursor: pointer;
   transition: var(--transition);
   text-align: left;
+  display: block;
 }
 
+/* Hiệu ứng khi di chuột vào nút */
 .rule-nav-btn:hover {
   background: var(--bg-tertiary);
   transform: translateX(5px);
 }
 
-.rule-nav-btn.active {
+/* Trạng thái active cho tab khi radio tương ứng được chọn */
+#tab-general:checked ~ .rules-sidebar label[for="tab-general"],
+#tab-study:checked ~ .rules-sidebar label[for="tab-study"],
+#tab-behavior:checked ~ .rules-sidebar label[for="tab-behavior"],
+#tab-uniform:checked ~ .rules-sidebar label[for="tab-uniform"] {
   background: var(--gradient-primary);
   color: white;
   border-color: transparent;
   box-shadow: var(--shadow-md);
 }
 
+/* Khung chứa nội dung của các tab */
 .rules-content {
   padding: var(--spacing-2xl);
 }
 
+/* Mỗi tab nội dung (mặc định ẩn) */
 .rule-tab {
   display: none;
   animation: fadeIn 0.5s ease-out;
 }
 
-.rule-tab.active {
+/* Hiển thị tab khi radio tương ứng được chọn */
+#tab-general:checked ~ .rules-content #general,
+#tab-study:checked ~ .rules-content #study,
+#tab-behavior:checked ~ .rules-content #behavior,
+#tab-uniform:checked ~ .rules-content #uniform {
   display: block;
 }
 
+/* Tiêu đề của tab nội dung */
 .rule-title {
   font-size: 2rem;
   font-weight: 700;
@@ -563,6 +691,7 @@
   border-bottom: 3px solid var(--primary);
 }
 
+/* Danh sách các điều trong nội quy */
 .rule-list {
   list-style: none;
   padding: 0;
@@ -571,6 +700,7 @@
   gap: var(--spacing-lg);
 }
 
+/* Mỗi điều trong danh sách */
 .rule-list li {
   display: flex;
   gap: var(--spacing-md);
@@ -580,11 +710,13 @@
   transition: var(--transition);
 }
 
+/* Hiệu ứng khi di chuột vào một điều */
 .rule-list li:hover {
   background: var(--bg-tertiary);
   transform: translateX(10px);
 }
 
+/* Số thứ tự của điều */
 .rule-number {
   width: 40px;
   height: 40px;
@@ -600,6 +732,7 @@
   box-shadow: var(--shadow-sm);
 }
 
+/* Nội dung văn bản của điều */
 .rule-text {
   flex: 1;
   font-size: 1.05rem;
@@ -609,17 +742,20 @@
   align-items: center;
 }
 
-/* ========== Documents Section ========== */
+/* ========== Phần Văn bản - Biểu mẫu ========== */
+/* Phần tài liệu */
 .documents-section {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Lưới chứa các thẻ tài liệu */
 .documents-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--spacing-xl);
 }
 
+/* Mỗi thẻ tài liệu */
 .doc-card {
   padding: var(--spacing-2xl);
   background: white;
@@ -630,21 +766,33 @@
   animation: scaleIn 0.6s ease-out backwards;
 }
 
-.doc-card:nth-child(1) { animation-delay: 0.1s; }
-.doc-card:nth-child(2) { animation-delay: 0.2s; }
-.doc-card:nth-child(3) { animation-delay: 0.3s; }
-.doc-card:nth-child(4) { animation-delay: 0.4s; }
+/* Thêm độ trễ cho animation */
+.doc-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.doc-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.doc-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.doc-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
 
+/* Hiệu ứng khi di chuột vào thẻ tài liệu */
 .doc-card:hover {
   transform: translateY(-10px);
   box-shadow: var(--shadow-xl);
 }
 
+/* Icon tài liệu */
 .doc-icon {
   font-size: 4rem;
   margin-bottom: var(--spacing-lg);
 }
 
+/* Tiêu đề tài liệu */
 .doc-title {
   font-size: 1.3rem;
   font-weight: 700;
@@ -652,6 +800,7 @@
   margin-bottom: var(--spacing-md);
 }
 
+/* Mô tả tài liệu */
 .doc-desc {
   font-size: 1rem;
   line-height: 1.6;
@@ -659,12 +808,14 @@
   margin-bottom: var(--spacing-xl);
 }
 
+/* Nhóm các nút hành động (Xem, Tải về) */
 .doc-actions {
   display: flex;
   gap: var(--spacing-md);
   justify-content: center;
 }
 
+/* Nút hành động chung */
 .doc-btn {
   padding: var(--spacing-sm) var(--spacing-lg);
   border: none;
@@ -676,8 +827,9 @@
   box-shadow: var(--shadow-sm);
 }
 
+/* Nút xem */
 .doc-btn--view {
-  background: var(--gradient-blue);
+  background: var(--gradient-blue); /* Nền xanh */
   color: white;
 }
 
@@ -686,8 +838,9 @@
   box-shadow: var(--shadow-md);
 }
 
+/* Nút tải về */
 .doc-btn--download {
-  background: var(--gradient-success);
+  background: var(--gradient-success); /* Nền xanh lá */
   color: white;
 }
 
@@ -697,79 +850,82 @@
 }
 
 /* ========== Responsive ========== */
+/* Cho màn hình nhỏ hơn 1200px */
 @media (max-width: 1200px) {
   .rules-container {
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 200px 1fr; /* Thu nhỏ sidebar */
   }
 }
 
+/* Cho màn hình nhỏ hơn 768px (máy tính bảng) */
 @media (max-width: 768px) {
   .page-banner {
-    height: 200px;
+    height: 200px; /* Giảm chiều cao banner */
   }
-  
+
   .page-banner__title {
-    font-size: 2rem;
+    font-size: 2rem; /* Giảm cỡ chữ tiêu đề banner */
   }
-  
+
   .access-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Chuyển lưới truy cập nhanh thành 1 cột */
   }
-  
+
   .schedule-info {
-    flex-direction: column;
+    flex-direction: column; /* Xếp chồng thông tin tuần */
   }
-  
+
   .day-header {
-    flex-direction: column;
+    flex-direction: column; /* Xếp chồng đầu ngày */
     gap: var(--spacing-sm);
     text-align: center;
   }
-  
+
   .event-item {
-    flex-direction: column;
+    flex-direction: column; /* Xếp chồng các mục sự kiện */
   }
-  
+
   .event-time {
-    width: 100%;
+    width: 100%; /* Thời gian sự kiện chiếm toàn bộ chiều rộng */
   }
-  
+
   .notices-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Chuyển lưới thông báo thành 1 cột */
   }
-  
+
   .rules-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Chuyển layout nội quy thành 1 cột */
   }
-  
+
   .rules-sidebar {
     padding: var(--spacing-lg);
   }
-  
+
   .rules-nav {
-    flex-direction: row;
-    overflow-x: auto;
+    flex-direction: row; /* Chuyển các nút tab thành hàng ngang */
+    overflow-x: auto; /* Cho phép cuộn ngang nếu không đủ chỗ */
   }
-  
+
   .rule-nav-btn {
-    white-space: nowrap;
+    white-space: nowrap; /* Ngăn các nút tab xuống dòng */
   }
-  
+
   .documents-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Chuyển lưới tài liệu thành 1 cột */
   }
-  
+
   .section-title {
-    font-size: 2rem;
+    font-size: 2rem; /* Giảm cỡ chữ tiêu đề phần */
   }
 }
 
+/* Cho màn hình nhỏ hơn 480px (điện thoại) */
 @media (max-width: 480px) {
   .doc-actions {
-    flex-direction: column;
+    flex-direction: column; /* Xếp chồng các nút hành động tài liệu */
   }
-  
+
   .doc-btn {
-    width: 100%;
+    width: 100%; /* Nút chiếm toàn bộ chiều rộng */
   }
 }

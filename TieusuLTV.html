@@ -17,18 +17,25 @@
   </head>
   <body>
     <div class="page">
+      <!-- Toàn bộ đầu trang -->
       <header class="header">
+        <!-- Lớp gradient cho header -->
         <div class="header__gradient">
+          <!-- Phần trên của header -->
           <div class="header__top">
+            <!-- Lớp bao bọc, căn giữa nội dung -->
             <div class="container">
               <a href="index.html">
+                <!-- Khối logo và tên trường -->
                 <div class="brand">
+                  <!-- Logo của trường -->
                   <img
                     src="Images/LogoTruong.jpg"
                     alt="logo"
                     class="brand__logo"
                   />
 
+                  <!-- Thông tin tên trường và tagline -->
                   <div class="brand__info">
                     <h1 class="brand__name">Trường THPT Lương Thế Vinh</h1>
                     <p class="brand__tagline">
@@ -40,14 +47,26 @@
             </div>
           </div>
 
+          <!-- Thanh điều hướng chính -->
           <nav class="nav">
+            <!-- Lớp bao bọc, căn giữa nội dung -->
             <div class="container">
+              <!-- Danh sách các mục menu -->
               <ul class="nav__list">
+                <!-- Mục menu -->
                 <li class="nav__item">
                   <a href="index.html" class="nav__link">🏠 Trang Chủ</a>
                 </li>
+                <!-- Mục menu có menu con (đang active) -->
                 <li class="nav__item has-submenu active">
+                  <input
+                    type="checkbox"
+                    id="menu-gioithieu"
+                    class="menu-toggle"
+                  />
                   <a href="Gioithieu.html" class="nav__link">ℹ️ Giới thiệu</a>
+                  <label for="menu-gioithieu" class="toggle-icon"></label>
+                  <!-- Menu con -->
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Lichsunhatruong.html" class="submenu__link"
@@ -66,8 +85,12 @@
                     </li>
                   </ul>
                 </li>
+                <!-- Mục menu có menu con -->
                 <li class="nav__item has-submenu">
+                  <input type="checkbox" id="menu-tochuc" class="menu-toggle" />
                   <a href="Tochuc.html" class="nav__link">🏢 Tổ chức</a>
+                  <label for="menu-tochuc" class="toggle-icon"></label>
+                  <!-- Menu con -->
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Bangiamhieu.html" class="submenu__link"
@@ -86,8 +109,12 @@
                     </li>
                   </ul>
                 </li>
+                <!-- Mục menu có menu con -->
                 <li class="nav__item has-submenu">
+                  <input type="checkbox" id="menu-tintuc" class="menu-toggle" />
                   <a href="Tintuc.html" class="nav__link">📰 Tin tức</a>
+                  <label for="menu-tintuc" class="toggle-icon"></label>
+                  <!-- Menu con -->
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Hoatdongtruong.html" class="submenu__link"
@@ -106,8 +133,16 @@
                     </li>
                   </ul>
                 </li>
+                <!-- Mục menu có menu con -->
                 <li class="nav__item has-submenu">
+                  <input
+                    type="checkbox"
+                    id="menu-dieuhanh"
+                    class="menu-toggle"
+                  />
                   <a href="Dieuhanh.html" class="nav__link">⚙️ Điều hành</a>
+                  <label for="menu-dieuhanh" class="toggle-icon"></label>
+                  <!-- Menu con -->
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Thoikhoabieu.html" class="submenu__link"
@@ -121,9 +156,11 @@
                     </li>
                   </ul>
                 </li>
+                <!-- Mục menu -->
                 <li class="nav__item">
                   <a href="Lienhe.html" class="nav__link">📞 Liên hệ</a>
                 </li>
+                <!-- Mục menu -->
                 <li class="nav__item">
                   <a href="Gopy.html" class="nav__link">💬 Góp ý</a>
                 </li>
@@ -133,10 +170,15 @@
         </div>
       </header>
 
+      <!-- Banner của trang -->
       <div class="page-banner">
+        <!-- Lớp phủ màu và nội dung trên banner -->
         <div class="page-banner__overlay">
+          <!-- Lớp bao bọc, căn giữa nội dung -->
           <div class="container">
+            <!-- Tiêu đề trang -->
             <h1 class="page-banner__title">Tiểu Sử Lương Thế Vinh</h1>
+            <!-- Thanh điều hướng breadcrumb -->
             <div class="breadcrumb">
               <a href="index.html" class="breadcrumb__item">Trang chủ</a>
               <span class="breadcrumb__separator">/</span>
@@ -150,19 +192,23 @@
         </div>
       </div>
 
+      <!-- Nội dung chính của trang -->
       <main class="main">
         <div class="container">
-          <!-- Hero Profile -->
+          <!-- Phần hồ sơ chính -->
           <section class="hero-profile">
+            <!-- Ảnh chân dung -->
             <div class="hero-profile__portrait">
+              <!-- Khung ảnh -->
               <div class="portrait-frame">
-                <!-- Thẻ img được đưa trực tiếp vào đây -->
                 <img
                   src="Images/ChandungLTV.jpg"
                   alt="Chân dung Lương Thế Vinh"
                 />
               </div>
+              <!-- Thông tin phụ trên ảnh -->
               <div class="portrait-info">
+                <!-- Huy hiệu thông tin -->
                 <div class="info-badge">
                   <span class="badge-icon">🏥</span>
                   <span class="badge-text">Học Giả</span>
@@ -174,9 +220,11 @@
               </div>
             </div>
 
+            <!-- Nội dung hồ sơ -->
             <div class="hero-profile__content">
               <h2 class="hero-profile__name">Lương Thế Vinh</h2>
               <div class="hero-profile__title">Học Giả - Nhà Toán Học</div>
+              <!-- Huy hiệu ngày tháng -->
               <div class="hero-profile__dates">
                 <span class="date-badge">📅 1441 - 1496</span>
               </div>
@@ -194,8 +242,9 @@
             </div>
           </section>
 
-          <!-- Quick Facts -->
+          <!-- Phần thông tin nhanh -->
           <section class="quick-facts">
+            <!-- Thẻ thông tin -->
             <div class="fact-card">
               <div class="fact-card__icon">🎂</div>
               <div class="fact-card__label">Năm sinh</div>
@@ -218,15 +267,18 @@
             </div>
           </section>
 
-          <!-- Biography Content -->
+          <!-- Phần tiểu sử chi tiết -->
           <section class="biography-section">
             <h2 class="section-title">📖 Tiểu Sử Chi Tiết</h2>
 
+            <!-- Khối tiểu sử -->
             <div class="bio-block">
+              <!-- Tiêu đề khối -->
               <div class="bio-block__header">
                 <span class="bio-block__icon">🌟</span>
                 <h3 class="bio-block__title">Xuất Thân Và Thời Niên Thiếu</h3>
               </div>
+              <!-- Nội dung khối -->
               <div class="bio-block__content">
                 <p>
                   Lương Thế Vinh sinh năm 1441 tại làng Bồ Đề, huyện Nghi Xuân,
@@ -234,6 +286,7 @@
                   là một thầy thuốc có tiếng trong vùng. Từ nhỏ, Lương Thế Vinh
                   đã thông minh, ham học hỏi và được cha truyền dạy về y học.
                 </p>
+                <!-- Hộp ghi chú nổi bật -->
                 <div class="highlight-box">
                   <div class="highlight-box__icon">💡</div>
                   <div class="highlight-box__text">
@@ -257,6 +310,7 @@
                   thuốc Nam riêng, phù hợp với thể chất người Việt. Nhiều ca
                   bệnh nan y đã được ông cứu chữa thành công.
                 </p>
+                <!-- Danh sách thành tựu -->
                 <ul class="achievement-list">
                   <li>
                     <span class="achievement-icon">✓</span>
@@ -298,6 +352,7 @@
                   Thánh Tông, đặc biệt trong các cuộc chiến chống Chiêm Thành và
                   bảo vệ biên cương phía Nam.
                 </p>
+                <!-- Dòng thời gian nhỏ -->
                 <div class="timeline-mini">
                   <div class="timeline-mini__item">
                     <div class="timeline-mini__year">1471</div>
@@ -333,6 +388,7 @@
                   công trình nghiên cứu sâu sắc về thuốc Nam và phương pháp điều
                   trị phù hợp với người Việt.
                 </p>
+                <!-- Lưới di sản -->
                 <div class="legacy-grid">
                   <div class="legacy-item">
                     <div class="legacy-item__icon">📖</div>
@@ -378,6 +434,7 @@
                   tôn thờ như một vị thần y. Nhiều đền miếu được xây dựng để thờ
                   ông, đặc biệt tại quê hương Hà Tĩnh.
                 </p>
+                <!-- Hộp tưởng nhớ -->
                 <div class="memorial-box">
                   <div class="memorial-box__icon">🏛️</div>
                   <div class="memorial-box__content">
@@ -394,8 +451,9 @@
             </div>
           </section>
 
-          <!-- Quote Section -->
+          <!-- Phần trích dẫn -->
           <section class="quote-section">
+            <!-- Hộp trích dẫn -->
             <div class="quote-box">
               <div class="quote-icon">💬</div>
               <blockquote class="quote-text">
@@ -405,9 +463,10 @@
             </div>
           </section>
 
-          <!-- Honor Section -->
+          <!-- Phần vinh danh -->
           <section class="honor-section">
             <h2 class="section-title">🎖️ Vinh Danh Và Kế Thừa</h2>
+            <!-- Nội dung vinh danh -->
             <div class="honor-content">
               <p class="honor-text">
                 Để tôn vinh công lao to lớn của Lương Thế Vinh đối với nền y học
@@ -417,7 +476,9 @@
                 các thế hệ học sinh sẽ kế thừa tinh thần hiếu học, tài năng và
                 đạo đức cao cả của vị đại danh y - tướng tài ba.
               </p>
+              <!-- Lưới vinh danh -->
               <div class="honor-grid">
+                <!-- Thẻ vinh danh -->
                 <div class="honor-card">
                   <div class="honor-card__number">10+</div>
                   <div class="honor-card__label">Trường học mang tên</div>
@@ -440,11 +501,14 @@
         </div>
       </main>
 
-      <!-- Footer -->
+      <!-- Chân trang -->
       <footer class="footer">
+        <!-- Lớp gradient cho chân trang -->
         <div class="footer__gradient">
           <div class="container">
+            <!-- Nội dung chân trang -->
             <div class="footer__content">
+              <!-- Thông tin trường -->
               <div class="footer__info">
                 <h3 class="footer__title">THPT Lương Thế Vinh</h3>
                 <p class="footer__desc">
@@ -453,6 +517,7 @@
                 <div class="footer__address">
                   📍 Phường Điện Nam Trung, Thị xã Điện Bàn, Tỉnh Quảng Nam
                 </div>
+                <!-- Mạng xã hội -->
                 <div class="footer__social">
                   <a
                     href="https://www.facebook.com/groups/ltvpro"
@@ -462,7 +527,9 @@
                   >
                 </div>
               </div>
+              <!-- Các cột liên kết -->
               <div class="footer__links">
+                <!-- Một cột liên kết -->
                 <div class="footer__column">
                   <h4>Liên kết nhanh</h4>
                   <ul>
@@ -492,6 +559,7 @@
                 </div>
               </div>
             </div>
+            <!-- Phần đáy của chân trang -->
             <div class="footer__bottom">
               <p>
                 &copy; 2025 Trường THPT Lương Thế Vinh. Tất cả quyền được bảo
@@ -502,7 +570,7 @@
         </div>
       </footer>
 
-      <!-- Floating Action Button -->
+      <!-- Các nút hành động nổi -->
       <div class="fab-container">
         <div class="fab fab--main">💬</div>
         <div class="fab-menu">
@@ -519,7 +587,7 @@
       </div>
     </div>
 
-    <!--Start of Tawk.to Script-->
+    <!-- Script Tawk.to -->
     <script type="text/javascript">
       var Tawk_API = Tawk_API || {},
         Tawk_LoadStart = new Date();
@@ -533,6 +601,6 @@
         s0.parentNode.insertBefore(s1, s0);
       })();
     </script>
-    <!--End of Tawk.to Script-->
+    <!-- Kết thúc script Tawk.to -->
   </body>
 </html>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Điều Hành - THPT Lương Thế Vinh</title>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,25 +13,36 @@
       rel="stylesheet"
     />
 
+    <!-- CSS -->
     <link rel="stylesheet" href="Css/Chung.css" />
     <link rel="stylesheet" href="Css/Dieuhanh.css" />
   </head>
   <body>
+    <!-- Toàn bộ trang -->
     <div class="page">
+      <!-- Đầu trang -->
       <header class="header">
+        <!-- Dải màu đầu trang -->
         <div class="header__gradient">
+          <!-- Phần trên của đầu trang -->
           <div class="header__top">
+            <!-- Container cho phần trên -->
             <div class="container">
               <a href="index.html">
+                <!-- Phần thương hiệu -->
                 <div class="brand">
+                  <!-- Logo thương hiệu -->
                   <img
                     src="Images/LogoTruong.jpg"
                     alt="logo"
                     class="brand__logo"
                   />
 
+                  <!-- Thông tin thương hiệu -->
                   <div class="brand__info">
+                    <!-- Tên thương hiệu -->
                     <h1 class="brand__name">Trường THPT Lương Thế Vinh</h1>
+                    <!-- Khẩu hiệu thương hiệu -->
                     <p class="brand__tagline">
                       Nơi ươm mầm tương lai - Khơi nguồn tri thức
                     </p>
@@ -40,15 +52,28 @@
             </div>
           </div>
 
+          <!-- Thanh điều hướng -->
           <nav class="nav">
+            <!-- Container cho thanh điều hướng -->
             <div class="container">
+              <!-- Danh sách mục điều hướng -->
               <ul class="nav__list">
+                <!-- Mục điều hướng -->
                 <li class="nav__item">
                   <a href="index.html" class="nav__link">🏠 Trang Chủ</a>
                 </li>
+                <!-- Mục điều hướng có menu con -->
                 <li class="nav__item has-submenu">
+                  <input
+                    type="checkbox"
+                    id="menu-gioithieu"
+                    class="menu-toggle"
+                  />
                   <a href="Gioithieu.html" class="nav__link">ℹ️ Giới thiệu</a>
+                  <label for="menu-gioithieu" class="toggle-icon"></label>
+                  <!-- Menu con -->
                   <ul class="submenu">
+                    <!-- Mục menu con -->
                     <li class="submenu__item">
                       <a href="Lichsunhatruong.html" class="submenu__link"
                         >📚 Lịch sử nhà trường</a
@@ -67,7 +92,9 @@
                   </ul>
                 </li>
                 <li class="nav__item has-submenu">
+                  <input type="checkbox" id="menu-tochuc" class="menu-toggle" />
                   <a href="Tochuc.html" class="nav__link">🏢 Tổ chức</a>
+                  <label for="menu-tochuc" class="toggle-icon"></label>
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Bangiamhieu.html" class="submenu__link"
@@ -87,7 +114,9 @@
                   </ul>
                 </li>
                 <li class="nav__item has-submenu">
+                  <input type="checkbox" id="menu-tintuc" class="menu-toggle" />
                   <a href="Tintuc.html" class="nav__link">📰 Tin tức</a>
+                  <label for="menu-tintuc" class="toggle-icon"></label>
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Hoatdongtruong.html" class="submenu__link"
@@ -106,8 +135,15 @@
                     </li>
                   </ul>
                 </li>
+                <!-- Mục điều hướng có menu con, đang hoạt động -->
                 <li class="nav__item has-submenu active">
+                  <input
+                    type="checkbox"
+                    id="menu-dieuhanh"
+                    class="menu-toggle"
+                  />
                   <a href="Dieuhanh.html" class="nav__link">⚙️ Điều hành</a>
+                  <label for="menu-dieuhanh" class="toggle-icon"></label>
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Thoikhoabieu.html" class="submenu__link"
@@ -133,10 +169,15 @@
         </div>
       </header>
 
+      <!-- Banner trang -->
       <div class="page-banner">
+        <!-- Lớp phủ banner -->
         <div class="page-banner__overlay">
+          <!-- Container cho banner -->
           <div class="container">
+            <!-- Tiêu đề banner -->
             <h1 class="page-banner__title">Điều Hành</h1>
+            <!-- Breadcrumb -->
             <div class="breadcrumb">
               <a href="index.html" class="breadcrumb__item">Trang chủ</a>
               <span class="breadcrumb__separator">/</span>
@@ -148,13 +189,19 @@
         </div>
       </div>
 
+      <!-- Nội dung chính -->
       <main class="main">
+        <!-- Container cho nội dung chính -->
         <div class="container">
-          <!-- Intro -->
+          <!-- Phần giới thiệu -->
           <section class="intro-section">
+            <!-- Hộp giới thiệu -->
             <div class="intro-box">
+              <!-- Icon giới thiệu -->
               <div class="intro-icon">⚙️</div>
+              <!-- Tiêu đề giới thiệu -->
               <h2 class="intro-title">Thông Tin Điều Hành Nhà Trường</h2>
+              <!-- Văn bản giới thiệu -->
               <p class="intro-text">
                 Trang điều hành cung cấp các thông tin quan trọng về hoạt động
                 giảng dạy và học tập tại trường: thời khóa biểu, lịch thi kiểm
@@ -164,10 +211,13 @@
             </div>
           </section>
 
-          <!-- Quick Access -->
+          <!-- Truy cập nhanh -->
           <section class="quick-access">
+            <!-- Tiêu đề phần -->
             <h2 class="section-title">🔗 Truy Cập Nhanh</h2>
+            <!-- Lưới truy cập -->
             <div class="access-grid">
+              <!-- Thẻ truy cập -->
               <a href="Thoikhoabieu.html" class="access-card">
                 <div class="access-icon">📅</div>
                 <h3 class="access-title">Thời Khóa Biểu</h3>
@@ -188,11 +238,15 @@
             </div>
           </section>
 
-          <!-- Weekly Schedule -->
+          <!-- Lịch công tác tuần -->
           <section class="weekly-schedule">
+            <!-- Tiêu đề phần -->
             <h2 class="section-title">📆 Lịch Công Tác Tuần</h2>
+            <!-- Đầu lịch -->
             <div class="schedule-header">
+              <!-- Thông tin lịch -->
               <div class="schedule-info">
+                <!-- Huy hiệu thông tin -->
                 <div class="info-badge">
                   <span class="badge-label">Tuần:</span>
                   <span class="badge-value">8 (14/10 - 20/10/2025)</span>
@@ -204,14 +258,18 @@
               </div>
             </div>
 
+            <!-- Dòng thời gian lịch -->
             <div class="schedule-timeline">
-              <!-- Monday -->
+              <!-- Lịch trong ngày -->
               <div class="day-schedule">
+                <!-- Đầu ngày -->
                 <div class="day-header">
                   <div class="day-name">Thứ Hai</div>
                   <div class="day-date">14/10/2025</div>
                 </div>
+                <!-- Sự kiện trong ngày -->
                 <div class="day-events">
+                  <!-- Mục sự kiện -->
                   <div class="event-item">
                     <div class="event-time">7:00</div>
                     <div class="event-content">
@@ -229,7 +287,7 @@
                 </div>
               </div>
 
-              <!-- Tuesday -->
+              <!-- Thứ Ba -->
               <div class="day-schedule">
                 <div class="day-header">
                   <div class="day-name">Thứ Ba</div>
@@ -246,7 +304,7 @@
                 </div>
               </div>
 
-              <!-- Wednesday -->
+              <!-- Thứ Tư -->
               <div class="day-schedule">
                 <div class="day-header">
                   <div class="day-name">Thứ Tư</div>
@@ -263,7 +321,7 @@
                 </div>
               </div>
 
-              <!-- Thursday -->
+              <!-- Thứ Năm -->
               <div class="day-schedule">
                 <div class="day-header">
                   <div class="day-name">Thứ Năm</div>
@@ -280,7 +338,7 @@
                 </div>
               </div>
 
-              <!-- Friday -->
+              <!-- Thứ Sáu -->
               <div class="day-schedule">
                 <div class="day-header">
                   <div class="day-name">Thứ Sáu</div>
@@ -297,7 +355,7 @@
                 </div>
               </div>
 
-              <!-- Saturday -->
+              <!-- Thứ Bảy -->
               <div class="day-schedule">
                 <div class="day-header">
                   <div class="day-name">Thứ Bảy</div>
@@ -323,10 +381,13 @@
             </div>
           </section>
 
-          <!-- Important Notices -->
+          <!-- Thông báo quan trọng -->
           <section class="notices-section">
+            <!-- Tiêu đề phần -->
             <h2 class="section-title">📢 Thông Báo Quan Trọng</h2>
+            <!-- Lưới thông báo -->
             <div class="notices-grid">
+              <!-- Thẻ thông báo khẩn -->
               <div class="notice-card notice-card--urgent">
                 <div class="notice-label">Khẩn cấp</div>
                 <h3 class="notice-title">Thông báo nghỉ học do bão số 6</h3>
@@ -341,6 +402,7 @@
                 <a href="#" class="notice-link">Xem chi tiết →</a>
               </div>
 
+              <!-- Thẻ thông báo quan trọng -->
               <div class="notice-card notice-card--important">
                 <div class="notice-label">Quan trọng</div>
                 <h3 class="notice-title">
@@ -359,6 +421,7 @@
                 >
               </div>
 
+              <!-- Thẻ thông báo -->
               <div class="notice-card">
                 <div class="notice-label">Thông báo</div>
                 <h3 class="notice-title">Họp phụ huynh học kỳ I</h3>
@@ -375,27 +438,60 @@
             </div>
           </section>
 
-          <!-- School Rules -->
+          <!-- Nội quy nhà trường -->
           <section class="rules-section">
+            <!-- Tiêu đề phần -->
             <h2 class="section-title">📜 Nội Quy Nhà Trường</h2>
+            <!-- Container nội quy -->
             <div class="rules-container">
+              <!-- Input radio cho tab CSS thuần -->
+              <input
+                type="radio"
+                name="rule-tab"
+                id="tab-general"
+                class="rule-tab-input"
+                checked
+              />
+              <input
+                type="radio"
+                name="rule-tab"
+                id="tab-study"
+                class="rule-tab-input"
+              />
+              <input
+                type="radio"
+                name="rule-tab"
+                id="tab-behavior"
+                class="rule-tab-input"
+              />
+              <input
+                type="radio"
+                name="rule-tab"
+                id="tab-uniform"
+                class="rule-tab-input"
+              />
+
+              <!-- Sidebar nội quy -->
               <div class="rules-sidebar">
+                <!-- Điều hướng nội quy -->
                 <div class="rules-nav">
-                  <button class="rule-nav-btn active" data-tab="general">
+                  <label for="tab-general" class="rule-nav-btn">
                     Nội quy chung
-                  </button>
-                  <button class="rule-nav-btn" data-tab="study">Học tập</button>
-                  <button class="rule-nav-btn" data-tab="behavior">
+                  </label>
+                  <label for="tab-study" class="rule-nav-btn">Học tập</label>
+                  <label for="tab-behavior" class="rule-nav-btn">
                     Hành vi
-                  </button>
-                  <button class="rule-nav-btn" data-tab="uniform">
+                  </label>
+                  <label for="tab-uniform" class="rule-nav-btn">
                     Đồng phục
-                  </button>
+                  </label>
                 </div>
               </div>
 
+              <!-- Nội dung nội quy -->
               <div class="rules-content">
-                <div class="rule-tab active" id="general">
+                <!-- Tab nội quy -->
+                <div class="rule-tab" id="general">
                   <h3 class="rule-title">Nội Quy Chung</h3>
                   <ul class="rule-list">
                     <li>
@@ -547,11 +643,15 @@
         </div>
       </main>
 
-      <!-- Footer -->
+      <!-- Chân trang -->
       <footer class="footer">
+        <!-- Dải màu chân trang -->
         <div class="footer__gradient">
+          <!-- Container cho chân trang -->
           <div class="container">
+            <!-- Nội dung chân trang -->
             <div class="footer__content">
+              <!-- Thông tin chân trang -->
               <div class="footer__info">
                 <h3 class="footer__title">THPT Lương Thế Vinh</h3>
                 <p class="footer__desc">
@@ -560,6 +660,7 @@
                 <div class="footer__address">
                   📍 Phường Điện Nam Trung, Thị xã Điện Bàn, Tỉnh Quảng Nam
                 </div>
+                <!-- Mạng xã hội chân trang -->
                 <div class="footer__social">
                   <a
                     href="https://www.facebook.com/groups/ltvpro"
@@ -569,7 +670,9 @@
                   >
                 </div>
               </div>
+              <!-- Liên kết chân trang -->
               <div class="footer__links">
+                <!-- Cột chân trang -->
                 <div class="footer__column">
                   <h4>Liên kết nhanh</h4>
                   <ul>
@@ -599,6 +702,7 @@
                 </div>
               </div>
             </div>
+            <!-- Phần dưới của chân trang -->
             <div class="footer__bottom">
               <p>
                 &copy; 2025 Trường THPT Lương Thế Vinh. Tất cả quyền được bảo
@@ -609,9 +713,10 @@
         </div>
       </footer>
 
-      <!-- Floating Action Button -->
+      <!-- Nút hành động nổi -->
       <div class="fab-container">
         <div class="fab fab--main">💬</div>
+        <!-- Menu nút hành động nổi -->
         <div class="fab-menu">
           <a href="tel:0935308369" class="fab fab--phone">📞</a>
           <a
@@ -626,27 +731,7 @@
       </div>
     </div>
 
-    <script>
-      // Tab switching for rules section
-      const ruleBtns = document.querySelectorAll(".rule-nav-btn");
-      const ruleTabs = document.querySelectorAll(".rule-tab");
-
-      ruleBtns.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const tabId = btn.getAttribute("data-tab");
-
-          // Remove active class from all buttons and tabs
-          ruleBtns.forEach((b) => b.classList.remove("active"));
-          ruleTabs.forEach((t) => t.classList.remove("active"));
-
-          // Add active class to clicked button and corresponding tab
-          btn.classList.add("active");
-          document.getElementById(tabId).classList.add("active");
-        });
-      });
-    </script>
-
-    <!--Start of Tawk.to Script-->
+    <!-- Bắt đầu Script Tawk.to -->
     <script type="text/javascript">
       var Tawk_API = Tawk_API || {},
         Tawk_LoadStart = new Date();
@@ -660,6 +745,6 @@
         s0.parentNode.insertBefore(s1, s0);
       })();
     </script>
-    <!--End of Tawk.to Script-->
+    <!-- Kết thúc Script Tawk.to -->
   </body>
 </html>

@@ -1,99 +1,126 @@
-/* ========== Page Banner ========== */
+﻿/* ============================================================
+   GOPY.CSS - CSS cho trang Góp ý
+   ============================================================ */
+
+/* ========== Banner trang ========== */
+/* Banner chính ở đầu trang */
 .page-banner {
-  position: relative;
-  height: 300px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  position: relative; /* Vị trí tương đối để chứa các phần tử con tuyệt đối */
+  height: 300px; /* Chiều cao của banner */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Nền chuyển sắc tím-xanh */
+  display: flex; /* Sử dụng flexbox để căn giữa nội dung */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  overflow: hidden; /* Ẩn các phần tử tràn ra ngoài */
 }
 
+/* Lớp giả để tạo hiệu ứng nền */
 .page-banner::before {
-  content: '';
-  position: absolute;
+  content: ""; /* Bắt buộc cho pseudo-element */
+  position: absolute; /* Vị trí tuyệt đối so với banner */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="90" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.15)"/></svg>');
-  animation: float 20s infinite linear;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="90" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.15)"/></svg>'); /* Hình nền SVG với các biểu tượng nhỏ */
+  animation: float 20s infinite linear; /* Animation di chuyển nền */
 }
 
+/* Keyframe cho animation 'float' */
 @keyframes float {
-  from { transform: translateY(0); }
-  to { transform: translateY(-100px); }
-}
-
-.page-banner__overlay {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: white;
-}
-
-.page-banner__title {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: var(--spacing-md);
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-  animation: slideInDown 0.6s ease-out;
-}
-
-@keyframes slideInDown {
   from {
-    opacity: 0;
-    transform: translateY(-30px);
+    transform: translateY(0); /* Bắt đầu từ vị trí ban đầu */
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    transform: translateY(-100px); /* Di chuyển lên trên 100px */
   }
 }
 
+/* Lớp phủ chứa nội dung text trên banner */
+.page-banner__overlay {
+  position: relative; /* Vị trí tương đối */
+  z-index: 2; /* Nằm trên lớp giả ::before */
+  text-align: center; /* Căn giữa chữ */
+  color: white; /* Màu chữ trắng */
+}
+
+/* Tiêu đề của banner */
+.page-banner__title {
+  font-size: 3rem; /* Cỡ chữ lớn */
+  font-weight: 800; /* Độ đậm chữ */
+  margin-bottom: var(--spacing-md); /* Lề dưới */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Đổ bóng cho chữ */
+  animation: slideInDown 0.6s ease-out; /* Animation trượt xuống */
+}
+
+/* Keyframe cho animation 'slideInDown' */
+@keyframes slideInDown {
+  from {
+    opacity: 0; /* Bắt đầu với độ mờ 0 */
+    transform: translateY(-30px); /* Bắt đầu từ vị trí cao hơn */
+  }
+  to {
+    opacity: 1; /* Kết thúc với độ mờ 1 */
+    transform: translateY(0); /* Kết thúc ở vị trí ban đầu */
+  }
+}
+
+/* Thanh điều hướng breadcrumb */
 .breadcrumb {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-sm);
-  font-size: 1rem;
-  animation: fadeIn 0.8s ease-out;
+  display: flex; /* Sử dụng flexbox */
+  align-items: center; /* Căn giữa dọc */
+  justify-content: center; /* Căn giữa ngang */
+  gap: var(--spacing-sm); /* Khoảng cách giữa các mục */
+  font-size: 1rem; /* Cỡ chữ */
+  animation: fadeIn 0.8s ease-out; /* Animation hiện ra */
 }
 
+/* Keyframe cho animation 'fadeIn' */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0; /* Bắt đầu mờ */
+  }
+  to {
+    opacity: 1; /* Kết thúc rõ */
+  }
 }
 
+/* Mỗi mục trong breadcrumb */
 .breadcrumb__item {
-  color: rgba(255,255,255,0.9);
-  transition: var(--transition);
+  color: rgba(255, 255, 255, 0.9); /* Màu chữ trắng mờ */
+  transition: var(--transition); /* Hiệu ứng chuyển động */
 }
 
+/* Hiệu ứng khi di chuột vào mục breadcrumb */
 .breadcrumb__item:hover {
-  color: white;
+  color: white; /* Chuyển màu thành trắng */
 }
 
+/* Mục đang hoạt động (trang hiện tại) */
 .breadcrumb__item--active {
-  color: white;
-  font-weight: 600;
+  color: white; /* Màu trắng */
+  font-weight: 600; /* Chữ đậm */
 }
 
+/* Dấu phân cách trong breadcrumb */
 .breadcrumb__separator {
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6); /* Màu trắng mờ hơn */
 }
 
-/* ========== Main ========== */
+/* ========== Nội dung chính ========== */
+/* Phần nội dung chính của trang */
 .main {
-  padding: var(--spacing-2xl) 0;
+  padding: var(--spacing-2xl) 0; /* Lề trong trên dưới */
 }
 
-/* ========== Intro Section (dùng chung với Contact Info) ========== */
+/* ========== Phần Giới thiệu & Thông tin liên hệ ========== */
+/* Các phần giới thiệu và thông tin liên hệ */
 .intro-section,
 .contact-info-section {
-  margin-bottom: var(--spacing-2xl);
+  margin-bottom: var(--spacing-2xl); /* Lề dưới */
 }
 
+/* Hộp chứa nội dung giới thiệu */
 .intro-box {
   background: white;
   padding: var(--spacing-2xl);
@@ -102,11 +129,13 @@
   text-align: center;
 }
 
+/* Icon giới thiệu */
 .intro-icon {
   font-size: 5rem;
   margin-bottom: var(--spacing-lg);
 }
 
+/* Tiêu đề giới thiệu */
 .intro-title {
   font-size: 2.5rem;
   font-weight: 800;
@@ -117,6 +146,7 @@
   margin-bottom: var(--spacing-lg);
 }
 
+/* Đoạn văn bản giới thiệu */
 .intro-text {
   font-size: 1.2rem;
   line-height: 1.9;
@@ -125,14 +155,16 @@
   margin: 0 auto;
 }
 
-/* ========== Info Cards / Stats Grid ========== */
+/* ========== Lưới Thẻ thông tin & Thống kê ========== */
+/* Lưới chứa các thẻ thông tin hoặc thống kê */
 .info-cards,
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Lưới tự động điều chỉnh */
   gap: var(--spacing-xl);
 }
 
+/* Mỗi thẻ thông tin hoặc thống kê */
 .info-card,
 .stat-box {
   padding: var(--spacing-2xl);
@@ -141,18 +173,28 @@
   box-shadow: var(--shadow-lg);
   text-align: center;
   transition: var(--transition);
-  animation: scaleIn 0.6s ease-out backwards;
+  animation: scaleIn 0.6s ease-out backwards; /* Animation phóng to */
 }
 
+/* Thêm độ trễ cho animation */
 .info-card:nth-child(1),
-.stat-box:nth-child(1) { animation-delay: 0.1s; }
+.stat-box:nth-child(1) {
+  animation-delay: 0.1s;
+}
 .info-card:nth-child(2),
-.stat-box:nth-child(2) { animation-delay: 0.2s; }
+.stat-box:nth-child(2) {
+  animation-delay: 0.2s;
+}
 .info-card:nth-child(3),
-.stat-box:nth-child(3) { animation-delay: 0.3s; }
+.stat-box:nth-child(3) {
+  animation-delay: 0.3s;
+}
 .info-card:nth-child(4),
-.stat-box:nth-child(4) { animation-delay: 0.4s; }
+.stat-box:nth-child(4) {
+  animation-delay: 0.4s;
+}
 
+/* Keyframe cho animation 'scaleIn' */
 @keyframes scaleIn {
   from {
     opacity: 0;
@@ -164,18 +206,21 @@
   }
 }
 
+/* Hiệu ứng khi di chuột vào thẻ */
 .info-card:hover,
 .stat-box:hover {
-  transform: translateY(-10px);
+  transform: translateY(-10px); /* Nhấc thẻ lên */
   box-shadow: var(--shadow-xl);
 }
 
+/* Icon của thẻ thông tin hoặc thống kê */
 .info-card__icon,
 .gopy-stat-icon {
   font-size: 4rem;
   margin-bottom: var(--spacing-lg);
 }
 
+/* Tiêu đề của thẻ thông tin */
 .info-card__title {
   font-size: 1.5rem;
   font-weight: 700;
@@ -183,12 +228,14 @@
   margin-bottom: var(--spacing-md);
 }
 
+/* Nội dung văn bản của thẻ thông tin */
 .info-card__text {
   font-size: 1.05rem;
   line-height: 1.8;
   color: var(--text-secondary);
 }
 
+/* Con số thống kê */
 .gopy-stat-number {
   font-size: 3rem;
   font-weight: 800;
@@ -199,19 +246,22 @@
   margin-bottom: var(--spacing-sm);
 }
 
+/* Nhãn của con số thống kê */
 .gopy-stat-label {
   font-size: 1.1rem;
   color: var(--text-secondary);
   font-weight: 600;
 }
 
-/* ========== Contact Main Section / Feedback Section ========== */
+/* ========== Phần Form & Bản đồ ========== */
+/* Các phần chính chứa form, bản đồ, thống kê */
 .contact-main-section,
 .feedback-section,
 .stats-section {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Layout 2 cột cho form và sidebar/bản đồ */
 .contact-layout,
 .feedback-layout {
   display: grid;
@@ -219,16 +269,17 @@
   gap: var(--spacing-2xl);
 }
 
-/* ========== Contact Form / Feedback Form ========== */
+/* Khung chứa form */
 .contact-form-wrapper,
 .feedback-form-wrapper {
   background: white;
   padding: var(--spacing-2xl);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-xl);
-  animation: fadeInLeft 0.8s ease-out;
+  animation: fadeInLeft 0.8s ease-out; /* Animation trượt vào từ trái */
 }
 
+/* Keyframe cho animation 'fadeInLeft' */
 @keyframes fadeInLeft {
   from {
     opacity: 0;
@@ -240,6 +291,7 @@
   }
 }
 
+/* Tiêu đề của form */
 .form-title {
   font-size: 2rem;
   font-weight: 800;
@@ -250,6 +302,7 @@
   margin-bottom: var(--spacing-md);
 }
 
+/* Phụ đề của form */
 .form-subtitle {
   font-size: 1.05rem;
   color: var(--text-secondary);
@@ -257,6 +310,7 @@
   line-height: 1.6;
 }
 
+/* Form liên hệ và form góp ý */
 .contact-form,
 .feedback-form {
   display: flex;
@@ -264,6 +318,7 @@
   gap: var(--spacing-xl);
 }
 
+/* Mỗi phần trong form (ví dụ: Thông tin cá nhân) */
 .form-section {
   padding: var(--spacing-2xl);
   background: var(--bg-secondary);
@@ -271,6 +326,7 @@
   border-left: 5px solid var(--primary);
 }
 
+/* Tiêu đề của một phần trong form */
 .section-heading {
   display: flex;
   align-items: center;
@@ -281,16 +337,19 @@
   color: var(--primary-dark);
 }
 
+/* Icon của tiêu đề phần */
 .heading-icon {
   font-size: 2rem;
 }
 
+/* Hàng trong form, chứa 2 trường nhập liệu */
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-lg);
 }
 
+/* Nhóm một trường nhập liệu (label + input) */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -301,6 +360,7 @@
   margin-bottom: 0;
 }
 
+/* Nhãn của trường nhập liệu */
 .form-label {
   font-weight: 700;
   color: var(--text-primary);
@@ -308,11 +368,13 @@
   font-size: 1rem;
 }
 
+/* Dấu * cho trường bắt buộc */
 .required {
   color: #ff6b6b;
   font-weight: 800;
 }
 
+/* Các trường nhập liệu chung (input, select, textarea) */
 .form-input,
 .form-select,
 .form-textarea {
@@ -326,6 +388,7 @@
   background: white;
 }
 
+/* Hiệu ứng khi focus vào trường nhập liệu */
 .form-input:focus,
 .form-select:focus,
 .form-textarea:focus {
@@ -334,11 +397,13 @@
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
+/* Trường nhập văn bản dài */
 .form-textarea {
-  resize: vertical;
+  resize: vertical; /* Cho phép thay đổi chiều cao */
   min-height: 120px;
 }
 
+/* Bộ đếm ký tự */
 .char-count {
   text-align: right;
   font-size: 0.9rem;
@@ -347,6 +412,17 @@
   font-weight: 600;
 }
 
+/* Ẩn số đếm ký tự động vì đã bỏ JS */
+.char-count #charCount {
+  display: none;
+}
+
+/* Hiển thị chữ "Tối đa" thay thế */
+.char-count::before {
+  content: "Tối đa ";
+}
+
+/* Trường tải tệp lên */
 .form-file {
   padding: var(--spacing-md);
   border: 2px dashed var(--bg-tertiary);
@@ -360,6 +436,7 @@
   background: var(--bg-secondary);
 }
 
+/* Văn bản trợ giúp dưới trường nhập liệu */
 .form-help {
   display: block;
   margin-top: var(--spacing-xs);
@@ -367,6 +444,7 @@
   color: var(--text-muted);
 }
 
+/* Nhóm các nút radio */
 .radio-group {
   display: flex;
   gap: var(--spacing-lg);
@@ -374,6 +452,7 @@
   margin-top: var(--spacing-sm);
 }
 
+/* Nhóm các checkbox */
 .checkbox-group {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -381,6 +460,7 @@
   margin-top: var(--spacing-sm);
 }
 
+/* Nhãn cho radio và checkbox */
 .radio-label,
 .checkbox-label {
   display: flex;
@@ -408,18 +488,21 @@
   background: var(--bg-secondary);
 }
 
+/* Nút radio và checkbox thực tế */
 .radio-label input[type="radio"],
 .checkbox-label input[type="radio"] {
   width: 20px;
   height: 20px;
   cursor: pointer;
-  accent-color: var(--primary);
+  accent-color: var(--primary); /* Đổi màu của nút khi được chọn */
 }
 
+/* Icon trong checkbox */
 .checkbox-icon {
   font-size: 1.5rem;
 }
 
+/* Chữ của radio và checkbox */
 .radio-text,
 .checkbox-text {
   font-weight: 600;
@@ -430,7 +513,7 @@
   font-size: 0.95rem;
 }
 
-/* Privacy labels */
+/* Nhãn cho checkbox điều khoản bảo mật */
 .privacy-label {
   display: flex;
   align-items: flex-start;
@@ -454,6 +537,7 @@
   flex-shrink: 0;
 }
 
+/* Văn bản điều khoản bảo mật */
 .privacy-text {
   font-size: 0.95rem;
   color: var(--text-secondary);
@@ -466,33 +550,37 @@
   text-decoration: underline;
 }
 
-/* Rating */
+/* Nhóm đánh giá bằng sao */
 .rating-group {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row-reverse; /* Đảo ngược thứ tự để hiệu ứng hover đúng */
   justify-content: center;
   gap: var(--spacing-sm);
   margin: var(--spacing-lg) 0;
 }
 
+/* Ẩn nút radio của sao */
 .rating-group input[type="radio"] {
   display: none;
 }
 
+/* Ngôi sao */
 .rating-group .star {
   font-size: 3rem;
   cursor: pointer;
   transition: var(--transition);
-  opacity: 0.3;
+  opacity: 0.3; /* Sao mờ mặc định */
 }
 
+/* Hiệu ứng khi chọn hoặc di chuột vào sao */
 .rating-group input[type="radio"]:checked ~ .star,
 .rating-group .star:hover,
 .rating-group .star:hover ~ .star {
-  opacity: 1;
-  transform: scale(1.2);
+  opacity: 1; /* Làm sao sáng lên */
+  transform: scale(1.2); /* Phóng to sao */
 }
 
+/* Văn bản hiển thị mức độ hài lòng */
 .rating-text {
   text-align: center;
   font-size: 1.1rem;
@@ -501,13 +589,31 @@
   margin-top: var(--spacing-md);
 }
 
-/* Form Actions */
+/* Cập nhật văn bản dựa trên sao được chọn (chỉ dùng CSS) */
+#star1:checked ~ .rating-text::after {
+  content: " - Rất không hài lòng";
+}
+#star2:checked ~ .rating-text::after {
+  content: " - Không hài lòng";
+}
+#star3:checked ~ .rating-text::after {
+  content: " - Bình thường";
+}
+#star4:checked ~ .rating-text::after {
+  content: " - Hài lòng";
+}
+#star5:checked ~ .rating-text::after {
+  content: " - Rất hài lòng";
+}
+
+/* Nhóm nút Gửi và Đặt lại */
 .form-actions {
   display: flex;
   gap: var(--spacing-lg);
   justify-content: center;
 }
 
+/* Nút Gửi và Đặt lại chung */
 .btn-submit,
 .btn-reset {
   display: flex;
@@ -523,6 +629,7 @@
   box-shadow: var(--shadow-md);
 }
 
+/* Nút Gửi */
 .btn-submit {
   background: var(--gradient-primary);
   color: white;
@@ -533,6 +640,7 @@
   box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
 }
 
+/* Nút Đặt lại */
 .btn-reset {
   background: var(--bg-tertiary);
   color: var(--text-primary);
@@ -544,20 +652,23 @@
   transform: translateY(-3px);
 }
 
+/* Icon trong nút */
 .btn-icon {
   font-size: 1.3rem;
 }
 
-/* ========== Map / Sidebar ========== */
+/* ========== Sidebar & Bản đồ ========== */
+/* Khung chứa bản đồ hoặc sidebar */
 .map-wrapper,
 .feedback-sidebar {
   background: white;
   padding: var(--spacing-2xl);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-xl);
-  animation: fadeInRight 0.8s ease-out;
+  animation: fadeInRight 0.8s ease-out; /* Animation trượt vào từ phải */
 }
 
+/* Sidebar của trang góp ý */
 .feedback-sidebar {
   display: flex;
   flex-direction: column;
@@ -567,6 +678,7 @@
   box-shadow: none;
 }
 
+/* Keyframe cho animation 'fadeInRight' */
 @keyframes fadeInRight {
   from {
     opacity: 0;
@@ -578,6 +690,7 @@
   }
 }
 
+/* Tiêu đề bản đồ */
 .map-title {
   font-size: 2rem;
   font-weight: 800;
@@ -588,6 +701,7 @@
   margin-bottom: var(--spacing-xl);
 }
 
+/* Khung chứa bản đồ Google Maps */
 .map-container {
   width: 100%;
   height: 400px;
@@ -597,6 +711,7 @@
   margin-bottom: var(--spacing-xl);
 }
 
+/* Thông tin dưới bản đồ */
 .map-info {
   padding: var(--spacing-xl);
   background: var(--bg-secondary);
@@ -604,6 +719,7 @@
   text-align: center;
 }
 
+/* Văn bản dưới bản đồ */
 .map-text {
   font-size: 1.05rem;
   line-height: 1.7;
@@ -611,6 +727,7 @@
   margin-bottom: var(--spacing-lg);
 }
 
+/* Nút chỉ đường */
 .btn-direction {
   display: inline-block;
   padding: var(--spacing-md) var(--spacing-2xl);
@@ -629,7 +746,7 @@
   box-shadow: var(--shadow-lg);
 }
 
-/* Sidebar cards */
+/* Thẻ trong sidebar */
 .sidebar-card {
   padding: var(--spacing-2xl);
   background: white;
@@ -637,6 +754,7 @@
   box-shadow: var(--shadow-lg);
 }
 
+/* Tiêu đề trong sidebar */
 .sidebar-title {
   font-size: 1.3rem;
   font-weight: 700;
@@ -644,6 +762,7 @@
   margin-bottom: var(--spacing-xl);
 }
 
+/* Danh sách trong sidebar */
 .sidebar-list {
   list-style: none;
   padding: 0;
@@ -652,6 +771,7 @@
   gap: var(--spacing-md);
 }
 
+/* Mỗi mục trong danh sách sidebar */
 .sidebar-item {
   display: flex;
   align-items: center;
@@ -667,6 +787,7 @@
   transform: translateX(5px);
 }
 
+/* Số thứ tự của mục */
 .item-number {
   width: 30px;
   height: 30px;
@@ -680,6 +801,7 @@
   flex-shrink: 0;
 }
 
+/* Văn bản của mục */
 .item-text {
   font-size: 0.95rem;
   color: var(--text-secondary);
@@ -687,12 +809,14 @@
   line-height: 1.5;
 }
 
+/* Thông tin về thời gian phản hồi */
 .response-info {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
 }
 
+/* Mỗi mục thông tin phản hồi */
 .response-item {
   display: flex;
   align-items: center;
@@ -702,22 +826,26 @@
   border-radius: var(--radius-lg);
 }
 
+/* Icon phản hồi */
 .response-icon {
   font-size: 2rem;
 }
 
+/* Nhãn phản hồi */
 .response-label {
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: var(--spacing-xs);
 }
 
+/* Thời gian phản hồi */
 .response-time {
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--primary);
 }
 
+/* Thẻ liên hệ đặc biệt trong sidebar */
 .sidebar-card--contact {
   background: var(--gradient-secondary);
   color: white;
@@ -727,6 +855,7 @@
   color: white;
 }
 
+/* Văn bản trong thẻ liên hệ */
 .contact-text {
   font-size: 1rem;
   line-height: 1.7;
@@ -734,28 +863,32 @@
   opacity: 0.95;
 }
 
+/* Danh sách liên hệ */
 .contact-list {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
 }
 
+/* Mỗi mục liên hệ */
 .contact-item {
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
   padding: var(--spacing-md);
-  background: rgba(255,255,255,0.2);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px); /* Hiệu ứng kính mờ */
   border-radius: var(--radius-md);
   font-weight: 600;
 }
 
+/* Icon liên hệ */
 .contact-icon {
   font-size: 1.5rem;
 }
 
-/* ========== Section Title ========== */
+/* ========== Tiêu đề chung của các phần ========== */
+/* Tiêu đề của một phần (section) */
 .section-title {
   font-size: 2.5rem;
   font-weight: 800;
@@ -769,8 +902,9 @@
   padding-bottom: var(--spacing-lg);
 }
 
+/* Gạch chân trang trí cho tiêu đề */
 .section-title::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -781,17 +915,20 @@
   border-radius: 2px;
 }
 
-/* ========== Departments Section ========== */
+/* ========== Phần Các phòng ban liên quan ========== */
+/* Phần các phòng ban */
 .departments-section {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Lưới chứa các thẻ phòng ban */
 .departments-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--spacing-2xl);
 }
 
+/* Mỗi thẻ phòng ban */
 .dept-card {
   padding: var(--spacing-2xl);
   background: white;
@@ -802,11 +939,21 @@
   animation: fadeInUp 0.6s ease-out backwards;
 }
 
-.dept-card:nth-child(1) { animation-delay: 0.1s; }
-.dept-card:nth-child(2) { animation-delay: 0.2s; }
-.dept-card:nth-child(3) { animation-delay: 0.3s; }
-.dept-card:nth-child(4) { animation-delay: 0.4s; }
+/* Thêm độ trễ cho animation */
+.dept-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.dept-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.dept-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.dept-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
 
+/* Keyframe cho animation 'fadeInUp' */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -818,16 +965,19 @@
   }
 }
 
+/* Hiệu ứng khi di chuột vào thẻ phòng ban */
 .dept-card:hover {
   transform: translateY(-10px);
   box-shadow: var(--shadow-xl);
 }
 
+/* Icon phòng ban */
 .dept-icon {
   font-size: 4rem;
   margin-bottom: var(--spacing-lg);
 }
 
+/* Tiêu đề phòng ban */
 .dept-title {
   font-size: 1.5rem;
   font-weight: 700;
@@ -835,12 +985,14 @@
   margin-bottom: var(--spacing-xl);
 }
 
+/* Thông tin của phòng ban */
 .dept-info {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
 }
 
+/* Mỗi mục thông tin (ví dụ: Email, Điện thoại) */
 .dept-item {
   display: flex;
   justify-content: space-between;
@@ -854,29 +1006,34 @@
   background: var(--bg-tertiary);
 }
 
+/* Nhãn của thông tin */
 .dept-label {
   font-weight: 600;
   color: var(--text-secondary);
   font-size: 0.95rem;
 }
 
+/* Giá trị của thông tin */
 .dept-value {
   font-weight: 700;
   color: var(--primary);
   font-size: 0.95rem;
 }
 
-/* ========== Social Section ========== */
+/* ========== Phần Mạng xã hội ========== */
+/* Phần mạng xã hội */
 .social-section {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Lưới chứa các thẻ mạng xã hội */
 .social-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: var(--spacing-xl);
 }
 
+/* Mỗi thẻ mạng xã hội */
 .social-card {
   padding: var(--spacing-2xl);
   background: white;
@@ -890,13 +1047,23 @@
   animation: scaleIn 0.6s ease-out backwards;
 }
 
-.social-card:nth-child(1) { animation-delay: 0.1s; }
-.social-card:nth-child(2) { animation-delay: 0.2s; }
-.social-card:nth-child(3) { animation-delay: 0.3s; }
-.social-card:nth-child(4) { animation-delay: 0.4s; }
+/* Thêm độ trễ cho animation */
+.social-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.social-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.social-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.social-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
 
+/* Đường kẻ màu ở trên cùng của thẻ */
 .social-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -904,21 +1071,33 @@
   height: 6px;
 }
 
-.social-card--facebook::before { background: #1877f2; }
-.social-card--youtube::before { background: #ff0000; }
-.social-card--zalo::before { background: #0068ff; }
-.social-card--website::before { background: var(--gradient-primary); }
+/* Màu riêng cho từng mạng xã hội */
+.social-card--facebook::before {
+  background: #1877f2;
+}
+.social-card--youtube::before {
+  background: #ff0000;
+}
+.social-card--zalo::before {
+  background: #0068ff;
+}
+.social-card--website::before {
+  background: var(--gradient-primary);
+}
 
+/* Hiệu ứng khi di chuột vào thẻ */
 .social-card:hover {
   transform: translateY(-10px);
   box-shadow: var(--shadow-xl);
 }
 
+/* Icon mạng xã hội */
 .social-icon {
   font-size: 4rem;
   margin-bottom: var(--spacing-lg);
 }
 
+/* Tên mạng xã hội */
 .social-name {
   font-size: 1.5rem;
   font-weight: 700;
@@ -926,12 +1105,14 @@
   margin-bottom: var(--spacing-sm);
 }
 
+/* Mô tả ngắn */
 .social-desc {
   font-size: 1rem;
   color: var(--text-secondary);
   margin-bottom: var(--spacing-lg);
 }
 
+/* Thống kê (lượt theo dõi,...) */
 .social-stats {
   padding: var(--spacing-sm) var(--spacing-lg);
   background: var(--bg-secondary);
@@ -941,17 +1122,20 @@
   display: inline-block;
 }
 
-/* ========== Recent Feedback ========== */
+/* ========== Phần Góp ý gần đây ========== */
+/* Phần các góp ý gần đây */
 .recent-section {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Lưới chứa các thẻ góp ý */
 .recent-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: var(--spacing-2xl);
 }
 
+/* Mỗi thẻ góp ý */
 .feedback-card {
   padding: var(--spacing-2xl);
   background: white;
@@ -961,15 +1145,24 @@
   animation: fadeInUp 0.6s ease-out backwards;
 }
 
-.feedback-card:nth-child(1) { animation-delay: 0.1s; }
-.feedback-card:nth-child(2) { animation-delay: 0.2s; }
-.feedback-card:nth-child(3) { animation-delay: 0.3s; }
+/* Thêm độ trễ cho animation */
+.feedback-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.feedback-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.feedback-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
 
+/* Hiệu ứng khi di chuột vào thẻ */
 .feedback-card:hover {
   transform: translateY(-10px);
   box-shadow: var(--shadow-xl);
 }
 
+/* Phần đầu của thẻ góp ý */
 .feedback-header {
   display: flex;
   align-items: center;
@@ -979,6 +1172,7 @@
   border-bottom: 2px solid var(--bg-tertiary);
 }
 
+/* Avatar của người góp ý */
 .feedback-avatar {
   width: 50px;
   height: 50px;
@@ -993,25 +1187,30 @@
   flex-shrink: 0;
 }
 
+/* Thông tin người dùng */
 .feedback-user {
   flex: 1;
 }
 
+/* Tên người dùng */
 .user-name {
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: var(--spacing-xs);
 }
 
+/* Ngày góp ý */
 .feedback-date {
   font-size: 0.9rem;
   color: var(--text-muted);
 }
 
+/* Đánh giá sao */
 .feedback-rating {
   font-size: 1.2rem;
 }
 
+/* Tiêu đề góp ý */
 .feedback-title {
   font-size: 1.2rem;
   font-weight: 700;
@@ -1019,6 +1218,7 @@
   margin-bottom: var(--spacing-md);
 }
 
+/* Nội dung góp ý */
 .feedback-text {
   font-size: 1rem;
   line-height: 1.7;
@@ -1026,12 +1226,14 @@
   margin-bottom: var(--spacing-lg);
 }
 
+/* Phần chân của thẻ góp ý */
 .feedback-footer {
   display: flex;
   gap: var(--spacing-md);
   flex-wrap: wrap;
 }
 
+/* Danh mục và loại góp ý */
 .feedback-category,
 .feedback-type {
   padding: var(--spacing-xs) var(--spacing-md);
@@ -1040,28 +1242,34 @@
   font-weight: 600;
 }
 
+/* Danh mục */
 .feedback-category {
   background: var(--bg-tertiary);
   color: var(--text-primary);
 }
 
+/* Loại góp ý */
 .feedback-type {
   color: white;
 }
 
+/* Màu cho loại "Khen ngợi" */
 .type-praise {
   background: var(--gradient-success);
 }
 
+/* Màu cho loại "Đề xuất" */
 .type-suggest {
   background: var(--gradient-warning);
 }
 
-/* ========== Commitment Section ========== */
+/* ========== Phần Cam kết ========== */
+/* Phần cam kết */
 .commitment-section {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Hộp chứa các cam kết */
 .commitment-box {
   padding: var(--spacing-2xl);
   background: white;
@@ -1069,6 +1277,7 @@
   box-shadow: var(--shadow-xl);
 }
 
+/* Tiêu đề cam kết */
 .commitment-title {
   font-size: 2rem;
   font-weight: 800;
@@ -1077,12 +1286,14 @@
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Lưới chứa các mục cam kết */
 .commitment-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: var(--spacing-2xl);
 }
 
+/* Mỗi mục cam kết */
 .commitment-item {
   text-align: center;
   padding: var(--spacing-xl);
@@ -1096,11 +1307,13 @@
   transform: translateY(-5px);
 }
 
+/* Icon cam kết */
 .commitment-icon {
   font-size: 3.5rem;
   margin-bottom: var(--spacing-lg);
 }
 
+/* Tiêu đề của mục cam kết */
 .commitment-heading {
   font-size: 1.3rem;
   font-weight: 700;
@@ -1108,17 +1321,21 @@
   margin-bottom: var(--spacing-md);
 }
 
+/* Nội dung của mục cam kết */
 .commitment-text {
   font-size: 1rem;
   line-height: 1.6;
   color: var(--text-secondary);
 }
 
-/* ========== FAQ Section ========== */
+
+/* ========== Phần Câu hỏi thường gặp (FAQ) ========== */
+/* Phần FAQ */
 .faq-section {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Danh sách các câu hỏi */
 .faq-list {
   max-width: 900px;
   margin: 0 auto;
@@ -1127,6 +1344,7 @@
   gap: var(--spacing-lg);
 }
 
+/* Mỗi mục câu hỏi và trả lời */
 .faq-item {
   background: white;
   border-radius: var(--radius-xl);
@@ -1136,15 +1354,25 @@
   animation: fadeInUp 0.6s ease-out backwards;
 }
 
-.faq-item:nth-child(1) { animation-delay: 0.1s; }
-.faq-item:nth-child(2) { animation-delay: 0.2s; }
-.faq-item:nth-child(3) { animation-delay: 0.3s; }
-.faq-item:nth-child(4) { animation-delay: 0.4s; }
+/* Thêm độ trễ cho animation */
+.faq-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.faq-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.faq-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.faq-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
 
 .faq-item:hover {
   box-shadow: var(--shadow-lg);
 }
 
+/* Phần câu hỏi (có thể click) */
 .faq-question {
   display: flex;
   align-items: center;
@@ -1159,11 +1387,13 @@
   background: var(--bg-secondary);
 }
 
+/* Icon câu hỏi */
 .faq-icon {
   font-size: 2rem;
   flex-shrink: 0;
 }
 
+/* Văn bản câu hỏi */
 .faq-text {
   flex: 1;
   font-weight: 700;
@@ -1171,6 +1401,7 @@
   color: var(--primary-dark);
 }
 
+/* Nút bật/tắt câu trả lời */
 .faq-toggle {
   width: 40px;
   height: 40px;
@@ -1186,10 +1417,12 @@
   flex-shrink: 0;
 }
 
+/* Xoay nút khi câu trả lời được mở */
 .faq-item.active .faq-toggle {
   transform: rotate(45deg);
 }
 
+/* Phần câu trả lời (mặc định ẩn) */
 .faq-answer {
   max-height: 0;
   overflow: hidden;
@@ -1197,11 +1430,13 @@
   padding: 0 var(--spacing-xl);
 }
 
+/* Hiển thị câu trả lời khi có class 'active' */
 .faq-item.active .faq-answer {
-  max-height: 500px;
+  max-height: 500px; /* Chiều cao tối đa để chứa nội dung */
   padding: 0 var(--spacing-xl) var(--spacing-xl);
 }
 
+/* Style cho nội dung câu trả lời */
 .faq-answer {
   font-size: 1.05rem;
   line-height: 1.8;
@@ -1214,18 +1449,21 @@
   padding: var(--spacing-xl);
 }
 
+
 /* ========== Responsive ========== */
+/* Cho màn hình nhỏ hơn 1200px */
 @media (max-width: 1200px) {
   .contact-layout,
   .feedback-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Chuyển layout form thành 1 cột */
   }
   
   .feedback-sidebar {
-    order: -1;
+    order: -1; /* Đưa sidebar lên trên form trên màn hình nhỏ */
   }
 }
 
+/* Cho màn hình nhỏ hơn 768px (máy tính bảng) */
 @media (max-width: 768px) {
   .page-banner {
     height: 200px;
@@ -1272,6 +1510,7 @@
   }
 }
 
+/* Cho màn hình nhỏ hơn 480px (điện thoại) */
 @media (max-width: 480px) {
   .form-title {
     font-size: 1.5rem;

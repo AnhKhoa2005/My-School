@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Chi Bộ Đảng - THPT Lương Thế Vinh</title>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,25 +13,36 @@
       rel="stylesheet"
     />
 
+    <!-- CSS -->
     <link rel="stylesheet" href="Css/Chung.css" />
     <link rel="stylesheet" href="Css/Chibodang.css" />
   </head>
   <body>
+    <!-- Toàn bộ trang -->
     <div class="page">
+      <!-- Đầu trang -->
       <header class="header">
+        <!-- Dải màu đầu trang -->
         <div class="header__gradient">
+          <!-- Phần trên của đầu trang -->
           <div class="header__top">
+            <!-- Container cho phần trên -->
             <div class="container">
               <a href="index.html">
+                <!-- Phần thương hiệu -->
                 <div class="brand">
+                  <!-- Logo thương hiệu -->
                   <img
                     src="Images/LogoTruong.jpg"
                     alt="logo"
                     class="brand__logo"
                   />
 
+                  <!-- Thông tin thương hiệu -->
                   <div class="brand__info">
+                    <!-- Tên thương hiệu -->
                     <h1 class="brand__name">Trường THPT Lương Thế Vinh</h1>
+                    <!-- Khẩu hiệu thương hiệu -->
                     <p class="brand__tagline">
                       Nơi ươm mầm tương lai - Khơi nguồn tri thức
                     </p>
@@ -40,15 +52,28 @@
             </div>
           </div>
 
+          <!-- Thanh điều hướng -->
           <nav class="nav">
+            <!-- Container cho thanh điều hướng -->
             <div class="container">
+              <!-- Danh sách mục điều hướng -->
               <ul class="nav__list">
+                <!-- Mục điều hướng -->
                 <li class="nav__item">
                   <a href="index.html" class="nav__link">🏠 Trang Chủ</a>
                 </li>
+                <!-- Mục điều hướng có menu con -->
                 <li class="nav__item has-submenu">
+                  <input
+                    type="checkbox"
+                    id="menu-gioithieu"
+                    class="menu-toggle"
+                  />
                   <a href="Gioithieu.html" class="nav__link">ℹ️ Giới thiệu</a>
+                  <label for="menu-gioithieu" class="toggle-icon"></label>
+                  <!-- Menu con -->
                   <ul class="submenu">
+                    <!-- Mục menu con -->
                     <li class="submenu__item">
                       <a href="Lichsunhatruong.html" class="submenu__link"
                         >📚 Lịch sử nhà trường</a
@@ -66,8 +91,11 @@
                     </li>
                   </ul>
                 </li>
+                <!-- Mục điều hướng có menu con, đang hoạt động -->
                 <li class="nav__item has-submenu active">
+                  <input type="checkbox" id="menu-tochuc" class="menu-toggle" />
                   <a href="Tochuc.html" class="nav__link">🏢 Tổ chức</a>
+                  <label for="menu-tochuc" class="toggle-icon"></label>
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Bangiamhieu.html" class="submenu__link"
@@ -87,7 +115,9 @@
                   </ul>
                 </li>
                 <li class="nav__item has-submenu">
+                  <input type="checkbox" id="menu-tintuc" class="menu-toggle" />
                   <a href="Tintuc.html" class="nav__link">📰 Tin tức</a>
+                  <label for="menu-tintuc" class="toggle-icon"></label>
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Hoatdongtruong.html" class="submenu__link"
@@ -107,7 +137,13 @@
                   </ul>
                 </li>
                 <li class="nav__item has-submenu">
+                  <input
+                    type="checkbox"
+                    id="menu-dieuhanh"
+                    class="menu-toggle"
+                  />
                   <a href="Dieuhanh.html" class="nav__link">⚙️ Điều hành</a>
+                  <label for="menu-dieuhanh" class="toggle-icon"></label>
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Thoikhoabieu.html" class="submenu__link"
@@ -133,10 +169,15 @@
         </div>
       </header>
 
+      <!-- Banner trang -->
       <div class="page-banner">
+        <!-- Lớp phủ banner -->
         <div class="page-banner__overlay">
+          <!-- Container cho banner -->
           <div class="container">
+            <!-- Tiêu đề banner -->
             <h1 class="page-banner__title">Chi Bộ Đảng</h1>
+            <!-- Breadcrumb -->
             <div class="breadcrumb">
               <a href="index.html" class="breadcrumb__item">Trang chủ</a>
               <span class="breadcrumb__separator">/</span>
@@ -150,15 +191,21 @@
         </div>
       </div>
 
+      <!-- Nội dung chính -->
       <main class="main">
+        <!-- Container cho nội dung chính -->
         <div class="container">
-          <!-- Party Intro -->
+          <!-- Giới thiệu về Chi bộ -->
           <section class="party-intro">
+            <!-- Biểu tượng Chi bộ -->
             <div class="party-emblem">
+              <!-- Icon biểu tượng -->
               <div class="emblem-icon">🏛️</div>
+              <!-- Tiêu đề giới thiệu -->
               <h2 class="party-intro__title">
                 Chi Bộ Đảng Trường THPT Lương Thế Vinh
               </h2>
+              <!-- Văn bản giới thiệu -->
               <p class="party-intro__text">
                 Chi bộ Đảng Cộng sản Việt Nam trường THPT Lương Thế Vinh trực
                 thuộc Đảng bộ khối giáo dục Điện Bàn, là hạt nhân lãnh đạo về
@@ -169,9 +216,11 @@
             </div>
           </section>
 
-          <!-- Statistics -->
+          <!-- Thống kê -->
           <section class="party-stats">
+            <!-- Lưới thống kê -->
             <div class="stats-grid">
+              <!-- Hộp thống kê -->
               <div class="stat-box stat-box--red">
                 <div class="stat-box__icon">👥</div>
                 <div class="stat-box__number">18</div>
@@ -195,22 +244,30 @@
             </div>
           </section>
 
-          <!-- Leadership -->
+          <!-- Ban lãnh đạo -->
           <section class="party-leadership">
+            <!-- Tiêu đề phần -->
             <h2 class="section-title">👑 Ban Chấp Hành Chi Bộ</h2>
+            <!-- Lưới lãnh đạo -->
             <div class="leadership-grid">
+              <!-- Hồ sơ lãnh đạo - Bí thư -->
               <div class="leader-profile leader-profile--secretary">
+                <!-- Huy hiệu lãnh đạo -->
                 <div class="leader-badge">
                   <span class="badge-star">⭐</span>
                   <span class="badge-text">Bí Thư</span>
                 </div>
+                <!-- Ảnh đại diện lãnh đạo -->
                 <div class="leader-avatar">
                   <div class="image-placeholder">
                     <span class="placeholder-icon">👨‍💼</span>
                   </div>
                 </div>
+                <!-- Tên lãnh đạo -->
                 <h3 class="leader-name">Đ/c Lê Văn Ngạt</h3>
+                <!-- Chức vụ lãnh đạo -->
                 <div class="leader-position">Bí thư Chi bộ - Hiệu trưởng</div>
+                <!-- Thông tin lãnh đạo -->
                 <div class="leader-info">
                   <div class="info-row">
                     <span class="info-icon">📅</span>
@@ -221,6 +278,7 @@
                     <span class="info-text">Thạc sĩ Giáo dục học</span>
                   </div>
                 </div>
+                <!-- Trách nhiệm lãnh đạo -->
                 <div class="leader-responsibilities">
                   <h4>Nhiệm vụ chính:</h4>
                   <ul>
@@ -231,6 +289,7 @@
                 </div>
               </div>
 
+              <!-- Hồ sơ lãnh đạo - Phó Bí thư -->
               <div class="leader-profile">
                 <div class="leader-badge">
                   <span class="badge-star">⭐</span>
@@ -263,6 +322,7 @@
                 </div>
               </div>
 
+              <!-- Hồ sơ lãnh đạo - Ủy viên -->
               <div class="leader-profile">
                 <div class="leader-badge">
                   <span class="badge-star">⭐</span>
@@ -297,10 +357,13 @@
             </div>
           </section>
 
-          <!-- Functions & Missions -->
+          <!-- Chức năng & Nhiệm vụ -->
           <section class="functions-section">
+            <!-- Tiêu đề phần -->
             <h2 class="section-title">🎯 Chức Năng Và Nhiệm Vụ</h2>
+            <!-- Lưới chức năng -->
             <div class="functions-grid">
+              <!-- Thẻ chức năng -->
               <div class="function-card">
                 <div class="function-number">01</div>
                 <div class="function-icon">🏛️</div>
@@ -369,10 +432,13 @@
             </div>
           </section>
 
-          <!-- Activities -->
+          <!-- Hoạt động -->
           <section class="activities-section">
+            <!-- Tiêu đề phần -->
             <h2 class="section-title">📋 Hoạt Động Chính</h2>
+            <!-- Dòng thời gian hoạt động -->
             <div class="activities-timeline">
+              <!-- Mục hoạt động -->
               <div class="activity-item">
                 <div class="activity-icon">📅</div>
                 <div class="activity-content">
@@ -427,10 +493,13 @@
             </div>
           </section>
 
-          <!-- Party Cells -->
+          <!-- Các Tổ Đảng -->
           <section class="party-cells-section">
+            <!-- Tiêu đề phần -->
             <h2 class="section-title">🏢 Các Tổ Đảng</h2>
+            <!-- Lưới các tổ -->
             <div class="cells-grid">
+              <!-- Thẻ tổ -->
               <div class="cell-card">
                 <div class="cell-header">
                   <div class="cell-number">Tổ 01</div>
@@ -499,10 +568,13 @@
             </div>
           </section>
 
-          <!-- Achievements -->
+          <!-- Thành tích -->
           <section class="achievements-showcase">
+            <!-- Tiêu đề phần -->
             <h2 class="section-title">🏆 Thành Tích Nổi Bật</h2>
+            <!-- Lưới thành tích -->
             <div class="showcase-grid">
+              <!-- Mục thành tích -->
               <div class="showcase-item">
                 <div class="showcase-year">2024</div>
                 <div class="showcase-award">🥇 Chi bộ xuất sắc</div>
@@ -543,14 +615,18 @@
             </div>
           </section>
 
-          <!-- Contact -->
+          <!-- Liên hệ -->
           <section class="party-contact">
+            <!-- Hộp liên hệ -->
             <div class="contact-box">
+              <!-- Đầu hộp liên hệ -->
               <div class="contact-box__header">
                 <div class="contact-icon">📞</div>
                 <h2 class="contact-title">Thông Tin Liên Hệ</h2>
               </div>
+              <!-- Nội dung hộp liên hệ -->
               <div class="contact-content">
+                <!-- Chi tiết liên hệ -->
                 <div class="contact-detail">
                   <span class="detail-label">📍 Địa chỉ:</span>
                   <span class="detail-value"
@@ -578,11 +654,15 @@
         </div>
       </main>
 
-      <!-- Footer -->
+      <!-- Chân trang -->
       <footer class="footer">
+        <!-- Dải màu chân trang -->
         <div class="footer__gradient">
+          <!-- Container cho chân trang -->
           <div class="container">
+            <!-- Nội dung chân trang -->
             <div class="footer__content">
+              <!-- Thông tin chân trang -->
               <div class="footer__info">
                 <h3 class="footer__title">THPT Lương Thế Vinh</h3>
                 <p class="footer__desc">
@@ -591,6 +671,7 @@
                 <div class="footer__address">
                   📍 Phường Điện Nam Trung, Thị xã Điện Bàn, Tỉnh Quảng Nam
                 </div>
+                <!-- Mạng xã hội chân trang -->
                 <div class="footer__social">
                   <a
                     href="https://www.facebook.com/groups/ltvpro"
@@ -600,7 +681,9 @@
                   >
                 </div>
               </div>
+              <!-- Liên kết chân trang -->
               <div class="footer__links">
+                <!-- Cột chân trang -->
                 <div class="footer__column">
                   <h4>Liên kết nhanh</h4>
                   <ul>
@@ -630,6 +713,7 @@
                 </div>
               </div>
             </div>
+            <!-- Phần dưới của chân trang -->
             <div class="footer__bottom">
               <p>
                 &copy; 2025 Trường THPT Lương Thế Vinh. Tất cả quyền được bảo
@@ -640,9 +724,10 @@
         </div>
       </footer>
 
-      <!-- Floating Action Button -->
+      <!-- Nút hành động nổi -->
       <div class="fab-container">
         <div class="fab fab--main">💬</div>
+        <!-- Menu nút hành động nổi -->
         <div class="fab-menu">
           <a href="tel:0935308369" class="fab fab--phone">📞</a>
           <a
@@ -657,7 +742,7 @@
       </div>
     </div>
 
-    <!--Start of Tawk.to Script-->
+    <!-- Bắt đầu Script Tawk.to -->
     <script type="text/javascript">
       var Tawk_API = Tawk_API || {},
         Tawk_LoadStart = new Date();
@@ -671,6 +756,6 @@
         s0.parentNode.insertBefore(s1, s0);
       })();
     </script>
-    <!--End of Tawk.to Script-->
+    <!-- Kết thúc Script Tawk.to -->
   </body>
 </html>

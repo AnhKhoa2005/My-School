@@ -16,21 +16,31 @@
     <link rel="stylesheet" href="Css/Lichthikiemtra.css" />
   </head>
   <body>
+    <!-- Toàn bộ trang -->
     <div class="page">
+      <!-- Đầu trang -->
       <header class="header">
+        <!-- Dải màu đầu trang -->
         <div class="header__gradient">
+          <!-- Phần trên của đầu trang -->
           <div class="header__top">
+            <!-- Container giới hạn chiều rộng -->
             <div class="container">
               <a href="index.html">
+                <!-- Phần thương hiệu -->
                 <div class="brand">
+                  <!-- Logo thương hiệu -->
                   <img
                     src="Images/LogoTruong.jpg"
                     alt="logo"
                     class="brand__logo"
                   />
 
+                  <!-- Thông tin thương hiệu -->
                   <div class="brand__info">
+                    <!-- Tên thương hiệu -->
                     <h1 class="brand__name">Trường THPT Lương Thế Vinh</h1>
+                    <!-- Khẩu hiệu thương hiệu -->
                     <p class="brand__tagline">
                       Nơi ươm mầm tương lai - Khơi nguồn tri thức
                     </p>
@@ -40,15 +50,28 @@
             </div>
           </div>
 
+          <!-- Thanh điều hướng -->
           <nav class="nav">
+            <!-- Container giới hạn chiều rộng -->
             <div class="container">
+              <!-- Danh sách điều hướng -->
               <ul class="nav__list">
+                <!-- Mục điều hướng -->
                 <li class="nav__item">
                   <a href="index.html" class="nav__link">🏠 Trang Chủ</a>
                 </li>
+                <!-- Mục điều hướng có menu con -->
                 <li class="nav__item has-submenu">
+                  <input
+                    type="checkbox"
+                    id="menu-gioithieu"
+                    class="menu-toggle"
+                  />
                   <a href="Gioithieu.html" class="nav__link">ℹ️ Giới thiệu</a>
+                  <label for="menu-gioithieu" class="toggle-icon"></label>
+                  <!-- Menu con -->
                   <ul class="submenu">
+                    <!-- Mục menu con -->
                     <li class="submenu__item">
                       <a href="Lichsunhatruong.html" class="submenu__link"
                         >📚 Lịch sử nhà trường</a
@@ -67,7 +90,9 @@
                   </ul>
                 </li>
                 <li class="nav__item has-submenu">
+                  <input type="checkbox" id="menu-tochuc" class="menu-toggle" />
                   <a href="Tochuc.html" class="nav__link">🏢 Tổ chức</a>
+                  <label for="menu-tochuc" class="toggle-icon"></label>
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Bangiamhieu.html" class="submenu__link"
@@ -87,7 +112,9 @@
                   </ul>
                 </li>
                 <li class="nav__item has-submenu">
+                  <input type="checkbox" id="menu-tintuc" class="menu-toggle" />
                   <a href="Tintuc.html" class="nav__link">📰 Tin tức</a>
+                  <label for="menu-tintuc" class="toggle-icon"></label>
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Hoatdongtruong.html" class="submenu__link"
@@ -106,8 +133,15 @@
                     </li>
                   </ul>
                 </li>
+                <!-- Mục điều hướng có menu con, đang hoạt động -->
                 <li class="nav__item has-submenu active">
+                  <input
+                    type="checkbox"
+                    id="menu-dieuhanh"
+                    class="menu-toggle"
+                  />
                   <a href="Dieuhanh.html" class="nav__link">⚙️ Điều hành</a>
+                  <label for="menu-dieuhanh" class="toggle-icon"></label>
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Thoikhoabieu.html" class="submenu__link"
@@ -133,10 +167,15 @@
         </div>
       </header>
 
+      <!-- Banner trang -->
       <div class="page-banner">
+        <!-- Lớp phủ banner -->
         <div class="page-banner__overlay">
+          <!-- Container giới hạn chiều rộng -->
           <div class="container">
+            <!-- Tiêu đề banner -->
             <h1 class="page-banner__title">Lịch Thi Kiểm Tra</h1>
+            <!-- Breadcrumb -->
             <div class="breadcrumb">
               <a href="index.html" class="breadcrumb__item">Trang chủ</a>
               <span class="breadcrumb__separator">/</span>
@@ -150,13 +189,19 @@
         </div>
       </div>
 
+      <!-- Nội dung chính -->
       <main class="main">
+        <!-- Container giới hạn chiều rộng -->
         <div class="container">
-          <!-- Info Section -->
+          <!-- Phần thông tin -->
           <section class="info-section">
+            <!-- Hộp thông tin -->
             <div class="info-box">
+              <!-- Icon thông tin -->
               <div class="info-icon">📝</div>
+              <!-- Tiêu đề thông tin -->
               <h2 class="info-title">Lịch Thi Kiểm Tra Năm Học 2025-2026</h2>
+              <!-- Văn bản thông tin -->
               <p class="info-text">
                 Lịch thi kiểm tra được thông báo trước ít nhất 1 tuần. Học sinh
                 cần chuẩn bị tốt kiến thức và có mặt đúng giờ. Mọi thắc mắc xin
@@ -165,21 +210,34 @@
             </div>
           </section>
 
-          <!-- Upcoming Exams -->
+          <!-- Phần kỳ thi sắp tới -->
           <section class="upcoming-section">
+            <!-- Tiêu đề phần -->
             <h2 class="section-title">⏰ Kỳ Thi Sắp Tới</h2>
+            <!-- Lưới kỳ thi sắp tới -->
             <div class="upcoming-grid">
+              <!-- Thẻ kỳ thi sắp tới, khẩn cấp -->
               <div class="upcoming-card upcoming-card--urgent">
+                <!-- Huy hiệu kỳ thi sắp tới -->
                 <div class="upcoming-badge">Sắp diễn ra</div>
+                <!-- Ngày kỳ thi sắp tới -->
                 <div class="upcoming-date">
+                  <!-- Ngày -->
                   <div class="date-day">28</div>
+                  <!-- Tháng -->
                   <div class="date-month">Tháng 10</div>
+                  <!-- Năm -->
                   <div class="date-year">2025</div>
                 </div>
+                <!-- Nội dung kỳ thi sắp tới -->
                 <div class="upcoming-content">
+                  <!-- Tiêu đề kỳ thi sắp tới -->
                   <h3 class="upcoming-title">Thi giữa kỳ I - Toán</h3>
+                  <!-- Thông tin kỳ thi sắp tới -->
                   <div class="upcoming-info">
+                    <!-- Mục thông tin -->
                     <div class="info-item">
+                      <!-- Icon thông tin -->
                       <span class="info-icon">📚</span>
                       <span>Khối 10, 11, 12</span>
                     </div>
@@ -192,8 +250,11 @@
                       <span>Các phòng thi</span>
                     </div>
                   </div>
+                  <!-- Đếm ngược -->
                   <div class="countdown">
+                    <!-- Nhãn đếm ngược -->
                     <span class="countdown-label">Còn:</span>
+                    <!-- Thời gian đếm ngược -->
                     <span class="countdown-time">19 ngày</span>
                   </div>
                 </div>
@@ -261,12 +322,15 @@
             </div>
           </section>
 
-          <!-- Midterm Schedule -->
+          <!-- Phần lịch thi giữa kỳ -->
           <section class="schedule-section">
+            <!-- Tiêu đề phần -->
             <h2 class="section-title">
               📋 Lịch Thi Giữa Kỳ I (28/10 - 02/11/2025)
             </h2>
+            <!-- Wrapper bảng lịch thi -->
             <div class="schedule-table-wrapper">
+              <!-- Bảng lịch thi -->
               <table class="exam-table">
                 <thead>
                   <tr>
@@ -280,23 +344,36 @@
                 </thead>
                 <tbody>
                   <tr>
+                    <!-- Ô ngày thi -->
                     <td class="td-date">
+                      <!-- Ô ngày -->
                       <div class="date-cell">
+                        <!-- Số ngày -->
                         <div class="date-num">28/10</div>
+                        <!-- Tên ngày -->
                         <div class="date-day">Thứ Hai</div>
                       </div>
                     </td>
+                    <!-- Ô môn thi -->
                     <td class="td-subject">
+                      <!-- Ô môn học, môn Toán -->
                       <div class="subject-cell subject-math">
+                        <!-- Icon môn học -->
                         <span class="subject-icon">🔢</span>
+                        <!-- Tên môn học -->
                         <span class="subject-name">Toán</span>
                       </div>
                     </td>
+                    <!-- Ô khối -->
                     <td class="td-grade">Khối 10, 11, 12</td>
+                    <!-- Ô thời gian -->
                     <td class="td-time">7:30 - 9:00 (90 phút)</td>
+                    <!-- Ô hình thức -->
                     <td class="td-format">
+                      <!-- Huy hiệu hình thức -->
                       <span class="format-badge">Tự luận</span>
                     </td>
+                    <!-- Ô phòng thi -->
                     <td class="td-room">P.201-220</td>
                   </tr>
 
@@ -411,14 +488,21 @@
             </div>
           </section>
 
-          <!-- Exam Rules -->
+          <!-- Phần quy định thi cử -->
           <section class="rules-section">
+            <!-- Tiêu đề phần -->
             <h2 class="section-title">📜 Quy Định Thi Cử</h2>
+            <!-- Lưới quy định -->
             <div class="rules-grid">
+              <!-- Thẻ quy định -->
               <div class="rule-card">
+                <!-- Số quy định -->
                 <div class="rule-number">01</div>
+                <!-- Icon quy định -->
                 <div class="rule-icon">🕐</div>
+                <!-- Tiêu đề quy định -->
                 <h3 class="rule-title">Thời gian</h3>
+                <!-- Mô tả quy định -->
                 <p class="rule-desc">
                   Học sinh phải có mặt trước 15 phút. Không được vào phòng thi
                   sau 30 phút kể từ khi bắt đầu làm bài.
@@ -457,14 +541,21 @@
             </div>
           </section>
 
-          <!-- Tips -->
+          <!-- Phần lời khuyên -->
           <section class="tips-section">
+            <!-- Hộp lời khuyên -->
             <div class="tips-box">
+              <!-- Tiêu đề lời khuyên -->
               <h2 class="tips-title">💡 Lời Khuyên Hữu Ích</h2>
+              <!-- Lưới lời khuyên -->
               <div class="tips-grid">
+                <!-- Mục lời khuyên -->
                 <div class="tip-item">
+                  <!-- Icon lời khuyên -->
                   <div class="tip-icon">📚</div>
+                  <!-- Tiêu đề lời khuyên -->
                   <h4 class="tip-heading">Chuẩn bị kỹ lưỡng</h4>
+                  <!-- Văn bản lời khuyên -->
                   <p class="tip-text">
                     Ôn tập toàn diện kiến thức, làm đề cũ, tìm hiểu cấu trúc đề
                     thi.
@@ -500,19 +591,27 @@
         </div>
       </main>
 
-      <!-- Footer -->
+      <!-- Chân trang -->
       <footer class="footer">
+        <!-- Dải màu chân trang -->
         <div class="footer__gradient">
+          <!-- Container giới hạn chiều rộng -->
           <div class="container">
+            <!-- Nội dung chân trang -->
             <div class="footer__content">
+              <!-- Thông tin chân trang -->
               <div class="footer__info">
+                <!-- Tiêu đề chân trang -->
                 <h3 class="footer__title">THPT Lương Thế Vinh</h3>
+                <!-- Mô tả chân trang -->
                 <p class="footer__desc">
                   Ngôi trường của tri thức và tương lai
                 </p>
+                <!-- Địa chỉ chân trang -->
                 <div class="footer__address">
                   📍 Phường Điện Nam Trung, Thị xã Điện Bàn, Tỉnh Quảng Nam
                 </div>
+                <!-- Mạng xã hội chân trang -->
                 <div class="footer__social">
                   <a
                     href="https://www.facebook.com/groups/ltvpro"
@@ -522,7 +621,9 @@
                   >
                 </div>
               </div>
+              <!-- Các liên kết chân trang -->
               <div class="footer__links">
+                <!-- Cột liên kết chân trang -->
                 <div class="footer__column">
                   <h4>Liên kết nhanh</h4>
                   <ul>
@@ -552,6 +653,7 @@
                 </div>
               </div>
             </div>
+            <!-- Phần dưới của chân trang -->
             <div class="footer__bottom">
               <p>
                 &copy; 2025 Trường THPT Lương Thế Vinh. Tất cả quyền được bảo
@@ -562,9 +664,11 @@
         </div>
       </footer>
 
-      <!-- Floating Action Button -->
+      <!-- Nút hành động nổi -->
       <div class="fab-container">
+        <!-- Nút chính -->
         <div class="fab fab--main">💬</div>
+        <!-- Menu nút nổi -->
         <div class="fab-menu">
           <a href="tel:0935308369" class="fab fab--phone">📞</a>
           <a

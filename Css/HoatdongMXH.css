@@ -1,61 +1,75 @@
-/* ========== Main Layout ========== */
+﻿/* ============================================================
+   HOATDONGMXH.CSS - CSS cho trang Hoạt động Mạng xã hội
+   ============================================================ */
+
+/* ========== Nội dung chính ========== */
+/* Phần nội dung chính của trang */
 .main {
-  padding: var(--spacing-2xl) 0;
+  padding: var(--spacing-2xl) 0; /* Lề trong trên dưới */
 }
 
+/* ========== Bố cục chính ========== */
+/* Bố cục lưới cho trang, chia làm 2 cột: cột chính và sidebar */
 .social-layout {
-  display: grid;
-  grid-template-columns: 1fr 350px;
-  gap: var(--spacing-2xl);
-  align-items: start;
+  display: grid; /* Sử dụng grid layout */
+  grid-template-columns: 1fr 350px; /* Cột feed chiếm phần còn lại, sidebar rộng 350px */
+  gap: var(--spacing-2xl); /* Khoảng cách giữa 2 cột */
+  align-items: start; /* Căn các mục ở đầu cột */
 }
 
-/* ========== Social Feed (Main Content) ========== */
+/* ========== Dòng thời gian (Feed) ========== */
+/* Vùng chứa các bài đăng trên mạng xã hội */
 .social-feed {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-2xl);
+  display: flex; /* Sử dụng flexbox */
+  flex-direction: column; /* Xếp các bài đăng theo chiều dọc */
+  gap: var(--spacing-2xl); /* Khoảng cách giữa các bài đăng */
 }
 
+/* Mỗi bài đăng */
 .social-post {
-  background: white;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
-  overflow: hidden;
-  transition: var(--transition);
-  animation: fadeInUp 0.6s ease-out backwards;
+  background: white; /* Nền trắng */
+  border-radius: var(--radius-xl); /* Bo góc lớn */
+  box-shadow: var(--shadow-lg); /* Đổ bóng lớn */
+  overflow: hidden; /* Ẩn nội dung tràn ra ngoài */
+  transition: var(--transition); /* Hiệu ứng chuyển động mượt mà */
+  animation: fadeInUp 0.6s ease-out backwards; /* Animation hiện ra từ dưới */
 }
 
+/* Hiệu ứng khi di chuột vào bài đăng */
 .social-post:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-xl);
+  transform: translateY(-5px); /* Nhấc bài đăng lên một chút */
+  box-shadow: var(--shadow-xl); /* Đổ bóng lớn hơn */
 }
 
+/* Phần đầu của bài đăng */
 .post-header {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-lg);
-  padding: var(--spacing-lg);
-  border-bottom: 2px solid var(--bg-tertiary);
+  display: flex; /* Sử dụng flexbox */
+  align-items: center; /* Căn giữa các mục theo chiều dọc */
+  gap: var(--spacing-lg); /* Khoảng cách giữa các mục */
+  padding: var(--spacing-lg); /* Lề trong */
+  border-bottom: 2px solid var(--bg-tertiary); /* Đường kẻ phân cách dưới */
 }
 
+/* Icon của nền tảng (Facebook, YouTube, TikTok) */
 .platform-icon {
   width: 50px;
   height: 50px;
-  border-radius: 50%;
+  border-radius: 50%; /* Hình tròn */
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  color: white;
-  flex-shrink: 0;
-  box-shadow: var(--shadow-sm);
+  font-size: 1.5rem; /* Cỡ chữ icon */
+  color: white; /* Màu chữ trắng */
+  flex-shrink: 0; /* Không co lại khi không đủ không gian */
+  box-shadow: var(--shadow-sm); /* Đổ bóng nhỏ */
 }
 
-.platform-icon.facebook { background: #1877F2; }
-.platform-icon.youtube { background: #FF0000; }
-.platform-icon.tiktok { background: #000000; }
+/* Màu nền cho từng nền tảng */
+.platform-icon.facebook { background: #1877F2; } /* Màu xanh của Facebook */
+.platform-icon.youtube { background: #FF0000; } /* Màu đỏ của YouTube */
+.platform-icon.tiktok { background: #000000; } /* Màu đen của TikTok */
 
+/* Tên tác giả bài đăng */
 .post-author h3 {
   font-size: 1.2rem;
   font-weight: 700;
@@ -63,66 +77,65 @@
   margin: 0;
 }
 
+/* Thời gian đăng bài */
 .post-timestamp {
   font-size: 0.9rem;
   color: var(--text-secondary);
   margin: 0;
 }
 
-/* === BẮT ĐẦU PHẦN TỐI ƯU === */
+/* === BẮT ĐẦU PHẦN TỐI ƯU CHO NỘI DUNG NHÚNG (EMBED) === */
 
-/* Mặc định post-body */
+/* Phần thân của bài đăng (chứa nội dung nhúng) */
 .post-body {
-  padding: var(--spacing-lg);
-  box-sizing: border-box;
+  padding: var(--spacing-lg); /* Lề trong mặc định */
+  box-sizing: border-box; /* Tính cả padding và border vào kích thước */
 }
 
-/* Dùng display: flex để căn giữa các thẻ con */
+/* Căn giữa nội dung nhúng của Facebook và TikTok */
 .social-post:has(.fb-post) .post-body,
 .social-post:has(.tiktok-embed) .post-body {
   display: flex;
   justify-content: center;
 }
 
-/* Style cho video (nền đen, không padding) */
+/* Style cho video YouTube (nền đen, không có lề trong) */
 .post-body:has(.embed-container--16-9) {
-    background-color: #000;
-    padding: 0;
+    background-color: #000; /* Nền đen */
+    padding: 0; /* Bỏ lề trong */
 }
 
-/* Container cho YouTube iframe */
+/* Container cho iframe (YouTube) để giữ tỷ lệ */
 .embed-container {
-  position: relative;
-  width: 100%;
+  position: relative; /* Vị trí tương đối */
+  width: 100%; /* Chiếm toàn bộ chiều rộng */
 }
 
+/* Container giữ tỷ lệ 16:9 cho video */
 .embed-container--16-9 {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 9; /* Giữ tỷ lệ khung hình 16:9 */
 }
 
+/* Iframe bên trong container */
 .embed-container iframe {
-  position: absolute;
+  position: absolute; /* Vị trí tuyệt đối so với container */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border: 0;
+  border: 0; /* Bỏ đường viền */
 }
 
-/* Container cho TikTok embed */
+/* Container cho nội dung nhúng TikTok */
 .tiktok-embed {
-  margin: 0 auto;
+  margin: 0 auto; /* Tự động căn giữa theo chiều ngang */
 }
 
-/* Style cho Facebook embed - không cần các !important phức tạp nữa */
-.fb-post {
-  /* Để Facebook SDK tự quản lý */
-}
 
 
 /* === KẾT THÚC PHẦN TỐI ƯU === */
 
-
+/* Chú thích/mô tả của bài đăng */
 .post-caption {
   padding: var(--spacing-lg);
   font-size: 1rem;
@@ -131,27 +144,31 @@
   background: white;
 }
 
+/* Phần chân của bài đăng */
 .post-footer {
   padding: var(--spacing-md) var(--spacing-lg);
-  border-top: 2px solid var(--bg-tertiary);
-  text-align: right;
+  border-top: 2px solid var(--bg-tertiary); /* Đường kẻ phân cách trên */
+  text-align: right; /* Căn phải */
   background: white;
 }
 
+/* Liên kết xem bài đăng gốc */
 .post-link {
   color: var(--primary);
   font-weight: 600;
 }
 
 /* ========== Sidebar ========== */
+/* Thanh bên (sidebar) */
 .social-sidebar {
-  position: sticky;
-  top: 20px;
+  position: sticky; /* Dính lại khi cuộn trang */
+  top: 20px; /* Cách đỉnh 20px */
   display: flex;
   flex-direction: column;
   gap: var(--spacing-xl);
 }
 
+/* Mỗi widget trong sidebar */
 .sidebar-widget {
   background: white;
   padding: var(--spacing-xl);
@@ -159,22 +176,24 @@
   box-shadow: var(--shadow-md);
 }
 
+/* Tiêu đề của widget */
 .widget-title {
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--primary-dark);
   margin-bottom: var(--spacing-lg);
   padding-bottom: var(--spacing-md);
-  border-bottom: 3px solid var(--primary);
+  border-bottom: 3px solid var(--primary); /* Gạch chân trang trí */
 }
 
-/* Social Channels Widget */
+/* Widget "Kênh mạng xã hội" */
 .social-channels-list {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
 }
 
+/* Mỗi mục kênh mạng xã hội */
 .social-channel-item {
   display: flex;
   align-items: center;
@@ -187,21 +206,22 @@
   box-shadow: var(--shadow-sm);
 }
 .social-channel-item:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Phóng to nhẹ khi di chuột */
   box-shadow: var(--shadow-lg);
 }
 .social-channel-icon { font-size: 1.2rem; }
 .facebook-bg { background: #1877F2; }
 .youtube-bg { background: #FF0000; }
-.tiktok-bg { background: linear-gradient(135deg, #00f2ea, #ff0050); }
+.tiktok-bg { background: linear-gradient(135deg, #00f2ea, #ff0050); } /* Nền chuyển sắc cho TikTok */
 
-/* Tags Cloud Widget */
+/* Widget "Đám mây thẻ" (Tags Cloud) */
 .tags-cloud {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Cho phép các thẻ xuống dòng */
   gap: var(--spacing-sm);
 }
 
+/* Mỗi thẻ (tag) */
 .tag-item {
   padding: var(--spacing-xs) var(--spacing-md);
   background: var(--bg-secondary);
@@ -212,23 +232,25 @@
   transition: var(--transition);
 }
 .tag-item:hover {
-  background: var(--primary);
-  color: white;
+  background: var(--primary); /* Đổi màu nền khi di chuột */
+  color: white; /* Đổi màu chữ khi di chuột */
 }
 
-/* Events List Widget */
+/* Widget "Danh sách sự kiện" */
 .events-list {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
 }
 
+/* Mỗi mục sự kiện */
 .event-item {
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
 }
 
+/* Ngày của sự kiện */
 .event-date {
   background: var(--gradient-secondary);
   color: white;
@@ -239,32 +261,36 @@
   text-align: center;
 }
 
+/* Tên sự kiện */
 .event-name {
   font-weight: 600;
   color: var(--text-primary);
 }
 
 /* ========== Responsive ========== */
+/* Cho màn hình nhỏ hơn 1200px */
 @media (max-width: 1200px) {
   .social-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Chuyển layout thành 1 cột */
   }
   .social-sidebar {
-    position: static;
+    position: static; /* Bỏ thuộc tính sticky cho sidebar */
   }
 }
 
-/* Bổ sung CSS cho Page Banner để giống trang Hoạt động trường */
+/* ========== Banner trang ========== */
+/* Bổ sung CSS cho Page Banner để giống các trang khác */
 .page-banner {
   position: relative;
   height: 300px;
-  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); /* Gradient từ Hoatdongtruong.css */
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); /* Nền chuyển sắc hồng-xanh */
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
+/* Lớp giả tạo hiệu ứng nền */
 .page-banner::before {
   content: '';
   position: absolute;
@@ -273,14 +299,16 @@
   right: 0;
   bottom: 0;
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="90" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.15)"/></svg>');
-  animation: float 20s infinite linear;
+  animation: float 20s infinite linear; /* Animation di chuyển nền */
 }
 
+/* Keyframe cho animation 'float' */
 @keyframes float {
   from { transform: translateY(0); }
   to { transform: translateY(-100px); }
 }
 
+/* Lớp phủ chứa nội dung text trên banner */
 .page-banner__overlay {
   position: relative;
   z-index: 2;
@@ -288,14 +316,16 @@
   color: white;
 }
 
+/* Tiêu đề của banner */
 .page-banner__title {
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: var(--spacing-md);
   text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-  animation: slideInDown 0.6s ease-out;
+  animation: slideInDown 0.6s ease-out; /* Animation trượt xuống */
 }
 
+/* Keyframe cho animation 'slideInDown' */
 @keyframes slideInDown {
   from {
     opacity: 0;
@@ -307,20 +337,23 @@
   }
 }
 
+/* Thanh điều hướng breadcrumb */
 .breadcrumb {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--spacing-sm);
   font-size: 1rem;
-  animation: fadeIn 0.8s ease-out;
+  animation: fadeIn 0.8s ease-out; /* Animation hiện ra */
 }
 
+/* Keyframe cho animation 'fadeIn' */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
+/* Mỗi mục trong breadcrumb */
 .breadcrumb__item {
   color: rgba(255,255,255,0.9);
   transition: var(--transition);
@@ -330,11 +363,13 @@
   color: white;
 }
 
+/* Mục đang hoạt động (trang hiện tại) */
 .breadcrumb__item--active {
   color: white;
   font-weight: 600;
 }
 
+/* Dấu phân cách trong breadcrumb */
 .breadcrumb__separator {
   color: rgba(255,255,255,0.6);
 }
@@ -342,9 +377,9 @@
 /* Responsive cho Page Banner */
 @media (max-width: 768px) {
   .page-banner {
-    height: 200px;
+    height: 200px; /* Giảm chiều cao banner trên màn hình nhỏ */
   }
   .page-banner__title {
-    font-size: 2rem;
+    font-size: 2rem; /* Giảm cỡ chữ tiêu đề trên màn hình nhỏ */
   }
 }

@@ -1,754 +1,812 @@
-/* ========== Page Banner ========== */
+﻿/* ============================================================
+   TIEUSULTV.CSS - TIỂU SỬ LƯƠNG THẾ VINH
+   ============================================================ */
+
+/* Banner chung của trang */
 .page-banner {
-  position: relative;
-  height: 300px;
-  background: linear-gradient(135deg, #c471ed 0%, #f64f59 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  position: relative; /* Vị trí tương đối để chứa các phần tử con tuyệt đối */
+  height: 300px; /* Chiều cao */
+  background: linear-gradient(135deg, #c471ed 0%, #f64f59 100%); /* Nền gradient */
+  display: flex; /* Hiển thị flexbox */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  overflow: hidden; /* Ẩn nội dung tràn */
 }
 
+/* Lớp giả ::before cho banner để tạo hiệu ứng nền */
 .page-banner::before {
-  content: '';
-  position: absolute;
+  content: ''; /* Bắt buộc */
+  position: absolute; /* Vị trí tuyệt đối */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="90" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.15)"/></svg>');
-  animation: float 20s infinite linear;
+  background: url('data:image/svg+xml,...'); /* Nền SVG dạng data URI */
+  animation: float 20s infinite linear; /* Animation lơ lửng */
 }
 
+/* Animation lơ lửng */
 @keyframes float {
   from { transform: translateY(0); }
   to { transform: translateY(-100px); }
 }
 
+/* Lớp phủ nội dung trên banner */
 .page-banner__overlay {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  color: white;
+  position: relative; /* Vị trí tương đối */
+  z-index: 2; /* Nằm trên lớp ::before */
+  text-align: center; /* Căn giữa văn bản */
+  color: white; /* Màu chữ trắng */
 }
 
+/* Tiêu đề chính của banner */
 .page-banner__title {
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: var(--spacing-md);
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-  animation: slideInDown 0.6s ease-out;
+  font-size: 3rem; /* Cỡ chữ */
+  font-weight: 800; /* Độ đậm */
+  margin-bottom: var(--spacing-md); /* Khoảng cách dưới */
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3); /* Đổ bóng chữ */
+  animation: slideInDown 0.6s ease-out; /* Animation trượt xuống */
 }
 
+/* Animation trượt xuống */
 @keyframes slideInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
+/* Thanh điều hướng breadcrumb */
 .breadcrumb {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-sm);
-  font-size: 1rem;
-  animation: fadeIn 0.8s ease-out;
+  display: flex; /* Hiển thị flexbox */
+  align-items: center; /* Căn giữa dọc */
+  justify-content: center; /* Căn giữa ngang */
+  gap: var(--spacing-sm); /* Khoảng cách */
+  font-size: 1rem; /* Cỡ chữ */
+  animation: fadeIn 0.8s ease-out; /* Animation mờ dần */
 }
 
+/* Animation mờ dần */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
+/* Mục trong breadcrumb */
 .breadcrumb__item {
-  color: rgba(255,255,255,0.9);
-  transition: var(--transition);
+  color: rgba(255,255,255,0.9); /* Màu chữ */
+  transition: var(--transition); /* Hiệu ứng chuyển đổi */
 }
 
+/* Khi di chuột vào mục breadcrumb */
 .breadcrumb__item:hover {
-  color: white;
+  color: white; /* Đổi màu chữ */
 }
 
+/* Mục breadcrumb đang hoạt động */
 .breadcrumb__item--active {
-  color: white;
-  font-weight: 600;
+  color: white; /* Màu chữ trắng */
+  font-weight: 600; /* Chữ đậm */
 }
 
+/* Dấu phân cách trong breadcrumb */
 .breadcrumb__separator {
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.6); /* Màu dấu phân cách */
 }
 
-/* ========== Main ========== */
+/* Phần nội dung chính của trang */
 .main {
-  padding: var(--spacing-2xl) 0;
+  padding: var(--spacing-2xl) 0; /* Đệm trên và dưới */
 }
 
-/* ========== Hero Profile ========== */
+/* Phần hero giới thiệu nhân vật */
 .hero-profile {
-  display: grid;
-  grid-template-columns: 400px 1fr;
-  gap: var(--spacing-2xl);
-  padding: var(--spacing-2xl);
-  background: white;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-xl);
-  margin-bottom: var(--spacing-2xl);
-  animation: fadeInUp 0.8s ease-out;
+  display: grid; /* Hiển thị dạng lưới */
+  grid-template-columns: 400px 1fr; /* Chia 2 cột, cột ảnh rộng 400px */
+  gap: var(--spacing-2xl); /* Khoảng cách giữa các cột */
+  padding: var(--spacing-2xl); /* Đệm */
+  background: white; /* Nền trắng */
+  border-radius: var(--radius-xl); /* Bo góc */
+  box-shadow: var(--shadow-xl); /* Đổ bóng */
+  margin-bottom: var(--spacing-2xl); /* Khoảng cách dưới */
+  animation: fadeInUp 0.8s ease-out; /* Animation trượt lên */
 }
 
+/* Animation trượt lên */
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
+/* Phần chứa ảnh chân dung và thông tin liên quan */
 .hero-profile__portrait {
-  position: relative;
+  position: relative; /* Vị trí tương đối */
 }
 
+/* Khung ảnh chân dung */
 .portrait-frame {
-  position: relative;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  border: 8px solid transparent;
+  position: relative; /* Vị trí tương đối */
+  border-radius: var(--radius-xl); /* Bo góc */
+  overflow: hidden; /* Ẩn nội dung tràn */
+  box-shadow: var(--shadow-lg); /* Đổ bóng */
+  border: 8px solid transparent; /* Viền trong suốt */
   background: linear-gradient(white, white) padding-box,
-              var(--gradient-primary) border-box;
+              var(--gradient-primary) border-box; /* Tạo viền gradient */
 }
 
-/* ========== SỬA LỖI ẢNH CHÂN DUNG TRÀN KHUNG ========== */
+/* Ảnh chân dung */
 .portrait-frame img {
-  width: 100%;
-  height: 500px; /* Chiều cao cố định giống .image-placeholder--portrait cũ */
-  object-fit: cover; /* QUAN TRỌNG: Lấp đầy khung, tự cắt phần thừa */
-  display: block; /* Đảm bảo ảnh là block element */
+  width: 100%; /* Rộng 100% */
+  height: 500px; /* Chiều cao cố định */
+  object-fit: cover; /* Lấp đầy khung, cắt phần thừa */
+  display: block; /* Hiển thị dạng block */
 }
 
+/* Trình giữ chỗ cho ảnh chân dung (khi ảnh chưa tải xong) */
 .image-placeholder--portrait {
-  height: 500px;
+  height: 500px; /* Chiều cao cố định */
 }
 
+/* Trình giữ chỗ chung cho hình ảnh */
 .image-placeholder {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-md);
-  transition: var(--transition);
-  position: relative;
-  overflow: hidden;
+  width: 100%; /* Rộng 100% */
+  height: 100%; /* Cao 100% */
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%); /* Nền gradient */
+  display: flex; /* Hiển thị flexbox */
+  flex-direction: column; /* Sắp xếp theo cột */
+  align-items: center; /* Căn giữa ngang */
+  justify-content: center; /* Căn giữa dọc */
+  gap: var(--spacing-md); /* Khoảng cách */
+  transition: var(--transition); /* Hiệu ứng chuyển đổi */
+  position: relative; /* Vị trí tương đối */
+  overflow: hidden; /* Ẩn nội dung tràn */
 }
 
+/* Lớp giả ::before cho trình giữ chỗ để tạo hiệu ứng lấp lánh */
 .image-placeholder::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    45deg,
-    transparent 30%,
-    rgba(255, 255, 255, 0.3) 50%,
-    transparent 70%
-  );
-  animation: shimmer 3s infinite;
+  content: ''; /* Bắt buộc */
+  position: absolute; /* Vị trí tuyệt đối */
+  top: -50%; left: -50%; width: 200%; height: 200%;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+  animation: shimmer 3s infinite; /* Animation lấp lánh */
 }
 
+/* Animation lấp lánh */
 @keyframes shimmer {
   0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
   100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
 }
 
+/* Icon trong trình giữ chỗ */
 .placeholder-icon {
-  font-size: 5rem;
-  opacity: 0.4;
-  position: relative;
-  z-index: 2;
+  font-size: 5rem; /* Cỡ chữ */
+  opacity: 0.4; /* Độ mờ */
+  position: relative; /* Vị trí tương đối */
+  z-index: 2; /* Nằm trên lớp ::before */
 }
 
+/* Văn bản trong trình giữ chỗ */
 .placeholder-text {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  position: relative;
-  z-index: 2;
+  font-size: 1.1rem; /* Cỡ chữ */
+  font-weight: 600; /* Độ đậm */
+  color: var(--text-muted); /* Màu chữ */
+  position: relative; /* Vị trí tương đối */
+  z-index: 2; /* Nằm trên lớp ::before */
 }
 
+/* Thông tin dưới ảnh chân dung (huy hiệu) */
 .portrait-info {
-  display: flex;
-  gap: var(--spacing-sm);
-  margin-top: var(--spacing-md);
-  flex-wrap: wrap;
+  display: flex; /* Hiển thị flexbox */
+  gap: var(--spacing-sm); /* Khoảng cách */
+  margin-top: var(--spacing-md); /* Khoảng cách trên */
+  flex-wrap: wrap; /* Cho phép xuống dòng */
 }
 
+/* Huy hiệu thông tin (ví dụ: Trạng nguyên) */
 .info-badge {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  padding: var(--spacing-md);
-  background: var(--gradient-primary);
-  color: white;
-  border-radius: var(--radius-lg);
-  font-weight: 600;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition);
+  flex: 1; /* Linh hoạt co giãn */
+  display: flex; /* Hiển thị flexbox */
+  align-items: center; /* Căn giữa dọc */
+  gap: var(--spacing-sm); /* Khoảng cách */
+  padding: var(--spacing-md); /* Đệm */
+  background: var(--gradient-primary); /* Nền gradient */
+  color: white; /* Màu chữ trắng */
+  border-radius: var(--radius-lg); /* Bo góc */
+  font-weight: 600; /* Độ đậm */
+  box-shadow: var(--shadow-md); /* Đổ bóng */
+  transition: var(--transition); /* Hiệu ứng chuyển đổi */
 }
 
+/* Khi di chuột vào huy hiệu */
 .info-badge:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-5px); /* Di chuyển lên trên */
+  box-shadow: var(--shadow-lg); /* Tăng bóng đổ */
 }
 
+/* Icon trong huy hiệu */
 .badge-icon {
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Cỡ chữ */
 }
 
+/* Nội dung chính bên phải ảnh */
 .hero-profile__content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: flex; /* Hiển thị flexbox */
+  flex-direction: column; /* Sắp xếp theo cột */
+  justify-content: center; /* Căn giữa dọc */
 }
 
+/* Tên nhân vật */
 .hero-profile__name {
-  font-size: 3.5rem;
-  font-weight: 800;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 3.5rem; /* Cỡ chữ */
+  font-weight: 800; /* Độ đậm */
+  background: var(--gradient-primary); /* Nền gradient */
+  -webkit-background-clip: text; /* Cắt nền theo chữ */
+  -webkit-text-fill-color: transparent; /* Chữ trong suốt */
   background-clip: text;
-  margin-bottom: var(--spacing-md);
-  line-height: 1.2;
+  margin-bottom: var(--spacing-md); /* Khoảng cách dưới */
+  line-height: 1.2; /* Chiều cao dòng */
 }
 
+/* Chức danh của nhân vật */
 .hero-profile__title {
-  font-size: 1.8rem;
-  color: var(--text-secondary);
-  font-weight: 600;
-  margin-bottom: var(--spacing-lg);
+  font-size: 1.8rem; /* Cỡ chữ */
+  color: var(--text-secondary); /* Màu chữ */
+  font-weight: 600; /* Độ đậm */
+  margin-bottom: var(--spacing-lg); /* Khoảng cách dưới */
 }
 
+/* Phần chứa năm sinh, năm mất */
 .hero-profile__dates {
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl); /* Khoảng cách dưới */
 }
 
+/* Huy hiệu hiển thị ngày tháng */
 .date-badge {
-  display: inline-block;
-  padding: var(--spacing-md) var(--spacing-xl);
-  background: var(--gradient-secondary);
-  color: white;
-  border-radius: var(--radius-lg);
-  font-weight: 700;
-  font-size: 1.1rem;
-  box-shadow: var(--shadow-md);
+  display: inline-block; /* Hiển thị inline-block */
+  padding: var(--spacing-md) var(--spacing-xl); /* Đệm */
+  background: var(--gradient-secondary); /* Nền gradient */
+  color: white; /* Màu chữ trắng */
+  border-radius: var(--radius-lg); /* Bo góc */
+  font-weight: 700; /* Độ đậm */
+  font-size: 1.1rem; /* Cỡ chữ */
+  box-shadow: var(--shadow-md); /* Đổ bóng */
 }
 
+/* Đoạn giới thiệu ngắn về nhân vật */
 .hero-profile__intro {
-  font-size: 1.2rem;
-  line-height: 1.9;
-  color: var(--text-secondary);
+  font-size: 1.2rem; /* Cỡ chữ */
+  line-height: 1.9; /* Chiều cao dòng */
+  color: var(--text-secondary); /* Màu chữ */
 }
 
-/* ========== Quick Facts ========== */
+/* Khu vực thông tin nhanh (Quick Facts) */
 .quick-facts {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--spacing-xl);
-  margin-bottom: var(--spacing-2xl);
+  display: grid; /* Hiển thị dạng lưới */
+  grid-template-columns: repeat(4, 1fr); /* 4 cột bằng nhau */
+  gap: var(--spacing-xl); /* Khoảng cách */
+  margin-bottom: var(--spacing-2xl); /* Khoảng cách dưới */
 }
 
+/* Thẻ chứa một thông tin nhanh */
 .fact-card {
-  padding: var(--spacing-2xl);
-  background: white;
-  border-radius: var(--radius-xl);
-  text-align: center;
-  box-shadow: var(--shadow-md);
-  border-top: 5px solid var(--primary);
-  transition: var(--transition);
-  animation: scaleIn 0.6s ease-out backwards;
+  padding: var(--spacing-2xl); /* Đệm */
+  background: white; /* Nền trắng */
+  border-radius: var(--radius-xl); /* Bo góc */
+  text-align: center; /* Căn giữa văn bản */
+  box-shadow: var(--shadow-md); /* Đổ bóng */
+  border-top: 5px solid var(--primary); /* Viền trên */
+  transition: var(--transition); /* Hiệu ứng chuyển đổi */
+  animation: scaleIn 0.6s ease-out backwards; /* Animation phóng to */
 }
 
+/* Gán màu và độ trễ animation cho từng thẻ */
 .fact-card:nth-child(1) { animation-delay: 0.1s; border-top-color: #667eea; }
 .fact-card:nth-child(2) { animation-delay: 0.2s; border-top-color: #f093fb; }
 .fact-card:nth-child(3) { animation-delay: 0.3s; border-top-color: #4facfe; }
 .fact-card:nth-child(4) { animation-delay: 0.4s; border-top-color: #f6d365; }
 
+/* Animation phóng to */
 @keyframes scaleIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
 }
 
+/* Khi di chuột vào thẻ thông tin nhanh */
 .fact-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-xl);
+  transform: translateY(-10px); /* Di chuyển lên trên */
+  box-shadow: var(--shadow-xl); /* Tăng bóng đổ */
 }
 
+/* Icon trong thẻ thông tin nhanh */
 .fact-card__icon {
-  font-size: 3rem;
-  margin-bottom: var(--spacing-md);
+  font-size: 3rem; /* Cỡ chữ */
+  margin-bottom: var(--spacing-md); /* Khoảng cách dưới */
 }
 
+/* Nhãn của thông tin (ví dụ: Quê quán) */
 .fact-card__label {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-bottom: var(--spacing-sm);
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-size: 0.9rem; /* Cỡ chữ */
+  color: var(--text-muted); /* Màu chữ */
+  margin-bottom: var(--spacing-sm); /* Khoảng cách dưới */
+  text-transform: uppercase; /* Viết hoa */
+  font-weight: 600; /* Độ đậm */
+  letter-spacing: 1px; /* Khoảng cách chữ */
 }
 
+/* Giá trị của thông tin (ví dụ: Cao Lộc) */
 .fact-card__value {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--primary-dark);
+  font-size: 1.8rem; /* Cỡ chữ */
+  font-weight: 800; /* Độ đậm */
+  color: var(--primary-dark); /* Màu chữ */
 }
 
-/* ========== Biography Section ========== */
+/* Khu vực tiểu sử chi tiết */
 .biography-section {
-  margin-bottom: var(--spacing-2xl);
+  margin-bottom: var(--spacing-2xl); /* Khoảng cách dưới */
 }
 
+/* Tiêu đề chung của khu vực */
 .section-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  text-align: center;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 2.5rem; /* Cỡ chữ */
+  font-weight: 800; /* Độ đậm */
+  text-align: center; /* Căn giữa văn bản */
+  background: var(--gradient-primary); /* Nền gradient */
+  -webkit-background-clip: text; /* Cắt nền theo chữ */
+  -webkit-text-fill-color: transparent; /* Chữ trong suốt */
   background-clip: text;
-  margin-bottom: var(--spacing-2xl);
-  position: relative;
-  padding-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl); /* Khoảng cách dưới */
+  position: relative; /* Vị trí tương đối */
+  padding-bottom: var(--spacing-lg); /* Đệm dưới */
 }
 
+/* Đường gạch chân dưới tiêu đề khu vực */
 .section-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 4px;
-  background: var(--gradient-secondary);
-  border-radius: 2px;
+  content: ''; /* Bắt buộc */
+  position: absolute; /* Vị trí tuyệt đối */
+  bottom: 0; /* Sát dưới */
+  left: 50%; /* Căn giữa ngang */
+  transform: translateX(-50%); /* Tinh chỉnh căn giữa */
+  width: 120px; /* Rộng */
+  height: 4px; /* Cao */
+  background: var(--gradient-secondary); /* Nền gradient */
+  border-radius: 2px; /* Bo góc */
 }
 
+/* Khối nội dung trong tiểu sử */
 .bio-block {
-  background: white;
-  border-radius: var(--radius-xl);
-  padding: var(--spacing-2xl);
-  margin-bottom: var(--spacing-xl);
-  box-shadow: var(--shadow-md);
-  border-left: 6px solid var(--primary);
-  transition: var(--transition);
-  animation: slideInLeft 0.6s ease-out backwards;
+  background: white; /* Nền trắng */
+  border-radius: var(--radius-xl); /* Bo góc */
+  padding: var(--spacing-2xl); /* Đệm */
+  margin-bottom: var(--spacing-xl); /* Khoảng cách dưới */
+  box-shadow: var(--shadow-md); /* Đổ bóng */
+  border-left: 6px solid var(--primary); /* Viền trái */
+  transition: var(--transition); /* Hiệu ứng chuyển đổi */
+  animation: slideInLeft 0.6s ease-out backwards; /* Animation trượt vào từ trái */
 }
 
+/* Gán độ trễ animation cho từng khối */
 .bio-block:nth-child(1) { animation-delay: 0.1s; }
 .bio-block:nth-child(2) { animation-delay: 0.2s; }
 .bio-block:nth-child(3) { animation-delay: 0.3s; }
 .bio-block:nth-child(4) { animation-delay: 0.4s; }
 .bio-block:nth-child(5) { animation-delay: 0.5s; }
 
+/* Animation trượt vào từ trái */
 @keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
+/* Khi di chuột vào khối tiểu sử */
 .bio-block:hover {
-  box-shadow: var(--shadow-xl);
-  transform: translateX(10px);
-  border-left-color: var(--secondary);
+  box-shadow: var(--shadow-xl); /* Tăng bóng đổ */
+  transform: translateX(10px); /* Di chuyển sang phải */
+  border-left-color: var(--secondary); /* Đổi màu viền trái */
 }
 
+/* Phần đầu của khối tiểu sử */
 .bio-block__header {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-xl);
-  padding-bottom: var(--spacing-lg);
-  border-bottom: 2px solid var(--bg-secondary);
+  display: flex; /* Hiển thị flexbox */
+  align-items: center; /* Căn giữa dọc */
+  gap: var(--spacing-md); /* Khoảng cách */
+  margin-bottom: var(--spacing-xl); /* Khoảng cách dưới */
+  padding-bottom: var(--spacing-lg); /* Đệm dưới */
+  border-bottom: 2px solid var(--bg-secondary); /* Đường kẻ dưới */
 }
 
+/* Icon trong đầu khối tiểu sử */
 .bio-block__icon {
-  font-size: 2.5rem;
-  background: var(--gradient-primary);
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  font-size: 2.5rem; /* Cỡ chữ */
+  background: var(--gradient-primary); /* Nền gradient */
+  width: 60px; /* Rộng */
+  height: 60px; /* Cao */
+  display: flex; /* Hiển thị flexbox */
+  align-items: center; /* Căn giữa dọc */
+  justify-content: center; /* Căn giữa ngang */
+  border-radius: var(--radius-lg); /* Bo góc */
+  box-shadow: var(--shadow-md); /* Đổ bóng */
 }
 
+/* Tiêu đề của khối tiểu sử */
 .bio-block__title {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--primary-dark);
+  font-size: 1.8rem; /* Cỡ chữ */
+  font-weight: 700; /* Độ đậm */
+  color: var(--primary-dark); /* Màu chữ */
 }
 
+/* Nội dung văn bản trong khối tiểu sử */
 .bio-block__content p {
-  font-size: 1.1rem;
-  line-height: 1.9;
-  color: var(--text-secondary);
-  margin-bottom: var(--spacing-lg);
+  font-size: 1.1rem; /* Cỡ chữ */
+  line-height: 1.9; /* Chiều cao dòng */
+  color: var(--text-secondary); /* Màu chữ */
+  margin-bottom: var(--spacing-lg); /* Khoảng cách dưới */
 }
 
-/* Highlight Box */
+/* Hộp làm nổi bật thông tin */
 .highlight-box {
-  display: flex;
-  gap: var(--spacing-lg);
-  padding: var(--spacing-xl);
-  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-  border-radius: var(--radius-lg);
-  margin: var(--spacing-xl) 0;
-  box-shadow: var(--shadow-md);
+  display: flex; /* Hiển thị flexbox */
+  gap: var(--spacing-lg); /* Khoảng cách */
+  padding: var(--spacing-xl); /* Đệm */
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); /* Nền gradient */
+  border-radius: var(--radius-lg); /* Bo góc */
+  margin: var(--spacing-xl) 0; /* Khoảng cách trên dưới */
+  box-shadow: var(--shadow-md); /* Đổ bóng */
 }
 
+/* Icon trong hộp nổi bật */
 .highlight-box__icon {
-  font-size: 3rem;
-  flex-shrink: 0;
+  font-size: 3rem; /* Cỡ chữ */
+  flex-shrink: 0; /* Không co lại */
 }
 
+/* Văn bản trong hộp nổi bật */
 .highlight-box__text {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: var(--text-primary);
-  font-style: italic;
+  font-size: 1.05rem; /* Cỡ chữ */
+  line-height: 1.8; /* Chiều cao dòng */
+  color: var(--text-primary); /* Màu chữ */
+  font-style: italic; /* Chữ nghiêng */
 }
 
-/* Achievement List */
+/* Danh sách thành tựu */
 .achievement-list {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  gap: var(--spacing-md);
-  margin: var(--spacing-xl) 0;
+  list-style: none; /* Bỏ dấu đầu dòng */
+  padding: 0; /* Bỏ đệm */
+  display: grid; /* Hiển thị dạng lưới */
+  gap: var(--spacing-md); /* Khoảng cách */
+  margin: var(--spacing-xl) 0; /* Khoảng cách trên dưới */
 }
 
+/* Một mục trong danh sách thành tựu */
 .achievement-list li {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-md);
-  padding: var(--spacing-md) var(--spacing-lg);
-  background: var(--bg-secondary);
-  border-radius: var(--radius-lg);
-  transition: var(--transition);
+  display: flex; /* Hiển thị flexbox */
+  align-items: center; /* Căn giữa dọc */
+  gap: var(--spacing-md); /* Khoảng cách */
+  padding: var(--spacing-md) var(--spacing-lg); /* Đệm */
+  background: var(--bg-secondary); /* Nền phụ */
+  border-radius: var(--radius-lg); /* Bo góc */
+  transition: var(--transition); /* Hiệu ứng chuyển đổi */
 }
 
+/* Khi di chuột vào mục thành tựu */
 .achievement-list li:hover {
-  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
-  transform: translateX(10px);
-  box-shadow: var(--shadow-sm);
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%); /* Đổi nền */
+  transform: translateX(10px); /* Di chuyển sang phải */
+  box-shadow: var(--shadow-sm); /* Đổ bóng */
 }
 
+/* Icon thành tựu */
 .achievement-icon {
-  font-size: 1.5rem;
-  color: var(--success);
-  font-weight: 700;
+  font-size: 1.5rem; /* Cỡ chữ */
+  color: var(--success); /* Màu thành công */
+  font-weight: 700; /* Độ đậm */
 }
 
+/* Văn bản thành tựu */
 .achievement-text {
-  font-size: 1.05rem;
-  color: var(--text-primary);
+  font-size: 1.05rem; /* Cỡ chữ */
+  color: var(--text-primary); /* Màu chữ */
 }
 
-/* Timeline Mini */
+/* Dòng thời gian thu nhỏ */
 .timeline-mini {
-  margin: var(--spacing-xl) 0;
+  margin: var(--spacing-xl) 0; /* Khoảng cách trên dưới */
 }
 
+/* Một mục trong dòng thời gian */
 .timeline-mini__item {
-  display: flex;
-  gap: var(--spacing-lg);
-  align-items: center;
-  padding: var(--spacing-lg);
-  background: var(--bg-secondary);
-  border-radius: var(--radius-lg);
-  margin-bottom: var(--spacing-md);
-  border-left: 5px solid var(--primary);
-  transition: var(--transition);
+  display: flex; /* Hiển thị flexbox */
+  gap: var(--spacing-lg); /* Khoảng cách */
+  align-items: center; /* Căn giữa dọc */
+  padding: var(--spacing-lg); /* Đệm */
+  background: var(--bg-secondary); /* Nền phụ */
+  border-radius: var(--radius-lg); /* Bo góc */
+  margin-bottom: var(--spacing-md); /* Khoảng cách dưới */
+  border-left: 5px solid var(--primary); /* Viền trái */
+  transition: var(--transition); /* Hiệu ứng chuyển đổi */
 }
 
+/* Khi di chuột vào mục dòng thời gian */
 .timeline-mini__item:hover {
-  background: white;
-  box-shadow: var(--shadow-md);
-  transform: translateX(10px);
-  border-left-color: var(--secondary);
+  background: white; /* Nền trắng */
+  box-shadow: var(--shadow-md); /* Đổ bóng */
+  transform: translateX(10px); /* Di chuyển sang phải */
+  border-left-color: var(--secondary); /* Đổi màu viền */
 }
 
+/* Năm trong dòng thời gian */
 .timeline-mini__year {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: white;
-  background: var(--gradient-primary);
-  padding: var(--spacing-md) var(--spacing-lg);
-  border-radius: var(--radius-lg);
-  min-width: 100px;
-  text-align: center;
-  box-shadow: var(--shadow-md);
+  font-size: 1.5rem; /* Cỡ chữ */
+  font-weight: 800; /* Độ đậm */
+  color: white; /* Màu chữ trắng */
+  background: var(--gradient-primary); /* Nền gradient */
+  padding: var(--spacing-md) var(--spacing-lg); /* Đệm */
+  border-radius: var(--radius-lg); /* Bo góc */
+  min-width: 100px; /* Chiều rộng tối thiểu */
+  text-align: center; /* Căn giữa văn bản */
+  box-shadow: var(--shadow-md); /* Đổ bóng */
 }
 
+/* Sự kiện trong dòng thời gian */
 .timeline-mini__event {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  font-weight: 500;
+  font-size: 1.05rem; /* Cỡ chữ */
+  color: var(--text-secondary); /* Màu chữ */
+  font-weight: 500; /* Độ đậm */
 }
 
-/* Legacy Grid */
+/* Lưới di sản */
 .legacy-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--spacing-lg);
-  margin: var(--spacing-xl) 0;
+  display: grid; /* Hiển thị dạng lưới */
+  grid-template-columns: repeat(2, 1fr); /* 2 cột bằng nhau */
+  gap: var(--spacing-lg); /* Khoảng cách */
+  margin: var(--spacing-xl) 0; /* Khoảng cách trên dưới */
 }
 
+/* Một mục trong di sản */
 .legacy-item {
-  padding: var(--spacing-xl);
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  border-radius: var(--radius-lg);
-  text-align: center;
-  transition: var(--transition);
-  border: 2px solid transparent;
+  padding: var(--spacing-xl); /* Đệm */
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); /* Nền gradient */
+  border-radius: var(--radius-lg); /* Bo góc */
+  text-align: center; /* Căn giữa văn bản */
+  transition: var(--transition); /* Hiệu ứng chuyển đổi */
+  border: 2px solid transparent; /* Viền trong suốt */
 }
 
+/* Khi di chuột vào mục di sản */
 .legacy-item:hover {
-  background: white;
-  border-color: var(--primary);
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-5px);
+  background: white; /* Nền trắng */
+  border-color: var(--primary); /* Hiện viền */
+  box-shadow: var(--shadow-lg); /* Đổ bóng */
+  transform: translateY(-5px); /* Di chuyển lên trên */
 }
 
+/* Icon trong mục di sản */
 .legacy-item__icon {
-  font-size: 3rem;
-  margin-bottom: var(--spacing-md);
+  font-size: 3rem; /* Cỡ chữ */
+  margin-bottom: var(--spacing-md); /* Khoảng cách dưới */
 }
 
+/* Tiêu đề trong mục di sản */
 .legacy-item__title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: var(--primary-dark);
-  margin-bottom: var(--spacing-sm);
+  font-size: 1.2rem; /* Cỡ chữ */
+  font-weight: 700; /* Độ đậm */
+  color: var(--primary-dark); /* Màu chữ */
+  margin-bottom: var(--spacing-sm); /* Khoảng cách dưới */
 }
 
+/* Mô tả trong mục di sản */
 .legacy-item__desc {
-  font-size: 1rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
+  font-size: 1rem; /* Cỡ chữ */
+  color: var(--text-secondary); /* Màu chữ */
+  line-height: 1.6; /* Chiều cao dòng */
 }
 
-/* Memorial Box */
+/* Hộp tưởng niệm */
 .memorial-box {
-  display: flex;
-  gap: var(--spacing-xl);
-  padding: var(--spacing-2xl);
-  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-  border-radius: var(--radius-xl);
-  margin: var(--spacing-xl) 0;
-  box-shadow: var(--shadow-lg);
+  display: flex; /* Hiển thị flexbox */
+  gap: var(--spacing-xl); /* Khoảng cách */
+  padding: var(--spacing-2xl); /* Đệm */
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); /* Nền gradient */
+  border-radius: var(--radius-xl); /* Bo góc */
+  margin: var(--spacing-xl) 0; /* Khoảng cách trên dưới */
+  box-shadow: var(--shadow-lg); /* Đổ bóng */
 }
 
+/* Icon trong hộp tưởng niệm */
 .memorial-box__icon {
-  font-size: 4rem;
-  flex-shrink: 0;
+  font-size: 4rem; /* Cỡ chữ */
+  flex-shrink: 0; /* Không co lại */
 }
 
+/* Tiêu đề trong hộp tưởng niệm */
 .memorial-box__title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary-dark);
-  margin-bottom: var(--spacing-md);
+  font-size: 1.5rem; /* Cỡ chữ */
+  font-weight: 700; /* Độ đậm */
+  color: var(--primary-dark); /* Màu chữ */
+  margin-bottom: var(--spacing-md); /* Khoảng cách dưới */
 }
 
+/* Văn bản trong hộp tưởng niệm */
 .memorial-box__text {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: var(--text-primary);
+  font-size: 1.05rem; /* Cỡ chữ */
+  line-height: 1.8; /* Chiều cao dòng */
+  color: var(--text-primary); /* Màu chữ */
 }
 
-/* ========== Quote Section ========== */
+/* Khu vực trích dẫn */
 .quote-section {
-  margin-bottom: var(--spacing-2xl);
+  margin-bottom: var(--spacing-2xl); /* Khoảng cách dưới */
 }
 
+/* Hộp chứa trích dẫn */
 .quote-box {
-  padding: var(--spacing-2xl);
-  background: var(--gradient-primary);
-  border-radius: var(--radius-xl);
-  text-align: center;
-  color: white;
-  box-shadow: var(--shadow-xl);
-  position: relative;
-  overflow: hidden;
+  padding: var(--spacing-2xl); /* Đệm */
+  background: var(--gradient-primary); /* Nền gradient */
+  border-radius: var(--radius-xl); /* Bo góc */
+  text-align: center; /* Căn giữa văn bản */
+  color: white; /* Màu chữ trắng */
+  box-shadow: var(--shadow-xl); /* Đổ bóng */
+  position: relative; /* Vị trí tương đối */
+  overflow: hidden; /* Ẩn nội dung tràn */
 }
 
+/* Lớp giả ::before cho hộp trích dẫn để tạo hiệu ứng nền */
 .quote-box::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 200%;
-  height: 200%;
+  content: ''; /* Bắt buộc */
+  position: absolute; /* Vị trí tuyệt đối */
+  top: -50%; right: -50%; width: 200%; height: 200%;
   background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-  animation: rotate 20s linear infinite;
+  animation: rotate 20s linear infinite; /* Animation xoay */
 }
 
+/* Animation xoay */
 @keyframes rotate {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
+/* Icon trích dẫn (dấu ngoặc kép) */
 .quote-icon {
-  font-size: 4rem;
-  margin-bottom: var(--spacing-lg);
-  opacity: 0.8;
-  position: relative;
-  z-index: 2;
+  font-size: 4rem; /* Cỡ chữ */
+  margin-bottom: var(--spacing-lg); /* Khoảng cách dưới */
+  opacity: 0.8; /* Độ mờ */
+  position: relative; /* Vị trí tương đối */
+  z-index: 2; /* Nằm trên lớp ::before */
 }
 
+/* Nội dung trích dẫn */
 .quote-text {
-  font-size: 1.8rem;
-  font-weight: 600;
-  line-height: 1.6;
-  margin-bottom: var(--spacing-lg);
-  font-style: italic;
-  position: relative;
-  z-index: 2;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  font-size: 1.8rem; /* Cỡ chữ */
+  font-weight: 600; /* Độ đậm */
+  line-height: 1.6; /* Chiều cao dòng */
+  margin-bottom: var(--spacing-lg); /* Khoảng cách dưới */
+  font-style: italic; /* Chữ nghiêng */
+  position: relative; /* Vị trí tương đối */
+  z-index: 2; /* Nằm trên lớp ::before */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Đổ bóng chữ */
 }
 
+/* Tác giả trích dẫn */
 .quote-author {
-  font-size: 1.2rem;
-  font-weight: 700;
-  opacity: 0.9;
-  position: relative;
-  z-index: 2;
+  font-size: 1.2rem; /* Cỡ chữ */
+  font-weight: 700; /* Độ đậm */
+  opacity: 0.9; /* Độ mờ */
+  position: relative; /* Vị trí tương đối */
+  z-index: 2; /* Nằm trên lớp ::before */
 }
 
-/* ========== Honor Section ========== */
+/* Khu vực vinh danh */
 .honor-section {
-  padding: var(--spacing-2xl);
-  background: white;
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
+  padding: var(--spacing-2xl); /* Đệm */
+  background: white; /* Nền trắng */
+  border-radius: var(--radius-xl); /* Bo góc */
+  box-shadow: var(--shadow-md); /* Đổ bóng */
 }
 
+/* Văn bản giới thiệu khu vực vinh danh */
 .honor-text {
-  font-size: 1.2rem;
-  line-height: 1.9;
-  color: var(--text-secondary);
-  margin-bottom: var(--spacing-2xl);
-  text-align: center;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 1.2rem; /* Cỡ chữ */
+  line-height: 1.9; /* Chiều cao dòng */
+  color: var(--text-secondary); /* Màu chữ */
+  margin-bottom: var(--spacing-2xl); /* Khoảng cách dưới */
+  text-align: center; /* Căn giữa văn bản */
+  max-width: 900px; /* Chiều rộng tối đa */
+  margin-left: auto; /* Căn giữa */
+  margin-right: auto; /* Căn giữa */
 }
 
+/* Lưới chứa các thẻ vinh danh */
 .honor-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--spacing-xl);
+  display: grid; /* Hiển thị dạng lưới */
+  grid-template-columns: repeat(4, 1fr); /* 4 cột bằng nhau */
+  gap: var(--spacing-xl); /* Khoảng cách */
 }
 
+/* Thẻ vinh danh */
 .honor-card {
-  padding: var(--spacing-2xl);
-  background: var(--gradient-purple);
-  color: white;
-  border-radius: var(--radius-xl);
-  text-align: center;
-  box-shadow: var(--shadow-lg);
-  transition: var(--transition);
+  padding: var(--spacing-2xl); /* Đệm */
+  background: var(--gradient-purple); /* Nền gradient tím */
+  color: white; /* Màu chữ trắng */
+  border-radius: var(--radius-xl); /* Bo góc */
+  text-align: center; /* Căn giữa văn bản */
+  box-shadow: var(--shadow-lg); /* Đổ bóng */
+  transition: var(--transition); /* Hiệu ứng chuyển đổi */
 }
 
+/* Khi di chuột vào thẻ vinh danh */
 .honor-card:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: var(--shadow-xl);
+  transform: translateY(-10px) scale(1.05); /* Di chuyển lên và phóng to */
+  box-shadow: var(--shadow-xl); /* Tăng bóng đổ */
 }
 
+/* Con số trong thẻ vinh danh */
 .honor-card__number {
-  font-size: 3.5rem;
-  font-weight: 800;
-  margin-bottom: var(--spacing-md);
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  font-size: 3.5rem; /* Cỡ chữ */
+  font-weight: 800; /* Độ đậm */
+  margin-bottom: var(--spacing-md); /* Khoảng cách dưới */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Đổ bóng chữ */
 }
 
+/* Nhãn trong thẻ vinh danh */
 .honor-card__label {
-  font-size: 1.1rem;
-  font-weight: 600;
-  opacity: 0.95;
+  font-size: 1.1rem; /* Cỡ chữ */
+  font-weight: 600; /* Độ đậm */
+  opacity: 0.95; /* Độ mờ */
 }
 
-/* ========== Responsive ========== */
+/* CSS cho màn hình nhỏ hơn 1024px */
 @media (max-width: 1024px) {
+  /* Phần hero: 1 cột */
   .hero-profile {
     grid-template-columns: 1fr;
   }
   
+  /* Thông tin nhanh: 2 cột */
   .quick-facts {
     grid-template-columns: repeat(2, 1fr);
   }
   
+  /* Lưới di sản: 1 cột */
   .legacy-grid {
     grid-template-columns: 1fr;
   }
   
+  /* Lưới vinh danh: 2 cột */
   .honor-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* CSS cho màn hình nhỏ hơn 768px */
 @media (max-width: 768px) {
+  /* Banner trang: giảm chiều cao */
   .page-banner {
     height: 200px;
   }
   
+  /* Tiêu đề banner: giảm cỡ chữ */
   .page-banner__title {
     font-size: 2rem;
   }
   
+  /* Tên nhân vật: giảm cỡ chữ */
   .hero-profile__name {
     font-size: 2.5rem;
   }
   
+  /* Thông tin nhanh: 1 cột */
   .quick-facts {
     grid-template-columns: 1fr;
   }
   
+  /* Lưới vinh danh: 1 cột */
   .honor-grid {
     grid-template-columns: 1fr;
   }
   
+  /* Văn bản trích dẫn: giảm cỡ chữ */
   .quote-text {
     font-size: 1.3rem;
   }
   
+  /* Hộp tưởng niệm: xếp thành cột, căn giữa */
   .memorial-box {
     flex-direction: column;
     text-align: center;

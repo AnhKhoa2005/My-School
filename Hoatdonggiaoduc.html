@@ -16,21 +16,31 @@
     <link rel="stylesheet" href="Css/Hoatdonggiaoduc.css" />
   </head>
   <body>
+    <!-- Toàn bộ trang -->
     <div class="page">
+      <!-- Đầu trang -->
       <header class="header">
+        <!-- Dải màu đầu trang -->
         <div class="header__gradient">
+          <!-- Phần trên của đầu trang -->
           <div class="header__top">
+            <!-- Container giới hạn chiều rộng -->
             <div class="container">
               <a href="index.html">
+                <!-- Phần thương hiệu -->
                 <div class="brand">
+                  <!-- Logo thương hiệu -->
                   <img
                     src="Images/LogoTruong.jpg"
                     alt="logo"
                     class="brand__logo"
                   />
 
+                  <!-- Thông tin thương hiệu -->
                   <div class="brand__info">
+                    <!-- Tên thương hiệu -->
                     <h1 class="brand__name">Trường THPT Lương Thế Vinh</h1>
+                    <!-- Khẩu hiệu thương hiệu -->
                     <p class="brand__tagline">
                       Nơi ươm mầm tương lai - Khơi nguồn tri thức
                     </p>
@@ -40,15 +50,28 @@
             </div>
           </div>
 
+          <!-- Thanh điều hướng -->
           <nav class="nav">
+            <!-- Container giới hạn chiều rộng -->
             <div class="container">
+              <!-- Danh sách điều hướng -->
               <ul class="nav__list">
+                <!-- Mục điều hướng -->
                 <li class="nav__item">
                   <a href="index.html" class="nav__link">🏠 Trang Chủ</a>
                 </li>
+                <!-- Mục điều hướng có menu con -->
                 <li class="nav__item has-submenu">
+                  <input
+                    type="checkbox"
+                    id="menu-gioithieu"
+                    class="menu-toggle"
+                  />
                   <a href="Gioithieu.html" class="nav__link">ℹ️ Giới thiệu</a>
+                  <label for="menu-gioithieu" class="toggle-icon"></label>
+                  <!-- Menu con -->
                   <ul class="submenu">
+                    <!-- Mục menu con -->
                     <li class="submenu__item">
                       <a href="Lichsunhatruong.html" class="submenu__link"
                         >📚 Lịch sử nhà trường</a
@@ -67,7 +90,9 @@
                   </ul>
                 </li>
                 <li class="nav__item has-submenu">
+                  <input type="checkbox" id="menu-tochuc" class="menu-toggle" />
                   <a href="Tochuc.html" class="nav__link">🏢 Tổ chức</a>
+                  <label for="menu-tochuc" class="toggle-icon"></label>
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Bangiamhieu.html" class="submenu__link"
@@ -86,8 +111,11 @@
                     </li>
                   </ul>
                 </li>
+                <!-- Mục điều hướng có menu con, đang hoạt động -->
                 <li class="nav__item has-submenu active">
+                  <input type="checkbox" id="menu-tintuc" class="menu-toggle" />
                   <a href="Tintuc.html" class="nav__link">📰 Tin tức</a>
+                  <label for="menu-tintuc" class="toggle-icon"></label>
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Hoatdongtruong.html" class="submenu__link"
@@ -107,7 +135,13 @@
                   </ul>
                 </li>
                 <li class="nav__item has-submenu">
+                  <input
+                    type="checkbox"
+                    id="menu-dieuhanh"
+                    class="menu-toggle"
+                  />
                   <a href="Dieuhanh.html" class="nav__link">⚙️ Điều hành</a>
+                  <label for="menu-dieuhanh" class="toggle-icon"></label>
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Thoikhoabieu.html" class="submenu__link"
@@ -133,10 +167,15 @@
         </div>
       </header>
 
+      <!-- Banner trang -->
       <div class="page-banner">
+        <!-- Lớp phủ banner -->
         <div class="page-banner__overlay">
+          <!-- Container giới hạn chiều rộng -->
           <div class="container">
+            <!-- Tiêu đề banner -->
             <h1 class="page-banner__title">Hoạt Động Giáo Dục</h1>
+            <!-- Breadcrumb -->
             <div class="breadcrumb">
               <a href="index.html" class="breadcrumb__item">Trang chủ</a>
               <span class="breadcrumb__separator">/</span>
@@ -150,13 +189,19 @@
         </div>
       </div>
 
+      <!-- Nội dung chính -->
       <main class="main">
+        <!-- Container giới hạn chiều rộng -->
         <div class="container">
-          <!-- Intro -->
+          <!-- Phần giới thiệu -->
           <section class="intro-section">
+            <!-- Hộp giới thiệu -->
             <div class="intro-box">
+              <!-- Icon giới thiệu -->
               <div class="intro-icon">🎓</div>
+              <!-- Tiêu đề giới thiệu -->
               <h2 class="intro-title">Hoạt Động Giáo Dục Toàn Diện</h2>
+              <!-- Văn bản giới thiệu -->
               <p class="intro-text">
                 Nhà trường không chỉ chú trọng đến việc truyền đạt kiến thức mà
                 còn quan tâm đến việc giáo dục kỹ năng sống, đạo đức, và phát
@@ -166,13 +211,19 @@
             </div>
           </section>
 
-          <!-- Education Categories -->
+          <!-- Các danh mục giáo dục -->
           <section class="edu-categories">
+            <!-- Tiêu đề phần -->
             <h2 class="section-title">📚 Các Lĩnh Vực Giáo Dục</h2>
+            <!-- Lưới danh mục giáo dục -->
             <div class="edu-grid">
+              <!-- Thẻ danh mục giáo dục -->
               <div class="edu-card">
+                <!-- Icon thẻ -->
                 <div class="edu-card__icon">📖</div>
+                <!-- Tiêu đề thẻ -->
                 <h3 class="edu-card__title">Giáo dục chính khóa</h3>
+                <!-- Danh sách thẻ -->
                 <ul class="edu-card__list">
                   <li>Giảng dạy theo chương trình GDPT 2018</li>
                   <li>Đổi mới phương pháp dạy học</li>
@@ -216,20 +267,29 @@
             </div>
           </section>
 
-          <!-- Teaching Methods -->
+          <!-- Phần phương pháp giảng dạy -->
           <section class="methods-section">
+            <!-- Tiêu đề phần -->
             <h2 class="section-title">💡 Phương Pháp Giảng Dạy Đổi Mới</h2>
+            <!-- Lưới phương pháp -->
             <div class="methods-grid">
+              <!-- Thẻ phương pháp -->
               <div class="method-card">
+                <!-- Số thứ tự phương pháp -->
                 <div class="method-number">01</div>
+                <!-- Nội dung phương pháp -->
                 <div class="method-content">
+                  <!-- Icon phương pháp -->
                   <div class="method-icon">🎯</div>
+                  <!-- Tiêu đề phương pháp -->
                   <h3 class="method-title">Dạy học tích cực</h3>
+                  <!-- Mô tả phương pháp -->
                   <p class="method-desc">
                     Áp dụng các phương pháp dạy học tích cực như dạy học theo dự
                     án, dạy học hợp tác, dạy học giải quyết vấn đề. Học sinh là
                     trung tâm, giáo viên là người hướng dẫn, tạo điều kiện.
                   </p>
+                  <!-- Thẻ phương pháp -->
                   <div class="method-tags">
                     <span class="method-tag">Tự học</span>
                     <span class="method-tag">Hợp tác</span>
@@ -276,26 +336,36 @@
             </div>
           </section>
 
-          <!-- Career Guidance -->
+          <!-- Phần hướng nghiệp -->
           <section class="career-section">
+            <!-- Tiêu đề phần -->
             <h2 class="section-title">🎯 Hoạt Động Hướng Nghiệp</h2>
+            <!-- Nội dung hướng nghiệp -->
             <div class="career-content">
+              <!-- Hình ảnh hướng nghiệp -->
               <div class="career-image">
                 <img src="Images/Dinhhuongnghenghiep.jpg" alt="" />
               </div>
+              <!-- Thông tin hướng nghiệp -->
               <div class="career-info">
+                <!-- Tiêu đề hướng nghiệp -->
                 <h3 class="career-title">
                   Định Hướng Nghề Nghiệp Cho Học Sinh
                 </h3>
+                <!-- Mô tả hướng nghiệp -->
                 <p class="career-desc">
                   Nhà trường tổ chức thường xuyên các buổi tư vấn, hội thảo
                   hướng nghiệp giúp học sinh hiểu rõ về các ngành nghề, xu hướng
                   nghề nghiệp tương lai và lựa chọn phù hợp với năng lực, sở
                   thích.
                 </p>
+                <!-- Các hoạt động hướng nghiệp -->
                 <div class="career-activities">
+                  <!-- Mục hoạt động -->
                   <div class="activity-item">
+                    <!-- Icon hoạt động -->
                     <div class="activity-icon">📊</div>
+                    <!-- Văn bản hoạt động -->
                     <div class="activity-text">
                       <strong>Khảo sát năng lực</strong>
                       <p>
@@ -339,24 +409,36 @@
             </div>
           </section>
 
-          <!-- Competitions -->
+          <!-- Phần các cuộc thi -->
           <section class="competitions-section">
+            <!-- Tiêu đề phần -->
             <h2 class="section-title">🏆 Các Kỳ Thi Và Cuộc Thi</h2>
+            <!-- Lưới các cuộc thi -->
             <div class="competitions-grid">
+              <!-- Thẻ cuộc thi -->
               <div class="competition-card">
+                <!-- Đầu thẻ cuộc thi -->
                 <div class="competition-header">
+                  <!-- Icon cuộc thi -->
                   <div class="competition-icon">🥇</div>
+                  <!-- Tên cuộc thi -->
                   <h3 class="competition-name">Học sinh giỏi</h3>
                 </div>
+                <!-- Thân thẻ cuộc thi -->
                 <div class="competition-body">
+                  <!-- Mô tả cuộc thi -->
                   <p class="competition-desc">
                     Tổ chức thi HSG cấp trường, tuyển chọn học sinh tham dự kỳ
                     thi HSG cấp tỉnh và quốc gia. Năm 2024-2025: 23 giải cấp
                     tỉnh, 5 giải quốc gia.
                   </p>
+                  <!-- Thống kê cuộc thi -->
                   <div class="competition-stats">
+                    <!-- Mục thống kê -->
                     <div class="stat-item">
+                      <!-- Nhãn thống kê -->
                       <div class="stat-label">Cấp trường</div>
+                      <!-- Giá trị thống kê -->
                       <div class="stat-value">156 giải</div>
                     </div>
                     <div class="stat-item">
@@ -382,7 +464,9 @@
                     Học sinh được khuyến khích sáng tạo, nghiên cứu khoa học,
                     làm dự án.
                   </p>
+                  <!-- Điểm nổi bật của cuộc thi -->
                   <div class="competition-highlights">
+                    <!-- Huy hiệu nổi bật -->
                     <div class="highlight-badge">15 dự án STEM</div>
                     <div class="highlight-badge">3 giải Robotics</div>
                     <div class="highlight-badge">8 sáng kiến</div>
@@ -411,20 +495,29 @@
             </div>
           </section>
 
-          <!-- Parent Meetings -->
+          <!-- Phần họp phụ huynh -->
           <section class="parents-section">
+            <!-- Tiêu đề phần -->
             <h2 class="section-title">👨‍👩‍👧‍👦 Hoạt Động Phối Hợp Với Phụ Huynh</h2>
+            <!-- Nội dung họp phụ huynh -->
             <div class="parents-content">
+              <!-- Nội dung chính họp phụ huynh -->
               <div class="parents-main">
+                <!-- Tiêu đề phụ họp phụ huynh -->
                 <h3 class="parents-subtitle">Hội Nghị Phụ Huynh</h3>
+                <!-- Văn bản họp phụ huynh -->
                 <p class="parents-text">
                   Nhà trường tổ chức hội nghị phụ huynh 2 lần/năm học để trao
                   đổi, chia sẻ về tình hình học tập, rèn luyện của học sinh. Phụ
                   huynh được cập nhật thông tin, góp ý xây dựng nhà trường.
                 </p>
+                <!-- Lịch trình họp phụ huynh -->
                 <div class="parents-schedule">
+                  <!-- Mục lịch trình -->
                   <div class="schedule-item">
+                    <!-- Thời gian lịch trình -->
                     <div class="schedule-time">Học kỳ I</div>
+                    <!-- Mô tả lịch trình -->
                     <div class="schedule-desc">
                       Tháng 10: Họp phụ huynh đầu năm, giới thiệu chương trình
                       học tập
@@ -439,8 +532,11 @@
                   </div>
                 </div>
               </div>
+              <!-- Lợi ích họp phụ huynh -->
               <div class="parents-benefits">
+                <!-- Tiêu đề lợi ích -->
                 <h4 class="benefits-title">Lợi ích từ sự phối hợp</h4>
+                <!-- Danh sách lợi ích -->
                 <ul class="benefits-list">
                   <li>
                     <span class="benefit-icon">✓</span>
@@ -467,15 +563,23 @@
             </div>
           </section>
 
-          <!-- Education Achievements -->
+          <!-- Phần thành tích giáo dục -->
           <section class="achievements-section">
+            <!-- Tiêu đề phần -->
             <h2 class="section-title">🌟 Thành Tích Giáo Dục</h2>
+            <!-- Trưng bày thành tích -->
             <div class="achievements-showcase">
+              <!-- Hộp thành tích -->
               <div class="achievement-box">
+                <!-- Icon thành tích -->
                 <div class="achievement-icon">🎓</div>
+                <!-- Nội dung thành tích -->
                 <div class="achievement-content">
+                  <!-- Số liệu thành tích -->
                   <div class="achievement-number">98.2%</div>
+                  <!-- Nhãn thành tích -->
                   <div class="achievement-label">Tỷ lệ tốt nghiệp THPT</div>
+                  <!-- Mô tả thành tích -->
                   <div class="achievement-desc">
                     Năm học 2024-2025, 487/496 học sinh tốt nghiệp
                   </div>
@@ -517,16 +621,21 @@
             </div>
           </section>
 
-          <!-- CTA Section -->
+          <!-- Phần kêu gọi hành động -->
           <section class="cta-section">
+            <!-- Hộp kêu gọi hành động -->
             <div class="cta-box">
+              <!-- Icon kêu gọi hành động -->
               <div class="cta-icon">📚</div>
+              <!-- Tiêu đề kêu gọi hành động -->
               <h2 class="cta-title">Tìm Hiểu Thêm Về Chương Trình Giáo Dục</h2>
+              <!-- Văn bản kêu gọi hành động -->
               <p class="cta-text">
                 Quý phụ huynh và học sinh có thể liên hệ với nhà trường để được
                 tư vấn chi tiết về chương trình giáo dục, phương pháp học tập và
                 các hoạt động giáo dục tại trường.
               </p>
+              <!-- Các nút kêu gọi hành động -->
               <div class="cta-buttons">
                 <a href="Lienhe.html" class="btn btn--primary"
                   >📞 Liên hệ tư vấn</a
@@ -540,19 +649,27 @@
         </div>
       </main>
 
-      <!-- Footer -->
+      <!-- Chân trang -->
       <footer class="footer">
+        <!-- Dải màu chân trang -->
         <div class="footer__gradient">
+          <!-- Container giới hạn chiều rộng -->
           <div class="container">
+            <!-- Nội dung chân trang -->
             <div class="footer__content">
+              <!-- Thông tin chân trang -->
               <div class="footer__info">
+                <!-- Tiêu đề chân trang -->
                 <h3 class="footer__title">THPT Lương Thế Vinh</h3>
+                <!-- Mô tả chân trang -->
                 <p class="footer__desc">
                   Ngôi trường của tri thức và tương lai
                 </p>
+                <!-- Địa chỉ chân trang -->
                 <div class="footer__address">
                   📍 Phường Điện Nam Trung, Thị xã Điện Bàn, Tỉnh Quảng Nam
                 </div>
+                <!-- Mạng xã hội chân trang -->
                 <div class="footer__social">
                   <a
                     href="https://www.facebook.com/groups/ltvpro"
@@ -562,7 +679,9 @@
                   >
                 </div>
               </div>
+              <!-- Các liên kết chân trang -->
               <div class="footer__links">
+                <!-- Cột liên kết chân trang -->
                 <div class="footer__column">
                   <h4>Liên kết nhanh</h4>
                   <ul>
@@ -592,6 +711,7 @@
                 </div>
               </div>
             </div>
+            <!-- Phần dưới của chân trang -->
             <div class="footer__bottom">
               <p>
                 &copy; 2025 Trường THPT Lương Thế Vinh. Tất cả quyền được bảo
@@ -602,9 +722,11 @@
         </div>
       </footer>
 
-      <!-- Floating Action Button -->
+      <!-- Nút hành động nổi -->
       <div class="fab-container">
+        <!-- Nút chính -->
         <div class="fab fab--main">💬</div>
+        <!-- Menu nút nổi -->
         <div class="fab-menu">
           <a href="tel:0935308369" class="fab fab--phone">📞</a>
           <a

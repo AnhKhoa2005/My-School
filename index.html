@@ -20,19 +20,25 @@
   </head>
   <body>
     <div class="page">
-      <!-- Header -->
+      <!-- Toàn bộ đầu trang -->
       <header class="header">
+        <!-- Lớp gradient cho header -->
         <div class="header__gradient">
+          <!-- Phần trên của header -->
           <div class="header__top">
+            <!-- Lớp bao bọc, căn giữa nội dung -->
             <div class="container">
               <a href="index.html">
+                <!-- Khối logo và tên trường -->
                 <div class="brand">
+                  <!-- Logo của trường -->
                   <img
                     src="Images/LogoTruong.jpg"
                     alt="logo"
                     class="brand__logo"
                   />
 
+                  <!-- Thông tin tên trường và tagline -->
                   <div class="brand__info">
                     <h1 class="brand__name">Trường THPT Lương Thế Vinh</h1>
                     <p class="brand__tagline">
@@ -44,14 +50,26 @@
             </div>
           </div>
 
+          <!-- Thanh điều hướng chính -->
           <nav class="nav">
+            <!-- Lớp bao bọc, căn giữa nội dung -->
             <div class="container">
+              <!-- Danh sách các mục menu -->
               <ul class="nav__list">
+                <!-- Mục menu Trang Chủ (đang active) -->
                 <li class="nav__item active">
                   <a href="index.html" class="nav__link">🏠 Trang Chủ</a>
                 </li>
+                <!-- Mục menu có menu con -->
                 <li class="nav__item has-submenu">
+                  <input
+                    type="checkbox"
+                    id="menu-gioithieu"
+                    class="menu-toggle"
+                  />
                   <a href="Gioithieu.html" class="nav__link">ℹ️ Giới thiệu</a>
+                  <label for="menu-gioithieu" class="toggle-icon"></label>
+                  <!-- Menu con -->
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Lichsunhatruong.html" class="submenu__link"
@@ -70,8 +88,12 @@
                     </li>
                   </ul>
                 </li>
+                <!-- Mục menu có menu con -->
                 <li class="nav__item has-submenu">
+                  <input type="checkbox" id="menu-tochuc" class="menu-toggle" />
                   <a href="Tochuc.html" class="nav__link">🏢 Tổ chức</a>
+                  <label for="menu-tochuc" class="toggle-icon"></label>
+                  <!-- Menu con -->
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Bangiamhieu.html" class="submenu__link"
@@ -90,8 +112,12 @@
                     </li>
                   </ul>
                 </li>
+                <!-- Mục menu có menu con -->
                 <li class="nav__item has-submenu">
+                  <input type="checkbox" id="menu-tintuc" class="menu-toggle" />
                   <a href="Tintuc.html" class="nav__link">📰 Tin tức</a>
+                  <label for="menu-tintuc" class="toggle-icon"></label>
+                  <!-- Menu con -->
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Hoatdongtruong.html" class="submenu__link"
@@ -110,8 +136,16 @@
                     </li>
                   </ul>
                 </li>
+                <!-- Mục menu có menu con -->
                 <li class="nav__item has-submenu">
+                  <input
+                    type="checkbox"
+                    id="menu-dieuhanh"
+                    class="menu-toggle"
+                  />
                   <a href="Dieuhanh.html" class="nav__link">⚙️ Điều hành</a>
+                  <label for="menu-dieuhanh" class="toggle-icon"></label>
+                  <!-- Menu con -->
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Thoikhoabieu.html" class="submenu__link"
@@ -125,9 +159,11 @@
                     </li>
                   </ul>
                 </li>
+                <!-- Mục menu -->
                 <li class="nav__item">
                   <a href="Lienhe.html" class="nav__link">📞 Liên hệ</a>
                 </li>
+                <!-- Mục menu -->
                 <li class="nav__item">
                   <a href="Gopy.html" class="nav__link">💬 Góp ý</a>
                 </li>
@@ -137,8 +173,9 @@
         </div>
       </header>
 
-      <!-- Banner với overlay text -->
+      <!-- Banner chính của trang chủ -->
       <div class="banner">
+        <!-- Slideshow ảnh nền -->
         <div class="slideshow">
           <img
             src="Images/AnhBiaTruong.jpg"
@@ -161,15 +198,20 @@
             class="slideshow__image"
           />
         </div>
+        <!-- Lớp phủ màu và nội dung trên banner -->
         <div class="banner__overlay">
           <div class="container">
+            <!-- Nội dung trên banner -->
             <div class="banner__content">
+              <!-- Tiêu đề chính -->
               <h2 class="banner__title">
                 Chào mừng đến với THPT Lương Thế Vinh
               </h2>
+              <!-- Phụ đề -->
               <p class="banner__subtitle">
                 Nơi khởi nguồn ước mơ - Nâng tầm tri thức
               </p>
+              <!-- Các nút hành động -->
               <div class="banner__actions">
                 <a href="Gioithieu.html" class="btn btn--outline"
                   >📖 Tìm hiểu thêm</a
@@ -180,21 +222,27 @@
         </div>
       </div>
 
-      <!-- Quick Services -->
+      <!-- Khu vực các thẻ dịch vụ nhanh -->
       <div class="services">
         <div class="container">
+          <!-- Lưới chứa các thẻ dịch vụ -->
           <div class="services__grid">
             <a href="Tintuc.html"
-              ><div class="service-card service-card--blue">
+              ><!-- Thẻ dịch vụ -->
+              <div class="service-card service-card--blue">
+                <!-- Icon của thẻ -->
                 <div class="service-card__icon">📰</div>
+                <!-- Tiêu đề thẻ -->
                 <h3 class="service-card__title">Tin tức</h3>
+                <!-- Mô tả thẻ -->
                 <p class="service-card__desc">
                   Cập nhật tin tức mới nhất về trường
                 </p>
               </div></a
             >
             <a href="Tochuc.html"
-              ><div class="service-card service-card--green">
+              ><!-- Thẻ dịch vụ -->
+              <div class="service-card service-card--green">
                 <div class="service-card__icon">🏢</div>
                 <h3 class="service-card__title">Cơ cấu tổ chức</h3>
                 <p class="service-card__desc">
@@ -203,6 +251,7 @@
               </div></a
             >
             <a href="Thoikhoabieu.html">
+              <!-- Thẻ dịch vụ -->
               <div class="service-card service-card--orange">
                 <div class="service-card__icon">📅</div>
                 <h3 class="service-card__title">Thời khoá biểu</h3>
@@ -212,7 +261,8 @@
               </div></a
             >
             <a href="Lienhe.html"
-              ><div class="service-card service-card--purple">
+              ><!-- Thẻ dịch vụ -->
+              <div class="service-card service-card--purple">
                 <div class="service-card__icon">📞</div>
                 <h3 class="service-card__title">Liên hệ hỗ trợ</h3>
                 <p class="service-card__desc">
@@ -224,22 +274,27 @@
         </div>
       </div>
 
-      <!-- Main Content -->
+      <!-- Nội dung chính của trang -->
       <main class="main">
         <div class="container">
+          <!-- Bố cục 3 cột -->
           <div class="layout layout--three-col">
-            <!-- Content chính -->
+            <!-- Cột nội dung chính -->
             <div class="content">
-              <!-- Giới thiệu -->
+              <!-- Phần giới thiệu về trường -->
               <section class="intro-section">
+                <!-- Tiêu đề phần -->
                 <div class="section-header">
                   <h2 class="section__title">🏫 Về chúng tôi</h2>
                   <div class="section__subtitle">
                     Trường THPT hàng đầu tỉnh Quảng Nam
                   </div>
                 </div>
+                <!-- Nội dung giới thiệu -->
                 <div class="intro-content">
+                  <!-- Các số liệu thống kê -->
                   <div class="intro-stats">
+                    <!-- Một số liệu -->
                     <div class="intro-stat">
                       <div class="intro-stat__number">27</div>
                       <div class="intro-stat__label">Năm kinh nghiệm</div>
@@ -253,6 +308,7 @@
                       <div class="intro-stat__label">Lớp học</div>
                     </div>
                   </div>
+                  <!-- Đoạn văn giới thiệu -->
                   <p class="intro-text">
                     Trường THPT Lương Thế Vinh được thành lập năm 1998, từ 7 lớp
                     học khiêm tốn đã phát triển thành ngôi trường với 32 lớp,
@@ -264,37 +320,46 @@
                 </div>
               </section>
 
-              <!-- Tin tức nổi bật -->
+              <!-- Phần tin tức nổi bật -->
               <section class="news-section">
                 <div class="section-header">
                   <h2 class="section__title">📰 Tin tức nổi bật</h2>
                   <a href="#" class="section__link">Xem tất cả →</a>
                 </div>
+                <!-- Lưới tin tức -->
                 <div class="news-grid">
+                  <!-- Thẻ tin tức nổi bật -->
                   <article class="news-card news-card--featured">
+                    <!-- Ảnh của tin tức -->
                     <div class="news-card__image">
                       <img
                         src="Images/phuong_an_lua_chon_mon_hoc_lop_10.jpg"
                         alt="Tin nổi bật"
                       />
+                      <!-- Danh mục tin -->
                       <div class="news-card__category">Tuyển sinh</div>
                     </div>
+                    <!-- Nội dung thẻ tin tức -->
                     <div class="news-card__content">
+                      <!-- Siêu dữ liệu (ngày, lượt xem) -->
                       <div class="news-card__meta">
                         <span class="news-card__date"
                           >📅 14 Tháng 10, 2025</span
                         >
                         <span class="news-card__views">👀 245 lượt xem</span>
                       </div>
+                      <!-- Tiêu đề tin tức -->
                       <h3 class="news-card__title">
                         Hướng dẫn lựa chọn tổ hợp môn học lớp 10 năm học
                         2025-2026
                       </h3>
+                      <!-- Đoạn trích -->
                       <p class="news-card__excerpt">
                         Nhà trường công bố phương án chi tiết giúp học sinh và
                         phụ huynh hiểu rõ về các tổ hợp môn học, định hướng nghề
                         nghiệp phù hợp...
                       </p>
+                      <!-- Các thẻ tag -->
                       <div class="news-card__tags">
                         <span class="tag">#TuyenSinh</span>
                         <span class="tag">#HuongNghiep</span>
@@ -302,7 +367,9 @@
                     </div>
                   </article>
 
+                  <!-- Danh sách các tin tức khác -->
                   <div class="news-list">
+                    <!-- Một mục tin tức -->
                     <article class="news-item">
                       <img
                         src="Images/ds_lop_10.jpg"
@@ -364,16 +431,21 @@
               </section>
             </div>
 
-            <!-- Sidebar trái -->
+            <!-- Cột sidebar bên trái -->
             <aside class="sidebar sidebar--left">
+              <!-- Widget lịch sự kiện -->
               <div class="widget widget--gradient-blue">
                 <h3 class="widget__title">📅 Lịch sự kiện</h3>
+                <!-- Danh sách sự kiện -->
                 <div class="event-list">
+                  <!-- Một sự kiện -->
                   <div class="event-item">
+                    <!-- Ngày sự kiện -->
                     <div class="event-date">
                       <div class="event-day">15</div>
                       <div class="event-month">Th10</div>
                     </div>
+                    <!-- Nội dung sự kiện -->
                     <div class="event-content">
                       <h4 class="event-title">Hội thao thể dục thể thao</h4>
                       <p class="event-time">8:00 - 17:00</p>
@@ -402,9 +474,12 @@
                 </div>
               </div>
 
+              <!-- Widget thành tích -->
               <div class="widget widget--gradient-green">
                 <h3 class="widget__title">🏆 Thành tích nổi bật</h3>
+                <!-- Danh sách thành tích -->
                 <div class="achievement-list">
+                  <!-- Một thành tích -->
                   <div class="achievement-item">
                     <div class="achievement-icon">🥇</div>
                     <div class="achievement-content">
@@ -430,11 +505,14 @@
               </div>
             </aside>
 
-            <!-- Sidebar phải -->
+            <!-- Cột sidebar bên phải -->
             <aside class="sidebar sidebar--right">
+              <!-- Widget liên hệ nhanh -->
               <div class="widget widget--gradient-orange">
                 <h3 class="widget__title">📞 Liên hệ nhanh</h3>
+                <!-- Thông tin liên hệ -->
                 <div class="contact-info">
+                  <!-- Một mục liên hệ -->
                   <div class="contact-item">
                     <div class="contact-icon">🏢</div>
                     <div class="contact-content">
@@ -472,8 +550,10 @@
                 </div>
               </div>
 
+              <!-- Widget tra cứu nhanh -->
               <div class="widget widget--gradient-purple">
                 <h3 class="widget__title">📚 Tra cứu nhanh</h3>
+                <!-- Các liên kết nhanh -->
                 <div class="quick-links">
                   <a href="Thoikhoabieu.html" class="quick-link"
                     >📋 Thời khóa biểu</a
@@ -485,9 +565,12 @@
                 </div>
               </div>
 
+              <!-- Widget thống kê -->
               <div class="widget">
                 <h3 class="widget__title">📈 Thống kê</h3>
+                <!-- Nội dung thống kê -->
                 <div class="stats-widget">
+                  <!-- Một dòng thống kê -->
                   <div class="stat-row">
                     <span class="stat-label">Học sinh hiện tại:</span>
                     <span class="stat-value">1,487</span>
@@ -511,11 +594,14 @@
         </div>
       </main>
 
-      <!-- Footer -->
+      <!-- Chân trang -->
       <footer class="footer">
+        <!-- Lớp gradient cho chân trang -->
         <div class="footer__gradient">
           <div class="container">
+            <!-- Nội dung chân trang -->
             <div class="footer__content">
+              <!-- Thông tin trường -->
               <div class="footer__info">
                 <h3 class="footer__title">THPT Lương Thế Vinh</h3>
                 <p class="footer__desc">
@@ -524,6 +610,7 @@
                 <div class="footer__address">
                   📍 Phường Điện Nam Trung, Thị xã Điện Bàn, Tỉnh Quảng Nam
                 </div>
+                <!-- Mạng xã hội -->
                 <div class="footer__social">
                   <a
                     href="https://www.facebook.com/groups/ltvpro"
@@ -533,7 +620,9 @@
                   >
                 </div>
               </div>
+              <!-- Các cột liên kết -->
               <div class="footer__links">
+                <!-- Một cột liên kết -->
                 <div class="footer__column">
                   <h4>Liên kết nhanh</h4>
                   <ul>
@@ -563,6 +652,7 @@
                 </div>
               </div>
             </div>
+            <!-- Phần đáy của chân trang -->
             <div class="footer__bottom">
               <p>
                 &copy; 2025 Trường THPT Lương Thế Vinh. Tất cả quyền được bảo
@@ -573,7 +663,7 @@
         </div>
       </footer>
 
-      <!-- Floating Action Button -->
+      <!-- Các nút hành động nổi -->
       <div class="fab-container">
         <div class="fab fab--main">💬</div>
         <div class="fab-menu">
@@ -590,7 +680,7 @@
       </div>
     </div>
 
-    <!--Start of Tawk.to Script-->
+    <!-- Script Tawk.to -->
     <script type="text/javascript">
       var Tawk_API = Tawk_API || {},
         Tawk_LoadStart = new Date();
@@ -604,6 +694,6 @@
         s0.parentNode.insertBefore(s1, s0);
       })();
     </script>
-    <!--End of Tawk.to Script-->
+    <!-- Kết thúc script Tawk.to -->
   </body>
 </html>

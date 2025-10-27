@@ -23,21 +23,31 @@
       crossorigin="anonymous"
       src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v24.0"
     ></script>
+    <!-- Toàn bộ trang -->
     <div class="page">
+      <!-- Đầu trang -->
       <header class="header">
+        <!-- Dải màu đầu trang -->
         <div class="header__gradient">
+          <!-- Phần trên của đầu trang -->
           <div class="header__top">
+            <!-- Container giới hạn chiều rộng -->
             <div class="container">
               <a href="index.html">
+                <!-- Phần thương hiệu -->
                 <div class="brand">
+                  <!-- Logo thương hiệu -->
                   <img
                     src="Images/LogoTruong.jpg"
                     alt="logo"
                     class="brand__logo"
                   />
 
+                  <!-- Thông tin thương hiệu -->
                   <div class="brand__info">
+                    <!-- Tên thương hiệu -->
                     <h1 class="brand__name">Trường THPT Lương Thế Vinh</h1>
+                    <!-- Khẩu hiệu thương hiệu -->
                     <p class="brand__tagline">
                       Nơi ươm mầm tương lai - Khơi nguồn tri thức
                     </p>
@@ -46,15 +56,28 @@
               </a>
             </div>
           </div>
+          <!-- Thanh điều hướng -->
           <nav class="nav">
+            <!-- Container giới hạn chiều rộng -->
             <div class="container">
+              <!-- Danh sách điều hướng -->
               <ul class="nav__list">
+                <!-- Mục điều hướng -->
                 <li class="nav__item">
                   <a href="index.html" class="nav__link">🏠 Trang Chủ</a>
                 </li>
+                <!-- Mục điều hướng có menu con -->
                 <li class="nav__item has-submenu">
+                  <input
+                    type="checkbox"
+                    id="menu-gioithieu"
+                    class="menu-toggle"
+                  />
                   <a href="Gioithieu.html" class="nav__link">ℹ️ Giới thiệu</a>
+                  <label for="menu-gioithieu" class="toggle-icon"></label>
+                  <!-- Menu con -->
                   <ul class="submenu">
+                    <!-- Mục menu con -->
                     <li class="submenu__item">
                       <a href="Lichsunhatruong.html" class="submenu__link"
                         >📚 Lịch sử nhà trường</a
@@ -73,7 +96,9 @@
                   </ul>
                 </li>
                 <li class="nav__item has-submenu">
+                  <input type="checkbox" id="menu-tochuc" class="menu-toggle" />
                   <a href="Tochuc.html" class="nav__link">🏢 Tổ chức</a>
+                  <label for="menu-tochuc" class="toggle-icon"></label>
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Bangiamhieu.html" class="submenu__link"
@@ -92,8 +117,11 @@
                     </li>
                   </ul>
                 </li>
+                <!-- Mục điều hướng có menu con, đang hoạt động -->
                 <li class="nav__item has-submenu active">
+                  <input type="checkbox" id="menu-tintuc" class="menu-toggle" />
                   <a href="Tintuc.html" class="nav__link">📰 Tin tức</a>
+                  <label for="menu-tintuc" class="toggle-icon"></label>
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Hoatdongtruong.html" class="submenu__link"
@@ -113,7 +141,13 @@
                   </ul>
                 </li>
                 <li class="nav__item has-submenu">
+                  <input
+                    type="checkbox"
+                    id="menu-dieuhanh"
+                    class="menu-toggle"
+                  />
                   <a href="Dieuhanh.html" class="nav__link">⚙️ Điều hành</a>
+                  <label for="menu-dieuhanh" class="toggle-icon"></label>
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Thoikhoabieu.html" class="submenu__link"
@@ -139,10 +173,15 @@
         </div>
       </header>
 
+      <!-- Banner trang -->
       <div class="page-banner">
+        <!-- Lớp phủ banner -->
         <div class="page-banner__overlay">
+          <!-- Container giới hạn chiều rộng -->
           <div class="container">
+            <!-- Tiêu đề banner -->
             <h1 class="page-banner__title">Hoạt động Mạng Xã Hội</h1>
+            <!-- Breadcrumb -->
             <div class="breadcrumb">
               <a href="index.html" class="breadcrumb__item">Trang chủ</a>
               <span class="breadcrumb__separator">/</span>
@@ -156,21 +195,32 @@
         </div>
       </div>
 
+      <!-- Nội dung chính -->
       <main class="main">
+        <!-- Container giới hạn chiều rộng -->
         <div class="container">
+          <!-- Bố cục mạng xã hội -->
           <div class="social-layout">
+            <!-- Luồng tin mạng xã hội -->
             <div class="social-feed">
+              <!-- Bài đăng mạng xã hội -->
               <article class="social-post">
+                <!-- Đầu bài đăng -->
                 <header class="post-header">
+                  <!-- Icon nền tảng -->
                   <div class="platform-icon youtube">▶️</div>
+                  <!-- Tác giả bài đăng -->
                   <div class="post-author">
                     <h3>THPT Lương Thế Vinh Channel</h3>
+                    <!-- Dấu thời gian bài đăng -->
                     <p class="post-timestamp">
                       12/10/2025 trên <strong>YouTube</strong>
                     </p>
                   </div>
                 </header>
+                <!-- Thân bài đăng -->
                 <div class="post-body">
+                  <!-- Container nhúng -->
                   <div class="embed-container embed-container--16-9">
                     <iframe
                       width="560"
@@ -184,9 +234,11 @@
                     ></iframe>
                   </div>
                 </div>
+                <!-- Chú thích bài đăng -->
                 <div class="post-caption">
                   <p>Mái trường THPT Lương Thế Vinh - Điện Bàn - Quảng Nam</p>
                 </div>
+                <!-- Chân bài đăng -->
                 <footer class="post-footer">
                   <a
                     href="https://www.youtube.com/watch?v=1ESDDniKFJw"
@@ -208,6 +260,7 @@
                   </div>
                 </header>
                 <div class="post-body">
+                  <!-- Bài đăng Facebook -->
                   <div
                     class="fb-post"
                     data-href="https://www.facebook.com/photo.php?fbid=930595971977936&set=a.848673143503553&type=3"
@@ -308,16 +361,22 @@
               </article>
             </div>
 
+            <!-- Thanh bên mạng xã hội -->
             <aside class="social-sidebar">
+              <!-- Widget thanh bên -->
               <div class="sidebar-widget">
+                <!-- Tiêu đề widget -->
                 <h3 class="widget-title">📡 Theo Dõi Chúng Tôi</h3>
+                <!-- Danh sách kênh mạng xã hội -->
                 <div class="social-channels-list">
                   <a
                     href="https://www.facebook.com/luongthevinhconfessionsthpt"
                     class="social-channel-item facebook-bg"
                     target="_blank"
                   >
+                    <!-- Icon kênh mạng xã hội -->
                     <span class="social-channel-icon">📘</span>
+                    <!-- Tên kênh mạng xã hội -->
                     <span class="social-channel-name">Fanpage Facebook</span>
                   </a>
                 </div>
@@ -325,6 +384,7 @@
 
               <div class="sidebar-widget">
                 <h3 class="widget-title">🔥 Từ Khóa Nổi Bật</h3>
+                <!-- Đám mây thẻ -->
                 <div class="tags-cloud">
                   <a href="#" class="tag-item">#LTVPro</a
                   ><a href="#" class="tag-item">#KhaiGiang2025</a>
@@ -339,9 +399,13 @@
 
               <div class="sidebar-widget">
                 <h3 class="widget-title">🗓️ Sự Kiện Sắp Tới</h3>
+                <!-- Danh sách sự kiện -->
                 <ul class="events-list">
+                  <!-- Mục sự kiện -->
                   <li class="event-item">
+                    <!-- Ngày sự kiện -->
                     <span class="event-date">20/11</span>
+                    <!-- Tên sự kiện -->
                     <span class="event-name"
                       >Lễ Kỷ niệm Ngày Nhà giáo Việt Nam</span
                     >
@@ -365,19 +429,27 @@
         </div>
       </main>
 
-      <!-- Footer -->
+      <!-- Chân trang -->
       <footer class="footer">
+        <!-- Dải màu chân trang -->
         <div class="footer__gradient">
+          <!-- Container giới hạn chiều rộng -->
           <div class="container">
+            <!-- Nội dung chân trang -->
             <div class="footer__content">
+              <!-- Thông tin chân trang -->
               <div class="footer__info">
+                <!-- Tiêu đề chân trang -->
                 <h3 class="footer__title">THPT Lương Thế Vinh</h3>
+                <!-- Mô tả chân trang -->
                 <p class="footer__desc">
                   Ngôi trường của tri thức và tương lai
                 </p>
+                <!-- Địa chỉ chân trang -->
                 <div class="footer__address">
                   📍 Phường Điện Nam Trung, Thị xã Điện Bàn, Tỉnh Quảng Nam
                 </div>
+                <!-- Mạng xã hội chân trang -->
                 <div class="footer__social">
                   <a
                     href="https://www.facebook.com/groups/ltvpro"
@@ -387,7 +459,9 @@
                   >
                 </div>
               </div>
+              <!-- Các liên kết chân trang -->
               <div class="footer__links">
+                <!-- Cột liên kết chân trang -->
                 <div class="footer__column">
                   <h4>Liên kết nhanh</h4>
                   <ul>
@@ -417,6 +491,7 @@
                 </div>
               </div>
             </div>
+            <!-- Phần dưới của chân trang -->
             <div class="footer__bottom">
               <p>
                 &copy; 2025 Trường THPT Lương Thế Vinh. Tất cả quyền được bảo
@@ -427,9 +502,11 @@
         </div>
       </footer>
 
-      <!-- Floating Action Button -->
+      <!-- Nút hành động nổi -->
       <div class="fab-container">
+        <!-- Nút chính -->
         <div class="fab fab--main">💬</div>
+        <!-- Menu nút nổi -->
         <div class="fab-menu">
           <a href="tel:0935308369" class="fab fab--phone">📞</a>
           <a

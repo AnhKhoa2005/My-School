@@ -1,14 +1,20 @@
-/* ========== Page Banner ========== */
+﻿/* ============================================================
+   LICHTHIKIEMTRA.CSS - CSS cho trang Lịch thi kiểm tra
+   ============================================================ */
+
+/* ========== Banner trang ========== */
+/* Banner chính ở đầu trang */
 .page-banner {
   position: relative;
   height: 300px;
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); /* Nền chuyển sắc đỏ-hồng */
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
+/* Lớp giả để tạo hiệu ứng nền */
 .page-banner::before {
   content: '';
   position: absolute;
@@ -20,11 +26,13 @@
   animation: float 20s infinite linear;
 }
 
+/* Keyframe cho animation 'float' */
 @keyframes float {
   from { transform: translateY(0); }
   to { transform: translateY(-100px); }
 }
 
+/* Lớp phủ chứa nội dung text trên banner */
 .page-banner__overlay {
   position: relative;
   z-index: 2;
@@ -32,6 +40,7 @@
   color: white;
 }
 
+/* Tiêu đề của banner */
 .page-banner__title {
   font-size: 3rem;
   font-weight: 800;
@@ -40,6 +49,7 @@
   animation: slideInDown 0.6s ease-out;
 }
 
+/* Keyframe cho animation 'slideInDown' */
 @keyframes slideInDown {
   from {
     opacity: 0;
@@ -51,6 +61,7 @@
   }
 }
 
+/* Thanh điều hướng breadcrumb */
 .breadcrumb {
   display: flex;
   align-items: center;
@@ -60,11 +71,13 @@
   animation: fadeIn 0.8s ease-out;
 }
 
+/* Keyframe cho animation 'fadeIn' */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
+/* Mỗi mục trong breadcrumb */
 .breadcrumb__item {
   color: rgba(255,255,255,0.9);
   transition: var(--transition);
@@ -74,26 +87,31 @@
   color: white;
 }
 
+/* Mục đang hoạt động (trang hiện tại) */
 .breadcrumb__item--active {
   color: white;
   font-weight: 600;
 }
 
+/* Dấu phân cách trong breadcrumb */
 .breadcrumb__separator {
   color: rgba(255,255,255,0.6);
 }
 
-/* ========== Main ========== */
+/* ========== Nội dung chính ========== */
+/* Phần nội dung chính của trang */
 .main {
   padding: var(--spacing-2xl) 0;
 }
 
-/* ========== Info Section ========== */
+/* ========== Phần Thông tin chung ========== */
+/* Phần thông tin giới thiệu */
 .info-section {
   margin-bottom: var(--spacing-2xl);
   animation: fadeInUp 0.8s ease-out;
 }
 
+/* Keyframe cho animation 'fadeInUp' */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -105,6 +123,7 @@
   }
 }
 
+/* Hộp chứa thông tin */
 .info-box {
   background: white;
   padding: var(--spacing-2xl);
@@ -113,11 +132,13 @@
   text-align: center;
 }
 
+/* Icon thông tin */
 .info-icon {
   font-size: 5rem;
   margin-bottom: var(--spacing-lg);
 }
 
+/* Tiêu đề thông tin */
 .info-title {
   font-size: 2.5rem;
   font-weight: 800;
@@ -128,6 +149,7 @@
   margin-bottom: var(--spacing-lg);
 }
 
+/* Văn bản thông tin */
 .info-text {
   font-size: 1.2rem;
   line-height: 1.9;
@@ -136,11 +158,13 @@
   margin: 0 auto;
 }
 
-/* ========== Filter Section ========== */
+/* ========== Phần Lọc lịch thi ========== */
+/* Phần chứa các bộ lọc */
 .filter-section {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Hộp chứa bộ lọc */
 .filter-box {
   background: white;
   padding: var(--spacing-2xl);
@@ -148,6 +172,7 @@
   box-shadow: var(--shadow-lg);
 }
 
+/* Tiêu đề bộ lọc */
 .filter-title {
   font-size: 1.5rem;
   font-weight: 700;
@@ -156,18 +181,21 @@
   text-align: center;
 }
 
+/* Các điều khiển lọc */
 .filter-controls {
   display: flex;
   gap: var(--spacing-lg);
-  align-items: flex-end;
-  flex-wrap: wrap;
+  align-items: flex-end; /* Căn các mục ở dưới cùng */
+  flex-wrap: wrap; /* Cho phép xuống dòng trên màn hình nhỏ */
 }
 
+/* Nhóm lọc (ví dụ: chọn khối) */
 .filter-group {
-  flex: 1;
-  min-width: 200px;
+  flex: 1; /* Linh hoạt co giãn */
+  min-width: 200px; /* Chiều rộng tối thiểu */
 }
 
+/* Nhãn của bộ lọc */
 .filter-label {
   display: block;
   font-weight: 700;
@@ -176,6 +204,7 @@
   font-size: 1rem;
 }
 
+/* Ô chọn (select box) */
 .filter-select {
   width: 100%;
   padding: var(--spacing-md) var(--spacing-lg);
@@ -189,12 +218,14 @@
   transition: var(--transition);
 }
 
+/* Hiệu ứng khi focus vào ô chọn */
 .filter-select:focus {
   outline: none;
   border-color: var(--primary);
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
+/* Nút lọc */
 .btn-filter {
   padding: var(--spacing-md) var(--spacing-2xl);
   background: var(--gradient-primary);
@@ -208,12 +239,13 @@
   box-shadow: var(--shadow-md);
 }
 
+/* Hiệu ứng khi di chuột vào nút lọc */
 .btn-filter:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-lg);
 }
 
-/* ========== Section Title ========== */
+/* ========== Tiêu đề chung của các phần ========== */
 .section-title {
   font-size: 2.5rem;
   font-weight: 800;
@@ -227,6 +259,7 @@
   padding-bottom: var(--spacing-lg);
 }
 
+/* Gạch chân trang trí cho tiêu đề */
 .section-title::after {
   content: '';
   position: absolute;
@@ -239,17 +272,20 @@
   border-radius: 2px;
 }
 
-/* ========== Upcoming Section ========== */
+/* ========== Phần Thi sắp diễn ra ========== */
+/* Phần chứa các kỳ thi sắp tới */
 .upcoming-section {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Lưới chứa các thẻ thi */
 .upcoming-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: var(--spacing-2xl);
 }
 
+/* Mỗi thẻ thi sắp diễn ra */
 .upcoming-card {
   background: white;
   border-radius: var(--radius-xl);
@@ -261,10 +297,12 @@
   animation: scaleIn 0.6s ease-out backwards;
 }
 
+/* Thêm độ trễ cho animation */
 .upcoming-card:nth-child(1) { animation-delay: 0.1s; }
 .upcoming-card:nth-child(2) { animation-delay: 0.2s; }
 .upcoming-card:nth-child(3) { animation-delay: 0.3s; }
 
+/* Keyframe cho animation 'scaleIn' */
 @keyframes scaleIn {
   from {
     opacity: 0;
@@ -276,15 +314,18 @@
   }
 }
 
+/* Hiệu ứng khi di chuột vào thẻ */
 .upcoming-card:hover {
   transform: translateY(-10px);
   box-shadow: var(--shadow-xl);
 }
 
+/* Thẻ thi khẩn cấp */
 .upcoming-card--urgent {
   border: 3px solid #ff6b6b;
 }
 
+/* Huy hiệu "Khẩn" */
 .upcoming-badge {
   position: absolute;
   top: var(--spacing-lg);
@@ -296,14 +337,16 @@
   font-weight: 700;
   font-size: 0.85rem;
   box-shadow: var(--shadow-md);
-  animation: pulse 2s infinite;
+  animation: pulse 2s infinite; /* Animation nhấp nháy */
 }
 
+/* Keyframe cho animation 'pulse' */
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); }
 }
 
+/* Khung hiển thị ngày thi */
 .upcoming-date {
   width: 100px;
   height: 100px;
@@ -318,12 +361,14 @@
   box-shadow: var(--shadow-md);
 }
 
+/* Ngày trong tháng */
 .date-day {
   font-size: 3rem;
   font-weight: 800;
   line-height: 1;
 }
 
+/* Tháng */
 .date-month {
   font-size: 0.95rem;
   font-weight: 600;
@@ -331,11 +376,13 @@
   margin-top: var(--spacing-xs);
 }
 
+/* Năm */
 .date-year {
   font-size: 0.85rem;
   opacity: 0.9;
 }
 
+/* Tiêu đề của kỳ thi */
 .upcoming-title {
   font-size: 1.5rem;
   font-weight: 700;
@@ -344,6 +391,7 @@
   text-align: center;
 }
 
+/* Thông tin chi tiết của kỳ thi */
 .upcoming-info {
   display: flex;
   flex-direction: column;
@@ -354,6 +402,7 @@
   border-radius: var(--radius-lg);
 }
 
+/* Mỗi mục thông tin (ví dụ: thời gian, địa điểm) */
 .info-item {
   display: flex;
   align-items: center;
@@ -363,10 +412,12 @@
   font-weight: 600;
 }
 
+/* Icon của mục thông tin */
 .info-icon {
   font-size: 1.2rem;
 }
 
+/* Đồng hồ đếm ngược */
 .countdown {
   display: flex;
   justify-content: center;
@@ -378,42 +429,49 @@
   border: 2px solid #ffd700;
 }
 
+/* Nhãn của đồng hồ đếm ngược */
 .countdown-label {
   font-weight: 700;
   color: var(--text-primary);
   font-size: 1rem;
 }
 
+/* Thời gian đếm ngược */
 .countdown-time {
   font-size: 1.3rem;
   font-weight: 800;
   color: #ff6b6b;
 }
 
-/* ========== Schedule Section ========== */
+/* ========== Phần Lịch thi chi tiết ========== */
+/* Phần chứa bảng lịch thi */
 .schedule-section {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Khung bọc bảng để cho phép cuộn ngang */
 .schedule-table-wrapper {
   background: white;
   padding: var(--spacing-2xl);
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
-  overflow-x: auto;
+  overflow-x: auto; /* Cho phép cuộn ngang trên màn hình nhỏ */
 }
 
+/* Bảng lịch thi */
 .exam-table {
   width: 100%;
-  border-collapse: collapse;
-  min-width: 800px;
+  border-collapse: collapse; /* Gộp đường viền */
+  min-width: 800px; /* Chiều rộng tối thiểu để tránh bị bóp méo */
 }
 
+/* Tiêu đề bảng */
 .exam-table thead {
   background: var(--gradient-secondary);
   color: white;
 }
 
+/* Ô tiêu đề (th) */
 .exam-table th {
   padding: var(--spacing-lg);
   text-align: left;
@@ -422,29 +480,35 @@
   border: 2px solid rgba(255,255,255,0.2);
 }
 
+/* Hàng trong thân bảng (tbody) */
 .exam-table tbody tr {
   transition: var(--transition);
   border-bottom: 2px solid var(--bg-tertiary);
 }
 
+/* Hiệu ứng khi di chuột vào hàng */
 .exam-table tbody tr:hover {
   background: var(--bg-secondary);
-  transform: scale(1.01);
+  transform: scale(1.01); /* Phóng to nhẹ */
 }
 
+/* Ô dữ liệu (td) */
 .exam-table td {
   padding: var(--spacing-lg);
   border: 2px solid var(--bg-tertiary);
 }
 
+/* Ô chứa ngày thi */
 .td-date {
   min-width: 120px;
 }
 
+/* Nội dung trong ô ngày */
 .date-cell {
   text-align: center;
 }
 
+/* Số ngày */
 .date-num {
   font-size: 1.3rem;
   font-weight: 800;
@@ -452,81 +516,85 @@
   margin-bottom: var(--spacing-xs);
 }
 
+/* Thứ trong tuần */
 .date-day {
   font-size: 0.9rem;
   color: var(--text-muted);
   font-weight: 600;
 }
 
+/* Ô chứa môn thi */
 .td-subject {
   min-width: 150px;
 }
 
+/* Nội dung trong ô môn thi */
 .subject-cell {
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
   padding: var(--spacing-md);
   border-radius: var(--radius-md);
-  border-left: 4px solid;
+  border-left: 4px solid; /* Viền trái để phân biệt màu */
 }
 
+/* Icon môn học */
 .subject-icon {
   font-size: 1.5rem;
 }
 
+/* Tên môn học */
 .subject-name {
   font-weight: 700;
   font-size: 1.1rem;
   color: var(--text-primary);
 }
 
-/* Subject colors - giống như TKB */
+/* Màu nền và viền cho từng môn học (giống TKB) */
 .subject-math { 
   background: #f0f4ff;
   border-left-color: #667eea;
 }
-
 .subject-physics { 
   background: #fff0f6;
   border-left-color: #f093fb;
 }
-
 .subject-chemistry { 
   background: #f0f9ff;
   border-left-color: #4facfe;
 }
-
 .subject-biology { 
   background: #f0fdf4;
   border-left-color: #43e97b;
 }
-
 .subject-literature { 
   background: #fffbeb;
   border-left-color: #fa709a;
 }
-
 .subject-english { 
   background: #f0fdfa;
   border-left-color: #30cfd0;
 }
 
+/* Ô chứa khối lớp */
 .td-grade {
   font-weight: 600;
   color: var(--text-secondary);
 }
 
+/* Ô chứa thời gian thi */
 .td-time {
   font-weight: 600;
   color: var(--text-primary);
   min-width: 150px;
 }
 
+/* Ô chứa hình thức thi */
 .td-format {
   text-align: center;
 }
 
+/* Huy hiệu hình thức thi */
 .format-badge {
   display: inline-block;
   padding: var(--spacing-xs) var(--spacing-lg);
@@ -538,26 +606,31 @@
   box-shadow: var(--shadow-sm);
 }
 
+/* Huy hiệu cho bài kiểm tra (khác bài thi) */
 .format-badge--test {
   background: var(--gradient-warning);
 }
 
+/* Ô chứa phòng thi */
 .td-room {
   font-weight: 600;
   color: var(--text-secondary);
 }
 
-/* ========== Rules Section ========== */
+/* ========== Phần Quy định phòng thi ========== */
+/* Phần chứa các quy định */
 .rules-section {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Lưới chứa các thẻ quy định */
 .rules-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--spacing-2xl);
 }
 
+/* Mỗi thẻ quy định */
 .rule-card {
   background: white;
   padding: var(--spacing-2xl);
@@ -570,16 +643,19 @@
   animation: fadeInUp 0.6s ease-out backwards;
 }
 
+/* Thêm độ trễ cho animation */
 .rule-card:nth-child(1) { animation-delay: 0.1s; }
 .rule-card:nth-child(2) { animation-delay: 0.2s; }
 .rule-card:nth-child(3) { animation-delay: 0.3s; }
 .rule-card:nth-child(4) { animation-delay: 0.4s; }
 
+/* Hiệu ứng khi di chuột vào thẻ */
 .rule-card:hover {
   transform: translateY(-10px);
   box-shadow: var(--shadow-xl);
 }
 
+/* Số thứ tự của quy định */
 .rule-number {
   position: absolute;
   top: var(--spacing-lg);
@@ -597,11 +673,13 @@
   box-shadow: var(--shadow-md);
 }
 
+/* Icon của quy định */
 .rule-icon {
   font-size: 4rem;
   margin-bottom: var(--spacing-lg);
 }
 
+/* Tiêu đề của quy định */
 .rule-title {
   font-size: 1.5rem;
   font-weight: 700;
@@ -609,17 +687,20 @@
   margin-bottom: var(--spacing-md);
 }
 
+/* Mô tả của quy định */
 .rule-desc {
   font-size: 1.05rem;
   line-height: 1.7;
   color: var(--text-secondary);
 }
 
-/* ========== Tips Section ========== */
+/* ========== Phần Mẹo ôn thi ========== */
+/* Phần chứa các mẹo ôn thi */
 .tips-section {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Hộp chứa các mẹo */
 .tips-box {
   background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
   padding: var(--spacing-2xl);
@@ -629,6 +710,7 @@
   overflow: hidden;
 }
 
+/* Hiệu ứng nền xoay */
 .tips-box::before {
   content: '';
   position: absolute;
@@ -640,11 +722,13 @@
   animation: rotate 30s linear infinite;
 }
 
+/* Keyframe cho animation 'rotate' */
 @keyframes rotate {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
+/* Tiêu đề phần mẹo */
 .tips-title {
   font-size: 2rem;
   font-weight: 800;
@@ -655,6 +739,7 @@
   z-index: 2;
 }
 
+/* Lưới chứa các mẹo */
 .tips-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -663,6 +748,7 @@
   z-index: 2;
 }
 
+/* Mỗi mục mẹo */
 .tip-item {
   padding: var(--spacing-2xl);
   background: rgba(255,255,255,0.9);
@@ -673,17 +759,20 @@
   box-shadow: var(--shadow-md);
 }
 
+/* Hiệu ứng khi di chuột vào mẹo */
 .tip-item:hover {
   background: white;
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
 }
 
+/* Icon của mẹo */
 .tip-icon {
   font-size: 3.5rem;
   margin-bottom: var(--spacing-lg);
 }
 
+/* Tiêu đề của mẹo */
 .tip-heading {
   font-size: 1.3rem;
   font-weight: 700;
@@ -691,17 +780,20 @@
   margin-bottom: var(--spacing-md);
 }
 
+/* Văn bản của mẹo */
 .tip-text {
   font-size: 1.05rem;
   line-height: 1.7;
   color: var(--text-secondary);
 }
 
-/* ========== Contact Section ========== */
+/* ========== Phần Liên hệ hỗ trợ ========== */
+/* Phần chứa thông tin liên hệ */
 .contact-section {
   margin-bottom: var(--spacing-2xl);
 }
 
+/* Hộp chứa thông tin liên hệ */
 .contact-box {
   background: white;
   padding: var(--spacing-2xl);
@@ -710,11 +802,13 @@
   text-align: center;
 }
 
+/* Icon liên hệ */
 .contact-icon {
   font-size: 4rem;
   margin-bottom: var(--spacing-lg);
 }
 
+/* Tiêu đề liên hệ */
 .contact-title {
   font-size: 2rem;
   font-weight: 700;
@@ -722,6 +816,7 @@
   margin-bottom: var(--spacing-lg);
 }
 
+/* Văn bản liên hệ */
 .contact-text {
   font-size: 1.1rem;
   line-height: 1.8;
@@ -732,6 +827,7 @@
   margin-right: auto;
 }
 
+/* Thông tin chi tiết liên hệ */
 .contact-info {
   display: grid;
   gap: var(--spacing-lg);
@@ -739,6 +835,7 @@
   margin: 0 auto;
 }
 
+/* Mỗi mục thông tin liên hệ */
 .contact-item {
   display: flex;
   justify-content: space-between;
@@ -749,17 +846,20 @@
   transition: var(--transition);
 }
 
+/* Hiệu ứng khi di chuột vào mục */
 .contact-item:hover {
   background: var(--bg-tertiary);
   transform: translateX(10px);
 }
 
+/* Nhãn của thông tin (ví dụ: "Email") */
 .contact-label {
   font-weight: 700;
   color: var(--text-primary);
   font-size: 1rem;
 }
 
+/* Giá trị của thông tin (ví dụ: "example@email.com") */
 .contact-value {
   font-weight: 700;
   color: var(--primary);
@@ -767,6 +867,7 @@
 }
 
 /* ========== Responsive ========== */
+/* Cho màn hình nhỏ hơn 1200px */
 @media (max-width: 1200px) {
   .filter-controls {
     flex-direction: column;
@@ -778,6 +879,7 @@
   }
 }
 
+/* Cho màn hình nhỏ hơn 768px (máy tính bảng) */
 @media (max-width: 768px) {
   .page-banner {
     height: 200px;
@@ -814,6 +916,7 @@
   }
 }
 
+/* Cho màn hình nhỏ hơn 480px (điện thoại) */
 @media (max-width: 480px) {
   .exam-table th,
   .exam-table td {

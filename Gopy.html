@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Góp Ý - THPT Lương Thế Vinh</title>
 
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,25 +13,36 @@
       rel="stylesheet"
     />
 
+    <!-- CSS -->
     <link rel="stylesheet" href="Css/Chung.css" />
     <link rel="stylesheet" href="Css/Gopy.css" />
   </head>
   <body>
+    <!-- Toàn bộ trang -->
     <div class="page">
+      <!-- Đầu trang -->
       <header class="header">
+        <!-- Dải màu đầu trang -->
         <div class="header__gradient">
+          <!-- Phần trên của đầu trang -->
           <div class="header__top">
+            <!-- Container cho phần trên -->
             <div class="container">
               <a href="index.html">
+                <!-- Phần thương hiệu -->
                 <div class="brand">
+                  <!-- Logo thương hiệu -->
                   <img
                     src="Images/LogoTruong.jpg"
                     alt="logo"
                     class="brand__logo"
                   />
 
+                  <!-- Thông tin thương hiệu -->
                   <div class="brand__info">
+                    <!-- Tên thương hiệu -->
                     <h1 class="brand__name">Trường THPT Lương Thế Vinh</h1>
+                    <!-- Khẩu hiệu thương hiệu -->
                     <p class="brand__tagline">
                       Nơi ươm mầm tương lai - Khơi nguồn tri thức
                     </p>
@@ -40,15 +52,28 @@
             </div>
           </div>
 
+          <!-- Thanh điều hướng -->
           <nav class="nav">
+            <!-- Container cho thanh điều hướng -->
             <div class="container">
+              <!-- Danh sách mục điều hướng -->
               <ul class="nav__list">
+                <!-- Mục điều hướng -->
                 <li class="nav__item">
                   <a href="index.html" class="nav__link">🏠 Trang Chủ</a>
                 </li>
+                <!-- Mục điều hướng có menu con -->
                 <li class="nav__item has-submenu">
+                  <input
+                    type="checkbox"
+                    id="menu-gioithieu"
+                    class="menu-toggle"
+                  />
                   <a href="Gioithieu.html" class="nav__link">ℹ️ Giới thiệu</a>
+                  <label for="menu-gioithieu" class="toggle-icon"></label>
+                  <!-- Menu con -->
                   <ul class="submenu">
+                    <!-- Mục menu con -->
                     <li class="submenu__item">
                       <a href="Lichsunhatruong.html" class="submenu__link"
                         >📚 Lịch sử nhà trường</a
@@ -67,7 +92,9 @@
                   </ul>
                 </li>
                 <li class="nav__item has-submenu">
+                  <input type="checkbox" id="menu-tochuc" class="menu-toggle" />
                   <a href="Tochuc.html" class="nav__link">🏢 Tổ chức</a>
+                  <label for="menu-tochuc" class="toggle-icon"></label>
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Bangiamhieu.html" class="submenu__link"
@@ -87,7 +114,9 @@
                   </ul>
                 </li>
                 <li class="nav__item has-submenu">
+                  <input type="checkbox" id="menu-tintuc" class="menu-toggle" />
                   <a href="Tintuc.html" class="nav__link">📰 Tin tức</a>
+                  <label for="menu-tintuc" class="toggle-icon"></label>
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Hoatdongtruong.html" class="submenu__link"
@@ -107,7 +136,13 @@
                   </ul>
                 </li>
                 <li class="nav__item has-submenu">
+                  <input
+                    type="checkbox"
+                    id="menu-dieuhanh"
+                    class="menu-toggle"
+                  />
                   <a href="Dieuhanh.html" class="nav__link">⚙️ Điều hành</a>
+                  <label for="menu-dieuhanh" class="toggle-icon"></label>
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Thoikhoabieu.html" class="submenu__link"
@@ -124,7 +159,7 @@
                 <li class="nav__item">
                   <a href="Lienhe.html" class="nav__link">📞 Liên hệ</a>
                 </li>
-                <li class="nav__item active">
+                <li class="nav__item">
                   <a href="Gopy.html" class="nav__link">💬 Góp ý</a>
                 </li>
               </ul>
@@ -133,10 +168,15 @@
         </div>
       </header>
 
+      <!-- Banner trang -->
       <div class="page-banner">
+        <!-- Lớp phủ banner -->
         <div class="page-banner__overlay">
+          <!-- Container cho banner -->
           <div class="container">
+            <!-- Tiêu đề banner -->
             <h1 class="page-banner__title">Góp Ý Xây Dựng Nhà Trường</h1>
+            <!-- Breadcrumb -->
             <div class="breadcrumb">
               <a href="index.html" class="breadcrumb__item">Trang chủ</a>
               <span class="breadcrumb__separator">/</span>
@@ -148,13 +188,19 @@
         </div>
       </div>
 
+      <!-- Nội dung chính -->
       <main class="main">
+        <!-- Container cho nội dung chính -->
         <div class="container">
-          <!-- Intro Section -->
+          <!-- Phần giới thiệu -->
           <section class="intro-section">
+            <!-- Hộp giới thiệu -->
             <div class="intro-box">
+              <!-- Icon giới thiệu -->
               <div class="intro-icon">💡</div>
+              <!-- Tiêu đề giới thiệu -->
               <h2 class="intro-title">Ý Kiến Của Bạn Rất Quan Trọng</h2>
+              <!-- Văn bản giới thiệu -->
               <p class="intro-text">
                 Nhà trường luôn lắng nghe và trân trọng mọi ý kiến đóng góp từ
                 phụ huynh, học sinh, giáo viên và cộng đồng. Những góp ý của bạn
@@ -164,12 +210,17 @@
             </div>
           </section>
 
-          <!-- Statistics -->
+          <!-- Thống kê -->
           <section class="stats-section">
+            <!-- Lưới thống kê -->
             <div class="stats-grid">
+              <!-- Hộp thống kê -->
               <div class="stat-box">
+                <!-- Icon thống kê -->
                 <div class="stat-icon">📊</div>
+                <!-- Số liệu thống kê -->
                 <div class="stat-number">1,245</div>
+                <!-- Nhãn thống kê -->
                 <div class="stat-label">Góp ý đã nhận</div>
               </div>
               <div class="stat-box">
@@ -190,30 +241,41 @@
             </div>
           </section>
 
-          <!-- Feedback Form -->
+          <!-- Phần biểu mẫu góp ý -->
           <section class="feedback-section">
+            <!-- Bố cục góp ý -->
             <div class="feedback-layout">
-              <!-- Form -->
+              <!-- Wrapper biểu mẫu góp ý -->
               <div class="feedback-form-wrapper">
+                <!-- Tiêu đề biểu mẫu -->
                 <h2 class="form-title">📝 Gửi Góp Ý Của Bạn</h2>
+                <!-- Phụ đề biểu mẫu -->
                 <p class="form-subtitle">
                   Vui lòng điền đầy đủ thông tin để chúng tôi có thể phản hồi
                   nhanh nhất.
                 </p>
 
+                <!-- Biểu mẫu góp ý -->
                 <form class="feedback-form" id="feedbackForm">
-                  <!-- Personal Info -->
+                  <!-- Phần thông tin cá nhân -->
                   <div class="form-section">
+                    <!-- Tiêu đề phần -->
                     <h3 class="section-heading">
+                      <!-- Icon tiêu đề -->
                       <span class="heading-icon">👤</span>
+                      <!-- Văn bản tiêu đề -->
                       <span class="heading-text">Thông Tin Cá Nhân</span>
                     </h3>
 
+                    <!-- Dòng biểu mẫu -->
                     <div class="form-row">
+                      <!-- Nhóm biểu mẫu -->
                       <div class="form-group">
+                        <!-- Nhãn biểu mẫu -->
                         <label class="form-label" for="fullName">
                           Họ và tên <span class="required">*</span>
                         </label>
+                        <!-- Input biểu mẫu -->
                         <input
                           type="text"
                           id="fullName"
@@ -257,6 +319,7 @@
                         <label class="form-label" for="relationship">
                           Bạn là <span class="required">*</span>
                         </label>
+                        <!-- Select biểu mẫu -->
                         <select
                           id="relationship"
                           name="relationship"
@@ -274,7 +337,7 @@
                     </div>
                   </div>
 
-                  <!-- Feedback Details -->
+                  <!-- Chi tiết góp ý -->
                   <div class="form-section">
                     <h3 class="section-heading">
                       <span class="heading-icon">💬</span>
@@ -307,7 +370,9 @@
                       <label class="form-label" for="feedbackType">
                         Loại góp ý <span class="required">*</span>
                       </label>
+                      <!-- Nhóm checkbox -->
                       <div class="checkbox-group">
+                        <!-- Nhãn checkbox -->
                         <label class="checkbox-label">
                           <input
                             type="radio"
@@ -315,7 +380,9 @@
                             value="khen-ngoi"
                             required
                           />
+                          <!-- Icon checkbox -->
                           <span class="checkbox-icon">👍</span>
+                          <!-- Văn bản checkbox -->
                           <span class="checkbox-text">Khen ngợi</span>
                         </label>
                         <label class="checkbox-label">
@@ -366,14 +433,17 @@
                       <label class="form-label" for="content">
                         Nội dung chi tiết <span class="required">*</span>
                       </label>
+                      <!-- Textarea biểu mẫu -->
                       <textarea
                         id="content"
                         name="content"
                         class="form-textarea"
                         rows="8"
+                        maxlength="1000"
                         placeholder="Mô tả chi tiết góp ý của bạn. Vui lòng cung cấp càng nhiều thông tin càng tốt để chúng tôi hiểu rõ vấn đề..."
                         required
                       ></textarea>
+                      <!-- Đếm ký tự -->
                       <div class="char-count">
                         <span id="charCount">0</span>/1000 ký tự
                       </div>
@@ -383,6 +453,7 @@
                       <label class="form-label" for="attachment">
                         Đính kèm file (nếu có)
                       </label>
+                      <!-- Input file -->
                       <input
                         type="file"
                         id="attachment"
@@ -390,13 +461,14 @@
                         class="form-file"
                         accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
                       />
+                      <!-- Trợ giúp biểu mẫu -->
                       <small class="form-help">
                         Hỗ trợ: PDF, Word, Ảnh. Tối đa 5MB
                       </small>
                     </div>
                   </div>
 
-                  <!-- Rating -->
+                  <!-- Đánh giá -->
                   <div class="form-section">
                     <h3 class="section-heading">
                       <span class="heading-icon">⭐</span>
@@ -408,6 +480,7 @@
                         Bạn đánh giá nhà trường như thế nào?
                         <span class="required">*</span>
                       </label>
+                      <!-- Nhóm đánh giá -->
                       <div class="rating-group" id="ratingGroup">
                         <input
                           type="radio"
@@ -416,7 +489,9 @@
                           value="5"
                           required
                         />
-                        <label for="star5" class="star">⭐</label>
+                        <label for="star5" class="star" data-text="Rất hài lòng"
+                          >⭐</label
+                        >
 
                         <input
                           type="radio"
@@ -424,7 +499,9 @@
                           name="rating"
                           value="4"
                         />
-                        <label for="star4" class="star">⭐</label>
+                        <label for="star4" class="star" data-text="Hài lòng"
+                          >⭐</label
+                        >
 
                         <input
                           type="radio"
@@ -432,7 +509,9 @@
                           name="rating"
                           value="3"
                         />
-                        <label for="star3" class="star">⭐</label>
+                        <label for="star3" class="star" data-text="Bình thường"
+                          >⭐</label
+                        >
 
                         <input
                           type="radio"
@@ -440,7 +519,12 @@
                           name="rating"
                           value="2"
                         />
-                        <label for="star2" class="star">⭐</label>
+                        <label
+                          for="star2"
+                          class="star"
+                          data-text="Không hài lòng"
+                          >⭐</label
+                        >
 
                         <input
                           type="radio"
@@ -448,23 +532,31 @@
                           name="rating"
                           value="1"
                         />
-                        <label for="star1" class="star">⭐</label>
+                        <label
+                          for="star1"
+                          class="star"
+                          data-text="Rất không hài lòng"
+                          >⭐</label
+                        >
                       </div>
+                      <!-- Văn bản đánh giá -->
                       <div class="rating-text" id="ratingText">
                         Chọn số sao để đánh giá
                       </div>
                     </div>
                   </div>
 
-                  <!-- Privacy -->
+                  <!-- Quyền riêng tư -->
                   <div class="form-section">
                     <div class="form-group">
+                      <!-- Nhãn quyền riêng tư -->
                       <label class="privacy-label">
                         <input
                           type="checkbox"
                           name="anonymous"
                           id="anonymous"
                         />
+                        <!-- Văn bản quyền riêng tư -->
                         <span class="privacy-text">
                           Gửi góp ý ẩn danh (Thông tin cá nhân sẽ không hiển thị
                           công khai)
@@ -485,12 +577,16 @@
                     </div>
                   </div>
 
-                  <!-- Submit Buttons -->
+                  <!-- Hành động biểu mẫu -->
                   <div class="form-actions">
+                    <!-- Nút gửi -->
                     <button type="submit" class="btn-submit">
+                      <!-- Icon nút -->
                       <span class="btn-icon">📤</span>
+                      <!-- Văn bản nút -->
                       <span class="btn-text">Gửi Góp Ý</span>
                     </button>
+                    <!-- Nút làm mới -->
                     <button type="reset" class="btn-reset">
                       <span class="btn-icon">🔄</span>
                       <span class="btn-text">Làm Mới</span>
@@ -499,14 +595,19 @@
                 </form>
               </div>
 
-              <!-- Sidebar -->
+              <!-- Sidebar góp ý -->
               <div class="feedback-sidebar">
-                <!-- Guidelines -->
+                <!-- Thẻ sidebar -->
                 <div class="sidebar-card">
+                  <!-- Tiêu đề sidebar -->
                   <h3 class="sidebar-title">📋 Hướng Dẫn Góp Ý</h3>
+                  <!-- Danh sách sidebar -->
                   <ul class="sidebar-list">
+                    <!-- Mục sidebar -->
                     <li class="sidebar-item">
+                      <!-- Số mục -->
                       <span class="item-number">1</span>
+                      <!-- Văn bản mục -->
                       <span class="item-text"
                         >Điền đầy đủ thông tin cá nhân</span
                       >
@@ -536,14 +637,19 @@
                   </ul>
                 </div>
 
-                <!-- Response Time -->
                 <div class="sidebar-card">
                   <h3 class="sidebar-title">⏰ Thời Gian Phản Hồi</h3>
+                  <!-- Thông tin phản hồi -->
                   <div class="response-info">
+                    <!-- Mục phản hồi -->
                     <div class="response-item">
+                      <!-- Icon phản hồi -->
                       <div class="response-icon">🟢</div>
+                      <!-- Nội dung phản hồi -->
                       <div class="response-content">
+                        <!-- Nhãn phản hồi -->
                         <div class="response-label">Khẩn cấp</div>
+                        <!-- Thời gian phản hồi -->
                         <div class="response-time">24 giờ</div>
                       </div>
                     </div>
@@ -564,14 +670,18 @@
                   </div>
                 </div>
 
-                <!-- Contact -->
+                <!-- Thẻ sidebar liên hệ -->
                 <div class="sidebar-card sidebar-card--contact">
                   <h3 class="sidebar-title">📞 Liên Hệ Trực Tiếp</h3>
+                  <!-- Văn bản liên hệ -->
                   <p class="contact-text">
                     Nếu cần phản hồi nhanh, vui lòng liên hệ:
                   </p>
+                  <!-- Danh sách liên hệ -->
                   <div class="contact-list">
+                    <!-- Mục liên hệ -->
                     <div class="contact-item">
+                      <!-- Icon liên hệ -->
                       <span class="contact-icon">☎️</span>
                       <span>0510.384.3033</span>
                     </div>
@@ -585,31 +695,45 @@
             </div>
           </section>
 
-          <!-- Recent Feedback -->
+          <!-- Góp ý gần đây -->
           <section class="recent-section">
             <h2 class="section-title">💬 Góp Ý Gần Đây</h2>
+            <!-- Lưới gần đây -->
             <div class="recent-grid">
+              <!-- Thẻ góp ý -->
               <div class="feedback-card">
+                <!-- Đầu thẻ góp ý -->
                 <div class="feedback-header">
+                  <!-- Avatar góp ý -->
                   <div class="feedback-avatar">PH</div>
+                  <!-- Người dùng góp ý -->
                   <div class="feedback-user">
+                    <!-- Tên người dùng -->
                     <div class="user-name">Phụ huynh học sinh lớp 10A1</div>
+                    <!-- Ngày góp ý -->
                     <div class="feedback-date">08/10/2025</div>
                   </div>
+                  <!-- Đánh giá góp ý -->
                   <div class="feedback-rating">⭐⭐⭐⭐⭐</div>
                 </div>
+                <!-- Nội dung góp ý -->
                 <div class="feedback-content">
+                  <!-- Tiêu đề góp ý -->
                   <h4 class="feedback-title">
                     Cảm ơn sự tận tâm của giáo viên
                   </h4>
+                  <!-- Văn bản góp ý -->
                   <p class="feedback-text">
                     Con tôi học lớp 10A1, thầy cô rất nhiệt tình và tận tâm.
                     Chất lượng giảng dạy tốt, con tiến bộ rõ rệt. Cảm ơn nhà
                     trường!
                   </p>
                 </div>
+                <!-- Chân thẻ góp ý -->
                 <div class="feedback-footer">
+                  <!-- Danh mục góp ý -->
                   <span class="feedback-category">Giảng dạy</span>
+                  <!-- Loại góp ý -->
                   <span class="feedback-type type-praise">Khen ngợi</span>
                 </div>
               </div>
@@ -662,14 +786,21 @@
             </div>
           </section>
 
-          <!-- Commitment -->
+          <!-- Phần cam kết -->
           <section class="commitment-section">
+            <!-- Hộp cam kết -->
             <div class="commitment-box">
+              <!-- Tiêu đề cam kết -->
               <h2 class="commitment-title">🤝 Cam Kết Của Nhà Trường</h2>
+              <!-- Lưới cam kết -->
               <div class="commitment-grid">
+                <!-- Mục cam kết -->
                 <div class="commitment-item">
+                  <!-- Icon cam kết -->
                   <div class="commitment-icon">✅</div>
+                  <!-- Tiêu đề cam kết -->
                   <h4 class="commitment-heading">Tiếp nhận 100%</h4>
+                  <!-- Văn bản cam kết -->
                   <p class="commitment-text">
                     Mọi góp ý đều được tiếp nhận và ghi nhận vào hệ thống
                   </p>
@@ -701,11 +832,15 @@
         </div>
       </main>
 
-      <!-- Footer -->
+      <!-- Chân trang -->
       <footer class="footer">
+        <!-- Dải màu chân trang -->
         <div class="footer__gradient">
+          <!-- Container cho chân trang -->
           <div class="container">
+            <!-- Nội dung chân trang -->
             <div class="footer__content">
+              <!-- Thông tin chân trang -->
               <div class="footer__info">
                 <h3 class="footer__title">THPT Lương Thế Vinh</h3>
                 <p class="footer__desc">
@@ -714,6 +849,7 @@
                 <div class="footer__address">
                   📍 Phường Điện Nam Trung, Thị xã Điện Bàn, Tỉnh Quảng Nam
                 </div>
+                <!-- Mạng xã hội chân trang -->
                 <div class="footer__social">
                   <a
                     href="https://www.facebook.com/groups/ltvpro"
@@ -723,7 +859,9 @@
                   >
                 </div>
               </div>
+              <!-- Liên kết chân trang -->
               <div class="footer__links">
+                <!-- Cột chân trang -->
                 <div class="footer__column">
                   <h4>Liên kết nhanh</h4>
                   <ul>
@@ -753,6 +891,7 @@
                 </div>
               </div>
             </div>
+            <!-- Phần dưới của chân trang -->
             <div class="footer__bottom">
               <p>
                 &copy; 2025 Trường THPT Lương Thế Vinh. Tất cả quyền được bảo
@@ -763,9 +902,10 @@
         </div>
       </footer>
 
-      <!-- Floating Action Button -->
+      <!-- Nút hành động nổi -->
       <div class="fab-container">
         <div class="fab fab--main">💬</div>
+        <!-- Menu nút hành động nổi -->
         <div class="fab-menu">
           <a href="tel:0935308369" class="fab fab--phone">📞</a>
           <a
@@ -780,90 +920,7 @@
       </div>
     </div>
 
-    <script>
-      // Character counter
-      const contentTextarea = document.getElementById("content");
-      const charCount = document.getElementById("charCount");
-
-      contentTextarea.addEventListener("input", function () {
-        const length = this.value.length;
-        charCount.textContent = length;
-
-        if (length > 1000) {
-          charCount.style.color = "#ff6b6b";
-        } else {
-          charCount.style.color = "inherit";
-        }
-      });
-
-      // Star rating
-      const ratingGroup = document.getElementById("ratingGroup");
-      const ratingText = document.getElementById("ratingText");
-      const ratingLabels = [
-        "Rất không hài lòng",
-        "Không hài lòng",
-        "Bình thường",
-        "Hài lòng",
-        "Rất hài lòng",
-      ];
-
-      ratingGroup.addEventListener("change", function (e) {
-        if (e.target.type === "radio") {
-          const value = parseInt(e.target.value);
-          ratingText.textContent = ratingLabels[value - 1];
-        }
-      });
-
-      // Form submission
-      const feedbackForm = document.getElementById("feedbackForm");
-
-      feedbackForm.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        // Get form data
-        const formData = new FormData(feedbackForm);
-        const data = Object.fromEntries(formData);
-
-        // Validation
-        if (
-          !data.fullName ||
-          !data.email ||
-          !data.relationship ||
-          !data.category ||
-          !data.title ||
-          !data.content ||
-          !data.rating
-        ) {
-          alert("Vui lòng điền đầy đủ các trường bắt buộc!");
-          return;
-        }
-
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(data.email)) {
-          alert("Email không hợp lệ!");
-          return;
-        }
-
-        // Content length check
-        if (data.content.length > 1000) {
-          alert("Nội dung không được vượt quá 1000 ký tự!");
-          return;
-        }
-
-        // Show success message
-        alert(
-          "Cảm ơn bạn đã gửi góp ý! Chúng tôi sẽ xem xét và phản hồi sớm nhất."
-        );
-
-        // Reset form
-        feedbackForm.reset();
-        charCount.textContent = "0";
-        ratingText.textContent = "Chọn số sao để đánh giá";
-      });
-    </script>
-
-    <!--Start of Tawk.to Script-->
+    <!-- Bắt đầu Script Tawk.to -->
     <script type="text/javascript">
       var Tawk_API = Tawk_API || {},
         Tawk_LoadStart = new Date();
@@ -877,6 +934,6 @@
         s0.parentNode.insertBefore(s1, s0);
       })();
     </script>
-    <!--End of Tawk.to Script-->
+    <!-- Kết thúc Script Tawk.to -->
   </body>
 </html>

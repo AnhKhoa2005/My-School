@@ -16,21 +16,31 @@
     <link rel="stylesheet" href="Css/Hoatdongtruong.css" />
   </head>
   <body>
+    <!-- Toàn bộ trang -->
     <div class="page">
+      <!-- Đầu trang -->
       <header class="header">
+        <!-- Dải màu đầu trang -->
         <div class="header__gradient">
+          <!-- Phần trên của đầu trang -->
           <div class="header__top">
+            <!-- Container giới hạn chiều rộng -->
             <div class="container">
               <a href="index.html">
+                <!-- Phần thương hiệu -->
                 <div class="brand">
+                  <!-- Logo thương hiệu -->
                   <img
                     src="Images/LogoTruong.jpg"
                     alt="logo"
                     class="brand__logo"
                   />
 
+                  <!-- Thông tin thương hiệu -->
                   <div class="brand__info">
+                    <!-- Tên thương hiệu -->
                     <h1 class="brand__name">Trường THPT Lương Thế Vinh</h1>
+                    <!-- Khẩu hiệu thương hiệu -->
                     <p class="brand__tagline">
                       Nơi ươm mầm tương lai - Khơi nguồn tri thức
                     </p>
@@ -40,15 +50,28 @@
             </div>
           </div>
 
+          <!-- Thanh điều hướng -->
           <nav class="nav">
+            <!-- Container giới hạn chiều rộng -->
             <div class="container">
+              <!-- Danh sách điều hướng -->
               <ul class="nav__list">
+                <!-- Mục điều hướng -->
                 <li class="nav__item">
                   <a href="index.html" class="nav__link">🏠 Trang Chủ</a>
                 </li>
+                <!-- Mục điều hướng có menu con -->
                 <li class="nav__item has-submenu">
+                  <input
+                    type="checkbox"
+                    id="menu-gioithieu"
+                    class="menu-toggle"
+                  />
                   <a href="Gioithieu.html" class="nav__link">ℹ️ Giới thiệu</a>
+                  <label for="menu-gioithieu" class="toggle-icon"></label>
+                  <!-- Menu con -->
                   <ul class="submenu">
+                    <!-- Mục menu con -->
                     <li class="submenu__item">
                       <a href="Lichsunhatruong.html" class="submenu__link"
                         >📚 Lịch sử nhà trường</a
@@ -67,7 +90,9 @@
                   </ul>
                 </li>
                 <li class="nav__item has-submenu">
+                  <input type="checkbox" id="menu-tochuc" class="menu-toggle" />
                   <a href="Tochuc.html" class="nav__link">🏢 Tổ chức</a>
+                  <label for="menu-tochuc" class="toggle-icon"></label>
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Bangiamhieu.html" class="submenu__link"
@@ -86,8 +111,11 @@
                     </li>
                   </ul>
                 </li>
+                <!-- Mục điều hướng có menu con, đang hoạt động -->
                 <li class="nav__item has-submenu active">
+                  <input type="checkbox" id="menu-tintuc" class="menu-toggle" />
                   <a href="Tintuc.html" class="nav__link">📰 Tin tức</a>
+                  <label for="menu-tintuc" class="toggle-icon"></label>
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Hoatdongtruong.html" class="submenu__link"
@@ -107,7 +135,13 @@
                   </ul>
                 </li>
                 <li class="nav__item has-submenu">
+                  <input
+                    type="checkbox"
+                    id="menu-dieuhanh"
+                    class="menu-toggle"
+                  />
                   <a href="Dieuhanh.html" class="nav__link">⚙️ Điều hành</a>
+                  <label for="menu-dieuhanh" class="toggle-icon"></label>
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Thoikhoabieu.html" class="submenu__link"
@@ -133,10 +167,15 @@
         </div>
       </header>
 
+      <!-- Banner trang -->
       <div class="page-banner">
+        <!-- Lớp phủ banner -->
         <div class="page-banner__overlay">
+          <!-- Container giới hạn chiều rộng -->
           <div class="container">
+            <!-- Tiêu đề banner -->
             <h1 class="page-banner__title">Hoạt Động Trường</h1>
+            <!-- Breadcrumb -->
             <div class="breadcrumb">
               <a href="index.html" class="breadcrumb__item">Trang chủ</a>
               <span class="breadcrumb__separator">/</span>
@@ -150,13 +189,19 @@
         </div>
       </div>
 
+      <!-- Nội dung chính -->
       <main class="main">
+        <!-- Container giới hạn chiều rộng -->
         <div class="container">
-          <!-- Intro -->
+          <!-- Phần giới thiệu -->
           <section class="intro-section">
+            <!-- Hộp giới thiệu -->
             <div class="intro-box">
+              <!-- Icon giới thiệu -->
               <div class="intro-icon">🎉</div>
+              <!-- Tiêu đề giới thiệu -->
               <h2 class="intro-title">Các Hoạt Động Ngoại Khóa</h2>
+              <!-- Văn bản giới thiệu -->
               <p class="intro-text">
                 Trường THPT Lương Thế Vinh luôn chú trọng phát triển toàn diện
                 cho học sinh thông qua các hoạt động ngoại khóa phong phú, đa
@@ -167,17 +212,24 @@
             </div>
           </section>
 
-          <!-- Activity Categories -->
+          <!-- Phần danh mục hoạt động -->
           <section class="categories-section">
+            <!-- Tiêu đề phần -->
             <h2 class="section-title">📂 Các Loại Hoạt Động</h2>
+            <!-- Lưới danh mục -->
             <div class="categories-grid">
+              <!-- Hộp danh mục -->
               <div class="category-box">
+                <!-- Icon danh mục -->
                 <div class="category-icon">🎭</div>
+                <!-- Tên danh mục -->
                 <h3 class="category-name">Văn Nghệ</h3>
+                <!-- Mô tả danh mục -->
                 <p class="category-desc">
                   Các hoạt động văn nghệ, biểu diễn nghệ thuật, hội diễn văn
                   nghệ
                 </p>
+                <!-- Số lượng danh mục -->
                 <div class="category-count">24 hoạt động</div>
               </div>
 
@@ -210,23 +262,33 @@
             </div>
           </section>
 
-          <!-- Activities Gallery -->
+          <!-- Album hoạt động -->
           <section class="activities-gallery">
+            <!-- Tiêu đề phần -->
             <h2 class="section-title">📸 Album Hoạt Động</h2>
 
-            <!-- Sports Activities -->
+            <!-- Nhóm hoạt động -->
             <div class="activity-group">
+              <!-- Tiêu đề nhóm -->
               <h3 class="group-title">⚽ Hoạt Động Thể Thao</h3>
+              <!-- Lưới thư viện ảnh -->
               <div class="gallery-grid">
+                <!-- Mục thư viện ảnh -->
                 <div class="gallery-item">
+                  <!-- Hình ảnh thư viện -->
                   <div class="gallery-image">
+                    <!-- Placeholder hình ảnh -->
                     <div class="image-placeholder">
                       <img src="Images/Hoithaocaptruong.jpg" alt="" />
                     </div>
                   </div>
+                  <!-- Thông tin thư viện -->
                   <div class="gallery-info">
+                    <!-- Tiêu đề thư viện -->
                     <h4 class="gallery-title">Hội thao TD-TT cấp trường</h4>
+                    <!-- Ngày thư viện -->
                     <div class="gallery-date">📅 15/03/2025</div>
+                    <!-- Mô tả thư viện -->
                     <p class="gallery-desc">
                       Hội thao sôi nổi với các môn: điền kinh, bóng đá, bóng
                       chuyền, cầu lông. Lớp 12A1 đạt giải Nhất toàn đoàn.
@@ -268,7 +330,6 @@
               </div>
             </div>
 
-            <!-- Cultural Activities -->
             <div class="activity-group">
               <h3 class="group-title">🎭 Hoạt Động Văn Nghệ</h3>
               <div class="gallery-grid">
@@ -306,7 +367,6 @@
               </div>
             </div>
 
-            <!-- Volunteer Activities -->
             <div class="activity-group">
               <h3 class="group-title">❤️ Hoạt Động Tình Nguyện</h3>
               <div class="gallery-grid">
@@ -363,14 +423,21 @@
             </div>
           </section>
 
-          <!-- Clubs -->
+          <!-- Phần các câu lạc bộ -->
           <section class="clubs-section">
+            <!-- Tiêu đề phần -->
             <h2 class="section-title">🌟 Các Câu Lạc Bộ</h2>
+            <!-- Lưới các câu lạc bộ -->
             <div class="clubs-grid">
+              <!-- Thẻ câu lạc bộ -->
               <div class="club-card">
+                <!-- Icon câu lạc bộ -->
                 <div class="club-icon">🗣️</div>
+                <!-- Tên câu lạc bộ -->
                 <h3 class="club-name">CLB Tiếng Anh</h3>
+                <!-- Thông tin câu lạc bộ -->
                 <div class="club-info">
+                  <!-- Mục thông tin -->
                   <div class="info-item">
                     <span class="label">👥 Thành viên:</span>
                     <span class="value">45 học sinh</span>
@@ -384,6 +451,7 @@
                     <span class="value">Thứ 4, 15:00</span>
                   </div>
                 </div>
+                <!-- Mô tả câu lạc bộ -->
                 <p class="club-desc">
                   Rèn luyện kỹ năng giao tiếp, thuyết trình bằng tiếng Anh. Tổ
                   chức các hoạt động English club, game show.
@@ -461,22 +529,33 @@
             </div>
           </section>
 
-          <!-- Upcoming Events -->
+          <!-- Phần sự kiện sắp tới -->
           <section class="events-section">
+            <!-- Tiêu đề phần -->
             <h2 class="section-title">📅 Sự Kiện Sắp Tới</h2>
+            <!-- Dòng thời gian sự kiện -->
             <div class="events-timeline">
+              <!-- Thẻ sự kiện -->
               <div class="event-card">
+                <!-- Ngày sự kiện -->
                 <div class="event-date">
+                  <!-- Ngày -->
                   <div class="date-day">20</div>
+                  <!-- Tháng -->
                   <div class="date-month">Th10</div>
                 </div>
+                <!-- Nội dung sự kiện -->
                 <div class="event-content">
+                  <!-- Huy hiệu sự kiện -->
                   <div class="event-badge">Thể thao</div>
+                  <!-- Tiêu đề sự kiện -->
                   <h3 class="event-title">Giải cầu lông học sinh</h3>
+                  <!-- Mô tả sự kiện -->
                   <p class="event-desc">
                     Giải đấu cầu lông tranh cúp Hiệu trưởng năm 2025. Đăng ký
                     đến hết ngày 15/10.
                   </p>
+                  <!-- Siêu dữ liệu sự kiện -->
                   <div class="event-meta">
                     <span>📍 Nhà thi đấu</span>
                     <span>🕐 8:00 - 17:00</span>
@@ -526,19 +605,27 @@
         </div>
       </main>
 
-      <!-- Footer -->
+      <!-- Chân trang -->
       <footer class="footer">
+        <!-- Dải màu chân trang -->
         <div class="footer__gradient">
+          <!-- Container giới hạn chiều rộng -->
           <div class="container">
+            <!-- Nội dung chân trang -->
             <div class="footer__content">
+              <!-- Thông tin chân trang -->
               <div class="footer__info">
+                <!-- Tiêu đề chân trang -->
                 <h3 class="footer__title">THPT Lương Thế Vinh</h3>
+                <!-- Mô tả chân trang -->
                 <p class="footer__desc">
                   Ngôi trường của tri thức và tương lai
                 </p>
+                <!-- Địa chỉ chân trang -->
                 <div class="footer__address">
                   📍 Phường Điện Nam Trung, Thị xã Điện Bàn, Tỉnh Quảng Nam
                 </div>
+                <!-- Mạng xã hội chân trang -->
                 <div class="footer__social">
                   <a
                     href="https://www.facebook.com/groups/ltvpro"
@@ -548,7 +635,9 @@
                   >
                 </div>
               </div>
+              <!-- Các liên kết chân trang -->
               <div class="footer__links">
+                <!-- Cột liên kết chân trang -->
                 <div class="footer__column">
                   <h4>Liên kết nhanh</h4>
                   <ul>
@@ -582,6 +671,7 @@
                 </div>
               </div>
             </div>
+            <!-- Phần dưới của chân trang -->
             <div class="footer__bottom">
               <p>
                 &copy; 2025 Trường THPT Lương Thế Vinh. Tất cả quyền được bảo
@@ -592,8 +682,11 @@
         </div>
       </footer>
 
+      <!-- Nút hành động nổi -->
       <div class="fab-container">
+        <!-- Nút chính -->
         <div class="fab fab--main">💬</div>
+        <!-- Menu nút nổi -->
         <div class="fab-menu">
           <a href="tel:0935308369" class="fab fab--phone">📞</a>
           <a href="#" class="fab fab--facebook">📘</a>

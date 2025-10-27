@@ -17,18 +17,25 @@
   </head>
   <body>
     <div class="page">
+      <!-- Toàn bộ đầu trang -->
       <header class="header">
+        <!-- Lớp gradient cho header -->
         <div class="header__gradient">
+          <!-- Phần trên của header -->
           <div class="header__top">
+            <!-- Lớp bao bọc, căn giữa nội dung -->
             <div class="container">
               <a href="index.html">
+                <!-- Khối logo và tên trường -->
                 <div class="brand">
+                  <!-- Logo của trường -->
                   <img
                     src="Images/LogoTruong.jpg"
                     alt="logo"
                     class="brand__logo"
                   />
 
+                  <!-- Thông tin tên trường và tagline -->
                   <div class="brand__info">
                     <h1 class="brand__name">Trường THPT Lương Thế Vinh</h1>
                     <p class="brand__tagline">
@@ -40,14 +47,26 @@
             </div>
           </div>
 
+          <!-- Thanh điều hướng chính -->
           <nav class="nav">
+            <!-- Lớp bao bọc, căn giữa nội dung -->
             <div class="container">
+              <!-- Danh sách các mục menu -->
               <ul class="nav__list">
+                <!-- Mục menu -->
                 <li class="nav__item">
                   <a href="index.html" class="nav__link">🏠 Trang Chủ</a>
                 </li>
+                <!-- Mục menu có menu con -->
                 <li class="nav__item has-submenu">
+                  <input
+                    type="checkbox"
+                    id="menu-gioithieu"
+                    class="menu-toggle"
+                  />
                   <a href="Gioithieu.html" class="nav__link">ℹ️ Giới thiệu</a>
+                  <label for="menu-gioithieu" class="toggle-icon"></label>
+                  <!-- Menu con -->
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Lichsunhatruong.html" class="submenu__link"
@@ -66,8 +85,12 @@
                     </li>
                   </ul>
                 </li>
+                <!-- Mục menu có menu con (đang active) -->
                 <li class="nav__item has-submenu active">
+                  <input type="checkbox" id="menu-tochuc" class="menu-toggle" />
                   <a href="Tochuc.html" class="nav__link">🏢 Tổ chức</a>
+                  <label for="menu-tochuc" class="toggle-icon"></label>
+                  <!-- Menu con -->
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Bangiamhieu.html" class="submenu__link"
@@ -86,8 +109,12 @@
                     </li>
                   </ul>
                 </li>
+                <!-- Mục menu có menu con -->
                 <li class="nav__item has-submenu">
+                  <input type="checkbox" id="menu-tintuc" class="menu-toggle" />
                   <a href="Tintuc.html" class="nav__link">📰 Tin tức</a>
+                  <label for="menu-tintuc" class="toggle-icon"></label>
+                  <!-- Menu con -->
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Hoatdongtruong.html" class="submenu__link"
@@ -106,8 +133,16 @@
                     </li>
                   </ul>
                 </li>
+                <!-- Mục menu có menu con -->
                 <li class="nav__item has-submenu">
+                  <input
+                    type="checkbox"
+                    id="menu-dieuhanh"
+                    class="menu-toggle"
+                  />
                   <a href="Dieuhanh.html" class="nav__link">⚙️ Điều hành</a>
+                  <label for="menu-dieuhanh" class="toggle-icon"></label>
+                  <!-- Menu con -->
                   <ul class="submenu">
                     <li class="submenu__item">
                       <a href="Thoikhoabieu.html" class="submenu__link"
@@ -121,9 +156,11 @@
                     </li>
                   </ul>
                 </li>
+                <!-- Mục menu -->
                 <li class="nav__item">
                   <a href="Lienhe.html" class="nav__link">📞 Liên hệ</a>
                 </li>
+                <!-- Mục menu -->
                 <li class="nav__item">
                   <a href="Gopy.html" class="nav__link">💬 Góp ý</a>
                 </li>
@@ -133,10 +170,15 @@
         </div>
       </header>
 
+      <!-- Banner của trang -->
       <div class="page-banner">
+        <!-- Lớp phủ màu và nội dung trên banner -->
         <div class="page-banner__overlay">
+          <!-- Lớp bao bọc, căn giữa nội dung -->
           <div class="container">
+            <!-- Tiêu đề trang -->
             <h1 class="page-banner__title">Ban Giám Hiệu</h1>
+            <!-- Thanh điều hướng breadcrumb -->
             <div class="breadcrumb">
               <a href="index.html" class="breadcrumb__item">Trang chủ</a>
               <span class="breadcrumb__separator">/</span>
@@ -150,13 +192,18 @@
         </div>
       </div>
 
+      <!-- Nội dung chính của trang -->
       <main class="main">
         <div class="container">
-          <!-- Introduction -->
+          <!-- Phần giới thiệu chung -->
           <section class="intro-section">
+            <!-- Hộp giới thiệu -->
             <div class="intro-box">
+              <!-- Icon của hộp giới thiệu -->
               <div class="intro-box__icon">👥</div>
+              <!-- Tiêu đề hộp giới thiệu -->
               <h2 class="intro-box__title">Giới Thiệu Chung</h2>
+              <!-- Nội dung giới thiệu -->
               <p class="intro-box__text">
                 Ban Giám hiệu trường THPT Lương Thế Vinh gồm 3 thành viên với
                 đội ngũ lãnh đạo có trình độ chuyên môn cao, giàu kinh nghiệm
@@ -167,29 +214,40 @@
             </div>
           </section>
 
-          <!-- Principal Profile -->
+          <!-- Phần thông tin hiệu trưởng -->
           <section class="principal-section">
+            <!-- Thẻ thông tin hiệu trưởng -->
             <div class="principal-card">
+              <!-- Phần đầu của thẻ -->
               <div class="principal-header">
+                <!-- Huy hiệu chức vụ -->
                 <div class="principal-badge">
                   <span class="principal-badge__icon">👑</span>
                   <span class="principal-badge__text">HIỆU TRƯỞNG</span>
                 </div>
               </div>
 
+              <!-- Nội dung chính của thẻ -->
               <div class="principal-content">
+                <!-- Ảnh đại diện và huy hiệu -->
                 <div class="principal-avatar">
+                  <!-- Các huy hiệu trên ảnh -->
                   <div class="avatar-badges">
                     <div class="badge-item">🎓 Thạc sĩ</div>
                     <div class="badge-item">📚 Giáo dục học</div>
                   </div>
                 </div>
 
+                <!-- Thông tin chi tiết của hiệu trưởng -->
                 <div class="principal-info">
+                  <!-- Tên hiệu trưởng -->
                   <h2 class="principal-name">ThS. Lê Văn Ngạt</h2>
+                  <!-- Chức vụ -->
                   <div class="principal-title">Hiệu trưởng</div>
 
+                  <!-- Hộp thông tin liên hệ -->
                   <div class="contact-info-box">
+                    <!-- Dòng thông tin liên hệ -->
                     <div class="contact-row">
                       <span class="contact-icon">📞</span>
                       <span class="contact-text">0935.308.369</span>
@@ -206,9 +264,12 @@
                     </div>
                   </div>
 
+                  <!-- Phần quá trình công tác -->
                   <div class="bio-section">
                     <h3 class="bio-title">📝 Quá trình công tác</h3>
+                    <!-- Dòng thời gian -->
                     <div class="timeline">
+                      <!-- Một mục trong dòng thời gian -->
                       <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content">
@@ -246,10 +307,12 @@
                     </div>
                   </div>
 
+                  <!-- Phần nhiệm vụ và quyền hạn -->
                   <div class="responsibilities-section">
                     <h3 class="responsibilities-title">
                       💼 Nhiệm vụ và quyền hạn
                     </h3>
+                    <!-- Danh sách nhiệm vụ -->
                     <ul class="responsibilities-list">
                       <li>
                         Điều hành toàn bộ hoạt động của nhà trường theo quy định
@@ -274,9 +337,12 @@
                     </ul>
                   </div>
 
+                  <!-- Phần thành tích nổi bật -->
                   <div class="achievements-section">
                     <h3 class="achievements-title">🏆 Thành tích nổi bật</h3>
+                    <!-- Lưới các huy hiệu thành tích -->
                     <div class="achievements-grid">
+                      <!-- Một huy hiệu thành tích -->
                       <div class="achievement-badge">
                         <div class="achievement-icon">🥇</div>
                         <div class="achievement-text">
@@ -304,11 +370,12 @@
             </div>
           </section>
 
-          <!-- Vice Principals -->
+          <!-- Phần các phó hiệu trưởng -->
           <section class="vice-principals-section">
             <h2 class="section-title">👨‍🏫 Phó Hiệu Trưởng</h2>
+            <!-- Lưới các thẻ phó hiệu trưởng -->
             <div class="vice-principals-grid">
-              <!-- Vice Principal 1 -->
+              <!-- Thẻ phó hiệu trưởng 1 -->
               <div class="vice-card">
                 <div class="vice-card__ribbon">Phó Hiệu Trưởng</div>
                 <h3 class="vice-card__name">Trần Văn Chương</h3>
@@ -349,7 +416,7 @@
                 </div>
               </div>
 
-              <!-- Vice Principal 2 -->
+              <!-- Thẻ phó hiệu trưởng 2 -->
               <div class="vice-card">
                 <div class="vice-card__ribbon">Phó Hiệu Trưởng</div>
                 <h3 class="vice-card__name">Cô Trần Thị B</h3>
@@ -392,8 +459,9 @@
             </div>
           </section>
 
-          <!-- Team Spirit -->
+          <!-- Phần tinh thần đoàn kết -->
           <section class="team-spirit-section">
+            <!-- Hộp tinh thần đoàn kết -->
             <div class="spirit-box">
               <div class="spirit-icon">🤝</div>
               <h2 class="spirit-title">Tinh Thần Đoàn Kết</h2>
@@ -404,7 +472,9 @@
                 để đạt mục tiêu chung: Xây dựng ngôi trường chất lượng cao, môi
                 trường giáo dục lành mạnh, toàn diện cho học sinh.
               </p>
+              <!-- Các giá trị cốt lõi -->
               <div class="spirit-values">
+                <!-- Một giá trị -->
                 <div class="value-item">
                   <div class="value-icon">💡</div>
                   <div class="value-text">Sáng tạo</div>
@@ -425,10 +495,12 @@
             </div>
           </section>
 
-          <!-- Working Schedule -->
+          <!-- Phần lịch tiếp công dân -->
           <section class="schedule-section">
             <h2 class="section-title">📅 Lịch Tiếp Công Dân</h2>
+            <!-- Lưới các thẻ lịch -->
             <div class="schedule-grid">
+              <!-- Thẻ lịch của hiệu trưởng -->
               <div class="schedule-card">
                 <div class="schedule-card__header">
                   <div class="schedule-icon">👨‍💼</div>
@@ -451,6 +523,7 @@
                 </div>
               </div>
 
+              <!-- Thẻ lịch của phó hiệu trưởng giáo dục -->
               <div class="schedule-card">
                 <div class="schedule-card__header">
                   <div class="schedule-icon">👨‍🏫</div>
@@ -473,6 +546,7 @@
                 </div>
               </div>
 
+              <!-- Thẻ lịch của phó hiệu trưởng hành chính -->
               <div class="schedule-card">
                 <div class="schedule-card__header">
                   <div class="schedule-icon">👩‍🏫</div>
@@ -499,11 +573,14 @@
         </div>
       </main>
 
-      <!-- Footer -->
+      <!-- Chân trang -->
       <footer class="footer">
+        <!-- Lớp gradient cho chân trang -->
         <div class="footer__gradient">
           <div class="container">
+            <!-- Nội dung chân trang -->
             <div class="footer__content">
+              <!-- Thông tin trường -->
               <div class="footer__info">
                 <h3 class="footer__title">THPT Lương Thế Vinh</h3>
                 <p class="footer__desc">
@@ -512,6 +589,7 @@
                 <div class="footer__address">
                   📍 Phường Điện Nam Trung, Thị xã Điện Bàn, Tỉnh Quảng Nam
                 </div>
+                <!-- Mạng xã hội -->
                 <div class="footer__social">
                   <a
                     href="https://www.facebook.com/groups/ltvpro"
@@ -521,7 +599,9 @@
                   >
                 </div>
               </div>
+              <!-- Các cột liên kết -->
               <div class="footer__links">
+                <!-- Một cột liên kết -->
                 <div class="footer__column">
                   <h4>Liên kết nhanh</h4>
                   <ul>
@@ -551,6 +631,7 @@
                 </div>
               </div>
             </div>
+            <!-- Phần đáy của chân trang -->
             <div class="footer__bottom">
               <p>
                 &copy; 2025 Trường THPT Lương Thế Vinh. Tất cả quyền được bảo
@@ -561,7 +642,7 @@
         </div>
       </footer>
 
-      <!-- Floating Action Button -->
+      <!-- Các nút hành động nổi -->
       <div class="fab-container">
         <div class="fab fab--main">💬</div>
         <div class="fab-menu">
@@ -573,7 +654,7 @@
       </div>
     </div>
 
-    <!--Start of Tawk.to Script-->
+    <!-- Script Tawk.to -->
     <script type="text/javascript">
       var Tawk_API = Tawk_API || {},
         Tawk_LoadStart = new Date();
@@ -587,6 +668,6 @@
         s0.parentNode.insertBefore(s1, s0);
       })();
     </script>
-    <!--End of Tawk.to Script-->
+    <!-- Kết thúc script Tawk.to -->
   </body>
 </html>
